@@ -10,19 +10,20 @@ import {
   HeaderSideNavItems,
 } from '@carbon/react';
 import { useCallback, useMemo, useState } from 'react';
-import LandingPage from './landing';
+import LandingPage from '../page-content/landing/landing';
+import LearnMorePage from '../page-content/learn/learn';
+import { GetServerSidePropsContext } from 'next';
+import useNavigation, {
+  ROUTE,
+  ROUTE_LABEL,
+  routes,
+} from '../utils/useNavigation';
 
-import styles from '@styles/Landing.module.scss';
-
-enum ROUTE {
-  learn,
-  program,
-  partners,
-}
+import styles from '@styles/main.module.scss';
 
 export default function Home() {
   const [isSideNavExpanded, setSideNavExpanded] = useState(false);
-  const [section, setSection] = useState<null | ROUTE>(null);
+  const { navigate, currentRoute } = useNavigation();
 
   const onClickSideNavExpand = useCallback(
     () => setSideNavExpanded(!isSideNavExpanded),
@@ -30,26 +31,45 @@ export default function Home() {
   );
 
   const buildMenuBtn = useCallback(
-    (path: ROUTE, label: string) => (
+    (path: ROUTE) => (
       <HeaderMenuItem
-        isActive={section === path}
-        onClick={setSection.bind(null, path)}
+        isActive={currentRoute === path}
+        onClick={navigate.bind(null, path)}
       >
-        {label}
+        {ROUTE_LABEL[path]}
       </HeaderMenuItem>
     ),
-    [section],
+    [navigate, currentRoute],
   );
 
   const headerMenuItems = useMemo(
     () => (
       <>
-        {buildMenuBtn(ROUTE.learn, 'Learn more')}
-        {buildMenuBtn(ROUTE.program, 'Program')}
-        {buildMenuBtn(ROUTE.partners, 'Partners')}
+        {buildMenuBtn(ROUTE.LEARN)}
+        {buildMenuBtn(ROUTE.PROGRAM)}
+        {buildMenuBtn(ROUTE.PARTNERS)}
       </>
     ),
     [buildMenuBtn],
+  );
+
+  const renderContent = useCallback(() => {
+    switch (currentRoute) {
+      case ROUTE.LEARN:
+        return <LearnMorePage />;
+
+      default:
+        return <LandingPage />;
+    }
+  }, [currentRoute]);
+
+  const handleGoHome = useCallback(
+    (e: MouseEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      navigate(ROUTE.HOME);
+    },
+    [navigate],
   );
 
   return (
@@ -57,20 +77,25 @@ export default function Home() {
       <Head>
         <title>AI Alliance</title>
         <meta name="description" content="IBM AI Alliance" />
-        <meta name="author" content="Stanislav Pelak - pelaksta@gmail.com" />
+        <meta
+          name="author"
+          content="Stanislav Pelak - stanislav.pelak@ibm.com"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* TODO */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Header aria-label="IBM Platform Name" className={styles.header}>
+        <Header aria-label="AI Alliance" className={styles.header}>
           <HeaderMenuButton
             aria-label={isSideNavExpanded ? 'Close menu' : 'Open menu'}
             onClick={onClickSideNavExpand}
             isActive={isSideNavExpanded}
             aria-expanded={isSideNavExpanded}
           />
-          <HeaderName prefix="">AI Alliance</HeaderName>
+          <HeaderName prefix="" href="/" onClick={handleGoHome}>
+            AI Alliance
+          </HeaderName>
           <HeaderNavigation aria-label="AI Alliance">
             {headerMenuItems}
           </HeaderNavigation>
@@ -85,8 +110,16 @@ export default function Home() {
             </SideNavItems>
           </SideNav>
         </Header>
-        <LandingPage />
+        {renderContent()}
       </main>
     </>
   );
 }
+
+export const getServerSideProps = (context: GetServerSidePropsContext) => {
+  const route = context.params?.route?.[0];
+  if (route && !routes.includes(route as ROUTE)) {
+    return { redirect: { destination: '/' } };
+  }
+  return { props: {} };
+};

@@ -1,0 +1,46 @@
+@use "@carbon/styles/scss/breakpoint" as *;
+@use "@carbon/type" as *;
+@use "@carbon/grid" as *;
+
+.learnMore {
+  padding-top: calc(48px + 48px);
+  row-gap: 120px;
+  position: relative;
+
+  @include breakpoint-up(lg) {
+    padding-top: calc(96px + 48px);
+  }
+
+  .heading {
+    @include type-style('fluid-display-03', true);
+  }
+
+  p {
+    @include type-style('fluid-paragraph-01', true);
+
+    & + p {
+      margin-top: 2cqmin;
+    }
+  }
+
+  .contentRow {
+    &__graphics {
+      &--left {
+        margin-right: calc(2 * $grid-gutter);
+      }
+      &--right {
+        margin-left: calc(2 * $grid-gutter);
+      }
+    }
+
+    &__text {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .contactForm {
+    margin-bottom: 120px;
+    min-height: 480px;
+  }
+}

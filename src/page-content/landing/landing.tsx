@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Button, Column, Grid, Heading, Section } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
 import Shape1 from '@graphics/shape1.svg';
 import Shape2 from '@graphics/shape2b.svg';
+import useNavigation, { ROUTE } from '../../utils/useNavigation';
 
-import styles from '@styles/Landing.module.scss';
+import styles from './landing.module.scss';
 
 const LandingPage: React.FC = () => {
+  const { navigate } = useNavigation();
+  const handleNextPage = useCallback(() => navigate(ROUTE.LEARN), [navigate]);
+
   return (
-    <Grid className={styles.grid}>
+    <Grid className={styles.landingPage}>
       <div className={styles.background}>
         <div className={styles.shapeTop}>
           <Shape2 />
@@ -19,8 +23,8 @@ const LandingPage: React.FC = () => {
       </div>
       <Column
         className={styles.contentWrapper}
-        lg={{ span: 7, offset: 6 }}
         xlg={{ span: 7, offset: 7 }}
+        lg={{ span: 7, offset: 6 }}
         md={5}
         sm={{ span: 4 }}
       >
@@ -33,6 +37,7 @@ const LandingPage: React.FC = () => {
           <Button
             renderIcon={() => <ArrowRight />}
             className={styles.content__action}
+            onClick={handleNextPage}
           >
             Learn more
           </Button>

@@ -1,0 +1,53 @@
+@use "@carbon/styles/scss/breakpoint" as *;
+@use "@carbon/type" as *;
+
+.main {
+  position: relative;
+
+  .header {
+    border: none;
+
+    :global(.cds--header__name) {
+      &:focus {
+        border-color: transparent !important;
+      }
+      &:focus-visible {
+        border-color: white !important;
+      }
+    }
+
+    :global(nav.cds--header__nav) {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 16px;
+
+      @include breakpoint-down(lg) {
+        display: none;
+      }
+
+      &::before {
+        display: none;
+      }
+
+      :global(.cds--header__menu-item) {
+        font-weight: 300;
+
+        &:focus {
+          border-color: transparent !important;
+        }
+        &:focus-visible {
+          border-color: white !important;
+        }
+      }
+
+      :global(.cds--header__menu-item--current) {
+        font-weight: bold;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+}
