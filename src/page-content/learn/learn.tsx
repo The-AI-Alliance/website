@@ -17,8 +17,8 @@ const LearnMorePage: React.FC = () => {
         styles['contentRow__graphics--left'],
       ),
       xlg: { span: 8, offset: 1 },
-      lg: { span: 9 },
-      md: { span: 4 },
+      lg: 9,
+      sm: 4,
     }),
     [],
   );
@@ -31,6 +31,7 @@ const LearnMorePage: React.FC = () => {
       ),
       lg: { span: 8, offset: 8 },
       md: { span: 4, offset: 4 },
+      sm: 4,
     }),
     [],
   );
@@ -42,8 +43,8 @@ const LearnMorePage: React.FC = () => {
         styles['contentRow__text--left'],
       ),
       xlg: { span: 5, offset: 1 },
-      lg: { span: 6 },
-      md: { span: 4 },
+      lg: 6,
+      sm: 4,
     }),
     [],
   );
@@ -57,6 +58,7 @@ const LearnMorePage: React.FC = () => {
       xlg: { span: 5, offset: 10 },
       lg: { span: 6, offset: 9 },
       md: { span: 4, offset: 4 },
+      sm: 4,
     }),
     [],
   );
@@ -103,7 +105,7 @@ const LearnMorePage: React.FC = () => {
       </>
 
       <>
-        <Column {...textLeftProps}>
+        <Column {...textLeftProps} data-view="inverted">
           <p>
             <strong>Enable</strong> a flourishing downstream ecosystem of
             research and application development based on these open frontier
@@ -112,6 +114,13 @@ const LearnMorePage: React.FC = () => {
         </Column>
         <Column {...graphicsRightProps}>
           <Shape3 />
+        </Column>
+        <Column {...textRightProps} data-view="normal">
+          <p>
+            <strong>Enable</strong> a flourishing downstream ecosystem of
+            research and application development based on these open frontier
+            models.
+          </p>
         </Column>
       </>
 

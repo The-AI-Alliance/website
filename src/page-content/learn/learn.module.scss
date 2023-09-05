@@ -12,8 +12,26 @@
     padding-top: calc(96px + 48px);
   }
 
+  [data-view=inverted] {
+    display: flex !important;
+    @include breakpoint-down(md) {
+      display: none !important;
+    }
+  }
+
+  [data-view=normal] {
+    display: none !important;
+    @include breakpoint-down(md) {
+      display: flex !important;
+    }
+  }
+
   .heading {
     @include type-style('fluid-display-03', true);
+
+    @include breakpoint-down(md) {
+      @include type-style('heading-06');
+    }
   }
   
   .innter_heading {
