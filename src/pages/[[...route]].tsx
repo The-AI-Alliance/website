@@ -1,3 +1,4 @@
+import React, { useCallback, useMemo, useState } from 'react';
 import Head from 'next/head';
 import {
   Header,
@@ -9,7 +10,6 @@ import {
   SideNavItems,
   HeaderSideNavItems,
 } from '@carbon/react';
-import { useCallback, useMemo, useState } from 'react';
 import LandingPage from '../page-content/landing/landing';
 import LearnMorePage from '../page-content/learn/learn';
 import { GetServerSidePropsContext } from 'next';

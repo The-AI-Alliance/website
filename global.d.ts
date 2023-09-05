@@ -1,7 +1,5 @@
 export * from '@carbon/react';
 
-// Patch to get rid of TypeScript errors due to missing type definitions
-
 declare module '@carbon/react' {
   declare const Header: (props: ?) => JSX.Element;
   declare const HeaderNavigation: (props: ?) => JSX.Element;
