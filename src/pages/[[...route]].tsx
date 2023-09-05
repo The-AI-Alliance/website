@@ -19,6 +19,7 @@ import useNavigation, {
   routes,
 } from '../utils/useNavigation';
 import ProgramPage from '../page-content/program/program';
+import PartnersPage from '../page-content/partners/partners';
 
 import styles from '@styles/main.module.scss';
 
@@ -61,6 +62,9 @@ export default function Home() {
 
       case ROUTE.PROGRAM:
         return <ProgramPage />;
+
+      case ROUTE.PARTNERS:
+        return <PartnersPage />;
 
       default:
         return <LandingPage />;
