@@ -2,28 +2,18 @@
 @use "@carbon/type" as *;
 @use "@carbon/grid" as *;
 
-.learnMore {
-  padding-top: calc(48px + 48px);
+.program {
   position: relative;
+  padding-top: calc(48px + 48px);
   row-gap: 48px;
-  
+
   @include breakpoint-up(lg) {
-    row-gap: 120px;
     padding-top: calc(96px + 48px);
+    row-gap: 96px;
   }
 
-  [data-view=inverted] {
-    display: flex !important;
-    @include breakpoint-down(md) {
-      display: none !important;
-    }
-  }
-
-  [data-view=normal] {
-    display: none !important;
-    @include breakpoint-down(md) {
-      display: flex !important;
-    }
+  @include breakpoint-up(xlg) {
+    row-gap: 160px;
   }
 
   .heading {
@@ -33,9 +23,9 @@
       @include type-style('heading-06');
     }
   }
-
+  
   p {
-    @include type-style('fluid-paragraph-01', true);
+    @include type-style('heading-04');
     
     @include breakpoint-down(lg) {
       @include type-style('body-02');
@@ -43,13 +33,6 @@
 
     & + p {
       margin-top: 2rem;
-    }
-  }
-
-  .contentRow {
-    &__text {
-      display: flex;
-      align-items: center;
     }
   }
 }

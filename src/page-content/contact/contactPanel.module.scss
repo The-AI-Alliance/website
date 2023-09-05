@@ -1,0 +1,36 @@
+@use "@carbon/styles/scss/breakpoint" as *;
+@use "@carbon/type" as *;
+@use "@carbon/grid" as *;
+
+.innter_heading {
+  @include type-style('fluid-display-03', true);
+  
+  @include breakpoint-down(lg) {
+    @include type-style('heading-06');
+  }
+}
+
+.contactForm {
+  margin-bottom: 120px;
+  min-height: 480px;
+
+  @include breakpoint-down(lg) {
+    margin-bottom: 96px;
+  }
+}
+
+.footerGraphics {
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  left: 0;
+  width: calc(50% - 2 * $grid-gutter);
+
+  @include breakpoint-down(max) {
+    bottom: 47px;
+  }
+
+  @include breakpoint-down(lg) {
+    display: none;
+  }
+}

@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
 import classnames from 'classnames';
 import { Column, Grid, Heading } from '@carbon/react';
-import Shape1b from '@graphics/shape1b.svg';
 import Shape2 from '@graphics/shape2.svg';
 import Shape3 from '@graphics/shape3.svg';
 import Shape4 from '@graphics/shape4.svg';
 import Footer from '@components/footer/footer';
+import ContactPanel from '../contact/contactPanel';
 
 import styles from './learn.module.scss';
 
@@ -137,30 +137,9 @@ const LearnMorePage: React.FC = () => {
         </Column>
       </>
 
-      <>
-        <Column xlg={{ span: 7, offset: 1 }} lg={5} md={8} sm={4}>
-          <Heading className={styles.inner_heading}>
-            Join the
-            <br />
-            AI Alliance
-          </Heading>
-        </Column>
-        <Column
-          className={styles.contactForm}
-          xlg={{ span: 8, offset: 8 }}
-          lg={{ span: 9, offset: 7 }}
-          md={6}
-          sm={4}
-        >
-          <div>TODO Contact form</div>
-        </Column>
-      </>
+      <ContactPanel />
 
       <Footer />
-
-      <div className={styles.footerGraphics}>
-        <Shape1b />
-      </div>
     </Grid>
   );
 };

@@ -26,7 +26,10 @@ const useNavigation = () => {
   }, [router]);
 
   const navigate = useCallback(
-    (route: ROUTE) => router.push(route, undefined, { shallow: true }),
+    (route: ROUTE) => {
+      router.push(route, undefined, { shallow: true });
+      window.scrollTo(0, 0);
+    },
     [router],
   );
 

@@ -18,6 +18,7 @@ import useNavigation, {
   ROUTE_LABEL,
   routes,
 } from '../utils/useNavigation';
+import ProgramPage from '../page-content/program/program';
 
 import styles from '@styles/main.module.scss';
 
@@ -57,6 +58,9 @@ export default function Home() {
     switch (currentRoute) {
       case ROUTE.LEARN:
         return <LearnMorePage />;
+
+      case ROUTE.PROGRAM:
+        return <ProgramPage />;
 
       default:
         return <LandingPage />;
