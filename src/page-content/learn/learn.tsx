@@ -1,15 +1,66 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import classnames from 'classnames';
 import { Column, Grid, Heading } from '@carbon/react';
-import Shape1 from '@graphics/shape1.svg';
+import Shape1b from '@graphics/shape1b.svg';
 import Shape2 from '@graphics/shape2.svg';
 import Shape3 from '@graphics/shape3.svg';
 import Shape4 from '@graphics/shape4.svg';
-
-import styles from './learn.module.scss';
 import Footer from '@components/footer/footer';
 
+import styles from './learn.module.scss';
+
 const LearnMorePage: React.FC = () => {
+  const graphicsLeftProps = useMemo(
+    () => ({
+      className: classnames(
+        styles.contentRow__graphics,
+        styles['contentRow__graphics--left'],
+      ),
+      xlg: { span: 8, offset: 1 },
+      lg: { span: 9 },
+      md: { span: 4 },
+    }),
+    [],
+  );
+
+  const graphicsRightProps = useMemo(
+    () => ({
+      className: classnames(
+        styles.contentRow__graphics,
+        styles['contentRow__graphics--right'],
+      ),
+      lg: { span: 8, offset: 8 },
+      md: { span: 4, offset: 4 },
+    }),
+    [],
+  );
+
+  const textLeftProps = useMemo(
+    () => ({
+      className: classnames(
+        styles.contentRow__text,
+        styles['contentRow__text--left'],
+      ),
+      xlg: { span: 5, offset: 1 },
+      lg: { span: 6 },
+      md: { span: 4 },
+    }),
+    [],
+  );
+
+  const textRightProps = useMemo(
+    () => ({
+      className: classnames(
+        styles.contentRow__text,
+        styles['contentRow__text--right'],
+      ),
+      xlg: { span: 5, offset: 10 },
+      lg: { span: 6, offset: 9 },
+      md: { span: 4, offset: 4 },
+    }),
+    [],
+  );
+
   return (
     <Grid className={styles.learnMore}>
       <>
@@ -40,19 +91,10 @@ const LearnMorePage: React.FC = () => {
       </>
 
       <>
-        <Column
-          className={styles['contentRow__graphics--left']}
-          xlg={{ span: 9, offset: 1 }}
-        >
+        <Column {...graphicsLeftProps}>
           <Shape2 />
         </Column>
-        <Column
-          className={classnames(
-            styles.contentRow__text,
-            styles['contentRow__text--right'],
-          )}
-          xlg={{ span: 5, offset: 10 }}
-        >
+        <Column {...textRightProps}>
           <p>
             <strong>Build</strong> and release open-source frontier models based
             on a common requirement and validation framework.
@@ -61,41 +103,23 @@ const LearnMorePage: React.FC = () => {
       </>
 
       <>
-        <Column
-          className={classnames(
-            styles.contentRow__text,
-            styles['contentRow__text--left'],
-          )}
-          xlg={{ span: 5, offset: 1 }}
-        >
+        <Column {...textLeftProps}>
           <p>
             <strong>Enable</strong> a flourishing downstream ecosystem of
             research and application development based on these open frontier
             models.
           </p>
         </Column>
-        <Column
-          className={styles['contentRow__graphics--right']}
-          xlg={{ span: 9, offset: 7 }}
-        >
+        <Column {...graphicsRightProps}>
           <Shape3 />
         </Column>
       </>
 
       <>
-        <Column
-          className={styles['contentRow__graphics--left']}
-          xlg={{ span: 9, offset: 1 }}
-        >
+        <Column {...graphicsLeftProps}>
           <Shape4 />
         </Column>
-        <Column
-          className={classnames(
-            styles.contentRow__text,
-            styles['contentRow__text--right'],
-          )}
-          xlg={{ span: 5, offset: 10 }}
-        >
+        <Column {...textRightProps}>
           <p>
             <strong>Inform</strong> and educate the public and regulators with a
             common narrative on the benefits of open-source AI to ensure trust
@@ -105,8 +129,8 @@ const LearnMorePage: React.FC = () => {
       </>
 
       <>
-        <Column xlg={{ span: 7, offset: 1 }} lg={7} md={8} sm={4}>
-          <Heading className={styles.heading}>
+        <Column xlg={{ span: 7, offset: 1 }} lg={5} md={8} sm={4}>
+          <Heading className={styles.inner_heading}>
             Join the
             <br />
             AI Alliance
@@ -124,6 +148,10 @@ const LearnMorePage: React.FC = () => {
       </>
 
       <Footer />
+
+      <div className={styles.footerGraphics}>
+        <Shape1b />
+      </div>
     </Grid>
   );
 };

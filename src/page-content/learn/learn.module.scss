@@ -4,19 +4,32 @@
 
 .learnMore {
   padding-top: calc(48px + 48px);
-  row-gap: 120px;
   position: relative;
-
+  row-gap: 48px;
+  
   @include breakpoint-up(lg) {
+    row-gap: 120px;
     padding-top: calc(96px + 48px);
   }
 
   .heading {
     @include type-style('fluid-display-03', true);
   }
+  
+  .innter_heading {
+    @include type-style('fluid-display-03', true);
+    
+    @include breakpoint-down(lg) {
+      @include type-style('heading-06');
+    }
+  }
 
   p {
     @include type-style('fluid-paragraph-01', true);
+    
+    @include breakpoint-down(lg) {
+      @include type-style('body-02');
+    }
 
     & + p {
       margin-top: 2cqmin;
@@ -24,15 +37,6 @@
   }
 
   .contentRow {
-    &__graphics {
-      &--left {
-        margin-right: calc(2 * $grid-gutter);
-      }
-      &--right {
-        margin-left: calc(2 * $grid-gutter);
-      }
-    }
-
     &__text {
       display: flex;
       align-items: center;
@@ -42,5 +46,25 @@
   .contactForm {
     margin-bottom: 120px;
     min-height: 480px;
+
+    @include breakpoint-down(lg) {
+      margin-bottom: 96px;
+    }
+  }
+
+  .footerGraphics {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    left: 0;
+    width: calc(50% - 2 * $grid-gutter);
+
+    @include breakpoint-down(max) {
+      bottom: 47px;
+    }
+
+    @include breakpoint-down(xlg) {
+      display: none;
+    }
   }
 }

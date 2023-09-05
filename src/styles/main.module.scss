@@ -8,6 +8,16 @@
     border: none;
 
     :global(.cds--header__name) {
+      border-width: 1px !important;
+      &:focus {
+        border-color: transparent !important;
+      }
+      &:focus-visible {
+        border-color: white !important;
+      }
+    }
+
+    :global(.cds--header__menu-toggle) {
       &:focus {
         border-color: transparent !important;
       }
