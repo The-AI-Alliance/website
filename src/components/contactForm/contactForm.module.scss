@@ -1,0 +1,48 @@
+@use "@carbon/styles/scss/breakpoint" as *;
+@use "@carbon/grid" as *;
+
+.field {
+  width: 100%;
+  margin-top: 24px;
+  float: left;
+
+  &--half-width {
+    width: calc((100% - $grid-gutter) / 2);
+
+    &:nth-of-type(2n + 1) {
+      margin-right: $grid-gutter;
+    }
+
+    @include breakpoint-down(md) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  &.acknowledge {
+    width: calc((100% - $grid-gutter) / 2);
+    margin-right: $grid-gutter;
+
+    :global(.cds--checkbox-label-text) {
+      padding-left: 16px;
+    }
+
+    @include breakpoint-down(lg) {
+      width: 100%;
+    }
+  }
+}
+
+.submitBtn {
+  float: right;
+  margin-top: 24px;
+  width: calc((100% - $grid-gutter) / 2);
+  
+  @include breakpoint-up(lg) {
+    max-width: 216px;
+  }
+
+  @include breakpoint-down(lg) {
+    float: left;
+  }
+}

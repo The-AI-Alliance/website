@@ -12,7 +12,6 @@
 
 .contactForm {
   margin-bottom: 120px;
-  min-height: 480px;
 
   @include breakpoint-down(lg) {
     margin-bottom: 96px;
