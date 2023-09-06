@@ -1,48 +1,89 @@
 @use "@carbon/styles/scss/breakpoint" as *;
 @use "@carbon/grid" as *;
+@use '@carbon/colors' as *;
 
-.field {
-  width: 100%;
-  margin-top: 24px;
-  float: left;
+.contactForm {
+  :global(.cds--label) {
+    color: $white-0;
+  }
 
-  &--half-width {
-    width: calc((100% - $grid-gutter) / 2);
+  :global(.cds--text-input), :global(.cds--text-area) {
+    border: solid 1px $white-0;
+    border-radius: 24px;
+    background-color: $gray-100;
 
-    &:nth-of-type(2n + 1) {
-      margin-right: $grid-gutter;
-    }
-
-    @include breakpoint-down(md) {
-      width: 100%;
-      margin-right: 0;
+    &::placeholder {
+      color: $gray-40;
     }
   }
 
-  &.acknowledge {
-    width: calc((100% - $grid-gutter) / 2);
-    margin-right: $grid-gutter;
+  :global(.cds--checkbox__validation-msg) {
+    align-items: flex-start;
 
-    :global(.cds--checkbox-label-text) {
-      padding-left: 16px;
-    }
-
-    @include breakpoint-down(lg) {
-      width: 100%;
+    svg {
+      flex-shrink: 0;
     }
   }
-}
 
-.submitBtn {
-  float: right;
-  margin-top: 24px;
-  width: calc((100% - $grid-gutter) / 2);
-  
-  @include breakpoint-up(lg) {
-    max-width: 216px;
-  }
-
-  @include breakpoint-down(lg) {
+  .field {
+    width: 100%;
+    margin-top: 24px;
     float: left;
+    
+    &--half-width {
+      width: calc((100% - $grid-gutter) / 2);
+
+      &:nth-of-type(2n + 1) {
+        margin-right: $grid-gutter;
+      }
+      
+      @include breakpoint-down(md) {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+
+    &.acknowledge {
+      width: calc((100% - $grid-gutter) / 2);
+      margin-right: $grid-gutter;
+      
+      :global(.cds--checkbox-label-text) {
+        padding-left: 16px;
+      }
+      
+      @include breakpoint-down(lg) {
+        width: 100%;
+      }
+    }
+  }
+
+  .link {
+    text-decoration: underline;
+    color: $white-0;
+    
+    &:hover {
+      color: $gray-20;
+    }
+
+    &:focus {
+      outline: none !important;
+    }
+    &:focus-visible {
+      outline: solid 1px $white-0 !important;
+    }
+  }
+
+  .submitBtn {
+    float: right;
+    margin-top: 24px;
+    width: calc((100% - $grid-gutter) / 2);
+    
+    @include breakpoint-up(lg) {
+      max-width: 216px;
+    }
+    
+    @include breakpoint-down(lg) {
+      float: left;
+    }
   }
 }
