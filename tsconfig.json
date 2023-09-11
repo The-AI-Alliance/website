@@ -17,7 +17,9 @@
     "paths": {
       "@components/*": ["./src/components/*"],
       "@graphics/*": ["./src/graphics/*"],
-      "@styles/*": ["./src/styles/*"]
+      "@styles/*": ["./src/styles/*"],
+      "@types/*": ["./src/types/*"],
+      "@utils/*": ["./src/utils/*"]
     },
     "typeRoots": ["./node_modules/@types"]
   },

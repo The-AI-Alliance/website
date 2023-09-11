@@ -10,6 +10,7 @@ import {
 import classNames from 'classnames';
 import { useForm } from 'react-hook-form';
 import { ArrowRight } from '@carbon/icons-react';
+import EmailParams from '@types/emailParams';
 
 import styles from './contactForm.module.scss';
 
@@ -18,10 +19,10 @@ const INPUT_MAX_LENGTH = 100;
 const MESSAGE_MAX_LENGTH = 1000;
 
 type ContactFormProps = {
-  className?: string;
+  onSubmit: (params: EmailParams) => Promise<void>;
 };
 
-type ContactFormData = {
+export type ContactFormData = {
   firstName: string;
   lastName: string;
   email: string;
@@ -34,15 +35,31 @@ type ContactFormData = {
 const isEmail = (value: string) =>
   /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(value);
 
-const ContactForm: React.FC<ContactFormProps> = ({}) => {
+const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
   const { register, handleSubmit, formState } = useForm<ContactFormData>();
 
-  const onSubmit = useCallback((values: ContactFormData) => {
-    // TODO
-  }, []);
+  const handleSubmitForm = useCallback(
+    ({
+      firstName,
+      lastName,
+      email,
+      organization,
+      message,
+    }: ContactFormData) => {
+      firstName &&
+        lastName &&
+        email &&
+        organization &&
+        onSubmit({ firstName, lastName, email, organization, message });
+    },
+    [onSubmit],
+  );
 
   return (
-    <Form className={styles.contactForm} onSubmit={handleSubmit(onSubmit)}>
+    <Form
+      className={styles.contactForm}
+      onSubmit={handleSubmit(handleSubmitForm)}
+    >
       <TextInput
         className={classNames(styles.field, styles['field--half-width'])}
         id="firstName"
