@@ -32,6 +32,10 @@
     left: -5%;
     background-color: #{$gray-100}c0;
     backdrop-filter: blur(5px);
+
+    > div {
+      position: relative;
+    }
   }
 }
 

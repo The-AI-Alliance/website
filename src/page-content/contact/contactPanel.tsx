@@ -1,10 +1,33 @@
 import React from 'react';
+import { AnimationProps, motion } from 'framer-motion';
 import { Column, Heading } from '@carbon/react';
 import Shape1b from '@graphics/shape1b.svg';
 import ContactForm from '@components/contactForm/contactForm';
 import useSendEmail from '../../utils/useSendEmail';
 
 import styles from './contactPanel.module.scss';
+
+const confirmVariants: AnimationProps['variants'] = {
+  hidden: { opacity: 0 },
+  shown: {
+    opacity: 1,
+    transition: {
+      ease: 'easeInOut',
+      duration: 0.4,
+    },
+  },
+};
+
+const confirmMessageVariants = {
+  hidden: { top: -15 },
+  shown: {
+    top: 0,
+    transition: {
+      ease: 'easeInOut',
+      duration: 0.6,
+    },
+  },
+};
 
 const ContactPanel: React.FC<{
   withBackground?: boolean;
@@ -28,9 +51,20 @@ const ContactPanel: React.FC<{
         sm={4}
       >
         {emailSent ? (
-          <div className={styles.emailSent}>
-            Your message was sent. Thank you!
-          </div>
+          <motion.div
+            className={styles.emailSent}
+            variants={confirmVariants}
+            initial="hidden"
+            animate="shown"
+          >
+            <motion.div
+              variants={confirmMessageVariants}
+              initial="hidden"
+              animate="shown"
+            >
+              Your message was sent. Thank you!
+            </motion.div>
+          </motion.div>
         ) : null}
         <ContactForm onSubmit={sendMail} />
       </Column>
