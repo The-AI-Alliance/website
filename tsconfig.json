@@ -18,7 +18,7 @@
       "@components/*": ["./src/components/*"],
       "@graphics/*": ["./src/graphics/*"],
       "@styles/*": ["./src/styles/*"],
-      "@types/*": ["./src/types/*"],
+      "@type/*": ["./src/types/*"],
       "@utils/*": ["./src/utils/*"]
     },
     "typeRoots": ["./node_modules/@types"]

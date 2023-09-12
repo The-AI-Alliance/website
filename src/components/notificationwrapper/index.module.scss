@@ -8,10 +8,11 @@
 
 .toastWrapper {
   position: relative;
-  padding: 56px 16px;
+  padding: 4px 16px;
 }
 
 .toastsWrapper {
+  padding: 56px 0;
   position: fixed;
   z-index: 10000;
   top: 0;

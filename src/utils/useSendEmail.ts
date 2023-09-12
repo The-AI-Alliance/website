@@ -1,6 +1,6 @@
 import { useCallback, useContext, useState } from 'react';
 import FeatureFlagsContext from './featureFlagsContext';
-import EmailParams from '@types/emailParams';
+import EmailParams from '@type/emailParams';
 import { useNotification } from './useNotification';
 
 const useSendEmail = () => {

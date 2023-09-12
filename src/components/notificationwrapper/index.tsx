@@ -37,33 +37,30 @@ const NotificationWrapper: React.FC<{
     <>
       <div className={styles.toastsWrapper}>
         <AnimatePresence>
-          {notifications.map(notification => {
-            const close = () => closeNotification?.(notification.id);
-            return (
-              <motion.div
-                className={styles.toastWrapper}
-                key={notification.id}
-                variants={toastVariants}
-                initial="hidden"
-                animate="shown"
-                exit="hidden"
-              >
-                <Toast
-                  title={notification.title}
-                  kind={notification.kind ?? 'info'}
-                  subtitle={notification.subtitle}
-                  onCloseButtonClick={close}
-                  className={classnames(
-                    styles.notification,
-                    styles['notification--toast'],
-                    className,
-                  )}
-                  lowContrast={!!notification.lowContrast}
-                  role={'alert'}
-                ></Toast>
-              </motion.div>
-            );
-          })}
+          {notifications.map(notification => (
+            <motion.div
+              className={styles.toastWrapper}
+              key={notification.id}
+              variants={toastVariants}
+              initial="hidden"
+              animate="shown"
+              exit="hidden"
+            >
+              <Toast
+                title={notification.title}
+                kind={notification.kind ?? 'info'}
+                subtitle={notification.subtitle}
+                onCloseButtonClick={() => closeNotification?.(notification.id)}
+                className={classnames(
+                  styles.notification,
+                  styles['notification--toast'],
+                  className,
+                )}
+                lowContrast={!!notification.lowContrast}
+                role={'alert'}
+              ></Toast>
+            </motion.div>
+          ))}
         </AnimatePresence>
       </div>
     </>
