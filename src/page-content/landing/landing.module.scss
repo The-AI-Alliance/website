@@ -63,6 +63,10 @@
     }
     
     .content {
+      &__animationWrapper {
+        position: relative;
+      }
+
       &__header {
         margin: 40vh 0 32px;
         white-space: nowrap;

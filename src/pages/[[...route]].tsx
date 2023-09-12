@@ -22,6 +22,8 @@ import ProgramPage from '../page-content/program/program';
 import PartnersPage from '../page-content/partners/partners';
 import FeatureFlagsContext from '../utils/featureFlagsContext';
 import NotificationWrapper from '@components/notificationwrapper';
+import { AnimatePresence } from 'framer-motion';
+import { usePrevious } from '@utils/usePrevious';
 
 import styles from '@styles/main.module.scss';
 
@@ -32,6 +34,7 @@ export default function Home({
 }) {
   const [isSideNavExpanded, setSideNavExpanded] = useState(false);
   const { navigate, currentRoute } = useNavigation();
+  const previousRoute = usePrevious(currentRoute, ROUTE.HOME);
 
   const onClickSideNavExpand = useCallback(
     () => setSideNavExpanded(!isSideNavExpanded),
@@ -64,18 +67,20 @@ export default function Home({
   const renderContent = useCallback(() => {
     switch (currentRoute) {
       case ROUTE.LEARN:
-        return <LearnMorePage />;
+        return (
+          <LearnMorePage key="learnMorePage" previousRoute={previousRoute} />
+        );
 
       case ROUTE.PROGRAM:
-        return <ProgramPage />;
+        return <ProgramPage key="programPage" />;
 
       case ROUTE.PARTNERS:
-        return <PartnersPage />;
+        return <PartnersPage key="partnersPage" />;
 
       default:
-        return <LandingPage />;
+        return <LandingPage key="landingPage" />;
     }
-  }, [currentRoute]);
+  }, [currentRoute, previousRoute]);
 
   const handleGoHome = useCallback(
     (e: MouseEvent) => {
@@ -96,7 +101,6 @@ export default function Home({
           content="Stanislav Pelak - stanislav.pelak@ibm.com"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* TODO */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
@@ -125,7 +129,7 @@ export default function Home({
             </SideNavItems>
           </SideNav>
         </Header>
-        {renderContent()}
+        <AnimatePresence>{renderContent()}</AnimatePresence>
       </main>
     </FeatureFlagsContext.Provider>
   );
