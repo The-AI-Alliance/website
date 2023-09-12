@@ -10,7 +10,7 @@ const ContactPanel: React.FC<{ withBackground?: boolean }> = ({
   return (
     <>
       <Column xlg={{ span: 7, offset: 1 }} lg={5} md={8} sm={4}>
-        <Heading className={styles.inner_heading}>
+        <Heading className={styles.innerHeading}>
           Join the
           <br />
           AI Alliance

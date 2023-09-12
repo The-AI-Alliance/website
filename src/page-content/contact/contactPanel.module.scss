@@ -2,7 +2,7 @@
 @use "@carbon/type" as *;
 @use "@carbon/grid" as *;
 
-.innter_heading {
+.innerHeading {
   @include type-style('fluid-display-03', true);
   
   @include breakpoint-down(lg) {
