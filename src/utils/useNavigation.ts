@@ -4,14 +4,12 @@ import { useCallback, useMemo } from 'react';
 export enum ROUTE {
   HOME = '',
   LEARN = 'learn',
-  PROGRAM = 'program',
   PARTNERS = 'partners',
 }
 
 export const ROUTE_LABEL: Record<ROUTE, string> = {
   [ROUTE.HOME]: 'Landing',
   [ROUTE.LEARN]: 'Learn more',
-  [ROUTE.PROGRAM]: 'Program',
   [ROUTE.PARTNERS]: 'Partners',
 };
 

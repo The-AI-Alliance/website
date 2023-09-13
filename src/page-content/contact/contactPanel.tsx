@@ -39,7 +39,13 @@ const ContactPanel: React.FC<{
 
   return enabled ? (
     <>
-      <Column xlg={{ span: 7, offset: 1 }} lg={6} md={8} sm={4}>
+      <Column
+        className={styles.titleColumn}
+        xlg={{ span: 7, offset: 1 }}
+        lg={6}
+        md={8}
+        sm={4}
+      >
         <Heading className={styles.innerHeading}>
           Join the
           <br />
