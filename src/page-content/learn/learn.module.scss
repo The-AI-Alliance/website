@@ -1,0 +1,55 @@
+@use "@carbon/styles/scss/breakpoint" as *;
+@use "@carbon/type" as *;
+@use "@carbon/grid" as *;
+
+.learnMore {
+  padding-top: calc(48px + 48px);
+  position: relative;
+  row-gap: 48px;
+  
+  @include breakpoint-up(lg) {
+    row-gap: 120px;
+    padding-top: calc(96px + 48px);
+  }
+
+  [data-view=inverted] {
+    display: flex !important;
+    @include breakpoint-down(md) {
+      display: none !important;
+    }
+  }
+
+  [data-view=normal] {
+    display: none !important;
+    @include breakpoint-down(md) {
+      display: flex !important;
+    }
+  }
+
+  .heading {
+    @include type-style('fluid-display-03', true);
+
+    @include breakpoint-down(md) {
+      @include type-style('heading-06');
+    }
+  }
+
+  p {
+    @include type-style('fluid-paragraph-01', true);
+    
+    @include breakpoint-down(lg) {
+      @include type-style('body-02');
+    }
+
+    & + p {
+      margin-top: 2rem;
+    }
+  }
+
+  .contentRow {
+    &__text {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

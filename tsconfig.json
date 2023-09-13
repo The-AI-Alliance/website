@@ -15,8 +15,11 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@components/*": ["./src/*"]
-    }
+      "@components/*": ["./src/components/*"],
+      "@graphics/*": ["./src/graphics/*"],
+      "@styles/*": ["./src/styles/*"]
+    },
+    "typeRoots": ["./node_modules/@types"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
