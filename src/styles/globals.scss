@@ -1,6 +1,7 @@
 @use "@carbon/react" as *;
 @use "@carbon/themes/scss/themes" as *;
 @use "@carbon/themes";
+@use "@carbon/styles/scss/breakpoint" as *;
 
 :root {
   @include themes.theme($g100);
@@ -14,13 +15,18 @@
 
 html {
   color-scheme: dark;
-}
-
-html,
-body {
   max-width: 100vw;
   overflow-x: hidden;
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y proximity;
+  
+  @include breakpoint-down(md) {
+    scroll-snap-type: none;
+  }
+}
 
+body {
   &.noscrollbar {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */

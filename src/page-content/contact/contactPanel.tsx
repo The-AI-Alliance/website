@@ -1,7 +1,9 @@
 import React from 'react';
+import classnames from 'classnames';
 import { AnimationProps, motion } from 'framer-motion';
 import { Column, Heading } from '@carbon/react';
 import Shape1b from '@graphics/shape1b.svg';
+import Shape1r from '@graphics/shape1r.svg';
 import ContactForm from '@components/contactForm/contactForm';
 import useSendEmail from '../../utils/useSendEmail';
 
@@ -30,21 +32,27 @@ const confirmMessageVariants = {
 };
 
 const ContactPanel: React.FC<{
-  withBackground?: boolean;
-}> = ({ withBackground = true }) => {
+  className?: string;
+  background?: 'straight' | 'tilted' | 'none';
+}> = ({ className, background = 'none' }) => {
   const { emailSent, enabled, sendMail } = useSendEmail();
 
   return enabled ? (
     <>
-      <Column xlg={{ span: 7, offset: 1 }} lg={5} md={8} sm={4}>
+      <Column xlg={{ span: 7, offset: 1 }} lg={6} md={8} sm={4}>
         <Heading className={styles.innerHeading}>
           Join the
           <br />
           AI Alliance
         </Heading>
+        {background === 'straight' ? (
+          <div className={styles.titleGraphics}>
+            <Shape1r />
+          </div>
+        ) : null}
       </Column>
       <Column
-        className={styles.contactForm}
+        className={classnames(styles.contactForm, className)}
         xlg={{ span: 8, offset: 8 }}
         lg={{ span: 8, offset: 7 }}
         md={8}
@@ -66,10 +74,10 @@ const ContactPanel: React.FC<{
             </motion.div>
           </motion.div>
         ) : null}
-        <ContactForm onSubmit={sendMail} />
+        <ContactForm className={className} onSubmit={sendMail} />
       </Column>
 
-      {withBackground ? (
+      {background === 'tilted' ? (
         <div className={styles.footerGraphics}>
           <Shape1b />
         </div>

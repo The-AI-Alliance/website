@@ -12,11 +12,15 @@
 }
 
 .contactForm {
-  margin-bottom: 120px;
+  padding-bottom: 160px;
   position: relative;
 
   @include breakpoint-down(lg) {
-    margin-bottom: 96px;
+    padding-bottom: 80px;
+  }
+
+  @include breakpoint-down(md) {
+    padding-bottom: calc(48px + 160px);
   }
   
   .emailSent {
@@ -35,6 +39,44 @@
 
     > div {
       position: relative;
+    }
+  }
+}
+
+.titleGraphics {
+  position: relative;
+  margin-top: 96px;
+  
+  // md
+  @include breakpoint-down(lg) {
+    position: absolute;
+    bottom: 0;
+    right: $grid-gutter;
+    width: calc(50% - (3 * $grid-gutter / 2));
+    height: 128px;
+    overflow: hidden;
+  }
+
+  // sm
+  @include breakpoint-down(md) {
+    position: absolute;
+    bottom: 0;
+    right: calc($grid-gutter / 2);
+    width: calc(100% - $grid-gutter);
+    height: 160px;
+  }
+  
+  svg {
+    position: absolute;
+    top: 0;
+    
+    @include breakpoint(lg) {
+      left: -20%;
+    }
+    
+    @include breakpoint-up(xlg) {
+      left: -33%;
+      width: 115%;
     }
   }
 }
