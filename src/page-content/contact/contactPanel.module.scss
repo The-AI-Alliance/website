@@ -1,6 +1,7 @@
 @use "@carbon/styles/scss/breakpoint" as *;
 @use "@carbon/type" as *;
 @use "@carbon/grid" as *;
+@use '@carbon/colors' as *;
 
 .innerHeading {
   @include type-style('fluid-display-03', true);
@@ -12,10 +13,29 @@
 
 .contactForm {
   margin-bottom: 120px;
-  min-height: 480px;
+  position: relative;
 
   @include breakpoint-down(lg) {
     margin-bottom: 96px;
+  }
+  
+  .emailSent {
+    @include type-style('body-02');
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+    background-color: #{$gray-100}c0;
+    backdrop-filter: blur(5px);
+
+    > div {
+      position: relative;
+    }
   }
 }
 

@@ -24,6 +24,16 @@ yarn dev
 
 3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Configuration
+
+- Copy `example.env` to `.env.local` or other `.env*` file - see [Next.js documentation](https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables) for reference.
+- Variables:
+  - Required to send emails:
+    - `SENDGRID_API_KEY` - Sendgrid API key
+    - `EMAIL_FROM` - email address to be used as a sender (NOT reply-to)
+    - `EMAIL_TO_CSV` - comma-separated emails of recipients
+
+
 ## Deployment
 
 TBD
