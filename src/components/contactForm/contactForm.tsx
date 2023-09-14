@@ -10,7 +10,7 @@ import {
 import classNames from 'classnames';
 import { useForm } from 'react-hook-form';
 import { ArrowRight } from '@carbon/icons-react';
-import EmailParams from '@types/emailParams';
+import EmailParams from '@type/emailParams';
 
 import styles from './contactForm.module.scss';
 
@@ -19,6 +19,7 @@ const INPUT_MAX_LENGTH = 100;
 const MESSAGE_MAX_LENGTH = 1000;
 
 type ContactFormProps = {
+  className?: string;
   onSubmit: (params: EmailParams) => Promise<void>;
 };
 
@@ -35,7 +36,7 @@ export type ContactFormData = {
 const isEmail = (value: string) =>
   /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(value);
 
-const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
+const ContactForm: React.FC<ContactFormProps> = ({ className, onSubmit }) => {
   const { register, handleSubmit, formState } = useForm<ContactFormData>();
 
   const handleSubmitForm = useCallback(
@@ -57,7 +58,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
 
   return (
     <Form
-      className={styles.contactForm}
+      className={classNames(styles.contactForm, className)}
       onSubmit={handleSubmit(handleSubmitForm)}
     >
       <TextInput
@@ -145,14 +146,16 @@ const ContactForm: React.FC<ContactFormProps> = ({ onSubmit }) => {
           <>
             By submitting this form, I acknowledge that I have read and
             understand the{' '}
-            <Link
-              className={styles.link}
-              href={PRIVACY_STATEMENT_URL}
-              target="_blank"
-            >
-              Privacy Statement
-            </Link>
-            .
+            <span style={{ whiteSpace: 'nowrap' }}>
+              <Link
+                className={styles.link}
+                href={PRIVACY_STATEMENT_URL}
+                target="_blank"
+              >
+                Privacy Statement
+              </Link>
+              .
+            </span>
           </>
         }
         invalid={!!formState.errors?.privacy}

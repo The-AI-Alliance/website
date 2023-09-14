@@ -10,22 +10,12 @@ const Footer: React.FC = () => {
   const { currentRoute, navigate } = useNavigation();
 
   const previousRoute = useMemo(
-    () =>
-      currentRoute === ROUTE.PROGRAM
-        ? ROUTE.LEARN
-        : currentRoute === ROUTE.PARTNERS
-        ? ROUTE.PROGRAM
-        : null,
+    () => (currentRoute === ROUTE.PARTNERS ? ROUTE.LEARN : null),
     [currentRoute],
   );
 
   const nextRoute = useMemo(
-    () =>
-      currentRoute === ROUTE.LEARN
-        ? ROUTE.PROGRAM
-        : currentRoute === ROUTE.PROGRAM
-        ? ROUTE.PARTNERS
-        : null,
+    () => (currentRoute === ROUTE.LEARN ? ROUTE.PARTNERS : null),
     [currentRoute],
   );
 

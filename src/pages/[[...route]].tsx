@@ -18,7 +18,6 @@ import useNavigation, {
   ROUTE_LABEL,
   routes,
 } from '../utils/useNavigation';
-import ProgramPage from '../page-content/program/program';
 import PartnersPage from '../page-content/partners/partners';
 import FeatureFlagsContext from '../utils/featureFlagsContext';
 import NotificationWrapper from '@components/notificationwrapper';
@@ -57,7 +56,6 @@ export default function Home({
     () => (
       <>
         {buildMenuBtn(ROUTE.LEARN)}
-        {buildMenuBtn(ROUTE.PROGRAM)}
         {buildMenuBtn(ROUTE.PARTNERS)}
       </>
     ),
@@ -70,9 +68,6 @@ export default function Home({
         return (
           <LearnMorePage key="learnMorePage" previousRoute={previousRoute} />
         );
-
-      case ROUTE.PROGRAM:
-        return <ProgramPage key="programPage" />;
 
       case ROUTE.PARTNERS:
         return <PartnersPage key="partnersPage" />;

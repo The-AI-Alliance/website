@@ -3,13 +3,11 @@
 @use "@carbon/grid" as *;
 
 .learnMore {
-  padding-top: calc(48px + 48px);
   position: relative;
   row-gap: 48px;
-  
+
   @include breakpoint-up(lg) {
-    row-gap: 120px;
-    padding-top: calc(96px + 48px);
+    row-gap: 160px;
   }
 
   [data-view=inverted] {
@@ -26,30 +24,97 @@
     }
   }
 
-  .heading {
+  .heading, .subheading {
     @include type-style('fluid-display-03', true);
 
     @include breakpoint-down(md) {
       @include type-style('heading-06');
     }
   }
+  
+  .subheading {
+    @include breakpoint-down(lg) {
+      margin-top: 32px;
+    }
+  }
 
-  p {
+  p, li {
     @include type-style('fluid-paragraph-01', true);
     
     @include breakpoint-down(lg) {
       @include type-style('body-02');
     }
 
-    & + p {
-      margin-top: 2rem;
+    & + p, & + li {
+      margin-top: 1.5em;
     }
   }
 
   .contentRow {
+    scroll-snap-align: center;
+
+    &__graphics {
+      display: flex;
+      align-items: center;
+    }
+
     &__text {
       display: flex;
       align-items: center;
     }
+
+    .subGrid {
+      row-gap: 48px;
+
+      @include breakpoint-down(lg) {
+        margin-bottom: 32px;
+      }
+      
+      .subheading p {
+        font-weight: bold;
+      }
+      
+      ul {
+        list-style-type: disc;
+        padding-left: 2.5rem;
+        
+        li::marker {
+          content: "•   ";
+        }
+
+        @include breakpoint-up(lg) {
+          li::marker {
+            font-size: 80%;
+          }
+        }
+
+        @include breakpoint-down(lg) {
+          padding-left: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .firstRow {
+    scroll-snap-align: start;
+    
+    @include breakpoint-down(lg) {
+      padding-top: 0;
+      &.pageHeading {
+        padding-top: calc(48px + 48px);
+      }
+    }
+
+    @include breakpoint-up(lg) {
+      padding-top: calc(96px + 48px);
+    }
+    
+    @include breakpoint-down(max) {
+      margin-bottom: 0;
+    }
+  }
+
+  .contactPanel {
+    scroll-snap-align: end;
   }
 }

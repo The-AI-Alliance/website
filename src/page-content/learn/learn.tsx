@@ -16,10 +16,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE }> = ({
 }) => {
   const graphicsLeftProps = useMemo(
     () => ({
-      className: classnames(
-        styles.contentRow__graphics,
-        styles['contentRow__graphics--left'],
-      ),
+      className: classnames(styles.contentRow, styles.contentRow__graphics),
       xlg: { span: 8, offset: 1 },
       lg: 9,
       sm: 4,
@@ -29,10 +26,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE }> = ({
 
   const graphicsRightProps = useMemo(
     () => ({
-      className: classnames(
-        styles.contentRow__graphics,
-        styles['contentRow__graphics--right'],
-      ),
+      className: classnames(styles.contentRow, styles.contentRow__graphics),
       lg: { span: 8, offset: 8 },
       md: { span: 4, offset: 4 },
       sm: 4,
@@ -42,10 +36,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE }> = ({
 
   const textLeftProps = useMemo(
     () => ({
-      className: classnames(
-        styles.contentRow__text,
-        styles['contentRow__text--left'],
-      ),
+      className: classnames(styles.contentRow, styles.contentRow__text),
       xlg: { span: 5, offset: 1 },
       lg: 6,
       sm: 4,
@@ -55,10 +46,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE }> = ({
 
   const textRightProps = useMemo(
     () => ({
-      className: classnames(
-        styles.contentRow__text,
-        styles['contentRow__text--right'],
-      ),
+      className: classnames(styles.contentRow, styles.contentRow__text),
       xlg: { span: 5, offset: 10 },
       lg: { span: 6, offset: 9 },
       md: { span: 4, offset: 4 },
@@ -77,7 +65,13 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE }> = ({
     >
       <Grid className={styles.learnMore}>
         <>
-          <Column xlg={{ span: 7, offset: 1 }} lg={7} md={8} sm={4}>
+          <Column
+            className={classnames(styles.firstRow, styles.pageHeading)}
+            xlg={{ span: 7, offset: 1 }}
+            lg={7}
+            md={4}
+            sm={4}
+          >
             <Heading className={styles.heading}>
               About the
               <br />
@@ -85,6 +79,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE }> = ({
             </Heading>
           </Column>
           <Column
+            className={styles.firstRow}
             xlg={{ span: 8, offset: 8 }}
             lg={{ span: 9, offset: 7 }}
             md={6}
@@ -148,9 +143,115 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE }> = ({
           </Column>
         </>
 
-        <ContactPanel />
+        <>
+          <Column
+            className={styles.contentRow}
+            xlg={{ span: 7, offset: 1 }}
+            lg={7}
+            md={5}
+            sm={4}
+          >
+            <Heading className={styles.subheading}>Why open source?</Heading>
+          </Column>
+          <Column
+            className={styles.contentRow}
+            xlg={{ span: 8, offset: 8 }}
+            lg={{ span: 9, offset: 7 }}
+            md={6}
+            sm={4}
+          >
+            <p>
+              Open-source AI is the best way to ensure AI is integrated into our
+              society in a transparent, trustworthy and safe way. It builds on a
+              long history of open-source AI research and development, and an
+              even longer track record of open-source software development.
+            </p>
+            <p>
+              An open-source approach to AI development allows a diverse
+              community to innovate and validate models together, helping find —
+              and address — potential risks, downsides and vulnerabilities
+              before such models are released at scale.
+            </p>
+          </Column>
+        </>
 
-        <Footer />
+        <>
+          <Column
+            className={styles.contentRow}
+            xlg={{ span: 7, offset: 1 }}
+            lg={7}
+            md={5}
+            sm={4}
+          >
+            <Heading className={styles.subheading}>
+              What is open-source AI?
+            </Heading>
+          </Column>
+          <Column
+            className={styles.contentRow}
+            xlg={{ span: 8, offset: 8 }}
+            lg={{ span: 9, offset: 7 }}
+            md={6}
+            sm={4}
+          >
+            <p>
+              AI is built on models. Therefore, open-source AI starts with
+              open-source models. Such models are transparent, accessible and
+              have permissive licenses. These principles extend to all related
+              artifacts, including model documentation, architecture, and
+              weights and biases.
+            </p>
+          </Column>
+        </>
+
+        <Column className={styles.contentRow} xlg={16} lg={16} md={8} sm={4}>
+          <Grid className={styles.subGrid}>
+            <Column
+              className={styles.subheading}
+              xlg={{ span: 15, offset: 1 }}
+              lg={16}
+              md={8}
+              sm={4}
+            >
+              <p>In particular, this means:</p>
+            </Column>
+            <Column xlg={{ span: 7, offset: 1 }} lg={7} md={4} sm={4}>
+              <ul>
+                <li>
+                  Transparency concerning organizations and individuals involved
+                  in creating, contributing to, and maintaining the models
+                </li>
+                <li>
+                  A standard, self-serve license with terms and conditions
+                  amenable to broad, permissive use and adaptation, without
+                  onerous terms, notifications, use limits and non-competition
+                  limits for users
+                </li>
+              </ul>
+            </Column>
+            <Column
+              xlg={{ span: 7, offset: 8 }}
+              lg={{ span: 7, offset: 7 }}
+              md={{ span: 4, offset: 4 }}
+              sm={4}
+            >
+              <ul>
+                <li>Transparency in model training and tuning methods</li>
+                <li>
+                  Full release of model architecture and trained parameter
+                  weights and biases
+                </li>
+                <li>
+                  Accessibility through an open, self-serve repository that
+                  includes everything needed to understand, modify, build on and
+                  deploy a model into applications
+                </li>
+              </ul>
+            </Column>
+          </Grid>
+        </Column>
+
+        <ContactPanel className={styles.contactPanel} background="straight" />
       </Grid>
     </motion.div>
   );

@@ -73,7 +73,7 @@ const PartnersPage: React.FC = () => {
         </Column>
       </>
 
-      <ContactPanel withBackground={false} />
+      <ContactPanel />
       <Footer />
     </Grid>
   );
