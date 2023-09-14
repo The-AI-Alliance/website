@@ -7,12 +7,7 @@
   row-gap: 48px;
 
   @include breakpoint-up(lg) {
-<<<<<<< HEAD
-    row-gap: 120px;
-    padding-top: calc(96px + 48px);
-=======
     row-gap: 160px;
->>>>>>> 7af04b7 (feat: updated learn-more content)
   }
 
   [data-view=inverted] {
@@ -43,30 +38,19 @@
     }
   }
 
-  p {
+  p, li {
     @include type-style('fluid-paragraph-01', true);
     
     @include breakpoint-down(lg) {
       @include type-style('body-02');
     }
 
-<<<<<<< HEAD
-    & + p {
-      margin-top: 2rem;
-=======
     & + p, & + li {
       margin-top: 1.5em;
-
-      @include breakpoint-down(lg) {
-        
-      }
->>>>>>> 7af04b7 (feat: updated learn-more content)
     }
   }
 
   .contentRow {
-<<<<<<< HEAD
-=======
     scroll-snap-align: center;
 
     &__graphics {
@@ -74,7 +58,6 @@
       align-items: center;
     }
 
->>>>>>> 7af04b7 (feat: updated learn-more content)
     &__text {
       display: flex;
       align-items: center;
@@ -111,8 +94,6 @@
       }
     }
   }
-<<<<<<< HEAD
-=======
 
   .firstRow {
     scroll-snap-align: start;
@@ -136,5 +117,4 @@
   .contactPanel {
     scroll-snap-align: end;
   }
->>>>>>> 7af04b7 (feat: updated learn-more content)
 }
