@@ -4,7 +4,6 @@ import { Column, Grid, Heading } from '@carbon/react';
 import Shape2 from '@graphics/shape2.svg';
 import Shape3 from '@graphics/shape3.svg';
 import Shape4 from '@graphics/shape4.svg';
-import Footer from '@components/footer/footer';
 import ContactPanel from '../contact/contactPanel';
 import { motion } from 'framer-motion';
 import { ROUTE } from '@utils/useNavigation';
