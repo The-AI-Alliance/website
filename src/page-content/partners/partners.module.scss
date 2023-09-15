@@ -229,8 +229,72 @@
     }
   }
 
-  .partnersList {
-    margin-top: 48px;
+  .logos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 -2%;
+
+    img {
+      width: auto;
+      margin: 3% 2%;
+    }
+
+    @include breakpoint(sm) {
+      .size0 { height: 11px; }
+      .size1 { height: 16px; }
+      .size2 { height: 20px; }
+      .size3 { height: 21px; }
+      .size4 { height: 37px; }
+      .size5 { height: 42px; }
+      .size6 { height: 46px; }
+    }
+
+    @include breakpoint(md) {
+      .size0 { height: 10px; }
+      .size1 { height: 17px; }
+      .size2 { height: 21px; }
+      .size3 { height: 23px; }
+      .size4 { height: 28px; }
+      .size5 { height: 31px; }
+      .size6 { height: 46px; }
+    }
+
+    @include breakpoint(lg) {
+      .size0 { height: 17px; }
+      .size1 { height: 28px; }
+      .size2 { height: 35px; }
+      .size3 { height: 38px; }
+      .size4 { height: 46px; }
+      .size5 { height: 52px; }
+      .size6 { height: 76px; }
+    }
+
+    @include breakpoint(xlg) {
+      .size0 { height: 20px; }
+      .size1 { height: 35px; }
+      .size2 { height: 40px; }
+      .size3 { height: 45px; }
+      .size4 { height: 55px; }
+      .size5 { height: 60px; }
+      .size6 { height: 90px; }
+    }
+
+    @include breakpoint(max) {
+      .size0 { height: 1.5rem; }
+      .size1 { height: 2.5rem; }
+      .size2 { height: 50px; }
+      .size3 { height: 54px; }
+      .size4 { height: 65px; }
+      .size5 { height: 74px; }
+      .size6 { height: 108px; }
+    }
+
+    .filler {
+      flex: 1;
+    }
   }
 
   .opportunities {

@@ -2,6 +2,32 @@ import React from 'react';
 import { Column, Grid, Heading } from '@carbon/react';
 import classnames from 'classnames';
 import ContactPanel from '../contact/contactPanel';
+import Image from 'next/image';
+import cerebras from '@public/partners/cerebras.png';
+import databricks from '@public/partners/databricks.png';
+import dell from '@public/partners/dell.png';
+import epfl from '@public/partners/epfl.png';
+import esa from '@public/partners/esa.png';
+import ethereum from '@public/partners/ethereum.png';
+import ethz from '@public/partners/ethz.png';
+import ibm from '@public/partners/ibm.png';
+import intel from '@public/partners/intel.png';
+import langchain from '@public/partners/langchain.png';
+import linux from '@public/partners/linux.png';
+import meta from '@public/partners/meta.png';
+import mit from '@public/partners/mit.png';
+import ml_commons from '@public/partners/ml_commons.png';
+import nasa from '@public/partners/nasa.png';
+import preferred_networks from '@public/partners/preferred_networks.png';
+import redhat from '@public/partners/redhat.png';
+import seldon from '@public/partners/seldon.png';
+import simons_foundation from '@public/partners/simons_foundation.png';
+import soft_bank from '@public/partners/soft_bank.png';
+import stanford from '@public/partners/stanford.png';
+import tum from '@public/partners/tum.png';
+import u_tokyo from '@public/partners/u_tokyo.png';
+import uiuc from '@public/partners/uiuc.png';
+import weights_biases from '@public/partners/weights_biases.png';
 
 import styles from './partners.module.scss';
 
@@ -16,14 +42,51 @@ const PartnersPage: React.FC = () => {
             Partners
           </Heading>
         </Column>
-        <Column
-          className={styles.partners__list}
-          xlg={{ span: 15, offset: 1 }}
-          lg={16}
-          md={8}
-          sm={4}
-        >
-          TODO: logos
+        <Column xlg={{ span: 15, offset: 1 }} lg={16} md={8} sm={4}>
+          <div className={styles.logos}>
+            <Image className={styles.size1} src={ibm} alt="IBM" />
+            <Image className={styles.size2} src={redhat} alt="RedHat" />
+            <Image className={styles.size1} src={dell} alt="Dell" />
+            <Image className={styles.size1} src={intel} alt="Intel" />
+            <Image className={styles.size1} src={soft_bank} alt="SoftBank" />
+            <Image className={styles.size1} src={meta} alt="Meta" />
+            <Image
+              className={styles.size2}
+              src={preferred_networks}
+              alt="Preferred Networks"
+            />
+            <Image className={styles.size5} src={databricks} alt="Databricks" />
+            <Image className={styles.size4} src={cerebras} alt="Cerebras" />
+            <Image
+              className={styles.size1}
+              src={weights_biases}
+              alt="Weights & Biases"
+            />
+            <Image className={styles.size2} src={linux} alt="linux" />
+            <Image className={styles.size3} src={ml_commons} alt="ML Commons" />
+            <Image className={styles.size1} src={epfl} alt="EPFL" />
+            <Image className={styles.size1} src={mit} alt="MIT" />
+            <Image className={styles.size2} src={uiuc} alt="UIUC" />
+            <Image className={styles.size1} src={stanford} alt="Stanford" />
+            <Image
+              className={styles.size3}
+              src={u_tokyo}
+              alt="The University of Tokyo"
+            />
+            <Image className={styles.size6} src={nasa} alt="NASA" />
+            <Image className={styles.size1} src={ethz} alt="ETH" />
+            <Image className={styles.size1} src={esa} alt="ESA" />
+            <Image className={styles.size1} src={seldon} alt="Seldon" />
+            <Image className={styles.size1} src={tum} alt="TUM" />
+            <Image
+              className={styles.size0}
+              src={simons_foundation}
+              alt="Simons Foundation"
+            />
+            <Image className={styles.size2} src={ethereum} alt="Ethereum" />
+            <Image className={styles.size1} src={langchain} alt="LangChain" />
+            <div className={styles.filler}></div>
+          </div>
         </Column>
       </>
 
