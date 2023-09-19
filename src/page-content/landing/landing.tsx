@@ -4,25 +4,33 @@ import { ArrowRight } from '@carbon/icons-react';
 import Shape1 from '@graphics/shape1.svg';
 import Shape2 from '@graphics/shape2b.svg';
 import useNavigation, { ROUTE } from '../../utils/useNavigation';
-import { AnimationProps, motion } from 'framer-motion';
+import { Variants, motion } from 'framer-motion';
 import BallPosition from '@type/ballPosition';
 import useResize from '@utils/useResize';
-
-import styles from './landing.module.scss';
 import Ball from '@components/ball/ball';
 
-const contentExitAnimation: AnimationProps['exit'] = {
-  opacity: 0,
-  left: -10,
-  transition: {
-    opacity: {
-      duration: 0.8,
+import styles from './landing.module.scss';
+
+const contentVariants: Variants = {
+  exit: {
+    opacity: 0,
+    left: -10,
+    transition: {
+      opacity: {
+        duration: 0.8,
+      },
+      left: {
+        duration: 0.8,
+        delay: 0.1,
+        ease: 'easeInOut',
+      },
     },
-    left: {
-      duration: 0.8,
-      delay: 0.1,
-      ease: 'easeInOut',
-    },
+  },
+  shown: {
+    opacity: 1,
+  },
+  hidden: {
+    opacity: 0,
   },
 };
 
@@ -90,9 +98,6 @@ const LandingPage: React.FC = () => {
   }, [calculateBallPositions]);
 
   const handleExitAnimationStarted = useCallback(() => {
-    window.document
-      .getElementsByTagName('body')[0]
-      ?.classList.add('noscrollbar');
     calculateBallPositions();
   }, [calculateBallPositions]);
 
@@ -113,7 +118,7 @@ const LandingPage: React.FC = () => {
             variants={ballPositions}
             initial="start"
             exit="end"
-          ></Ball>
+          />
         ) : null}
         <motion.div
           className={styles.shapeTop}
@@ -149,7 +154,10 @@ const LandingPage: React.FC = () => {
         <Section level={1} className={styles.content}>
           <motion.div
             className={styles.content__animationWrapper}
-            exit={contentExitAnimation}
+            variants={contentVariants}
+            initial="hidden"
+            animate="shown"
+            exit="exit"
           >
             <Heading className={styles.content__header}>AI Alliance</Heading>
             <p className={styles.content__subhead}>

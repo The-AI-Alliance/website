@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 import classnames from 'classnames';
 import { AnimationProps, motion } from 'framer-motion';
 import { Column, Heading } from '@carbon/react';
@@ -34,7 +34,8 @@ const confirmMessageVariants = {
 const ContactPanel: React.FC<{
   className?: string;
   background?: 'straight' | 'tilted' | 'none';
-}> = ({ className, background = 'none' }) => {
+  graphicsRef?: RefObject<HTMLDivElement>;
+}> = ({ className, background = 'none', graphicsRef }) => {
   const { emailSent, enabled, sendMail } = useSendEmail();
 
   return enabled ? (
@@ -52,7 +53,7 @@ const ContactPanel: React.FC<{
           AI Alliance
         </Heading>
         {background === 'straight' ? (
-          <div className={styles.titleGraphics}>
+          <div className={styles.titleGraphics} ref={graphicsRef}>
             <Shape1r />
           </div>
         ) : null}
@@ -75,20 +76,20 @@ const ContactPanel: React.FC<{
             initial="hidden"
             animate="shown"
           >
-            <motion.div
+            <motion.p
               variants={confirmMessageVariants}
               initial="hidden"
               animate="shown"
             >
               Your message was sent. Thank you!
-            </motion.div>
+            </motion.p>
           </motion.div>
         ) : null}
         <ContactForm onSubmit={sendMail} />
       </Column>
 
       {background === 'tilted' ? (
-        <div className={styles.footerGraphics}>
+        <div className={styles.footerGraphics} ref={graphicsRef}>
           <Shape1b />
         </div>
       ) : null}

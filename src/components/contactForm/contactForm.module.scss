@@ -67,6 +67,10 @@
     }
   }
 
+  .textarea textarea {
+    resize: none;
+  }
+
   .link {
     text-decoration: underline;
     color: $white-0;

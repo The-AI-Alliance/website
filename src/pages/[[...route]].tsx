@@ -70,7 +70,9 @@ export default function Home({
         );
 
       case ROUTE.PARTNERS:
-        return <PartnersPage key="partnersPage" />;
+        return (
+          <PartnersPage key="partnersPage" previousRoute={previousRoute} />
+        );
 
       default:
         return <LandingPage key="landingPage" />;
@@ -118,6 +120,7 @@ export default function Home({
             expanded={isSideNavExpanded}
             isPersistent={false}
             onSideNavBlur={onClickSideNavExpand}
+            inert={undefined}
           >
             <SideNavItems>
               <HeaderSideNavItems>{headerMenuItems}</HeaderSideNavItems>

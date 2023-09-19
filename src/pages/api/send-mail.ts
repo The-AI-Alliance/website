@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import sg from '@sendgrid/mail';
-import EmailParams from '@types/emailParams';
+import EmailParams from '@type/emailParams';
 
 const emailFrom = process.env.EMAIL_FROM;
 const emailTo = (process.env.EMAIL_TO_CSV ?? '').split(',');
@@ -20,7 +20,7 @@ const sendEmail = async (params: EmailParams) => {
       name: `${params.firstName} ${params.lastName}`,
     },
 
-    subject: 'New message from IBM Research contact page',
+    subject: 'New message from AI Alliance page',
     html: `
       <p><strong>${params.firstName || ''} ${
         params.lastName || ''
