@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Column, Grid, Heading } from '@carbon/react';
 import classnames from 'classnames';
 import ContactPanel from '../contact/contactPanel';
@@ -27,11 +27,13 @@ import tum from '@public/partners/tum.png';
 import u_tokyo from '@public/partners/u_tokyo.png';
 import uiuc from '@public/partners/uiuc.png';
 import weights_biases from '@public/partners/weights_biases.png';
-import { motion } from 'framer-motion';
+import { easeInOut, motion } from 'framer-motion';
 import { ROUTE } from '@utils/useNavigation';
+import AnimatedBall from '@components/ball/animatedBall';
+import { showInView } from '@utils/showInView';
+import useResize from '@utils/useResize';
 
 import styles from './partners.module.scss';
-import { showInView } from '../learn/animations';
 
 const logos = [
   { size: 1, src: ibm, alt: 'IBM' },
@@ -63,6 +65,43 @@ const logos = [
 const PartnersPage: React.FC<{ previousRoute: ROUTE }> = ({
   previousRoute,
 }) => {
+  const graphicsRef = useRef<HTMLDivElement>(null);
+
+  const [ballPosition, setBallPosition] = useState<{
+    sizes: number[];
+    stopPoints: number[];
+    xCoordinates: number[];
+    yCoordinates: number[];
+  } | null>(null);
+
+  const calculateAnimationStops = useCallback(() => {
+    if (!graphicsRef.current) {
+      setBallPosition(null);
+      return;
+    }
+
+    const rect = graphicsRef.current.getBoundingClientRect();
+    const graphicsX = rect.left + rect.width * 0.4345;
+    const graphicsY = window.innerHeight - rect.height + rect.height * 0.27;
+    const graphicsSize = rect.width * 0.273;
+
+    setBallPosition({
+      stopPoints: [0, window.document.body.scrollHeight - window.innerHeight],
+      sizes: [Math.max(window.innerWidth / 8, 120), graphicsSize],
+      xCoordinates: [(window.innerWidth / 5) * 3, graphicsX],
+      yCoordinates: [48, graphicsY],
+    });
+  }, []);
+
+  useResize(calculateAnimationStops);
+
+  useEffect(() => {
+    setTimeout(
+      calculateAnimationStops,
+      previousRoute === ROUTE.HOME ? 1300 : 100,
+    );
+  }, [calculateAnimationStops, previousRoute]);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -71,6 +110,16 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE }> = ({
         transition: { delay: previousRoute === ROUTE.HOME ? 1.3 : 0 },
       }}
     >
+      {ballPosition ? (
+        <AnimatedBall
+          xStopCoordinates={ballPosition.xCoordinates}
+          yStopCoordinates={ballPosition.yCoordinates}
+          stopPoints={ballPosition.stopPoints}
+          ballSizes={ballPosition.sizes}
+          easeX={[easeInOut]}
+          className={styles.ball}
+        />
+      ) : null}
       <Grid className={styles.partners}>
         <>
           <Column xlg={{ span: 15, offset: 1 }} lg={16} md={8} sm={4}>
@@ -267,7 +316,11 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE }> = ({
           </Column>
         </>
 
-        <ContactPanel className={styles.contactPanel} background="tilted" />
+        <ContactPanel
+          className={styles.contactPanel}
+          background="tilted"
+          graphicsRef={graphicsRef}
+        />
       </Grid>
     </motion.div>
   );
