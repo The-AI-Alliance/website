@@ -237,9 +237,12 @@
     align-items: center;
     margin: 0 -2%;
 
-    img {
-      width: auto;
+    div {
       margin: 3% 2%;
+      
+      img {
+        width: auto;
+      }
     }
 
     @include breakpoint(sm) {

@@ -31,6 +31,34 @@ import { motion } from 'framer-motion';
 import { ROUTE } from '@utils/useNavigation';
 
 import styles from './partners.module.scss';
+import { showInView } from '../learn/animations';
+
+const logos = [
+  { size: 1, src: ibm, alt: 'IBM' },
+  { size: 2, src: redhat, alt: 'RedHat' },
+  { size: 1, src: dell, alt: 'Dell' },
+  { size: 1, src: intel, alt: 'Intel' },
+  { size: 1, src: soft_bank, alt: 'SoftBank' },
+  { size: 1, src: meta, alt: 'Meta' },
+  { size: 2, src: preferred_networks, alt: 'Preferred Networks' },
+  { size: 5, src: databricks, alt: 'Databricks' },
+  { size: 4, src: cerebras, alt: 'Cerebras' },
+  { size: 1, src: weights_biases, alt: 'Weights & Biases' },
+  { size: 2, src: linux, alt: 'linux' },
+  { size: 3, src: ml_commons, alt: 'ML Commons' },
+  { size: 1, src: epfl, alt: 'EPFL' },
+  { size: 1, src: mit, alt: 'MIT' },
+  { size: 2, src: uiuc, alt: 'UIUC' },
+  { size: 1, src: stanford, alt: 'Stanford' },
+  { size: 3, src: u_tokyo, alt: 'The University of Tokyo' },
+  { size: 6, src: nasa, alt: 'NASA' },
+  { size: 1, src: ethz, alt: 'ETH' },
+  { size: 1, src: esa, alt: 'ESA' },
+  { size: 1, src: seldon, alt: 'Seldon' },
+  { size: 1, src: tum, alt: 'TUM' },
+  { size: 0, src: simons_foundation, alt: 'Simons Foundation' },
+  { size: 1, src: langchain, alt: 'LangChain' },
+];
 
 const PartnersPage: React.FC<{ previousRoute: ROUTE }> = ({
   previousRoute,
@@ -57,54 +85,24 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE }> = ({
           </Column>
           <Column xlg={{ span: 15, offset: 1 }} lg={16} md={8} sm={4}>
             <div className={styles.logos}>
-              <Image className={styles.size1} src={ibm} alt="IBM" />
-              <Image className={styles.size2} src={redhat} alt="RedHat" />
-              <Image className={styles.size1} src={dell} alt="Dell" />
-              <Image className={styles.size1} src={intel} alt="Intel" />
-              <Image className={styles.size1} src={soft_bank} alt="SoftBank" />
-              <Image className={styles.size1} src={meta} alt="Meta" />
-              <Image
-                className={styles.size2}
-                src={preferred_networks}
-                alt="Preferred Networks"
-              />
-              <Image
-                className={styles.size5}
-                src={databricks}
-                alt="Databricks"
-              />
-              <Image className={styles.size4} src={cerebras} alt="Cerebras" />
-              <Image
-                className={styles.size1}
-                src={weights_biases}
-                alt="Weights & Biases"
-              />
-              <Image className={styles.size2} src={linux} alt="linux" />
-              <Image
-                className={styles.size3}
-                src={ml_commons}
-                alt="ML Commons"
-              />
-              <Image className={styles.size1} src={epfl} alt="EPFL" />
-              <Image className={styles.size1} src={mit} alt="MIT" />
-              <Image className={styles.size2} src={uiuc} alt="UIUC" />
-              <Image className={styles.size1} src={stanford} alt="Stanford" />
-              <Image
-                className={styles.size3}
-                src={u_tokyo}
-                alt="The University of Tokyo"
-              />
-              <Image className={styles.size6} src={nasa} alt="NASA" />
-              <Image className={styles.size1} src={ethz} alt="ETH" />
-              <Image className={styles.size1} src={esa} alt="ESA" />
-              <Image className={styles.size1} src={seldon} alt="Seldon" />
-              <Image className={styles.size1} src={tum} alt="TUM" />
-              <Image
-                className={styles.size0}
-                src={simons_foundation}
-                alt="Simons Foundation"
-              />
-              <Image className={styles.size1} src={langchain} alt="LangChain" />
+              {logos.map(({ size, src, alt }, idx) => (
+                <motion.div
+                  key={alt}
+                  initial={{ opacity: 0 }}
+                  whileInView={{
+                    opacity: 1,
+                    transition: { delay: idx / 50 },
+                  }}
+                  viewport={{ once: true, amount: 0.8 }}
+                >
+                  <Image
+                    className={styles[`size${size}`]}
+                    src={src}
+                    alt={alt}
+                  />
+                </motion.div>
+              ))}
+
               <div className={styles.filler}></div>
             </div>
           </Column>
@@ -122,11 +120,11 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE }> = ({
             </Heading>
           </Column>
           <Column xlg={{ span: 7, offset: 1 }} lg={9} md={5} sm={4}>
-            <p>
+            <motion.p {...showInView}>
               The Alliance needs partners to succeed in its mission to create
               the world’s most trusted, safe, and advanced open-source AI
               models.
-            </p>
+            </motion.p>
             <h3>Partner benefits include the opportunity to:</h3>
           </Column>
           <Column
@@ -137,20 +135,20 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE }> = ({
             sm={4}
           >
             <ul>
-              <li>
+              <motion.li {...showInView}>
                 Multiply human and technology resources, and reduce duplicative
                 work
-              </li>
-              <li>
+              </motion.li>
+              <motion.li {...showInView} custom={2}>
                 Counter proprietary activity from competitors seeking to
                 restrict access to their models and shape regulation to
                 constrain innovation from others
-              </li>
-              <li>
+              </motion.li>
+              <motion.li {...showInView} custom={4}>
                 Guide and access more capable and better validated base models,
                 including those from different domains and modalities (beyond
                 language, code, image generation)
-              </li>
+              </motion.li>
             </ul>
           </Column>
           <Column
@@ -161,19 +159,19 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE }> = ({
             sm={4}
           >
             <ul>
-              <li>
+              <motion.li {...showInView} custom={1}>
                 Drive transparency in methods that assists in building trust
                 with the public and customers
-              </li>
-              <li>
+              </motion.li>
+              <motion.li {...showInView} custom={3}>
                 Advance a simple and clear framework for open versus proprietary
                 data/models and technology
-              </li>
-              <li>
+              </motion.li>
+              <motion.li {...showInView} custom={5}>
                 Ensure that healthy public narrative and reasonable regulation
                 prevails, which is far better done coming from a group than
                 individual companies
-              </li>
+              </motion.li>
             </ul>
           </Column>
         </>
@@ -203,62 +201,66 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE }> = ({
               <tbody>
                 <tr>
                   <th>Infrastructure Providers</th>
-                  <td>
+                  <motion.td {...showInView}>
                     Compute and storage capacity for training, tuning, serving.
-                  </td>
-                  <td>
+                  </motion.td>
+                  <motion.td {...showInView} custom={1}>
                     Use case understanding; feedback to refine products;
                     marketing proof points and demonstrations.
-                  </td>
+                  </motion.td>
                 </tr>
                 <tr>
                   <th>Data Providers</th>
-                  <td>Curated data sets across domains and modalities.</td>
-                  <td>
+                  <motion.td {...showInView}>
+                    Curated data sets across domains and modalities.
+                  </motion.td>
+                  <motion.td {...showInView} custom={1}>
                     Feedback on quality and utility of data to improve curation,
                     marketing proof points and demonstrations.
-                  </td>
+                  </motion.td>
                 </tr>
                 <tr>
                   <th>Model Builders</th>
-                  <td>Scientific and engineering talent to build models.</td>
-                  <td>
+                  <motion.td {...showInView}>
+                    Scientific and engineering talent to build models.
+                  </motion.td>
+                  <motion.td {...showInView} custom={1}>
                     Skills and experience development, marketing proof points
                     and demonstrations.
-                  </td>
+                  </motion.td>
                 </tr>
                 <tr>
                   <th>Tool Developers and Providers</th>
-                  <td>
+                  <motion.td {...showInView}>
                     Tools for data engineering; model training, tuning, and
                     validation; application integration and operations.
-                  </td>
-                  <td>
+                  </motion.td>
+                  <motion.td {...showInView} custom={1}>
                     Use case understanding, feedback to refine products,
                     marketing proof points and demonstrations.
-                  </td>
+                  </motion.td>
                 </tr>
                 <tr>
                   <th>Application Owners</th>
-                  <td>
+                  <motion.td {...showInView}>
                     Use case context and requirements, subject matter experts.
-                  </td>
-                  <td>
+                  </motion.td>
+                  <motion.td {...showInView} custom={1}>
                     Models well-targeted to specific applications with proof
                     points, and trust in the methods used to build them.
-                  </td>
+                  </motion.td>
                 </tr>
                 <tr>
                   <th>Research and Educational Institutions</th>
-                  <td>
+                  <motion.td {...showInView}>
                     Research staff and methods to enable and understand next
                     generation models.
-                  </td>
-                  <td>
+                  </motion.td>
+                  <motion.td {...showInView} custom={1}>
                     Resources to implement new ideas; first to access largest
                     most capable models; paper and conference leadership; new
                     course development; hiring opportunities.
-                  </td>
+                  </motion.td>
                 </tr>
               </tbody>
             </table>
