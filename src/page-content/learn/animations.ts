@@ -3,23 +3,6 @@ import styles from './learn.module.scss';
 import { RefObject } from 'react';
 import { Breakpoint } from '@utils/useBreakpoint';
 
-const inViewVariants = {
-  hidden: { opacity: 0 },
-  shown: (i: number = 0) => ({
-    opacity: 1,
-    transition: {
-      delay: i * 0.1,
-    },
-  }),
-};
-
-export const showInView = {
-  variants: inViewVariants,
-  initial: 'hidden',
-  whileInView: 'shown',
-  viewport: { once: true, amount: 0.8 },
-};
-
 export const graphicsLeftProps = {
   className: classnames(styles.contentRow, styles.contentRow__graphics),
   xlg: { span: 8, offset: 1 },
@@ -207,7 +190,7 @@ export const getSectionStops = (
   return {
     stops: [getMiddleStop(rect, viewportHeight)],
     top: [viewportHeight / 2],
-    left: [-60],
+    left: [rect.left - 120],
     size: [previousSize || 120],
   };
 };

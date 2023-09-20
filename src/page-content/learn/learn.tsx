@@ -11,7 +11,6 @@ import useResize from '@utils/useResize';
 import AnimatedBall from '@components/ball/animatedBall';
 import {
   graphicsLeftProps,
-  showInView,
   textRightProps,
   graphicsRightProps,
   textLeftProps,
@@ -22,6 +21,7 @@ import {
   getSectionStops,
 } from './animations';
 import useBreakpoint, { Breakpoint } from '@utils/useBreakpoint';
+import { showInView } from '@utils/showInView';
 
 import styles from './learn.module.scss';
 
