@@ -56,6 +56,10 @@
     &__graphics {
       display: flex;
       align-items: center;
+
+      & > div {
+        width: 100%;
+      }
     }
 
     &__text {
