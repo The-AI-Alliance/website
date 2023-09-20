@@ -1,0 +1,59 @@
+language: minimal
+
+group: bluezone
+
+services:
+  - docker
+
+env:
+  global:
+    - REGISTRY_URL="us.icr.io"
+    - APP_NAME="ai-alliance"
+
+# jobs:
+#   include:
+    # - env:
+    #     - IMAGE_NAME="research-website/${APP_NAME}"
+    #     - INFRA="RIS3"
+    #     - INFRA_ENV="DEV"
+    #     - TAG_PREFIX="dev"
+    #     - IBMCLOUD_API_KEY_DEFAULT=$IBMCLOUD_API_KEY_DEV
+    # - env:
+    #     - IMAGE_NAME="${APP_NAME}"
+        # - INFRA="RIS3"
+        # - INFRA_ENV="PROD"
+        # - TAG_PREFIX="prod-internal"
+        # - IBMCLOUD_API_KEY_DEFAULT=$IBMCLOUD_API_KEY_PROD_INTERNAL
+
+# before_install:
+#   - source scripts/set_env.sh
+#   # Substitte env variables
+#   - envsubst < .yarnrc.template.yml > .yarnrc.yml
+
+# before_script:
+#   # Login to docker hub to bypass unauthenticated pull limits
+#   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+#   # Login to IBM Cloud Container registry
+#   - echo "$IBMCLOUD_API_KEY_DEFAULT" | docker login -u iamapikey --password-stdin $REGISTRY_URL
+
+script:
+  - docker version
+  # - docker build -t ${REGISTRY_URL}/${IMAGE_NAME}:${TAG_PREFIX}-${TRAVIS_COMMIT} -t ${REGISTRY_URL}/${IMAGE_NAME}:${TAG} --build-arg IMAGE_DOMAINS=${IMAGE_DOMAINS} --build-arg NEXT_PUBLIC_RW_UI_PUBLIC_URL=${NEXT_PUBLIC_RW_UI_PUBLIC_URL} --build-arg NEXT_PUBLIC_CP_UI_PUBLIC_URL=${NEXT_PUBLIC_CP_UI_PUBLIC_URL} .
+  # - docker push ${REGISTRY_URL}/${IMAGE_NAME} --all-tags
+
+deploy:
+  # DEV
+  - provider: script
+    script: echo HelloWorld
+    # script: bash scripts/deploy.sh DEV $IBMCLOUD_API_KEY_DEV $OPENSHIFT_SERVER_DEV $OPENSHIFT_NAMESPACE_DEV
+    # on:
+    #   branch: master
+    #   tags: false
+    #   condition: $INFRA = "RIS3"
+#   # PROD_INTERNAL
+#   - provider: script
+#     script: bash scripts/deploy.sh PROD_INTERNAL $IBMCLOUD_API_KEY_PROD_INTERNAL $OPENSHIFT_SERVER_PROD_INTERNAL $OPENSHIFT_NAMESPACE_PROD_INTERNAL
+#     on:
+#       tags: true
+#       condition: $INFRA = "RIS3" && $PROD = true
+
