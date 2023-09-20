@@ -11,8 +11,10 @@
     padding-bottom: 80px;
   }
 
-  @include breakpoint-down(md) {
-    padding-bottom: calc(48px + 160px);
+  &--bcg-straight {
+    @include breakpoint-down(md) {
+      padding-bottom: calc(48px + 160px);
+    }
   }
   
   .emailSent {
@@ -93,11 +95,7 @@
   bottom: 0;
   z-index: -1;
   left: 0;
-  width: calc(50% - 2 * $grid-gutter);
-
-  @include breakpoint-down(max) {
-    bottom: 47px;
-  }
+  width: 50%;
 
   @include breakpoint-down(lg) {
     display: none;

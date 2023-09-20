@@ -58,7 +58,11 @@ const ContactPanel: React.FC<{
         ) : null}
       </Column>
       <Column
-        className={classnames(styles.contactForm, className)}
+        className={classnames(
+          styles.contactForm,
+          styles[`contactForm--bcg-${background}`],
+          className,
+        )}
         xlg={{ span: 8, offset: 8 }}
         lg={{ span: 8, offset: 7 }}
         md={8}
@@ -80,7 +84,7 @@ const ContactPanel: React.FC<{
             </motion.div>
           </motion.div>
         ) : null}
-        <ContactForm className={className} onSubmit={sendMail} />
+        <ContactForm onSubmit={sendMail} />
       </Column>
 
       {background === 'tilted' ? (
