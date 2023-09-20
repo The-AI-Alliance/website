@@ -190,7 +190,7 @@ export const getSectionStops = (
   return {
     stops: [getMiddleStop(rect, viewportHeight)],
     top: [viewportHeight / 2],
-    left: [-60],
+    left: [rect.left - 120],
     size: [previousSize || 120],
   };
 };

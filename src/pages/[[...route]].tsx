@@ -1,4 +1,9 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, {
+  MouseEventHandler,
+  useCallback,
+  useMemo,
+  useState,
+} from 'react';
 import Head from 'next/head';
 import {
   Header,
@@ -79,8 +84,8 @@ export default function Home({
     }
   }, [currentRoute, previousRoute]);
 
-  const handleGoHome = useCallback(
-    (e: MouseEvent) => {
+  const handleGoHome: MouseEventHandler<HTMLAnchorElement> = useCallback(
+    e => {
       e.preventDefault();
       e.stopPropagation();
       navigate(ROUTE.HOME);
