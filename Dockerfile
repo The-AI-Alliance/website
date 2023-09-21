@@ -3,11 +3,14 @@
 #####################################################
 FROM node:18-alpine AS base
 
-RUN apk add --no-cache bash && /bin/bash
+RUN apk add --no-cache bash
 
 ENV APP_DIR=/home/node/app
 
 USER node
+
+# Create dir to avoid permission denied error on yarn install
+RUN mkdir -p ${APP_DIR}
 WORKDIR ${APP_DIR}
 
 # #####################################################
