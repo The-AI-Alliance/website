@@ -13,7 +13,8 @@ env:
 jobs:
   include:
     - env:
-        - IMAGE_NAME="${APP_NAME}"
+        - IMAGE_NAMESPACE="ai-alliance"
+        - IMAGE_NAME=$APP_NAME
         - INFRA="RIS3"
         - IBMCLOUD_API_KEY=$IBMCLOUD_API_KEY_PROD
         - OPENSHIFT_SERVER=$OPENSHIFT_SERVER_PROD
@@ -27,8 +28,8 @@ before_script:
 
 script:
   - docker --version
-  - docker build -t ${REGISTRY_URL}/${IMAGE_NAME}:${TRAVIS_COMMIT} -t ${REGISTRY_URL}/${IMAGE_NAME} --build-arg SENDGRID_API_KEY=${SENDGRID_API_KEY} --build-arg EMAIL_FROM=${EMAIL_FROM} --build-arg EMAIL_TO_CSV=${EMAIL_TO_CSV} .
-  - docker push ${REGISTRY_URL}/${IMAGE_NAME} --all-tags
+  - docker build -t ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME}:${TRAVIS_COMMIT} -t ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME} --build-arg SENDGRID_API_KEY=${SENDGRID_API_KEY} --build-arg EMAIL_FROM=${EMAIL_FROM} --build-arg EMAIL_TO_CSV=${EMAIL_TO_CSV} .
+  - docker push ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME} --all-tags
 
 deploy:
   - provider: script
