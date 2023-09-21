@@ -16,9 +16,9 @@ jobs:
         - IMAGE_NAMESPACE="ai-alliance"
         - IMAGE_NAME=$APP_NAME
         - INFRA="RIS3"
-        - IBMCLOUD_API_KEY=$IBMCLOUD_API_KEY_PROD
-        - OPENSHIFT_SERVER=$OPENSHIFT_SERVER_PROD
-        - OPENSHIFT_NAMESPACE=$OPENSHIFT_NAMESPACE_PROD
+        - IBMCLOUD_API_KEY=$IBMCLOUD_API_KEY_DEV
+        - OPENSHIFT_SERVER=$OPENSHIFT_SERVER_DEV
+        - OPENSHIFT_NAMESPACE=$OPENSHIFT_NAMESPACE_DEV
 
 before_script:
   # Login to docker hub to bypass unauthenticated pull limits
