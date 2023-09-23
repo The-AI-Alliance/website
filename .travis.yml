@@ -35,5 +35,5 @@ deploy:
   - provider: script
     script: bash scripts/deploy.sh
     on:
-      branch: 5-deployment # TODO main
+      branch: main
 
