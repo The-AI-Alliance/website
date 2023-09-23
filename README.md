@@ -32,8 +32,10 @@ yarn dev
     - `SENDGRID_API_KEY` - Sendgrid API key
     - `EMAIL_FROM` - email address to be used as a sender (NOT reply-to)
     - `EMAIL_TO_CSV` - comma-separated emails of recipients
+    - `HTTP_BASIC_AUTH` - (optional) credentials in `username:password` format to turn on basic authentication restricting access to the site to authenticated users only
 
 
 ## Deployment
 
-TBD
+The app deploys automatically upon merge to `main` branch.
+See `.travis.yml` configuration and `scripts/deploy.sh` script for more details.
