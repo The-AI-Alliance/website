@@ -59,4 +59,3 @@ deploy:
     on:
       tags: true
       condition: $INFRA_ENV = "PROD" && $PROD = true
-
