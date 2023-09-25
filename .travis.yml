@@ -1,0 +1,39 @@
+language: minimal
+
+group: bluezone
+
+services:
+  - docker
+
+env:
+  global:
+    - REGISTRY_URL="us.icr.io"
+    - APP_NAME="ai-alliance"
+
+jobs:
+  include:
+    - env:
+        - IMAGE_NAMESPACE="ai-alliance"
+        - IMAGE_NAME=$APP_NAME
+        - INFRA="RIS3"
+        - IBMCLOUD_API_KEY=$IBMCLOUD_API_KEY_DEV
+        - OPENSHIFT_SERVER=$OPENSHIFT_SERVER_DEV
+        - OPENSHIFT_NAMESPACE=$OPENSHIFT_NAMESPACE_DEV
+
+before_script:
+  # Login to docker hub to bypass unauthenticated pull limits
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  # Login to IBM Cloud Container registry
+  - echo "$IBMCLOUD_API_KEY" | docker login -u iamapikey --password-stdin $REGISTRY_URL
+
+script:
+  - docker --version
+  - docker build -t ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME}:${TRAVIS_COMMIT} -t ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME} --build-arg SENDGRID_API_KEY=${SENDGRID_API_KEY} --build-arg EMAIL_FROM=${EMAIL_FROM} --build-arg EMAIL_TO_CSV=${EMAIL_TO_CSV} .
+  - docker push ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME} --all-tags
+
+deploy:
+  - provider: script
+    script: bash scripts/deploy.sh
+    on:
+      branch: main
+
