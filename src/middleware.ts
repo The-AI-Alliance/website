@@ -13,17 +13,10 @@ const isAuthenticated = (req: NextRequest) => {
     return false;
   }
 
-  const auth = Buffer.from(authHeader.split(' ')[1], 'base64')
-    .toString()
-    .split(':');
-  const user = auth[0];
-  const pass = auth[1];
+  const [user, pass] =
+    Buffer.from(authHeader.split(' ')[1], 'base64').toString().split(':') ?? [];
 
-  if (user == AUTH_USER && pass == AUTH_PASS) {
-    return true;
-  } else {
-    return false;
-  }
+  return user === AUTH_USER && pass === AUTH_PASS;
 };
 
 export function middleware(req: NextRequest) {
