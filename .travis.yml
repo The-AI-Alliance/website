@@ -16,9 +16,23 @@ jobs:
         - IMAGE_NAMESPACE="ai-alliance"
         - IMAGE_NAME=$APP_NAME
         - INFRA="RIS3"
+        - INFRA_ENV="DEV"
+        - TAG_PREFIX="dev"
         - IBMCLOUD_API_KEY=$IBMCLOUD_API_KEY_DEV
         - OPENSHIFT_SERVER=$OPENSHIFT_SERVER_DEV
         - OPENSHIFT_NAMESPACE=$OPENSHIFT_NAMESPACE_DEV
+    - env:
+        - IMAGE_NAMESPACE="ai-alliance"
+        - IMAGE_NAME=$APP_NAME
+        - INFRA="RIS3"
+        - INFRA_ENV="PROD"
+        - TAG_PREFIX="prod"
+        - IBMCLOUD_API_KEY=$IBMCLOUD_API_KEY_PROD
+        - OPENSHIFT_SERVER=$OPENSHIFT_SERVER_PROD
+        - OPENSHIFT_NAMESPACE=$OPENSHIFT_NAMESPACE_PROD
+
+before_install:
+  - source scripts/set_env.sh
 
 before_script:
   # Login to docker hub to bypass unauthenticated pull limits
@@ -28,12 +42,20 @@ before_script:
 
 script:
   - docker --version
-  - docker build -t ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME}:${TRAVIS_COMMIT} -t ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME} --build-arg SENDGRID_API_KEY=${SENDGRID_API_KEY} --build-arg EMAIL_FROM=${EMAIL_FROM} --build-arg EMAIL_TO_CSV=${EMAIL_TO_CSV} --build-arg HTTP_BASIC_AUTH=${HTTP_BASIC_AUTH} .
+  - docker build -t ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME}:${TAG_PREFIX}-${TRAVIS_COMMIT} -t ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME}:${TAG} --build-arg SENDGRID_API_KEY=${SENDGRID_API_KEY} --build-arg EMAIL_FROM=${EMAIL_FROM} --build-arg EMAIL_TO_CSV=${EMAIL_TO_CSV} --build-arg HTTP_BASIC_AUTH=${HTTP_BASIC_AUTH} .
   - docker push ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME} --all-tags
 
 deploy:
+  # DEV
   - provider: script
     script: bash scripts/deploy.sh
     on:
       branch: main
-
+      tags: false
+      condition: $INFRA_ENV = "DEV"
+  # PROD
+  - provider: script
+    script: bash scripts/deploy.sh
+    on:
+      tags: true
+      condition: $INFRA_ENV = "PROD" && $PROD = true
