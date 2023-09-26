@@ -158,10 +158,9 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE }> = ({
               academic and research organizations.
             </motion.p>
             <motion.p {...showInView}>
-              Driven by a flexible mode of collaborating based on individual
-              member preference and very lightweight governance, we only require
-              that members commit to execute toward one or more parts of the
-              three-part mission of the Alliance to build, enable and inform.
+              Guided by flexible collaboration and minimal governance, members
+              must commit to at least one aspect of the Alliance&apos;s
+              three-fold mission: Build, Enable, and Inform.
             </motion.p>
           </Column>
         </>
@@ -211,8 +210,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE }> = ({
           <Column {...textRightProps}>
             <motion.p {...showInView}>
               <strong>Inform</strong> and educate the public and regulators with
-              a common narrative on the benefits of open-source AI to ensure
-              trust and safety in AI.
+              a unified narrative on the benefits of open-source AI.
             </motion.p>
           </Column>
         </>
