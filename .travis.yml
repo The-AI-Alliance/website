@@ -42,7 +42,7 @@ before_script:
 
 script:
   - docker --version
-  - docker build -t ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME}:${TAG_PREFIX}-${TRAVIS_COMMIT//sha256:/""} -t ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME}:${TAG} --build-arg SENDGRID_API_KEY=${SENDGRID_API_KEY} --build-arg EMAIL_FROM=${EMAIL_FROM} --build-arg EMAIL_TO_CSV=${EMAIL_TO_CSV} --build-arg HTTP_BASIC_AUTH=${HTTP_BASIC_AUTH} .
+  - docker build -t ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME}:${TAG_PREFIX}-${TRAVIS_COMMIT//sha256:/""} -t ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME}:${TAG} .
   - docker push ${REGISTRY_URL}/${IMAGE_NAMESPACE}/${IMAGE_NAME} --all-tags
 
 deploy:
