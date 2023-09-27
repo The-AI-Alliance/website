@@ -37,8 +37,16 @@ export default function Home({
   enableContactForm: boolean;
 }) {
   const [isSideNavExpanded, setSideNavExpanded] = useState(false);
-  const { navigate, currentRoute } = useNavigation();
+  const { navigate: _navigate, currentRoute } = useNavigation();
   const previousRoute = usePrevious(currentRoute, ROUTE.HOME);
+
+  const navigate = useCallback(
+    (route: ROUTE) => {
+      isSideNavExpanded && setSideNavExpanded(false);
+      _navigate(route);
+    },
+    [_navigate, isSideNavExpanded],
+  );
 
   const onClickSideNavExpand = useCallback(
     () => setSideNavExpanded(!isSideNavExpanded),
