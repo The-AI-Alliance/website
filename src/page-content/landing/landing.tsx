@@ -1,38 +1,19 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { Button, Column, Grid, Heading, Section } from '@carbon/react';
-import { ArrowRight } from '@carbon/icons-react';
 import Shape1 from '@graphics/shape1.svg';
 import Shape2 from '@graphics/shape2b.svg';
 import useNavigation, { ROUTE } from '../../utils/useNavigation';
-import { Variants, motion } from 'framer-motion';
-import BallPosition from '@type/ballPosition';
+import { Variant, motion } from 'framer-motion';
 import useResize from '@utils/useResize';
 import Ball from '@components/ball/ball';
 
 import styles from './landing.module.scss';
-
-const contentVariants: Variants = {
-  exit: {
-    opacity: 0,
-    left: -10,
-    transition: {
-      opacity: {
-        duration: 0.8,
-      },
-      left: {
-        duration: 0.8,
-        delay: 0.1,
-        ease: 'easeInOut',
-      },
-    },
-  },
-  shown: {
-    opacity: 1,
-  },
-  hidden: {
-    opacity: 0,
-  },
-};
 
 const LandingPage: React.FC = () => {
   const { navigate } = useNavigation();
@@ -41,8 +22,9 @@ const LandingPage: React.FC = () => {
   const shape2ref = useRef<HTMLDivElement>(null);
 
   const [ballPositions, setBallPositions] = useState<{
-    start: BallPosition;
-    end: BallPosition;
+    start: Variant;
+    show: Variant;
+    end: Variant;
   } | null>(null);
 
   const calculateBallPositions = useCallback(() => {
@@ -55,25 +37,34 @@ const LandingPage: React.FC = () => {
     const destSize = destDim.width / 5.9;
     setBallPositions({
       start: {
+        opacity: 0,
         top: sourceDim.top + sourceDim.height * 0.537,
         left: sourceDim.left + sourceDim.width * 0.662,
         width: sourceSize,
         height: sourceSize,
+      },
+      show: {
+        opacity: 1,
+        transition: {
+          delay: 0.5,
+          duration: 1.4,
+        },
       },
       end: {
         top: destDim.top + destDim.height * 0.374,
         left: destDim.left + destDim.width * 0.205,
         width: destSize,
         height: destSize,
+        opacity: 0,
         transition: {
           top: {
             delay: 0.1,
-            duration: 0.9,
-            ease: [0.55, 0.11, 0.18, 0.97],
+            duration: 1.5,
+            ease: [0.6, 0, 0.36, 0.97],
           },
           left: {
             delay: 0.1,
-            duration: 1,
+            duration: 1.5,
             ease: [0.8, 0, 0.56, 0.98],
           },
           width: {
@@ -84,10 +75,83 @@ const LandingPage: React.FC = () => {
             delay: 0.2,
             duration: 0.5,
           },
+          opacity: {
+            delay: 1.6,
+            duration: 0.1,
+          },
         },
       },
     });
   }, []);
+
+  const animation = useMemo(
+    () => ({
+      button: {
+        initial: { opacity: 0, top: 3 },
+        animate: {
+          opacity: 1,
+          top: 0,
+          transition: { delay: 2, duration: 0.5 },
+        },
+        exit: { opacity: 0, transition: { duration: 0.7 } },
+      },
+
+      buttonBackground: {
+        initial: { opacity: 0, width: '48px' },
+        animate: {
+          opacity: 1,
+          width: '100%',
+          transition: {
+            opacity: {
+              delay: 1.3,
+              duration: 1.2,
+            },
+            width: {
+              delay: 1.5,
+              duration: 0.7,
+              ease: 'easeInOut',
+            },
+          },
+        },
+        exit: { opacity: 0, transition: { duration: 0.7 } },
+      },
+
+      text: {
+        initial: {
+          opacity: 0,
+          top: 20,
+        },
+        animate: {
+          opacity: 1,
+          top: 0,
+          transition: {
+            top: {
+              duration: 1.5,
+              ease: 'easeOut',
+            },
+            opacity: {
+              delay: 0.5,
+              duration: 1.8,
+            },
+          },
+        },
+        exit: { opacity: 0, transition: { duration: 0.7 } },
+      },
+
+      title: {
+        initial: { opacity: 0 },
+        animate: { opacity: 1, transition: { delay: 0.1 } },
+        exit: { opacity: 0, transition: { duration: 0.7 } },
+      },
+
+      shape: {
+        initial: { opacity: 0 },
+        animate: { opacity: 1, transition: { delay: 0.1 } },
+        exit: { opacity: 0, transition: { delay: 1.6, duration: 0.1 } },
+      },
+    }),
+    [],
+  );
 
   useResize(calculateBallPositions, () => setBallPositions(null));
 
@@ -101,14 +165,6 @@ const LandingPage: React.FC = () => {
     calculateBallPositions();
   }, [calculateBallPositions]);
 
-  useEffect(() => {
-    return () => {
-      window.document
-        .getElementsByTagName('body')[0]
-        ?.classList.remove('noscrollbar');
-    };
-  }, []);
-
   return (
     <Grid className={styles.landingPage}>
       <div className={styles.background}>
@@ -117,32 +173,24 @@ const LandingPage: React.FC = () => {
             onAnimationStart={handleExitAnimationStarted}
             variants={ballPositions}
             initial="start"
+            animate="show"
             exit="end"
           />
         ) : null}
         <motion.div
           className={styles.shapeTop}
           ref={shape1ref}
-          exit={
-            shape1ref.current
-              ? {
-                  top: '-100%',
-                  left: '-100%',
-                  opacity: 0.4,
-                  transition: {
-                    delay: 0.1,
-                    ease: 'easeIn',
-                    duration: 1.1,
-                  },
-                }
-              : undefined
-          }
+          {...animation.shape}
         >
           <Shape2 />
         </motion.div>
-        <div className={styles.shapeBottom} ref={shape2ref}>
+        <motion.div
+          className={styles.shapeBottom}
+          ref={shape2ref}
+          {...animation.shape}
+        >
           <Shape1 />
-        </div>
+        </motion.div>
       </div>
       <Column
         className={styles.contentWrapper}
@@ -152,26 +200,27 @@ const LandingPage: React.FC = () => {
         sm={{ span: 4 }}
       >
         <Section level={1} className={styles.content}>
-          <motion.div
-            className={styles.content__animationWrapper}
-            variants={contentVariants}
-            initial="hidden"
-            animate="shown"
-            exit="exit"
-          >
-            <Heading className={styles.content__header}>AI Alliance</Heading>
-            <p className={styles.content__subhead}>
+          <div className={styles.content__animationWrapper}>
+            <motion.div {...animation.title}>
+              <Heading className={styles.content__header}>AI Alliance</Heading>
+            </motion.div>
+            <motion.p className={styles.content__subhead} {...animation.text}>
               A community of academic and industry leaders committed to building
               safe and trusted open-source AI models.
-            </p>
-            <Button
-              renderIcon={() => <ArrowRight />}
-              className={styles.content__action}
-              onClick={handleNextPage}
-            >
-              Learn more
-            </Button>
-          </motion.div>
+            </motion.p>
+            <div className={styles.content__actionWrapper}>
+              <motion.div
+                className={styles.content__actionBackground}
+                {...animation.buttonBackground}
+              ></motion.div>
+              <motion.div
+                className={styles.content__action}
+                {...animation.button}
+              >
+                <Button onClick={handleNextPage}>Learn more</Button>
+              </motion.div>
+            </div>
+          </div>
         </Section>
       </Column>
     </Grid>

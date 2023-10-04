@@ -1,5 +1,6 @@
 @use "@carbon/styles/scss/breakpoint" as *;
 @use "@carbon/type" as *;
+@use "@carbon/colors" as *;
 
 .landingPage {
   position: relative;
@@ -79,6 +80,8 @@
       }
 
       &__subhead {
+        position: relative;
+
         @include type-style('fluid-paragraph-01', true);
       
         @include breakpoint-down(lg) {
@@ -86,12 +89,31 @@
         }
       }
 
-      &__action {
+      &__actionWrapper {
         margin: 48px 0;
-        width: 216px;
-      
+        width: 128px;
+        position: relative;
+        
         @include breakpoint-down(md) {
           margin-top: 32px;
+        }
+      }
+
+      &__actionBackground {
+        background-color: $white-0;
+        height: 48px;
+        position: absolute;
+        z-index: -1;
+        border-radius: 24px;
+      }
+
+      &__action {
+        position: relative;
+
+        button {
+          width: 100%;
+          justify-content: center;
+          background-color: transparent;
         }
       }
     }
