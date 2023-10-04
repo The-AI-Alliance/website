@@ -25,7 +25,7 @@ import { showInView } from '@utils/showInView';
 
 import styles from './learn.module.scss';
 
-const LearnMorePage: React.FC<{ previousRoute: ROUTE }> = ({
+const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
   previousRoute,
 }) => {
   const breakpoint = useBreakpoint();

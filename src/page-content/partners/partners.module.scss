@@ -5,6 +5,7 @@
 
 .ball {
   z-index: -1;
+  position: absolute;
 
   @include breakpoint-down(lg) {
     display: none;
@@ -45,7 +46,7 @@
   ul {
     list-style-type: disc;
     padding-left: 2.5rem;
-    
+
     li::marker {
       content: "•   ";
     }
@@ -62,6 +63,7 @@
   }
   
   p, li, h3 {
+    position: relative;
     @include type-style('fluid-paragraph-01', true);
 
     @include breakpoint-down(lg) {
@@ -173,6 +175,7 @@
 
     td, th {
       display: inline-block;
+      position: relative;
       @include type-style('heading-03');
       
       @include breakpoint-down(lg) {
