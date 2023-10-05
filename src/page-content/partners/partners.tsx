@@ -116,7 +116,7 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
   useEffect(() => {
     setTimeout(
       calculateAnimationStops,
-      previousRoute === ROUTE.HOME ? 1300 : 100,
+      previousRoute === ROUTE.HOME ? 1300 : 500,
     );
   }, [calculateAnimationStops, previousRoute]);
 
@@ -127,6 +127,7 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
         opacity: 1,
         transition: { delay: previousRoute === ROUTE.HOME ? 1.7 : 0.2 },
       }}
+      exit={{ opacity: 0, transition: { duration: 0.35 } }}
     >
       {ballPosition ? (
         <Ball

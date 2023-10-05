@@ -1,5 +1,5 @@
 const inViewVariants = {
-  hidden: { opacity: 0, top: 7 },
+  hidden: { opacity: 0, top: 10 },
   shown: (i: number = 0) => ({
     opacity: 1,
     top: 0,

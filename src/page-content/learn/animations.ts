@@ -52,26 +52,30 @@ export const getShape1Stops = (
   }
 
   const sizeFactor = 0.25;
-  const xFactor = 0.25;
   const yFactor = 0.497;
 
   const viewportHeight = window.innerHeight;
   const rect = ref.current.getBoundingClientRect();
+  const size = rect.width * sizeFactor;
 
   const middle = getMiddleStop(rect, viewportHeight);
   const top = viewportHeight / 2 - rect.height * yFactor;
-  const left1 = rect.left + rect.width * xFactor;
+  const left1 = rect.left + rect.width * 0.75;
 
-  const stop2 = middle + (rect.height / 4) * 3;
+  const stop2 = middle + rect.height / 4;
   const left2 = rect.left + rect.width;
 
-  const size = rect.width * sizeFactor;
+  const stop3 = middle + rect.height / 2;
+  const left3 = rect.left + rect.width * 0.95;
+
+  const stop4 = middle + (rect.height / 4) * 3;
+  const left4 = rect.left + rect.width;
 
   return {
-    stops: [middle, stop2],
-    top: [top, top],
-    left: [left1, left2],
-    size: [size, size],
+    stops: [middle, stop2, stop3, stop4],
+    top: [top, top, top, top],
+    left: [left1, left2, left3, left4],
+    size: [size, size, size, size],
   };
 };
 
@@ -83,17 +87,28 @@ export const getShape2Stops = (
   }
 
   const sizeFactor = 0.25;
-  const xFactor = 0;
   const yFactor = 0.497;
 
   const viewportHeight = window.innerHeight;
   const rect = ref.current.getBoundingClientRect();
+  const middle = getMiddleStop(rect, viewportHeight);
+  const top = viewportHeight / 2 - rect.height * yFactor;
+  const size = rect.width * sizeFactor;
+
+  const stop2 = middle + rect.height / 4;
+  const left2 = rect.left - rect.width * 0.25;
+
+  const stop3 = middle + rect.height / 2;
+  const left3 = rect.left - rect.width * 0.2;
+
+  const stop4 = middle + (rect.height / 4) * 3;
+  const left4 = rect.left - rect.width * 0.25;
 
   return {
-    stops: [getMiddleStop(rect, viewportHeight)],
-    top: [viewportHeight / 2 - rect.height * yFactor],
-    left: [rect.left + rect.width * xFactor],
-    size: [rect.width * sizeFactor],
+    stops: [middle, stop2, stop3, stop4],
+    top: [top, top, top, top],
+    left: [rect.left, left2, left3, left4],
+    size: [size, size, size, size],
   };
 };
 
@@ -105,31 +120,33 @@ export const getShape3Stops = (
   }
 
   const sizeFactor = 0.25;
-  const xFactor1 = 0.25;
-  const xFactor2 = 0.75;
+  const yFactor = 0.5;
 
   const viewportHeight = window.innerHeight;
   const rect = ref.current.getBoundingClientRect();
-
-  const middleStop = getMiddleStop(rect, viewportHeight);
-  const topStop = middleStop - rect.height / 2;
-  const bottomStop = middleStop + rect.height / 4;
-  const leaveStop = middleStop + rect.height / 2;
-
-  const top = viewportHeight / 2;
-
-  const left1 = rect.left + rect.width * xFactor1;
-  const left2 = rect.left + rect.width * xFactor2;
-  const left3 = rect.left + rect.width;
-  const left4 = rect.left + rect.width * xFactor2;
-
+  const top = viewportHeight / 2 - rect.height * yFactor;
   const size = rect.width * sizeFactor;
 
+  const middleStop = getMiddleStop(rect, viewportHeight);
+  const left1 = rect.left + rect.width * 0.25;
+
+  const stop2 = middleStop + rect.height / 4;
+  const left2 = rect.left + rect.width * 0.5;
+
+  const stop3 = middleStop + rect.height / 2;
+  const left3 = rect.left + rect.width * 0.75;
+
+  const bottomStop = middleStop + (rect.height / 4) * 3;
+  const left4 = rect.left + rect.width;
+
+  const leaveStop = middleStop + (rect.height / 4) * 6;
+  const left5 = rect.left + rect.width * 1.1;
+
   return {
-    stops: [topStop, middleStop, bottomStop, leaveStop],
-    top: [top, top, top, top],
-    left: [left1, left2, left3, left4],
-    size: [size, size, size, size],
+    stops: [middleStop, stop2, stop3, bottomStop, leaveStop],
+    top: [top, top, top, top, top],
+    left: [left1, left2, left3, left4, left5],
+    size: [size, size, size, size, size],
   };
 };
 
@@ -190,7 +207,7 @@ export const getSectionStops = (
   return {
     stops: [getMiddleStop(rect, viewportHeight)],
     top: [viewportHeight / 2],
-    left: [rect.left - 120],
+    left: [rect.left + rect.width * 0.25],
     size: [previousSize || 120],
   };
 };
