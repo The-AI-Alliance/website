@@ -6,10 +6,6 @@
 .ball {
   z-index: -1;
   position: absolute;
-
-  @include breakpoint-down(lg) {
-    display: none;
-  }
 }
 
 .partners {
@@ -73,10 +69,6 @@
 
   p + p, li + li {
     margin-top: 1.5em;
-  }
-
-  p, ul, table {
-    backdrop-filter: blur(6px);
   }
 
   h3 {
@@ -251,7 +243,6 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 -2%;
-    backdrop-filter: blur(6px);
 
     div {
       margin: 3% 2%;

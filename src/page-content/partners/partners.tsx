@@ -32,6 +32,7 @@ import { ROUTE } from '@utils/useNavigation';
 import Ball from '@components/ball/ball';
 import { showInView } from '@utils/showInView';
 import useResize from '@utils/useResize';
+import useBreakpoint, { Breakpoint } from '@utils/useBreakpoint';
 
 import styles from './partners.module.scss';
 
@@ -62,36 +63,55 @@ const logos = [
   { size: 1, src: langchain, alt: 'LangChain' },
 ];
 
+const ballSizeFactor: Record<Breakpoint, number> = {
+  [Breakpoint.MAX]: 0.288,
+  [Breakpoint.XLG]: 0.288,
+  [Breakpoint.LG]: 0.3,
+  [Breakpoint.MD]: 0.25,
+  [Breakpoint.SM]: 0.25,
+};
+
+const ballXFactor: Record<Breakpoint, number> = {
+  [Breakpoint.MAX]: -0.043,
+  [Breakpoint.XLG]: -0.043,
+  [Breakpoint.LG]: 0.1,
+  [Breakpoint.MD]: 0.25,
+  [Breakpoint.SM]: 0.25,
+};
+
 const PartnersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
   previousRoute,
 }) => {
+  const breakpoint = useBreakpoint();
   const graphicsRef = useRef<HTMLDivElement>(null);
 
   const [ballPosition, setBallPosition] = useState<{
     size: number;
     left: number;
-    bottom: number;
+    top: number;
   } | null>(null);
 
   const calculateAnimationStops = useCallback(() => {
-    if (!graphicsRef.current) {
+    if (!graphicsRef.current || breakpoint === undefined) {
       setBallPosition(null);
       return;
     }
 
     const rect = graphicsRef.current.getBoundingClientRect();
-    const ballLeft = rect.left + rect.width * 0.4347;
-    const ballBottom = rect.height - rect.height * 0.743;
-    const ballSize = rect.width * 0.272;
+    const ballLeft = rect.left + rect.width * ballXFactor[breakpoint];
+    const ballTop = window.scrollY + rect.top;
+    const ballSize = rect.width * ballSizeFactor[breakpoint];
 
     setBallPosition({
       size: ballSize,
       left: ballLeft,
-      bottom: ballBottom,
+      top: ballTop,
     });
-  }, []);
+  }, [breakpoint]);
 
-  useResize(calculateAnimationStops);
+  const resetBallPosition = useCallback(() => setBallPosition(null), []);
+
+  useResize(calculateAnimationStops, resetBallPosition);
 
   useEffect(() => {
     setTimeout(
@@ -110,13 +130,16 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
     >
       {ballPosition ? (
         <Ball
+          key="ball"
           className={styles.ball}
           style={{
-            bottom: ballPosition.bottom,
+            top: ballPosition.top,
             left: ballPosition.left,
             width: ballPosition.size,
             height: ballPosition.size,
           }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
         />
       ) : null}
       <Grid className={styles.partners}>
@@ -317,7 +340,7 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
 
         <ContactPanel
           className={styles.contactPanel}
-          background="tilted"
+          background="straight"
           graphicsRef={graphicsRef}
         />
       </Grid>

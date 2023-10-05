@@ -25,7 +25,9 @@ const useBreakpoint = (): Breakpoint | undefined => {
     [getBreakpoint],
   );
 
-  useResize(updateBreakpoint);
+  const reset = useCallback(() => setBreakpoint(undefined), []);
+
+  useResize(updateBreakpoint, reset);
 
   useEffect(() => {
     updateBreakpoint();
