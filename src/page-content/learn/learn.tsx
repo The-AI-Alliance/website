@@ -110,7 +110,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE }> = ({
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: previousRoute === ROUTE.HOME ? 1.3 : 0 },
+        transition: { delay: previousRoute === ROUTE.HOME ? 1.7 : 0 },
       }}
     >
       {ballPosition ? (

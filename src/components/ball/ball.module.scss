@@ -3,7 +3,7 @@
 .ball {
   position: fixed;
   z-index: 100;
-  border: solid 2px $white-0;
+  border: solid 2px $gray-70;
   border-radius: 50%;
   background-color: #{$gray-100}50;
   backdrop-filter: blur(4px);
