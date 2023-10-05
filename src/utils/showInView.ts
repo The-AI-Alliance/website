@@ -1,9 +1,11 @@
 const inViewVariants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0, top: 7 },
   shown: (i: number = 0) => ({
     opacity: 1,
+    top: 0,
     transition: {
-      delay: i * 0.1,
+      duration: 0.7,
+      delay: i * 0.15,
     },
   }),
 };

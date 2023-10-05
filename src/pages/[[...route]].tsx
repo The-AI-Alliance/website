@@ -38,7 +38,7 @@ export default function Home({
 }) {
   const [isSideNavExpanded, setSideNavExpanded] = useState(false);
   const { navigate: _navigate, currentRoute } = useNavigation();
-  const previousRoute = usePrevious(currentRoute, ROUTE.HOME);
+  const previousRoute = usePrevious(currentRoute, null);
 
   const navigate = useCallback(
     (route: ROUTE) => {

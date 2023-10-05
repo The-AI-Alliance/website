@@ -27,11 +27,12 @@ import tum from '@public/partners/tum.png';
 import u_tokyo from '@public/partners/u_tokyo.png';
 import uiuc from '@public/partners/uiuc.png';
 import weights_biases from '@public/partners/weights_biases.png';
-import { easeInOut, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ROUTE } from '@utils/useNavigation';
-import AnimatedBall from '@components/ball/animatedBall';
+import Ball from '@components/ball/ball';
 import { showInView } from '@utils/showInView';
 import useResize from '@utils/useResize';
+import useBreakpoint, { Breakpoint } from '@utils/useBreakpoint';
 
 import styles from './partners.module.scss';
 
@@ -62,38 +63,55 @@ const logos = [
   { size: 1, src: langchain, alt: 'LangChain' },
 ];
 
-const PartnersPage: React.FC<{ previousRoute: ROUTE }> = ({
+const ballSizeFactor: Record<Breakpoint, number> = {
+  [Breakpoint.MAX]: 0.288,
+  [Breakpoint.XLG]: 0.288,
+  [Breakpoint.LG]: 0.3,
+  [Breakpoint.MD]: 0.25,
+  [Breakpoint.SM]: 0.25,
+};
+
+const ballXFactor: Record<Breakpoint, number> = {
+  [Breakpoint.MAX]: -0.043,
+  [Breakpoint.XLG]: -0.043,
+  [Breakpoint.LG]: 0.1,
+  [Breakpoint.MD]: 0.25,
+  [Breakpoint.SM]: 0.25,
+};
+
+const PartnersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
   previousRoute,
 }) => {
+  const breakpoint = useBreakpoint();
   const graphicsRef = useRef<HTMLDivElement>(null);
 
   const [ballPosition, setBallPosition] = useState<{
-    sizes: number[];
-    stopPoints: number[];
-    xCoordinates: number[];
-    yCoordinates: number[];
+    size: number;
+    left: number;
+    top: number;
   } | null>(null);
 
   const calculateAnimationStops = useCallback(() => {
-    if (!graphicsRef.current) {
+    if (!graphicsRef.current || breakpoint === undefined) {
       setBallPosition(null);
       return;
     }
 
     const rect = graphicsRef.current.getBoundingClientRect();
-    const graphicsX = rect.left + rect.width * 0.4345;
-    const graphicsY = window.innerHeight - rect.height + rect.height * 0.27;
-    const graphicsSize = rect.width * 0.273;
+    const ballLeft = rect.left + rect.width * ballXFactor[breakpoint];
+    const ballTop = window.scrollY + rect.top;
+    const ballSize = rect.width * ballSizeFactor[breakpoint];
 
     setBallPosition({
-      stopPoints: [0, window.document.body.scrollHeight - window.innerHeight],
-      sizes: [Math.max(window.innerWidth / 8, 120), graphicsSize],
-      xCoordinates: [(window.innerWidth / 5) * 3, graphicsX],
-      yCoordinates: [48, graphicsY],
+      size: ballSize,
+      left: ballLeft,
+      top: ballTop,
     });
-  }, []);
+  }, [breakpoint]);
 
-  useResize(calculateAnimationStops);
+  const resetBallPosition = useCallback(() => setBallPosition(null), []);
+
+  useResize(calculateAnimationStops, resetBallPosition);
 
   useEffect(() => {
     setTimeout(
@@ -107,17 +125,21 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE }> = ({
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: previousRoute === ROUTE.HOME ? 1.7 : 0 },
+        transition: { delay: previousRoute === ROUTE.HOME ? 1.7 : 0.2 },
       }}
     >
       {ballPosition ? (
-        <AnimatedBall
-          xStopCoordinates={ballPosition.xCoordinates}
-          yStopCoordinates={ballPosition.yCoordinates}
-          stopPoints={ballPosition.stopPoints}
-          ballSizes={ballPosition.sizes}
-          easeX={[easeInOut]}
+        <Ball
+          key="ball"
           className={styles.ball}
+          style={{
+            top: ballPosition.top,
+            left: ballPosition.left,
+            width: ballPosition.size,
+            height: ballPosition.size,
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
         />
       ) : null}
       <Grid className={styles.partners}>
@@ -318,7 +340,7 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE }> = ({
 
         <ContactPanel
           className={styles.contactPanel}
-          background="tilted"
+          background="straight"
           graphicsRef={graphicsRef}
         />
       </Grid>
