@@ -5,7 +5,16 @@ import Shape2 from '@graphics/shape2.svg';
 import Shape3 from '@graphics/shape3.svg';
 import Shape4 from '@graphics/shape4.svg';
 import ContactPanel from '../contact/contactPanel';
-import { backInOut, circIn, circOut, easeInOut, motion } from 'framer-motion';
+import {
+  backInOut,
+  backOut,
+  circOut,
+  cubicBezier,
+  easeIn,
+  easeInOut,
+  easeOut,
+  motion,
+} from 'framer-motion';
 import { ROUTE } from '@utils/useNavigation';
 import useResize from '@utils/useResize';
 import AnimatedBall from '@components/ball/animatedBall';
@@ -20,7 +29,7 @@ import {
   getShape4Stops,
   getSectionStops,
 } from './animations';
-import useBreakpoint, { Breakpoint } from '@utils/useBreakpoint';
+import useBreakpoint from '@utils/useBreakpoint';
 import { showInView } from '@utils/showInView';
 
 import styles from './learn.module.scss';
@@ -86,7 +95,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
         ...shape4stops.left,
       ],
       yCoordinates: [
-        breakpoint === Breakpoint.MD ? 0 : -40,
+        -shape1stops.size[0],
         ...shape1stops.top,
         ...shape2stops.top,
         ...shape3stops.top,
@@ -101,7 +110,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
   useEffect(() => {
     setTimeout(
       calculateAnimationStops,
-      previousRoute === ROUTE.HOME ? 1300 : 100,
+      previousRoute === ROUTE.HOME ? 1300 : 500,
     );
   }, [calculateAnimationStops, previousRoute]);
 
@@ -112,6 +121,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
         opacity: 1,
         transition: { delay: previousRoute === ROUTE.HOME ? 1.7 : 0 },
       }}
+      exit={{ opacity: 0, transition: { duration: 0.35 } }}
     >
       {ballPosition ? (
         <AnimatedBall
@@ -120,15 +130,32 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
           stopPoints={ballPosition.stopPoints}
           ballSizes={ballPosition.sizes}
           easeX={[
-            easeInOut,
-            circOut,
-            backInOut,
-            circOut,
-            circOut,
-            circOut,
-            circIn,
-            circOut,
+            // shape1
+            cubicBezier(0.8, -2, 0.2, 1), // to stop 1
+            circOut, // to stop 2
+            circOut, // to stop 3
+            easeInOut, // to stop 4
+
+            // shape2
+            cubicBezier(0.79, 0.64, 0, 2), // to stop 1
+            circOut, // to stop 2
+            easeInOut, // to stop 3
+            easeInOut, // to stop 4
+
+            // shape3
+            easeInOut, // to stop 1
+            circOut, // to stop 2
+            circOut, // to stop 3
+            circOut, // to stop 4
+            backOut, // to stop 5
+
+            // to section
+            easeIn,
+
+            // to contactForm
+            easeOut,
           ]}
+          easeY={[backInOut]}
         />
       ) : null}
       <Grid className={styles.learnMore}>
@@ -157,7 +184,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
               The AI Alliance is a collaboration of leading global industry and
               academic and research organizations.
             </motion.p>
-            <motion.p {...showInView}>
+            <motion.p {...showInView} custom={1}>
               Guided by flexible collaboration and minimal governance, members
               must commit to at least one aspect of the Alliance&apos;s
               three-fold mission: Build, Enable, and Inform.

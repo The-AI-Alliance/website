@@ -93,7 +93,7 @@ const LandingPage: React.FC = () => {
           top: 0,
           transition: { delay: 2, duration: 0.5 },
         },
-        exit: { opacity: 0, transition: { duration: 0.7 } },
+        exit: { opacity: 0, top: 3, transition: { duration: 0.4 } },
       },
 
       buttonBackground: {
@@ -113,7 +113,14 @@ const LandingPage: React.FC = () => {
             },
           },
         },
-        exit: { opacity: 0, transition: { duration: 0.7 } },
+        exit: {
+          opacity: 0,
+          width: '48px',
+          transition: {
+            width: { delay: 0.3, duration: 0.5 },
+            opacity: { delay: 0.8, duration: 0.5 },
+          },
+        },
       },
 
       text: {

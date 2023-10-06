@@ -39,6 +39,8 @@
   }
 
   p, li {
+    position: relative;
+
     @include type-style('fluid-paragraph-01', true);
     
     @include breakpoint-down(lg) {
