@@ -131,7 +131,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
           ballSizes={ballPosition.sizes}
           easeX={[
             // shape1
-            cubicBezier(0.8, -3, 0.2, 1), // to stop 1
+            cubicBezier(0.8, -2, 0.2, 1), // to stop 1
             circOut, // to stop 2
             circOut, // to stop 3
             easeInOut, // to stop 4
