@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { Column, Grid, Heading } from '@carbon/react';
 import classnames from 'classnames';
 import ContactPanel from '../contact/contactPanel';
@@ -113,21 +113,34 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
 
   useResize(calculateAnimationStops, resetBallPosition);
 
-  useEffect(() => {
-    setTimeout(
-      calculateAnimationStops,
-      previousRoute === ROUTE.HOME ? 1300 : 500,
-    );
-  }, [calculateAnimationStops, previousRoute]);
+  const mainContentVariants = useMemo(
+    () => ({
+      hide: { opacity: 0 },
+      show: {
+        opacity: 1,
+        transition: { delay: previousRoute === ROUTE.HOME ? 1.7 : 0.35 },
+      },
+      unmount: { opacity: 0, transition: { duration: 0.35 } },
+    }),
+    [previousRoute],
+  );
+
+  const onContentAnimationComplete = useCallback(
+    (variantName: string) => {
+      if (variantName === 'show') {
+        calculateAnimationStops();
+      }
+    },
+    [calculateAnimationStops],
+  );
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { delay: previousRoute === ROUTE.HOME ? 1.7 : 0.2 },
-      }}
-      exit={{ opacity: 0, transition: { duration: 0.35 } }}
+      variants={mainContentVariants}
+      initial="hide"
+      animate="show"
+      exit="unmount"
+      onAnimationComplete={onContentAnimationComplete}
     >
       {ballPosition ? (
         <Ball

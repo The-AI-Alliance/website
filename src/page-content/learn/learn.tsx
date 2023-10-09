@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
 import classnames from 'classnames';
 import { Column, Grid, Heading } from '@carbon/react';
 import Shape2 from '@graphics/shape2.svg';
@@ -50,6 +50,18 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
     xCoordinates: number[];
     yCoordinates: number[];
   } | null>(null);
+
+  const mainContentVariants = useMemo(
+    () => ({
+      hide: { opacity: 0 },
+      show: {
+        opacity: 1,
+        transition: { delay: previousRoute === ROUTE.HOME ? 1.7 : 0.35 },
+      },
+      unmount: { opacity: 0, transition: { duration: 0.35 } },
+    }),
+    [previousRoute],
+  );
 
   const calculateAnimationStops = useCallback(() => {
     const shape1stops = getShape1Stops(shape1ref);
@@ -107,21 +119,22 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
 
   useResize(calculateAnimationStops);
 
-  useEffect(() => {
-    setTimeout(
-      calculateAnimationStops,
-      previousRoute === ROUTE.HOME ? 1300 : 500,
-    );
-  }, [calculateAnimationStops, previousRoute]);
+  const onContentAnimationComplete = useCallback(
+    (variantName: string) => {
+      if (variantName === 'show') {
+        calculateAnimationStops();
+      }
+    },
+    [calculateAnimationStops],
+  );
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { delay: previousRoute === ROUTE.HOME ? 1.7 : 0 },
-      }}
-      exit={{ opacity: 0, transition: { duration: 0.35 } }}
+      variants={mainContentVariants}
+      initial="hide"
+      animate="show"
+      exit="unmount"
+      onAnimationComplete={onContentAnimationComplete}
     >
       {ballPosition ? (
         <AnimatedBall
