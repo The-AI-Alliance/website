@@ -3,8 +3,8 @@ import sg from '@sendgrid/mail';
 import EmailParams from '@type/emailParams';
 
 const emailFrom = process.env.EMAIL_FROM;
-const emailTo = (process.env.EMAIL_TO_CSV ?? '').split(',');
-const apiKey = process.env.SENDGRID_API_KEY;
+const emailTo = (process.env.EMAIL_TO ?? '').split(',');
+const apiKey = process.env.SEND_GRID_API_KEY;
 apiKey && sg.setApiKey(apiKey);
 
 const sendEmail = async (params: EmailParams) => {

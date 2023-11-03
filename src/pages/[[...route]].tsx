@@ -157,9 +157,9 @@ export const getServerSideProps = async (
   return {
     props: {
       enableContactForm:
-        !!process.env.SENDGRID_API_KEY &&
+        !!process.env.SEND_GRID_API_KEY &&
         !!process.env.EMAIL_FROM &&
-        !!process.env.EMAIL_TO_CSV,
+        !!process.env.EMAIL_TO,
     },
   };
 };
