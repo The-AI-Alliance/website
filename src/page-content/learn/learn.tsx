@@ -195,7 +195,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
           >
             <motion.p {...showInView}>
               The AI Alliance is a collaboration of leading global industry and
-              academic and research organizations.
+              research organizations.
             </motion.p>
             <motion.p {...showInView} custom={1}>
               Guided by flexible collaboration and minimal governance, members
@@ -213,8 +213,10 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
           </Column>
           <Column {...textRightProps}>
             <motion.p {...showInView}>
-              <strong>Build</strong> and release open-source frontier models
-              based on a common requirement and validation framework.
+              <strong>Build</strong> and release open technology including AI
+              models and tooling, especially in language, code, image, video and
+              in domains and modalities essential to the health, sustainability,
+              and prosperity of society.
             </motion.p>
           </Column>
         </>
@@ -222,9 +224,10 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
         <>
           <Column {...textLeftProps} data-view="inverted">
             <motion.p {...showInView}>
-              <strong>Enable</strong> a flourishing downstream ecosystem of
-              research and application development based on these open frontier
-              models.
+              <strong>Enable</strong> developer and organizational use and
+              adoption of open technology including with advocacy, events,
+              community support, education and training, and use case
+              demonstrations.
             </motion.p>
           </Column>
           <Column {...graphicsRightProps}>
@@ -234,9 +237,10 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
           </Column>
           <Column {...textRightProps} data-view="normal">
             <motion.p {...showInView}>
-              <strong>Enable</strong> a flourishing downstream ecosystem of
-              research and application development based on these open frontier
-              models.
+              <strong>Enable</strong> developer and organizational use and
+              adoption of open technology including with advocacy, events,
+              community support, education and training, and use case
+              demonstrations.
             </motion.p>
           </Column>
         </>
@@ -249,8 +253,10 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
           </Column>
           <Column {...textRightProps}>
             <motion.p {...showInView}>
-              <strong>Inform</strong> and educate the public and regulators with
-              a unified narrative on the benefits of open-source AI.
+              <strong>Advocate</strong> for a vibrant open technology ecosystem
+              in AI to enable broad benefit, address challenges, and foster
+              trust and safety with organizational and societal leaders, policy
+              and regulatory bodies, and the public.
             </motion.p>
           </Column>
         </>
@@ -273,10 +279,12 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
             sm={4}
           >
             <motion.p {...showInView}>
-              Open-source AI is the best way to ensure AI is integrated into our
-              society in a transparent, trustworthy and safe way. It builds on a
-              long history of open-source AI research and development, and an
-              even longer track record of open-source software development.
+              Open-source AI is the best way to ensure we can achieve the
+              promise of AI is integrated into our society in a transparent,
+              trustworthy and safe way. It builds on a long history of
+              open-source AI research and development, and an even longer track
+              record of open-source software development which has enabled it to
+              flourish….
             </motion.p>
             <motion.p {...showInView} custom={1}>
               An open-source approach to AI development allows a diverse
