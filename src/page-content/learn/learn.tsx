@@ -200,7 +200,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
             <motion.p {...showInView} custom={1}>
               Guided by flexible collaboration and minimal governance, members
               must commit to at least one aspect of the Alliance&apos;s
-              three-fold mission: Build, Enable, and Inform.
+              three-fold mission: Build, Enable, and Advocate.
             </motion.p>
           </Column>
         </>
