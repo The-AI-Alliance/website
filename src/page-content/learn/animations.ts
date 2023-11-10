@@ -2,6 +2,15 @@ import classnames from 'classnames';
 import styles from './learn.module.scss';
 import { RefObject } from 'react';
 import { Breakpoint } from '@utils/useBreakpoint';
+import {
+  EasingFunction,
+  backOut,
+  circOut,
+  cubicBezier,
+  easeIn,
+  easeInOut,
+  easeOut,
+} from 'framer-motion';
 
 export const graphicsLeftProps = {
   className: classnames(styles.contentRow, styles.contentRow__graphics),
@@ -37,6 +46,7 @@ export type ShapeStops = {
   top: number[];
   left: number[];
   size: number[];
+  easings: EasingFunction[];
 };
 
 const getMiddleStop = (rect: DOMRect, viewportHeight: number) => {
@@ -51,8 +61,8 @@ export const getShape1Stops = (
     return null;
   }
 
-  const sizeFactor = 0.25;
-  const yFactor = 0.497;
+  const sizeFactor = 0.251;
+  const yFactor = 0.5;
 
   const viewportHeight = window.innerHeight;
   const rect = ref.current.getBoundingClientRect();
@@ -62,20 +72,18 @@ export const getShape1Stops = (
   const top = viewportHeight / 2 - rect.height * yFactor;
   const left1 = rect.left + rect.width * 0.75;
 
-  const stop2 = middle + rect.height / 4;
+  const stop2 = middle + (rect.height / 4) * 3;
   const left2 = rect.left + rect.width;
 
-  const stop3 = middle + rect.height / 2;
-  const left3 = rect.left + rect.width * 0.95;
-
-  const stop4 = middle + (rect.height / 4) * 3;
-  const left4 = rect.left + rect.width;
-
   return {
-    stops: [middle, stop2, stop3, stop4],
-    top: [top, top, top, top],
-    left: [left1, left2, left3, left4],
-    size: [size, size, size, size],
+    stops: [middle, stop2],
+    top: [top, top],
+    left: [left1, left2],
+    size: [size, size],
+    easings: [
+      cubicBezier(0.8, -2, 0.2, 1), // to stop 1
+      cubicBezier(0, 2, 0.58, 1), // to stop 2
+    ],
   };
 };
 
@@ -87,7 +95,7 @@ export const getShape2Stops = (
   }
 
   const sizeFactor = 0.25;
-  const yFactor = 0.497;
+  const yFactor = 0.5;
 
   const viewportHeight = window.innerHeight;
   const rect = ref.current.getBoundingClientRect();
@@ -95,20 +103,18 @@ export const getShape2Stops = (
   const top = viewportHeight / 2 - rect.height * yFactor;
   const size = rect.width * sizeFactor;
 
-  const stop2 = middle + rect.height / 4;
-  const left2 = rect.left - rect.width * 0.25;
-
-  const stop3 = middle + rect.height / 2;
-  const left3 = rect.left - rect.width * 0.2;
-
   const stop4 = middle + (rect.height / 4) * 3;
   const left4 = rect.left - rect.width * 0.25;
 
   return {
-    stops: [middle, stop2, stop3, stop4],
-    top: [top, top, top, top],
-    left: [rect.left, left2, left3, left4],
-    size: [size, size, size, size],
+    stops: [middle, stop4],
+    top: [top, top],
+    left: [rect.left, left4],
+    size: [size, size],
+    easings: [
+      easeInOut,
+      cubicBezier(0.1, 2, 0.35, 0.79), // to stop 1
+    ],
   };
 };
 
@@ -147,6 +153,13 @@ export const getShape3Stops = (
     top: [top, top, top, top, top],
     left: [left1, left2, left3, left4, left5],
     size: [size, size, size, size, size],
+    easings: [
+      easeInOut, // to stop 1
+      circOut, // to stop 2
+      circOut, // to stop 3
+      circOut, // to stop 4
+      backOut, // to stop 5
+    ],
   };
 };
 
@@ -159,26 +172,18 @@ export const getShape4Stops = (
   }
 
   const sizeFactor: Record<Breakpoint, number> = {
-    [Breakpoint.MAX]: 0.285,
-    [Breakpoint.XLG]: 0.285,
+    [Breakpoint.MAX]: 0.288,
+    [Breakpoint.XLG]: 0.288,
     [Breakpoint.LG]: 0.301,
     [Breakpoint.MD]: 0.25,
     [Breakpoint.SM]: 0,
   };
 
   const xFactor: Record<Breakpoint, number> = {
-    [Breakpoint.MAX]: -0.041,
-    [Breakpoint.XLG]: -0.041,
-    [Breakpoint.LG]: 0.1,
+    [Breakpoint.MAX]: -0.042,
+    [Breakpoint.XLG]: -0.043,
+    [Breakpoint.LG]: 0.098,
     [Breakpoint.MD]: 0.25,
-    [Breakpoint.SM]: 0,
-  };
-
-  const yFactor: Record<Breakpoint, number> = {
-    [Breakpoint.MAX]: 0.005,
-    [Breakpoint.XLG]: 0.005,
-    [Breakpoint.LG]: 0,
-    [Breakpoint.MD]: 0,
     [Breakpoint.SM]: 0,
   };
 
@@ -186,15 +191,20 @@ export const getShape4Stops = (
 
   return {
     stops: [window.document.body.scrollHeight - window.innerHeight],
-    top: [window.innerHeight - rect.height + rect.height * yFactor[breakpoint]],
+    top: [window.innerHeight - rect.height],
     left: [rect.left + rect.width * xFactor[breakpoint]],
     size: [rect.width * sizeFactor[breakpoint]],
+    easings: [
+      // to contactForm
+      easeOut,
+    ],
   };
 };
 
 export const getSectionStops = (
   ref: RefObject<HTMLDivElement>,
   previousBallSizes: number[] | undefined,
+  breakpoint?: Breakpoint,
 ): ShapeStops | null => {
   if (!ref.current) {
     return null;
@@ -203,11 +213,16 @@ export const getSectionStops = (
   const viewportHeight = window.innerHeight;
   const rect = ref.current.getBoundingClientRect();
   const previousSize = previousBallSizes?.[previousBallSizes?.length - 1];
+  const left =
+    breakpoint === Breakpoint.MD
+      ? rect.left + rect.width * 0.5
+      : rect.left + rect.width * 0.25;
 
   return {
     stops: [getMiddleStop(rect, viewportHeight)],
     top: [viewportHeight / 2],
-    left: [rect.left + rect.width * 0.25],
+    left: [left],
     size: [previousSize || 120],
+    easings: [easeIn],
   };
 };

@@ -1,20 +1,17 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import classnames from 'classnames';
 import { Column, Grid, Heading } from '@carbon/react';
 import Shape2 from '@graphics/shape2.svg';
 import Shape3 from '@graphics/shape3.svg';
 import Shape4 from '@graphics/shape4.svg';
 import ContactPanel from '../contact/contactPanel';
-import {
-  backInOut,
-  backOut,
-  circOut,
-  cubicBezier,
-  easeIn,
-  easeInOut,
-  easeOut,
-  motion,
-} from 'framer-motion';
+import { EasingFunction, backInOut, motion } from 'framer-motion';
 import { ROUTE } from '@utils/useNavigation';
 import useResize from '@utils/useResize';
 import AnimatedBall from '@components/ball/animatedBall';
@@ -34,6 +31,8 @@ import { showInView } from '@utils/showInView';
 
 import styles from './learn.module.scss';
 
+const DEBUG_ANIMATIONS = false;
+
 const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
   previousRoute,
 }) => {
@@ -49,6 +48,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
     stopPoints: number[];
     xCoordinates: number[];
     yCoordinates: number[];
+    easings: EasingFunction[];
   } | null>(null);
 
   const mainContentVariants = useMemo(
@@ -63,11 +63,38 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
     [previousRoute],
   );
 
+  const renderBreakpoints = useCallback(
+    () =>
+      ballPosition?.stopPoints?.map((scroll, idx) => (
+        <div
+          key={idx}
+          style={{
+            position: 'absolute',
+            width: 3,
+            height: 3,
+            backgroundColor: 'red',
+            top:
+              scroll +
+              ballPosition.yCoordinates[idx] -
+              1 +
+              ballPosition.sizes[idx] / 2,
+            left:
+              ballPosition.xCoordinates[idx] - 1 + ballPosition.sizes[idx] / 2,
+          }}
+        ></div>
+      )),
+    [ballPosition],
+  );
+
   const calculateAnimationStops = useCallback(() => {
     const shape1stops = getShape1Stops(shape1ref);
     const shape2stops = getShape2Stops(shape2ref);
     const shape3stops = getShape3Stops(shape3ref);
-    const sectionStops = getSectionStops(sectionRef, shape3stops?.size);
+    const sectionStops = getSectionStops(
+      sectionRef,
+      shape3stops?.size,
+      breakpoint,
+    );
     const shape4stops = getShape4Stops(shape4ref, breakpoint);
 
     if (
@@ -114,10 +141,18 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
         ...sectionStops.top,
         ...shape4stops.top,
       ],
+      easings: [
+        ...shape1stops.easings,
+        ...shape2stops.easings,
+        ...shape3stops.easings,
+        ...sectionStops.easings,
+        ...shape4stops.easings,
+      ],
     });
   }, [breakpoint]);
 
   useResize(calculateAnimationStops);
+  useEffect(calculateAnimationStops, [calculateAnimationStops]);
 
   const onContentAnimationComplete = useCallback(
     (variantName: string) => {
@@ -136,38 +171,14 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
       exit="unmount"
       onAnimationComplete={onContentAnimationComplete}
     >
+      {DEBUG_ANIMATIONS ? renderBreakpoints() : null}
       {ballPosition ? (
         <AnimatedBall
           xStopCoordinates={ballPosition.xCoordinates}
           yStopCoordinates={ballPosition.yCoordinates}
           stopPoints={ballPosition.stopPoints}
           ballSizes={ballPosition.sizes}
-          easeX={[
-            // shape1
-            cubicBezier(0.8, -2, 0.2, 1), // to stop 1
-            circOut, // to stop 2
-            circOut, // to stop 3
-            easeInOut, // to stop 4
-
-            // shape2
-            cubicBezier(0.79, 0.64, 0, 2), // to stop 1
-            circOut, // to stop 2
-            easeInOut, // to stop 3
-            easeInOut, // to stop 4
-
-            // shape3
-            easeInOut, // to stop 1
-            circOut, // to stop 2
-            circOut, // to stop 3
-            circOut, // to stop 4
-            backOut, // to stop 5
-
-            // to section
-            easeIn,
-
-            // to contactForm
-            easeOut,
-          ]}
+          easeX={ballPosition.easings}
           easeY={[backInOut]}
         />
       ) : null}
@@ -208,7 +219,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
         <>
           <Column {...graphicsLeftProps}>
             <div ref={shape1ref}>
-              <Shape2 />
+              <Shape2 className={styles.shape} />
             </div>
           </Column>
           <Column {...textRightProps}>
@@ -232,7 +243,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
           </Column>
           <Column {...graphicsRightProps}>
             <div ref={shape2ref}>
-              <Shape3 />
+              <Shape3 className={styles.shape} />
             </div>
           </Column>
           <Column {...textRightProps} data-view="normal">
@@ -248,7 +259,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
         <>
           <Column {...graphicsLeftProps}>
             <div ref={shape3ref}>
-              <Shape4 />
+              <Shape4 className={styles.shape} />
             </div>
           </Column>
           <Column {...textRightProps}>

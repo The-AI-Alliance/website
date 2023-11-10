@@ -24,6 +24,11 @@
     }
   }
 
+  .shape {
+    position: relative;
+    z-index: -2;
+  }
+
   .heading, .subheading {
     @include type-style('fluid-display-03', true);
 

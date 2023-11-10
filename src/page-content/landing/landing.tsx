@@ -33,7 +33,7 @@ const LandingPage: React.FC = () => {
 
     if (!sourceDim || !destDim) return;
 
-    const sourceSize = sourceDim.width / 5.65;
+    const sourceSize = sourceDim.width / 5.68;
     const destSize = destDim.width / 5.9;
     setBallPositions({
       start: {
