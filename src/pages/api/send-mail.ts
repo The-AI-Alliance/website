@@ -32,14 +32,12 @@ const sendEmail = async (params: EmailParams) => {
       <p style="max-width:700px;text-align:justify;"><small>
         Privacy notice: This email contains business contact \
         information entered by a user in the contact form at \
-        <a href='https://research.ibm.com/contact'>research.ibm.com/contact</a>. \
+        <a href='https://thealliance.ai'>thealliance.ai</a>. \
         This information should only be used to respond to the \
         user’s inquiry by email and not for any other purposes. \
-        The user indicated they read and understood the \
-        <a href='https://www.ibm.com/privacy'>IBM Privacy Statement</a> \
-        before they submitted the form. As a recipient of this email, \
-        you have an obligation on the data recipient to comply with \
-        Data Subject Rights (DSR) requests should they arise.
+        The user indicated they allow IBM to store and process \
+        the personal information submitted to provide the content \
+        requested.
       </small></p>
     `,
   };

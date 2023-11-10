@@ -1,12 +1,5 @@
 import React, { useCallback } from 'react';
-import {
-  Button,
-  Checkbox,
-  Form,
-  Link,
-  TextArea,
-  TextInput,
-} from '@carbon/react';
+import { Button, Form, TextArea, TextInput } from '@carbon/react';
 import classNames from 'classnames';
 import { useForm } from 'react-hook-form';
 import { ArrowRight } from '@carbon/icons-react';
@@ -14,7 +7,6 @@ import EmailParams from '@type/emailParams';
 
 import styles from './contactForm.module.scss';
 
-const PRIVACY_STATEMENT_URL = '#'; // TODO
 const INPUT_MAX_LENGTH = 100;
 const MESSAGE_MAX_LENGTH = 1000;
 
@@ -139,31 +131,20 @@ const ContactForm: React.FC<ContactFormProps> = ({ className, onSubmit }) => {
         maxLength={MESSAGE_MAX_LENGTH}
         {...register('message', {})}
       />
-      <Checkbox
-        className={classNames(styles.field, styles.acknowledge)}
-        id="privacy"
-        labelText={
-          <>
-            By submitting this form, I acknowledge that I have read and
-            understand the{' '}
-            <span style={{ whiteSpace: 'nowrap' }}>
-              <Link
-                className={styles.link}
-                href={PRIVACY_STATEMENT_URL}
-                target="_blank"
-              >
-                Privacy Statement
-              </Link>
-              .
-            </span>
-          </>
-        }
-        invalid={!!formState.errors?.privacy}
-        invalidText={formState.errors?.privacy?.message}
-        {...register('privacy', {
-          required: 'Please accept the Privacy Statement',
-        })}
-      />
+      <div
+        className={classNames(styles.field, styles.acknowledge, styles.test)}
+      >
+        <p>
+          The AI Alliance is committed to protecting and respecting your
+          privacy, and we’ll only use your personal information to contact you
+          upon submission of this form.
+        </p>
+        <p>
+          By submitting the preceding form, you consent to allow IBM to store
+          and process the personal information submitted to provide the content
+          requested.
+        </p>
+      </div>
       <Button
         className={styles.submitBtn}
         kind="primary"

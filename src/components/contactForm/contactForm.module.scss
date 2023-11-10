@@ -1,6 +1,7 @@
 @use "@carbon/styles/scss/breakpoint" as *;
 @use "@carbon/grid" as *;
 @use '@carbon/colors' as *;
+@use '@carbon/type' as *;
 
 .contactForm {
   :global(.cds--label) {
@@ -56,7 +57,11 @@
     &.acknowledge {
       width: calc((100% - $grid-gutter) / 2);
       margin-right: $grid-gutter;
-      
+
+      p {
+        @include type-style('label-01');
+      }
+
       :global(.cds--checkbox-label-text) {
         padding-left: 16px;
       }
