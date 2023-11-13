@@ -290,18 +290,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
             sm={4}
           >
             <motion.p {...showInView}>
-              Open-source AI is the best way to ensure we can achieve the
-              promise of AI is integrated into our society in a transparent,
-              trustworthy and safe way. It builds on a long history of
-              open-source AI research and development, and an even longer track
-              record of open-source software development which has enabled it to
-              flourish….
-            </motion.p>
-            <motion.p {...showInView} custom={1}>
-              An open-source approach to AI development allows a diverse
-              community to innovate and validate models together, helping find —
-              and address — potential risks, downsides and vulnerabilities
-              before such models are released at scale.
+              The promise of AI is best realized through the transparency, safety, and trust inherent in open-source approaches. Open-source AI development allows a diverse community to innovate and validate models together, helping find — and address — potential risks, downsides, and vulnerabilities before such models are released at scale.
             </motion.p>
           </Column>
         </>
