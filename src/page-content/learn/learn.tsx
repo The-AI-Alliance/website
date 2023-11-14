@@ -290,7 +290,12 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
             sm={4}
           >
             <motion.p {...showInView}>
-              The promise of AI is best realized through the transparency, safety, and trust inherent in open-source approaches. Open-source AI development allows a diverse community to innovate and validate models together, helping find — and address — potential risks, downsides, and vulnerabilities before such models are released at scale.
+              The promise of AI is best realized through the transparency,
+              safety, and trust inherent in open-source approaches. Open-source
+              AI development allows a diverse community to innovate and validate
+              models together, helping find — and address — potential risks,
+              downsides, and vulnerabilities before such models are released at
+              scale.
             </motion.p>
           </Column>
         </>
