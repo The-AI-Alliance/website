@@ -210,14 +210,11 @@ const LandingPage: React.FC = () => {
           <div className={styles.content__animationWrapper}>
             <motion.div {...animation.title}>
               <Heading className={styles.content__header}>
-                Open Source
-                <br />
-                AI Alliance
+                The AI Alliance
               </Heading>
             </motion.div>
             <motion.p className={styles.content__subhead} {...animation.text}>
-              A community of industry and research leaders committed to building
-              the most capable and trusted open-source AI models.
+            Building and supporting open technology for AI and the open communities that build it.
             </motion.p>
             <div className={styles.content__actionWrapper}>
               <motion.div

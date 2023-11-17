@@ -48,9 +48,9 @@ const ContactPanel: React.FC<{
         sm={4}
       >
         <Heading className={styles.innerHeading}>
-          Join the
+          Learn more about
           <br />
-          AI Alliance
+          the AI Alliance
         </Heading>
         {background === 'straight' ? (
           <div className={styles.titleGraphics} ref={graphicsRef}>
