@@ -205,7 +205,10 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
             sm={4}
           >
             <motion.p {...showInView}>
-            The Alliance is a global partnership among leading commercial and research organizations with a critical mass of talent and resources to accelerate open innovation in AI and its safe, secure, trusted adoption.​
+              The Alliance is a global partnership among leading commercial and
+              research organizations with a critical mass of talent and
+              resources to accelerate open innovation in AI and its safe,
+              secure, trusted adoption.​
             </motion.p>
           </Column>
         </>
@@ -218,7 +221,9 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
           </Column>
           <Column {...textRightProps}>
             <motion.p {...showInView}>
-              <strong>Build</strong> and advance open technologies for AI, including software frameworks, foundation models, and tooling to ensure safe deployment.
+              <strong>Build</strong> and advance open technologies for AI,
+              including software frameworks, foundation models, and tooling to
+              ensure safe deployment.
             </motion.p>
           </Column>
         </>
@@ -226,7 +231,9 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
         <>
           <Column {...textLeftProps} data-view="inverted">
             <motion.p {...showInView}>
-              <strong>Enable</strong> developers and organizations to harness the capability of open technologies through advocacy, education and skills development, demonstrations and community support.​
+              <strong>Enable</strong> developers and organizations to harness
+              the capability of open technologies through advocacy, education
+              and skills development, demonstrations and community support.​
             </motion.p>
           </Column>
           <Column {...graphicsRightProps}>
@@ -236,7 +243,9 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
           </Column>
           <Column {...textRightProps} data-view="normal">
             <motion.p {...showInView}>
-              <strong>Enable</strong> developers and organizations to harness the capability of open technologies through advocacy, education and skills development, demonstrations and community support.​
+              <strong>Enable</strong> developers and organizations to harness
+              the capability of open technologies through advocacy, education
+              and skills development, demonstrations and community support.​
             </motion.p>
           </Column>
         </>
@@ -249,33 +258,10 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
           </Column>
           <Column {...textRightProps}>
             <motion.p {...showInView}>
-              <strong>Advocate</strong> for the importance of an open technology ecosystem in AI to enable broad benefit and foster trust and safety with organizational and societal leaders, policy and regulatory bodies, and the public.​
-            </motion.p>
-          </Column>
-        </>
-
-        <>
-          <Column
-            className={styles.contentRow}
-            xlg={{ span: 7, offset: 1 }}
-            lg={7}
-            md={5}
-            sm={4}
-          >
-            <Heading className={styles.subheading}>Open innovation in AI is essential</Heading>
-          </Column>
-          <Column
-            className={styles.contentRow}
-            xlg={{ span: 8, offset: 8 }}
-            lg={{ span: 9, offset: 7 }}
-            md={6}
-            sm={4}
-          >
-            <motion.p {...showInView}>
-            It is a pivotal time in AI. Foundation models and generative AI are introducing, almost daily, opportunities that can improve how we work, live and interact with one another. This incredible progress is possible because of decades of open innovation: the collaboration among communities of developers, scientists, academics, and business leaders to build, validate, and adopt the latest AI technologies that advance business and society.
-            </motion.p>
-            <motion.p {...showInView} custom={1}>
-            This open ecosystem has also been a catalyst for ensuring: trust, ethics, resiliency and responsibility are at the core of AI development and use. As AI advances, so must our ability to improve governance and safety – and this can only be done through the collective power of an open, healthy AI community that promotes the exchange of ideas and collaboration on decisions and outputs.​
+              <strong>Advocate</strong> for the importance of an open technology
+              ecosystem in AI to enable broad benefit and foster trust and
+              safety with organizational and societal leaders, policy and
+              regulatory bodies, and the public.​
             </motion.p>
           </Column>
         </>
@@ -289,7 +275,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
             sm={4}
           >
             <Heading className={styles.subheading}>
-            Meeting the challenges of open innovation​
+              Open innovation in AI is essential
             </Heading>
           </Column>
           <Column
@@ -300,10 +286,58 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
             sm={4}
           >
             <motion.p {...showInView}>
-            Recently, the large amount of computational and data resources required to build foundation models; scarcity of scientific and engineering talent; the need to ensure AI is useful and trusted; and amplified concerns around the risks of AI have threatened to relegate AI innovation to a small number of companies with a closed, proprietary vision for the AI industry.
+              It is a pivotal time in AI. Foundation models and generative AI
+              are introducing, almost daily, opportunities that can improve how
+              we work, live and interact with one another. This incredible
+              progress is possible because of decades of open innovation: the
+              collaboration among communities of developers, scientists,
+              academics, and business leaders to build, validate, and adopt the
+              latest AI technologies that advance business and society.
             </motion.p>
             <motion.p {...showInView} custom={1}>
-            The AI Alliance members are coming together to address these bottlenecks and accelerate and disseminate open innovation across the AI technology landscape to improve capabilities and responsibly benefit society.​
+              This open ecosystem has also been a catalyst for ensuring: trust,
+              ethics, resiliency and responsibility are at the core of AI
+              development and use. As AI advances, so must our ability to
+              improve governance and safety – and this can only be done through
+              the collective power of an open, healthy AI community that
+              promotes the exchange of ideas and collaboration on decisions and
+              outputs.​
+            </motion.p>
+          </Column>
+        </>
+
+        <>
+          <Column
+            className={styles.contentRow}
+            xlg={{ span: 7, offset: 1 }}
+            lg={7}
+            md={5}
+            sm={4}
+          >
+            <Heading className={styles.subheading}>
+              Meeting the challenges of open innovation​
+            </Heading>
+          </Column>
+          <Column
+            className={styles.contentRow}
+            xlg={{ span: 8, offset: 8 }}
+            lg={{ span: 9, offset: 7 }}
+            md={6}
+            sm={4}
+          >
+            <motion.p {...showInView}>
+              Recently, the large amount of computational and data resources
+              required to build foundation models; scarcity of scientific and
+              engineering talent; the need to ensure AI is useful and trusted;
+              and amplified concerns around the risks of AI have threatened to
+              relegate AI innovation to a small number of companies with a
+              closed, proprietary vision for the AI industry.
+            </motion.p>
+            <motion.p {...showInView} custom={1}>
+              The AI Alliance members are coming together to address these
+              bottlenecks and accelerate and disseminate open innovation across
+              the AI technology landscape to improve capabilities and
+              responsibly benefit society.​
             </motion.p>
           </Column>
         </>
@@ -319,18 +353,28 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
                 sm={4}
               >
                 <p>The AI Alliance Agenda</p>
-                <p>The Alliance will bring together a critical mass of compute, data, tools, and talent to accelerate open innovation in AI by starting or enhancing projects that:​</p>
+                <p>
+                  The Alliance will bring together a critical mass of compute,
+                  data, tools, and talent to accelerate open innovation in AI by
+                  starting or enhancing projects that:​
+                </p>
               </Column>
               <Column xlg={{ span: 7, offset: 1 }} lg={7} md={4} sm={4}>
                 <ul>
                   <motion.li {...showInView}>
-                  Foster a vibrant AI hardware accelerator ecosystem by boosting contributions and adoption of essential enabling software technology​
+                    Foster a vibrant AI hardware accelerator ecosystem by
+                    boosting contributions and adoption of essential enabling
+                    software technology​
                   </motion.li>
                   <motion.li {...showInView} custom={1}>
-                  Build and advance the most efficient and capable software frameworks and tools to enable AI model builders and GenAI application developers
+                    Build and advance the most efficient and capable software
+                    frameworks and tools to enable AI model builders and GenAI
+                    application developers
                   </motion.li>
                   <motion.li {...showInView} custom={2}>
-                  Enable an ecosystem of open foundation models with diverse modalities, including highly capable multilingual, multi-modal, and science models.
+                    Enable an ecosystem of open foundation models with diverse
+                    modalities, including highly capable multilingual,
+                    multi-modal, and science models.
                   </motion.li>
                 </ul>
               </Column>
@@ -342,13 +386,16 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
               >
                 <ul>
                   <motion.li {...showInView} custom={3}>
-                  Create testing, validation and benchmarking tools and methodologies to ensure safe, secure, trusted and ethical AI
+                    Create testing, validation and benchmarking tools and
+                    methodologies to ensure safe, secure, trusted and ethical AI
                   </motion.li>
                   <motion.li {...showInView} custom={4}>
-                  Support global AI skills building, education, and exploratory research.
+                    Support global AI skills building, education, and
+                    exploratory research.
                   </motion.li>
                   <motion.li {...showInView} custom={5}>
-                  Advocate for regulatory policies that create a healthy open AI ecosystem
+                    Advocate for regulatory policies that create a healthy open
+                    AI ecosystem
                   </motion.li>
                 </ul>
               </Column>
