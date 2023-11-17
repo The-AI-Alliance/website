@@ -23,7 +23,7 @@ import useNavigation, {
   ROUTE_LABEL,
   routes,
 } from '../utils/useNavigation';
-import PartnersPage from '../page-content/partners/partners';
+import MembersPage from '../page-content/members/members';
 import FeatureFlagsContext from '../utils/featureFlagsContext';
 import NotificationWrapper from '@components/notificationwrapper';
 import { AnimatePresence } from 'framer-motion';
@@ -69,7 +69,7 @@ export default function Home({
     () => (
       <>
         {buildMenuBtn(ROUTE.LEARN)}
-        {buildMenuBtn(ROUTE.PARTNERS)}
+        {buildMenuBtn(ROUTE.MEMBERS)}
       </>
     ),
     [buildMenuBtn],
@@ -82,10 +82,8 @@ export default function Home({
           <LearnMorePage key="learnMorePage" previousRoute={previousRoute} />
         );
 
-      case ROUTE.PARTNERS:
-        return (
-          <PartnersPage key="partnersPage" previousRoute={previousRoute} />
-        );
+      case ROUTE.MEMBERS:
+        return <MembersPage key="membersPage" previousRoute={previousRoute} />;
 
       default:
         return <LandingPage key="landingPage" />;

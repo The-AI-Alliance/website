@@ -3,30 +3,24 @@ import { Column, Grid, Heading } from '@carbon/react';
 import classnames from 'classnames';
 import ContactPanel from '../contact/contactPanel';
 import Image from 'next/image';
-import cerebras from '@public/partners/cerebras.png';
-import databricks from '@public/partners/databricks.png';
-import dell from '@public/partners/dell.png';
-import epfl from '@public/partners/epfl.png';
-import esa from '@public/partners/esa.png';
-import ethz from '@public/partners/ethz.png';
-import ibm from '@public/partners/ibm.png';
-import intel from '@public/partners/intel.png';
-import langchain from '@public/partners/langchain.png';
-import linux from '@public/partners/linux.png';
-import meta from '@public/partners/meta.png';
-import mit from '@public/partners/mit.png';
-import ml_commons from '@public/partners/ml_commons.png';
-import nasa from '@public/partners/nasa.png';
-import preferred_networks from '@public/partners/preferred_networks.png';
-import redhat from '@public/partners/redhat.png';
-import seldon from '@public/partners/seldon.png';
-import simons_foundation from '@public/partners/simons_foundation.png';
-import soft_bank from '@public/partners/soft_bank.png';
-import stanford from '@public/partners/stanford.png';
-import tum from '@public/partners/tum.png';
-import u_tokyo from '@public/partners/u_tokyo.png';
-import uiuc from '@public/partners/uiuc.png';
-import weights_biases from '@public/partners/weights_biases.png';
+import cerebras from '@public/members/cerebras.png';
+import dell from '@public/members/dell.png';
+import epfl from '@public/members/epfl.png';
+import esa from '@public/members/esa.png';
+import ethz from '@public/members/ethz.png';
+import ibm from '@public/members/ibm.png';
+import intel from '@public/members/intel.png';
+import langchain from '@public/members/langchain.png';
+import linux from '@public/members/linux.png';
+import meta from '@public/members/meta.png';
+import mit from '@public/members/mit.png';
+import ml_commons from '@public/members/ml_commons.png';
+import nasa from '@public/members/nasa.png';
+import preferred_networks from '@public/members/preferred_networks.png';
+import redhat from '@public/members/redhat.png';
+import soft_bank from '@public/members/soft_bank.png';
+import tum from '@public/members/tum.png';
+import uiuc from '@public/members/uiuc.png';
 import { motion } from 'framer-motion';
 import { ROUTE } from '@utils/useNavigation';
 import Ball from '@components/ball/ball';
@@ -34,7 +28,7 @@ import { showInView } from '@utils/showInView';
 import useResize from '@utils/useResize';
 import useBreakpoint, { Breakpoint } from '@utils/useBreakpoint';
 
-import styles from './partners.module.scss';
+import styles from './members.module.scss';
 
 const logos = [
   { size: 1, src: ibm, alt: 'IBM' },
@@ -73,7 +67,7 @@ const ballXFactor: Record<Breakpoint, number> = {
   [Breakpoint.SM]: 0.25,
 };
 
-const PartnersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
+const MembersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
   previousRoute,
 }) => {
   const breakpoint = useBreakpoint();
@@ -150,19 +144,22 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
           animate={{ opacity: 1 }}
         />
       ) : null}
-      <Grid className={styles.partners}>
+      <Grid className={styles.members}>
         <>
           <Column xlg={{ span: 15, offset: 1 }} lg={16} md={8} sm={4}>
             <Heading
-              className={classnames(
-                styles.heading,
-                styles['heading--partners'],
-              )}
+              className={classnames(styles.heading, styles['heading--members'])}
             >
               Members
             </Heading>
           </Column>
           <Column xlg={{ span: 15, offset: 1 }} lg={16} md={8} sm={4}>
+            <p className={styles.subheading}>
+              The AI Alliance consists of companies and startups, universities,
+              research and government organizations, and non-profit foundations
+              that individually and together are innovating across all aspects
+              of AI technology, applications and governance.
+            </p>
             <div className={styles.logos}>
               {logos.map(({ size, src, alt }, idx) => (
                 <motion.div
@@ -255,97 +252,6 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
           </Column>
         </>
 
-        {/* <>
-          <Column xlg={{ span: 7, offset: 1 }} lg={9} md={5} sm={4}>
-            <h3>
-              Partners of various types can expect other industry-specific
-              benefits, including:
-            </h3>
-          </Column>
-          <Column
-            className={styles.table}
-            xlg={{ span: 14, offset: 1 }}
-            lg={16}
-            md={8}
-            sm={4}
-          >
-            <table>
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Potential Contributions</th>
-                  <th>Benefits</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>Infrastructure Providers</th>
-                  <motion.td {...showInView}>
-                    Compute and storage capacity for training, tuning, serving.
-                  </motion.td>
-                  <motion.td {...showInView} custom={1}>
-                    Use case understanding; feedback to refine products;
-                    marketing proof points and demonstrations.
-                  </motion.td>
-                </tr>
-                <tr>
-                  <th>Data Providers</th>
-                  <motion.td {...showInView}>
-                    Curated data sets across domains and modalities.
-                  </motion.td>
-                  <motion.td {...showInView} custom={1}>
-                    Feedback on quality and utility of data to improve curation,
-                    marketing proof points and demonstrations.
-                  </motion.td>
-                </tr>
-                <tr>
-                  <th>Model Builders</th>
-                  <motion.td {...showInView}>
-                    Scientific and engineering talent to build models.
-                  </motion.td>
-                  <motion.td {...showInView} custom={1}>
-                    Skills and experience development, marketing proof points
-                    and demonstrations.
-                  </motion.td>
-                </tr>
-                <tr>
-                  <th>Tool Developers and Providers</th>
-                  <motion.td {...showInView}>
-                    Tools for data engineering; model training, tuning, and
-                    validation; application integration and operations.
-                  </motion.td>
-                  <motion.td {...showInView} custom={1}>
-                    Use case understanding, feedback to refine products,
-                    marketing proof points and demonstrations.
-                  </motion.td>
-                </tr>
-                <tr>
-                  <th>Application Owners</th>
-                  <motion.td {...showInView}>
-                    Use case context and requirements, subject matter experts.
-                  </motion.td>
-                  <motion.td {...showInView} custom={1}>
-                    Models well-targeted to specific applications with proof
-                    points, and trust in the methods used to build them.
-                  </motion.td>
-                </tr>
-                <tr>
-                  <th>Research and Educational Institutions</th>
-                  <motion.td {...showInView}>
-                    Research staff and methods to enable and understand next
-                    generation models.
-                  </motion.td>
-                  <motion.td {...showInView} custom={1}>
-                    Resources to implement new ideas; first to access largest
-                    most capable models; paper and conference leadership; new
-                    course development; hiring opportunities.
-                  </motion.td>
-                </tr>
-              </tbody>
-            </table>
-          </Column>
-        </> */}
-
         <ContactPanel
           className={styles.contactPanel}
           background="straight"
@@ -356,4 +262,4 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
   );
 };
 
-export default PartnersPage;
+export default MembersPage;
