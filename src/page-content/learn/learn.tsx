@@ -208,7 +208,7 @@ const LearnMorePage: React.FC<{ previousRoute: ROUTE | null }> = ({
               The Alliance is a global partnership among leading commercial and
               research organizations with a critical mass of talent and
               resources to accelerate open innovation in AI and its safe,
-              secure, trusted adoption.​
+              secure, trusted adoption. Our three-part mission is to:
             </motion.p>
           </Column>
         </>
