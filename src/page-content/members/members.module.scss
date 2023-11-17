@@ -8,7 +8,7 @@
   position: absolute;
 }
 
-.partners {
+.members {
   position: relative;
   padding-top: calc(48px + 48px);
 
@@ -25,7 +25,7 @@
     }
 
     @include breakpoint-up(lg) {
-      &--partners {
+      &--members {
         margin-bottom: 96px;
       }
     }
@@ -37,6 +37,10 @@
         margin-top: 80px;
       }
     }
+  }
+
+  .subheading {
+    margin-bottom: 1.5rem;
   }
 
   ul {
