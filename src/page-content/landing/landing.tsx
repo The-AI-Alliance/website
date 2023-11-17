@@ -214,8 +214,8 @@ const LandingPage: React.FC = () => {
               </Heading>
             </motion.div>
             <motion.p className={styles.content__subhead} {...animation.text}>
-              Building and supporting open technology for AI and the open
-              communities that build it.
+              Building and supporting open technology and open
+              communities to enable AI to benefit us all.
             </motion.p>
             <div className={styles.content__actionWrapper}>
               <motion.div

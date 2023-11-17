@@ -184,7 +184,7 @@ const MembersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
           </Column>
         </>
 
-        <>
+        {/* <>
           <Column xlg={{ span: 15, offset: 1 }} lg={16} md={8} sm={4}>
             <Heading
               className={classnames(
@@ -250,7 +250,7 @@ const MembersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
               </motion.li>
             </ul>
           </Column>
-        </>
+        </> */}
 
         <ContactPanel
           className={styles.contactPanel}
