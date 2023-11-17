@@ -44,22 +44,16 @@ const logos = [
   { size: 1, src: soft_bank, alt: 'SoftBank' },
   { size: 1, src: meta, alt: 'Meta' },
   { size: 2, src: preferred_networks, alt: 'Preferred Networks' },
-  { size: 5, src: databricks, alt: 'Databricks' },
   { size: 4, src: cerebras, alt: 'Cerebras' },
-  { size: 1, src: weights_biases, alt: 'Weights & Biases' },
   { size: 2, src: linux, alt: 'linux' },
   { size: 3, src: ml_commons, alt: 'ML Commons' },
   { size: 1, src: epfl, alt: 'EPFL' },
   { size: 1, src: mit, alt: 'MIT' },
   { size: 2, src: uiuc, alt: 'UIUC' },
-  { size: 1, src: stanford, alt: 'Stanford' },
-  { size: 3, src: u_tokyo, alt: 'The University of Tokyo' },
   { size: 6, src: nasa, alt: 'NASA' },
   { size: 1, src: ethz, alt: 'ETH' },
   { size: 1, src: esa, alt: 'ESA' },
-  { size: 1, src: seldon, alt: 'Seldon' },
   { size: 1, src: tum, alt: 'TUM' },
-  { size: 0, src: simons_foundation, alt: 'Simons Foundation' },
   { size: 1, src: langchain, alt: 'LangChain' },
 ];
 
@@ -165,7 +159,7 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
                 styles['heading--partners'],
               )}
             >
-              Partners
+              Members
             </Heading>
           </Column>
           <Column xlg={{ span: 15, offset: 1 }} lg={16} md={8} sm={4}>
@@ -261,7 +255,7 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
           </Column>
         </>
 
-        <>
+        {/* <>
           <Column xlg={{ span: 7, offset: 1 }} lg={9} md={5} sm={4}>
             <h3>
               Partners of various types can expect other industry-specific
@@ -350,7 +344,7 @@ const PartnersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
               </tbody>
             </table>
           </Column>
-        </>
+        </> */}
 
         <ContactPanel
           className={styles.contactPanel}
