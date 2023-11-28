@@ -1,0 +1,31 @@
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '@carbon/grid' as *;
+@use '../../styles/type.scss' as *;
+
+.members {
+  &__grid {
+    row-gap: 48px;
+
+    @include breakpoint(lg) {
+      row-gap: 80px;
+    }
+  }
+
+  &__list {
+    position: relative;
+    list-style-type: disc;
+    
+    @include breakpoint(md) {
+      columns: 2;
+      column-gap: calc(2 * $grid-gutter);
+    }
+
+    li {
+      margin-left: $grid-gutter;
+      @include paragraph;
+      @include breakpoint(max) {
+        line-height: 42px;
+      }
+    }
+  }
+}

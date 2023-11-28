@@ -1,0 +1,98 @@
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '@carbon/grid' as *;
+@use '@carbon/colors' as *;
+@use '../../styles/type.scss' as *;
+
+.background {
+  .shapeTop {
+    position: absolute;
+    transform: rotate(90deg);
+    z-index: -2;
+
+    @include breakpoint(sm) {
+      width: 800px;
+      top: -340px;
+      left: -280px;
+    }
+    
+    @include breakpoint(lg) {
+      width: 1100px;
+      top: -360px;
+      left: -600px;
+    }
+    
+    @include breakpoint(xlg) {
+      left: -380px;
+    }
+    
+    @include breakpoint(max) {
+      left: -450px;
+    }
+  }
+
+  .shapeBottom {
+    position: absolute;
+    width: 1103px;
+    z-index: -2;
+    display: none;
+
+    @include breakpoint(md) {
+      display: block;
+      transform: scale(0.75);
+      right: -660px;
+      top: 60px;
+    }
+    
+    @include breakpoint(lg) {
+      transform: scale(1);
+      top: 0;
+      right: -800px;
+    }
+    
+    @include breakpoint(xlg) {
+      right: -750px;
+    }
+  }
+}
+
+.content {
+  position: relative;
+  margin-bottom: 80px;
+  grid-column: 1/span 4;
+  
+  @include breakpoint(md) {
+    grid-column: 1/span 5;
+    margin-bottom: 160px;
+  }
+
+  @include breakpoint(lg) {
+    grid-column: 6/span 8;
+    margin-bottom: 320px;
+  }
+
+  @include breakpoint(xlg) {
+    grid-column: 7/span 8;
+  }
+
+  &__header {
+    margin: 400px 0 32px;
+    
+    @include breakpoint(lg) {
+      margin: 330px 0 32px;
+    }
+  }
+
+  &__subhead {
+    position: relative;
+    @include subheading;
+  }
+
+  .action {
+    margin-top: 32px;
+    min-width: 216px;
+
+    @include breakpoint(lg) {
+      margin-top: 48px;
+    }
+  }
+}

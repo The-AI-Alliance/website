@@ -1,0 +1,72 @@
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '@carbon/grid' as *;
+@use '../../styles/type.scss' as *;
+
+.mission {
+  scroll-margin-top: 96px;
+
+  &__grid {
+    row-gap: 48px;
+    @include breakpoint(lg) { row-gap: 160px; }
+  }
+
+  .contentRow {
+    &__graphics {
+      display: flex;
+      
+      @include breakpoint(md) {
+        align-items: center;
+      }
+      
+      & > div {
+        width: 100%;
+      }
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      
+      @include breakpoint(md) {
+        justify-content: center;
+      }
+      
+      > p {
+        @include paragraph;
+
+        & + p {
+          margin-top: 2rem;
+        }
+      }
+    }
+  }
+
+  .cta {
+    margin-top: 48px;
+  }
+
+  .smallScreenCtaWrapper {
+    width: 100%;
+    
+    .cta {
+      margin-top: 0;
+      width: 100%;
+    }
+  }
+
+
+  [data-viewport='small'] {
+    display: flex;
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+
+  [data-viewport='large'] {
+    display: none;
+    @include breakpoint(md) {
+      display: flex;
+    }
+  }
+}

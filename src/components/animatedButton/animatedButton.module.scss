@@ -1,0 +1,27 @@
+@use '@carbon/colors' as *;
+
+.animatedButton {
+  width: fit-content;
+  position: relative;
+  
+  &__background {
+    background-color: $white-0;
+    height: 48px;
+    position: absolute;
+    z-index: -1;
+    border-radius: 24px;
+  }
+  
+  &__button {
+    button {
+      height: 48px;
+      width: 100%;
+      max-width: unset;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      background-color: transparent !important;
+    }
+  }
+}

@@ -1,5 +1,3 @@
-import classnames from 'classnames';
-import styles from './learn.module.scss';
 import { RefObject } from 'react';
 import { Breakpoint } from '@utils/useBreakpoint';
 import {
@@ -11,35 +9,6 @@ import {
   easeInOut,
   easeOut,
 } from 'framer-motion';
-
-export const graphicsLeftProps = {
-  className: classnames(styles.contentRow, styles.contentRow__graphics),
-  xlg: { span: 8, offset: 1 },
-  lg: 9,
-  sm: 4,
-};
-
-export const graphicsRightProps = {
-  className: classnames(styles.contentRow, styles.contentRow__graphics),
-  lg: { span: 8, offset: 8 },
-  md: { span: 4, offset: 4 },
-  sm: 4,
-};
-
-export const textLeftProps = {
-  className: classnames(styles.contentRow, styles.contentRow__text),
-  xlg: { span: 5, offset: 1 },
-  lg: 6,
-  sm: 4,
-};
-
-export const textRightProps = {
-  className: classnames(styles.contentRow, styles.contentRow__text),
-  xlg: { span: 5, offset: 10 },
-  lg: { span: 6, offset: 9 },
-  md: { span: 4, offset: 4 },
-  sm: 4,
-};
 
 export type ShapeStops = {
   stops: number[];
@@ -225,4 +194,37 @@ export const getSectionStops = (
     size: [previousSize || 120],
     easings: [easeIn],
   };
+};
+
+export const headerAnimations = {
+  text: {
+    initial: {
+      opacity: 0,
+      top: 20,
+    },
+    animate: {
+      opacity: 1,
+      top: 0,
+      transition: {
+        top: {
+          duration: 1,
+          ease: 'easeOut',
+        },
+        opacity: {
+          delay: 0.3,
+          duration: 1,
+        },
+      },
+    },
+  },
+
+  title: {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { delay: 0.1 } },
+  },
+
+  shape: {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { delay: 0.1 } },
+  },
 };

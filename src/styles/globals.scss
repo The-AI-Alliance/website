@@ -1,7 +1,7 @@
-@use "@carbon/react" as *;
-@use "@carbon/themes/scss/themes" as *;
-@use "@carbon/themes";
-@use "@carbon/styles/scss/breakpoint" as *;
+@use '@carbon/react' as *;
+@use '@carbon/themes/scss/themes' as *;
+@use '@carbon/themes';
+@use '@carbon/styles/scss/breakpoint' as *;
 
 :root {
   @include themes.theme($g100);
@@ -20,17 +20,43 @@ html {
   height: 100vh;
   overflow-y: auto;
   scroll-snap-type: y proximity;
-  
+
   @include breakpoint-down(md) {
     scroll-snap-type: none;
   }
 }
 
+h1 {
+  @include type-style('fluid-display-03', true);
+  
+  font-size: 56px;
+  line-height: 64px;
+  
+  @include breakpoint(md) {
+    font-size: 68px;
+    line-height: 78px;
+  }
+  @include breakpoint(xlg) {
+    font-size: 76px;
+    line-height: 86px;
+  }
+  @include breakpoint(max) {
+    font-size: 84px;
+    line-height: 94px;
+  }
+}
+
+h2 {
+  @include type-style('fluid-display-01', true);
+}
+
 .cds--btn {
+  height: 48px;
   border-radius: 24px;
   padding: 14px 24px;
   display: flex;
   align-items: center;
+  font-size: 16px;
 
   svg {
     margin-left: 24px;
@@ -39,7 +65,7 @@ html {
   &.cds--btn--primary {
     background-color: $white-0;
     color: $gray-100;
-    transition: opacity .1s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
 
     svg {
       fill: $gray-100;
@@ -51,16 +77,18 @@ html {
     }
 
     &:focus-visible {
-      box-shadow: inset 0 0 0 1px $white-0, inset 0 0 0 2px $gray-100;
+      box-shadow:
+        inset 0 0 0 1px $white-0,
+        inset 0 0 0 2px $gray-100;
       border-color: $white-0;
     }
 
     &:hover {
-      opacity: .9;
+      opacity: 0.9;
     }
 
     &:active {
-      opacity: .8;
+      opacity: 0.8;
     }
   }
 }
