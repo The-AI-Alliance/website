@@ -49,54 +49,7 @@ const logos = [
   { size: 1, src: langchain, alt: 'LangChain' },
 ];
 
-const ballSizeFactor: Record<Breakpoint, number> = {
-  [Breakpoint.MAX]: 0.288,
-  [Breakpoint.XLG]: 0.288,
-  [Breakpoint.LG]: 0.3,
-  [Breakpoint.MD]: 0.25,
-  [Breakpoint.SM]: 0.25,
-};
-
-const ballXFactor: Record<Breakpoint, number> = {
-  [Breakpoint.MAX]: -0.043,
-  [Breakpoint.XLG]: -0.043,
-  [Breakpoint.LG]: 0.1,
-  [Breakpoint.MD]: 0.25,
-  [Breakpoint.SM]: 0.25,
-};
-
 const MembersPage: React.FC = () => {
-  const breakpoint = useBreakpoint();
-  const graphicsRef = useRef<HTMLDivElement>(null);
-
-  const [ballPosition, setBallPosition] = useState<{
-    size: number;
-    left: number;
-    top: number;
-  } | null>(null);
-
-  const calculateAnimationStops = useCallback(() => {
-    if (!graphicsRef.current || breakpoint === undefined) {
-      setBallPosition(null);
-      return;
-    }
-
-    const rect = graphicsRef.current.getBoundingClientRect();
-    const ballLeft = rect.left + rect.width * ballXFactor[breakpoint];
-    const ballTop = window.scrollY + rect.top;
-    const ballSize = rect.width * ballSizeFactor[breakpoint];
-
-    setBallPosition({
-      size: ballSize,
-      left: ballLeft,
-      top: ballTop,
-    });
-  }, [breakpoint]);
-
-  const resetBallPosition = useCallback(() => setBallPosition(null), []);
-
-  useResize(calculateAnimationStops, resetBallPosition);
-
   const mainContentVariants = useMemo(
     () => ({
       hide: { opacity: 0 },
@@ -109,37 +62,13 @@ const MembersPage: React.FC = () => {
     [],
   );
 
-  const onContentAnimationComplete = useCallback(
-    (variantName: string) => {
-      if (variantName === 'show') {
-        calculateAnimationStops();
-      }
-    },
-    [calculateAnimationStops],
-  );
-
   return (
     <motion.div
       variants={mainContentVariants}
       initial="hide"
       animate="show"
       exit="unmount"
-      onAnimationComplete={onContentAnimationComplete}
     >
-      {ballPosition ? (
-        <Ball
-          key="ball"
-          className={styles.ball}
-          style={{
-            top: ballPosition.top,
-            left: ballPosition.left,
-            width: ballPosition.size,
-            height: ballPosition.size,
-          }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        />
-      ) : null}
       <Grid className={styles.members}>
         <>
           <Column xlg={{ span: 15, offset: 1 }} lg={16} md={8} sm={4}>
