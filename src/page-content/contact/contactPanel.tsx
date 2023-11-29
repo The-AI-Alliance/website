@@ -41,14 +41,14 @@ const ContactPanel: React.FC<{
   const { emailSent, enabled, sendMail } = useSendEmail();
 
   return enabled ? (
-    <Section>
+    <Section className={styles.wrapper}>
       <Grid>
         <Column
           className={styles.titleColumn}
           xlg={{ span: 6, offset: 1 }}
           lg={6}
-          md={8}
-          sm={4}
+          md={5}
+          sm={3}
         >
           <Heading className={styles.innerHeading}>
             Learn more about the AI Alliance

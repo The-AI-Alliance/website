@@ -28,6 +28,8 @@ import FeatureFlagsContext from '../utils/featureFlagsContext';
 import NotificationWrapper from '@components/notificationwrapper';
 import { AnimatePresence } from 'framer-motion';
 import { usePrevious } from '@utils/usePrevious';
+import FocusAreasPage from '../page-content/focusAreas/focusAreas';
+import NewsPage from '../page-content/news/news';
 
 import styles from '@styles/main.module.scss';
 
@@ -38,7 +40,6 @@ export default function Home({
 }) {
   const [isSideNavExpanded, setSideNavExpanded] = useState(false);
   const { navigate: _navigate, currentRoute } = useNavigation();
-  const previousRoute = usePrevious(currentRoute, null);
 
   const navigate = useCallback(
     (route: ROUTE) => {
@@ -70,6 +71,8 @@ export default function Home({
       <>
         {buildMenuBtn(ROUTE.LEARN)}
         {buildMenuBtn(ROUTE.MEMBERS)}
+        {buildMenuBtn(ROUTE.FOCUS_AREAS)}
+        {buildMenuBtn(ROUTE.NEWS)}
       </>
     ),
     [buildMenuBtn],
@@ -78,17 +81,21 @@ export default function Home({
   const renderContent = useCallback(() => {
     switch (currentRoute) {
       case ROUTE.LEARN:
-        return (
-          <LearnMorePage key="learnMorePage" previousRoute={previousRoute} />
-        );
+        return <LearnMorePage key="learnMorePage" />;
 
       case ROUTE.MEMBERS:
-        return <MembersPage key="membersPage" previousRoute={previousRoute} />;
+        return <MembersPage key="membersPage" />;
+
+      case ROUTE.FOCUS_AREAS:
+        return <FocusAreasPage key="faqPage" />;
+
+      case ROUTE.NEWS:
+        return <NewsPage key="newsPage" />;
 
       default:
         return <LandingPage key="landingPage" />;
     }
-  }, [currentRoute, previousRoute]);
+  }, [currentRoute]);
 
   const handleGoHome: MouseEventHandler<HTMLAnchorElement> = useCallback(
     e => {

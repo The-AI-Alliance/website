@@ -3,6 +3,14 @@
 @use '@carbon/grid' as *;
 @use '@carbon/colors' as *;
 
+.wrapper {
+  margin-top: 80px;
+
+  @include breakpoint(lg) {
+    margin-top: 160px;
+  }
+}
+
 .innerHeading {
   margin-bottom: 48px;
 

@@ -2,14 +2,9 @@
 
 .membersSection {
   margin-top: 80px;
-  padding-bottom: 80px;
   
   @include breakpoint(md) {
     margin-top: 160px;
-  }
-
-  @include breakpoint(lg) {
-    padding-bottom: 160px;
   }
 }
 

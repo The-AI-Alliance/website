@@ -1,131 +1,43 @@
 @use "@carbon/styles/scss/breakpoint" as *;
 @use "@carbon/type" as *;
 @use "@carbon/grid" as *;
+@use '../../styles/type.scss' as *;
 
 .learnMore {
   position: relative;
-  row-gap: 48px;
+  padding-top: 16px;
 
-  @include breakpoint-up(lg) {
-    row-gap: 160px;
+  @include breakpoint(lg) {
+    padding-top: 0px;
+    margin-top: -16px;
   }
 
-  [data-view=inverted] {
-    display: flex !important;
-    @include breakpoint-down(md) {
-      display: none !important;
-    }
-  }
-
-  [data-view=normal] {
-    display: none !important;
-    @include breakpoint-down(md) {
-      display: flex !important;
-    }
-  }
-
-  .shape {
-    position: relative;
-    z-index: -2;
-  }
-
-  .heading, .subheading {
-    @include type-style('fluid-display-03', true);
-
-    @include breakpoint-down(md) {
-      @include type-style('heading-06');
-    }
-  }
-  
-  .subheading {
-    @include breakpoint-down(lg) {
-      margin-top: 32px;
-    }
-  }
-
-  p, li {
-    position: relative;
-
-    @include type-style('fluid-paragraph-01', true);
+  .grid {
+    row-gap: 48px;
+    margin-top: 80px;
     
-    @include breakpoint-down(lg) {
-      @include type-style('body-02');
-    }
-
-    & + p, & + li {
-      margin-top: 1.5em;
+    @include breakpoint(lg) {
+      margin-top: 160px;
     }
   }
 
   .contentRow {
-    // scroll-snap-align: center;
+    > p {
+      @include paragraph;
 
-    &__graphics {
-      display: flex;
-      align-items: center;
-
-      & > div {
-        width: 100%;
-      }
-    }
-
-    &__text {
-      display: flex;
-      align-items: center;
-    }
-
-    .subGrid {
-      row-gap: 48px;
-
-      @include breakpoint-down(lg) {
-        margin-bottom: 32px;
-      }
-      
-      .subheading p:first-child {
-        font-weight: bold;
-      }
-      
-      ul {
-        list-style-type: disc;
-        padding-left: 2.5rem;
-        
-        li::marker {
-          content: "•   ";
-        }
-
-        @include breakpoint-up(lg) {
-          li::marker {
-            font-size: 80%;
-          }
-        }
-
-        @include breakpoint-down(lg) {
-          padding-left: 1.5rem;
-        }
+      & + p {
+        margin-top: 2rem;
       }
     }
   }
 
-  .firstRow {
-    // scroll-snap-align: start;
-    
-    @include breakpoint-down(lg) {
-      padding-top: 0;
-      &.pageHeading {
-        padding-top: calc(48px + 48px);
-      }
-    }
+  .membersCta {
+    margin-top: 48px;
+    width: 100%;
+    max-width: unset;
 
-    @include breakpoint-up(lg) {
-      padding-top: calc(96px + 48px);
+    @include breakpoint(md) {
+      max-width: 240px;
     }
-    
-    @include breakpoint-down(max) {
-      margin-bottom: 0;
-    }
-  }
-
-  .contactPanel {
-    // scroll-snap-align: end;
   }
 }

@@ -22,7 +22,6 @@ import soft_bank from '@public/members/soft_bank.png';
 import tum from '@public/members/tum.png';
 import uiuc from '@public/members/uiuc.png';
 import { motion } from 'framer-motion';
-import { ROUTE } from '@utils/useNavigation';
 import Ball from '@components/ball/ball';
 import useResize from '@utils/useResize';
 import useBreakpoint, { Breakpoint } from '@utils/useBreakpoint';
@@ -66,9 +65,7 @@ const ballXFactor: Record<Breakpoint, number> = {
   [Breakpoint.SM]: 0.25,
 };
 
-const MembersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
-  previousRoute,
-}) => {
+const MembersPage: React.FC = () => {
   const breakpoint = useBreakpoint();
   const graphicsRef = useRef<HTMLDivElement>(null);
 
@@ -105,11 +102,11 @@ const MembersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
       hide: { opacity: 0 },
       show: {
         opacity: 1,
-        transition: { delay: previousRoute === ROUTE.HOME ? 1.5 : 0.35 },
+        transition: { delay: 0.35 },
       },
       unmount: { opacity: 0, transition: { duration: 0.35 } },
     }),
-    [previousRoute],
+    [],
   );
 
   const onContentAnimationComplete = useCallback(
@@ -182,13 +179,13 @@ const MembersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
             </div>
           </Column>
         </>
-
-        <ContactPanel
-          className={styles.contactPanel}
-          background="straight"
-          graphicsRef={graphicsRef}
-        />
       </Grid>
+
+      <ContactPanel
+        className={styles.contactPanel}
+        background="straight"
+        staticBall
+      />
     </motion.div>
   );
 };
