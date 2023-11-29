@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useRef, useState } from 'react';
+import { FC, useCallback, useRef, useState } from 'react';
 import useNavigation, { ROUTE } from '../../utils/useNavigation';
 import LandingHeader from './landingHeader';
 import Mission from './mission';
@@ -41,7 +41,7 @@ const LandingPage: FC = () => {
     setAnimationStops(positions);
   }, []);
 
-  useEffect(() => {
+  const onMissionEnter = useCallback(() => {
     if (shape1ref.current && shape2ref.current) {
       updateAnimationStops();
     }
@@ -92,6 +92,7 @@ const LandingPage: FC = () => {
 
       <Mission
         onLearnMore={onLearnMore}
+        onViewportEnter={onMissionEnter}
         sectionRef={missionRef}
         shape1ref={shape1ref}
         shape2ref={shape2ref}

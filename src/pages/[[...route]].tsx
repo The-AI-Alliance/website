@@ -27,7 +27,6 @@ import MembersPage from '../page-content/members/members';
 import FeatureFlagsContext from '../utils/featureFlagsContext';
 import NotificationWrapper from '@components/notificationwrapper';
 import { AnimatePresence } from 'framer-motion';
-import { usePrevious } from '@utils/usePrevious';
 import FocusAreasPage from '../page-content/focusAreas/focusAreas';
 import NewsPage from '../page-content/news/news';
 
