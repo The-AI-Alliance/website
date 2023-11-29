@@ -4,17 +4,35 @@
 @use '../../styles/type.scss' as *;
 
 .background {
+  .ball {
+    position: absolute;
+    top: 90.5px;
+    left: 250px;
+    width: 141px;
+
+    @include breakpoint(lg) {
+      width: 194px;
+      top: 231.5px;
+      left: 128px;
+    }
+
+    @include breakpoint(xlg) {
+      left: 348px;
+    }
+
+    @include breakpoint(max) {
+      left: 278px;
+    }
+  }
+
   .shapeTop {
     position: absolute;
     transform: rotate(90deg);
     z-index: -2;
+    width: 800px;
+    top: -340px;
+    left: -280px;
 
-    @include breakpoint(sm) {
-      width: 800px;
-      top: -340px;
-      left: -280px;
-    }
-    
     @include breakpoint(lg) {
       width: 1100px;
       top: -360px;

@@ -1,14 +1,5 @@
 import { RefObject } from 'react';
-import { Breakpoint } from '@utils/useBreakpoint';
-import {
-  EasingFunction,
-  backOut,
-  circOut,
-  cubicBezier,
-  easeIn,
-  easeInOut,
-  easeOut,
-} from 'framer-motion';
+import { EasingFunction, circOut, cubicBezier, easeInOut } from 'framer-motion';
 
 export type ShapeStops = {
   stops: number[];
@@ -23,176 +14,119 @@ const getMiddleStop = (rect: DOMRect, viewportHeight: number) => {
   return Math.round((center - viewportHeight / 2) * 2) / 2;
 };
 
-export const getShape1Stops = (
-  ref: RefObject<HTMLDivElement>,
-): ShapeStops | null => {
+const getShape1Stops = (ref: RefObject<HTMLDivElement>): ShapeStops | null => {
   if (!ref.current) {
     return null;
   }
 
   const sizeFactor = 0.251;
-  const yFactor = 0.5;
 
   const viewportHeight = window.innerHeight;
   const rect = ref.current.getBoundingClientRect();
   const size = rect.width * sizeFactor;
 
+  const rtop = rect.top + window.scrollY;
+
   const middle = getMiddleStop(rect, viewportHeight);
-  const top = viewportHeight / 2 - rect.height * yFactor;
   const left1 = rect.left + rect.width * 0.75;
 
-  const stop2 = middle + (rect.height / 4) * 3;
+  const stop2 = (rect.height / 4) * 3;
   const left2 = rect.left + rect.width;
 
   return {
-    stops: [middle, stop2],
-    top: [top, top],
-    left: [left1, left2],
-    size: [size, size],
+    stops: [0, middle, middle + stop2],
+    top: [rtop, rtop, rtop + stop2],
+    left: [left1, left1, left2],
+    size: [size, size, size],
     easings: [
-      cubicBezier(0.8, -2, 0.2, 1), // to stop 1
+      v => v, // track shape - no easing
       cubicBezier(0, 2, 0.58, 1), // to stop 2
+      easeInOut, // to shape 2
     ],
   };
 };
 
-export const getShape2Stops = (
-  ref: RefObject<HTMLDivElement>,
-): ShapeStops | null => {
+const getShape2Stops = (ref: RefObject<HTMLDivElement>): ShapeStops | null => {
   if (!ref.current) {
     return null;
   }
 
   const sizeFactor = 0.25;
-  const yFactor = 0.5;
 
   const viewportHeight = window.innerHeight;
   const rect = ref.current.getBoundingClientRect();
   const middle = getMiddleStop(rect, viewportHeight);
-  const top = viewportHeight / 2 - rect.height * yFactor;
   const size = rect.width * sizeFactor;
 
-  const stop4 = middle + (rect.height / 4) * 3;
+  const stop4 = (rect.height / 4) * 3;
   const left4 = rect.left - rect.width * 0.25;
 
+  const rtop = rect.top + window.scrollY;
+
   return {
-    stops: [middle, stop4],
-    top: [top, top],
+    stops: [middle, middle + stop4],
+    top: [rtop, rtop + stop4],
     left: [rect.left, left4],
     size: [size, size],
     easings: [
-      easeInOut,
       cubicBezier(0.1, 2, 0.35, 0.79), // to stop 1
+      easeInOut,
     ],
   };
 };
 
-export const getShape3Stops = (
-  ref: RefObject<HTMLDivElement>,
-): ShapeStops | null => {
+const getShape3Stops = (ref: RefObject<HTMLDivElement>): ShapeStops | null => {
   if (!ref.current) {
     return null;
   }
 
   const sizeFactor = 0.25;
-  const yFactor = 0.5;
 
   const viewportHeight = window.innerHeight;
   const rect = ref.current.getBoundingClientRect();
-  const top = viewportHeight / 2 - rect.height * yFactor;
   const size = rect.width * sizeFactor;
 
-  const middleStop = getMiddleStop(rect, viewportHeight);
+  const middle = getMiddleStop(rect, viewportHeight);
   const left1 = rect.left + rect.width * 0.25;
 
-  const stop2 = middleStop + rect.height / 4;
+  const stop2 = rect.height / 4;
   const left2 = rect.left + rect.width * 0.5;
 
-  const stop3 = middleStop + rect.height / 2;
+  const stop3 = rect.height / 2;
   const left3 = rect.left + rect.width * 0.75;
 
-  const bottomStop = middleStop + (rect.height / 4) * 3;
-  const left4 = rect.left + rect.width;
+  const leave1Stop = (rect.height / 4) * 3.2;
+  const left5 = rect.left + rect.width * 1.2;
 
-  const leaveStop = middleStop + (rect.height / 4) * 6;
-  const left5 = rect.left + rect.width * 1.1;
+  const leave2Stop = (rect.height / 4) * 7;
+  const left6 = window.innerWidth + 2 * size;
+
+  const rtop = rect.top + window.scrollY;
 
   return {
-    stops: [middleStop, stop2, stop3, bottomStop, leaveStop],
-    top: [top, top, top, top, top],
-    left: [left1, left2, left3, left4, left5],
+    stops: [
+      middle,
+      middle + stop2,
+      middle + stop3,
+      middle + leave1Stop,
+      middle + leave2Stop,
+    ],
+    top: [
+      rtop,
+      rtop + stop2,
+      rtop + stop3,
+      rtop + leave1Stop,
+      rtop + leave2Stop,
+    ],
+    left: [left1, left2, left3, left5, left6],
     size: [size, size, size, size, size],
     easings: [
-      easeInOut, // to stop 1
       circOut, // to stop 2
       circOut, // to stop 3
       circOut, // to stop 4
-      backOut, // to stop 5
+      easeInOut, // below shape
+      easeInOut, // out of the screen
     ],
-  };
-};
-
-export const getShape4Stops = (
-  ref: RefObject<HTMLDivElement>,
-  breakpoint?: Breakpoint,
-): ShapeStops | null => {
-  if (!ref.current || !breakpoint) {
-    return null;
-  }
-
-  const sizeFactor: Record<Breakpoint, number> = {
-    [Breakpoint.MAX]: 0.288,
-    [Breakpoint.XLG]: 0.288,
-    [Breakpoint.LG]: 0.301,
-    [Breakpoint.MD]: 0.25,
-    [Breakpoint.SM]: 0,
-  };
-
-  const xFactor: Record<Breakpoint, number> = {
-    [Breakpoint.MAX]: -0.042,
-    [Breakpoint.XLG]: -0.043,
-    [Breakpoint.LG]: 0.098,
-    [Breakpoint.MD]: 0.25,
-    [Breakpoint.SM]: 0,
-  };
-
-  const rect = ref.current.getBoundingClientRect();
-
-  return {
-    stops: [window.document.body.scrollHeight - window.innerHeight],
-    top: [window.innerHeight - rect.height],
-    left: [rect.left + rect.width * xFactor[breakpoint]],
-    size: [rect.width * sizeFactor[breakpoint]],
-    easings: [
-      // to contactForm
-      easeOut,
-    ],
-  };
-};
-
-export const getSectionStops = (
-  ref: RefObject<HTMLDivElement>,
-  previousBallSizes: number[] | undefined,
-  breakpoint?: Breakpoint,
-): ShapeStops | null => {
-  if (!ref.current) {
-    return null;
-  }
-
-  const viewportHeight = window.innerHeight;
-  const rect = ref.current.getBoundingClientRect();
-  const previousSize = previousBallSizes?.[previousBallSizes?.length - 1];
-  const left =
-    breakpoint === Breakpoint.MD
-      ? rect.left + rect.width * 0.5
-      : rect.left + rect.width * 0.25;
-
-  return {
-    stops: [getMiddleStop(rect, viewportHeight)],
-    top: [viewportHeight / 2],
-    left: [left],
-    size: [previousSize || 120],
-    easings: [easeIn],
   };
 };
 
@@ -227,4 +161,38 @@ export const headerAnimations = {
     initial: { opacity: 0 },
     animate: { opacity: 1, transition: { delay: 0.1 } },
   },
+};
+
+export const calculateAnimationStops = (
+  shape1ref: RefObject<HTMLDivElement>,
+  shape2ref: RefObject<HTMLDivElement>,
+  shape3ref: RefObject<HTMLDivElement>,
+) => {
+  const shape1stops = getShape1Stops(shape1ref);
+  const shape2stops = getShape2Stops(shape2ref);
+  const shape3stops = getShape3Stops(shape3ref);
+
+  if (!shape1stops || !shape2stops || !shape3stops) {
+    return null;
+  }
+
+  return {
+    stopPoints: [
+      ...shape1stops.stops,
+      ...shape2stops.stops,
+      ...shape3stops.stops,
+    ],
+    sizes: [...shape1stops.size, ...shape2stops.size, ...shape3stops.size],
+    xCoordinates: [
+      ...shape1stops.left,
+      ...shape2stops.left,
+      ...shape3stops.left,
+    ],
+    yCoordinates: [...shape1stops.top, ...shape2stops.top, ...shape3stops.top],
+    easings: [
+      ...shape1stops.easings,
+      ...shape2stops.easings,
+      ...shape3stops.easings,
+    ],
+  };
 };

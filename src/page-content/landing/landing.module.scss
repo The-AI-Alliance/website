@@ -12,3 +12,11 @@
     padding-bottom: 160px;
   }
 }
+
+.animatedBall {
+  display: none;
+
+  @include breakpoint(md) {
+    display: block;
+  }
+}

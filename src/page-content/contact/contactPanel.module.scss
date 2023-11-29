@@ -102,3 +102,20 @@
     display: none;
   }
 }
+
+.ball {
+  position: absolute;
+  top: 0;
+  left: 25.044%;
+  width: 24.96%;
+  
+  @include breakpoint(lg) {
+    left: 10%;
+    width: 30%;
+  }
+
+  @include breakpoint(xlg) {
+    left: -4.26%;
+    width: 28.8%;
+  }
+}

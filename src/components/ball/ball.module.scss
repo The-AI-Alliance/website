@@ -1,8 +1,13 @@
 @use "@carbon/colors" as *;
 
 .ball {
-  position: fixed;
+  position: absolute;
   z-index: -1;
   border: solid 2px $gray-70;
   border-radius: 50%;
+  aspect-ratio: 1;
+  
+  &--fixed {
+    position: fixed;
+  }
 }

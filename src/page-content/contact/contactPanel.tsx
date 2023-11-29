@@ -6,6 +6,7 @@ import Shape1b from '@graphics/shape1b.svg';
 import Shape1r from '@graphics/shape1r.svg';
 import ContactForm from '@components/contactForm/contactForm';
 import useSendEmail from '../../utils/useSendEmail';
+import Ball from '@components/ball/ball';
 
 import styles from './contactPanel.module.scss';
 
@@ -35,7 +36,8 @@ const ContactPanel: React.FC<{
   className?: string;
   background?: 'straight' | 'tilted' | 'none';
   graphicsRef?: RefObject<HTMLDivElement>;
-}> = ({ className, background = 'none', graphicsRef }) => {
+  staticBall?: boolean;
+}> = ({ className, background = 'none', graphicsRef, staticBall }) => {
   const { emailSent, enabled, sendMail } = useSendEmail();
 
   return enabled ? (
@@ -53,6 +55,7 @@ const ContactPanel: React.FC<{
           </Heading>
           {background === 'straight' ? (
             <div className={styles.titleGraphics} ref={graphicsRef}>
+              {staticBall ? <Ball className={styles.ball} /> : null}
               <Shape1r />
             </div>
           ) : null}

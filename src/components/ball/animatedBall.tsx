@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import {
   EasingFunction,
   HTMLMotionProps,
@@ -10,7 +10,7 @@ import classnames from 'classnames';
 
 import styles from './ball.module.scss';
 
-const AnimatedBall: React.FC<
+const AnimatedBall: FC<
   HTMLMotionProps<'div'> & {
     ballSizes: number[];
     easeX?: EasingFunction | EasingFunction[];

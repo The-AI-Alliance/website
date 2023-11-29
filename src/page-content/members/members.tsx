@@ -24,7 +24,6 @@ import uiuc from '@public/members/uiuc.png';
 import { motion } from 'framer-motion';
 import { ROUTE } from '@utils/useNavigation';
 import Ball from '@components/ball/ball';
-import { showInView } from '@utils/showInView';
 import useResize from '@utils/useResize';
 import useBreakpoint, { Breakpoint } from '@utils/useBreakpoint';
 
@@ -106,7 +105,7 @@ const MembersPage: React.FC<{ previousRoute: ROUTE | null }> = ({
       hide: { opacity: 0 },
       show: {
         opacity: 1,
-        transition: { delay: previousRoute === ROUTE.HOME ? 1.7 : 0.35 },
+        transition: { delay: previousRoute === ROUTE.HOME ? 1.5 : 0.35 },
       },
       unmount: { opacity: 0, transition: { duration: 0.35 } },
     }),
