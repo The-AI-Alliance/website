@@ -1,0 +1,28 @@
+@use '@carbon/colors' as *;
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '../../styles/type.scss' as *;
+
+.wrapper {
+  padding: 32px 0;
+  border-top: solid 0.5px $white-0;
+  border-bottom: solid 0.5px $white-0;
+  font-style: italic;
+
+  @include breakpoint(lg) {
+    padding: 48px 0;
+  }
+
+  > p {
+    @include paragraph;
+  }
+  
+  > p + p {
+    margin-top: 2rem;
+  }
+  
+  .author {
+    font-style: normal;
+    margin-top: 2rem;
+    @include paragraph;
+  }
+}

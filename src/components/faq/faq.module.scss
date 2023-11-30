@@ -11,6 +11,14 @@
 
   :global(.cds--accordion__heading) {
     padding: 24px 16px;
+
+    &[aria-expanded="false"] + :global(.cds--accordion__content) > * {
+      opacity: 0;
+    }
+
+    &[aria-expanded="true"] + :global(.cds--accordion__content) > * {
+      opacity: 1;
+    }
   }
 
   :global(.cds--accordion__title) {
@@ -25,6 +33,10 @@
     
     @include breakpoint(md) {
       padding-right: calc(12.5% - $grid-gutter / 2);
+    }
+
+    > * {
+      transition: opacity .08s linear;
     }
 
     > p, > ul > li {

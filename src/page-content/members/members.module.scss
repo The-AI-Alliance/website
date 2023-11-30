@@ -2,251 +2,28 @@
 @use '@carbon/type' as *;
 @use '@carbon/grid' as *;
 @use '@carbon/colors' as *;
+@use '../../styles/type.scss' as *;
 
-.ball {
-  z-index: -1;
-  position: absolute;
+.wrapper {
+  > section {
+    &:not(:first-of-type) .grid {
+      margin-top: 80px;
+      
+      @include breakpoint(lg) {
+        margin-top: 160px;
+      }
+    }
+  }
 }
 
 .members {
   position: relative;
   padding-top: calc(48px + 48px);
 
-  @include breakpoint-up(lg) {
+  @include breakpoint(lg) {
     padding-top: calc(96px + 48px);
   }
-
-  .heading {
-    @include type-style('fluid-display-03', true);
-    margin-bottom: 48px;
-
-    @include breakpoint-down(md) {
-      @include type-style('heading-06');
-    }
-
-    @include breakpoint-up(lg) {
-      &--members {
-        margin-bottom: 96px;
-      }
-    }
-
-    &--benefits {
-      margin-top: 160px;
-
-      @include breakpoint-down(lg) {
-        margin-top: 80px;
-      }
-    }
-  }
-
-  .subheading {
-    margin-bottom: 1.5rem;
-  }
-
-  ul {
-    list-style-type: disc;
-    padding-left: 2.5rem;
-
-    li::marker {
-      content: '•   ';
-    }
-
-    @include breakpoint-up(lg) {
-      li::marker {
-        font-size: 80%;
-      }
-    }
-
-    @include breakpoint-down(lg) {
-      padding-left: 1.5rem;
-    }
-  }
-
-  p,
-  li,
-  h3 {
-    position: relative;
-    @include type-style('fluid-paragraph-01', true);
-
-    @include breakpoint-down(lg) {
-      @include type-style('body-02');
-    }
-  }
-
-  p + p,
-  li + li {
-    margin-top: 1.5em;
-  }
-
-  h3 {
-    font-weight: bold;
-    margin-top: 80px;
-    margin-bottom: 48px;
-  }
-
-  table {
-    display: block;
-    text-align: left;
-
-    thead tr {
-      padding-bottom: 24px;
-
-      @include breakpoint-down(lg) {
-        padding-bottom: 16px;
-      }
-
-      th {
-        display: flex;
-        align-items: flex-end;
-      }
-    }
-
-    tr {
-      display: flex;
-      flex-direction: row;
-      padding-top: 24px;
-
-      &:not(:last-child) {
-        padding-bottom: 48px;
-
-        @include breakpoint-down(lg) {
-          padding-bottom: 40px;
-        }
-      }
-
-      @include breakpoint-up(xlg) {
-        $col-width: calc((100% + $grid-gutter) / 14);
-
-        & > *:nth-child(1) {
-          width: calc($col-width * 4);
-          padding-right: $col-width;
-        }
-
-        & > *:nth-child(2) {
-          width: calc($col-width * 5);
-          padding-right: $col-width;
-        }
-
-        & > *:nth-child(3) {
-          width: calc($col-width * 4);
-        }
-      }
-
-      @include breakpoint-down(xlg) {
-        $col-width: calc((100% + $grid-gutter) / 16);
-
-        td,
-        th {
-          padding-right: $col-width;
-        }
-
-        & > *:nth-child(1) {
-          width: calc($col-width * 4);
-        }
-
-        & > *:nth-child(2) {
-          width: calc($col-width * 5);
-        }
-
-        & > *:nth-child(3) {
-          width: calc($col-width * 6);
-        }
-      }
-
-      @include breakpoint-down(lg) {
-        $col-width: calc((100% + $grid-gutter) / 8);
-
-        & > *:nth-child(1) {
-          width: calc($col-width * 2);
-          padding-right: calc($grid-gutter / 2);
-        }
-
-        & > *:nth-child(2) {
-          width: calc($col-width * 3);
-          padding-right: $grid-gutter;
-        }
-
-        & > *:nth-child(3) {
-          width: calc($col-width * 3 - $grid-gutter);
-          padding-right: 0;
-        }
-      }
-    }
-
-    td,
-    th {
-      display: inline-block;
-      position: relative;
-      @include type-style('heading-03');
-
-      @include breakpoint-down(lg) {
-        @include type-style('body-02');
-      }
-    }
-
-    th {
-      font-weight: bold;
-    }
-
-    tbody tr {
-      border-top: solid 1px $white-0;
-    }
-
-    @include breakpoint-down(md) {
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-
-      tr,
-      th {
-        :nth-child(2) {
-          scroll-snap-align: end;
-        }
-        :nth-child(3) {
-          scroll-snap-align: start;
-        }
-      }
-
-      thead th {
-        margin-left: calc($grid-gutter / 2) !important;
-      }
-
-      tr {
-        display: flex;
-        flex-direction: row;
-        width: calc(100% / 2 * 3);
-
-        > *:first-child {
-          @media (min-width: 390px) {
-            background-color: $gray-100;
-            position: sticky;
-            left: 0;
-          }
-        }
-
-        th,
-        td {
-          display: inline-block;
-          width: calc(100% / 3) !important;
-          padding-right: 0 !important;
-          padding-left: 0 !important;
-          word-wrap: break-word;
-        }
-
-        th {
-          margin-right: calc($grid-gutter / 2) !important;
-        }
-
-        td {
-          margin-left: calc($grid-gutter / 2) !important;
-
-          &:nth-child(2) {
-            padding-right: calc($grid-gutter / 2) !important;
-          }
-        }
-      }
-    }
-  }
-
+  
   .logos {
     display: flex;
     flex-direction: row;
@@ -387,18 +164,16 @@
       flex: 1;
     }
   }
+}
 
-  .opportunities {
-    @include breakpoint-up(lg) {
-      margin-bottom: 80px;
-    }
+.grid {
+  row-gap: 48px;
+  
+  @include breakpoint(lg) {
+    row-gap: 96px;
   }
+}
 
-  .table {
-    margin-bottom: 80px;
-
-    @include breakpoint-up(lg) {
-      margin-bottom: 160px;
-    }
-  }
+.paragraph {
+  @include paragraph;
 }

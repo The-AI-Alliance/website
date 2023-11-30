@@ -1,12 +1,28 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { Accordion, AccordionItem } from '@carbon/react';
+import { motion } from 'framer-motion';
+import { showInView } from '@utils/showInView';
 
 import styles from './faq.module.scss';
+
+const AnimatedItem: React.FC<{
+  children: ReactNode;
+  custom?: number;
+  title: string;
+}> = ({ children, custom, title }) => {
+  return (
+    <motion.div {...showInView} custom={custom}>
+      <AccordionItem title={title}>{children}</AccordionItem>
+    </motion.div>
+  );
+};
+
+const fadeInFactor = 0.15;
 
 const Faq: FC = () => {
   return (
     <Accordion className={styles.faq}>
-      <AccordionItem title="What is the AI Alliance?">
+      <AnimatedItem title="What is the AI Alliance?" custom={fadeInFactor}>
         <p>
           The AI Alliance is an international community of researchers,
           developers and organizational leaders committed to support and enhance
@@ -17,8 +33,12 @@ const Faq: FC = () => {
           and responsible AI that benefit society rather than a select few big
           players.
         </p>
-      </AccordionItem>
-      <AccordionItem title="What is the intent of the AI Alliance?">
+      </AnimatedItem>
+
+      <AnimatedItem
+        title="What is the intent of the AI Alliance?"
+        custom={2 * fadeInFactor}
+      >
         <p>
           The AI Alliance is focused on accelerating and disseminating open
           innovation across the AI technology landscape to improve foundational
@@ -55,8 +75,12 @@ const Faq: FC = () => {
             ecosystem for AI.
           </li>
         </ul>
-      </AccordionItem>
-      <AccordionItem title="What do members contribute to the Alliance?">
+      </AnimatedItem>
+
+      <AnimatedItem
+        title="What do members contribute to the Alliance?"
+        custom={3 * fadeInFactor}
+      >
         <p>
           AI Alliance members will actively contribute to one or more of the
           following areas:
@@ -72,8 +96,12 @@ const Faq: FC = () => {
             ecosystem.
           </li>
         </ul>
-      </AccordionItem>
-      <AccordionItem title="What is the Alliance’s immediate roadmap?">
+      </AnimatedItem>
+
+      <AnimatedItem
+        title="What is the Alliance’s immediate roadmap?"
+        custom={4 * fadeInFactor}
+      >
         <p>
           The AI Alliance will begin its work with the formation of working
           groups with a focus on:
@@ -109,8 +137,12 @@ const Faq: FC = () => {
           oversight committee dedicated to advancing the above project areas, as
           well as establishing overall project standards and guidelines.
         </p>
-      </AccordionItem>
-      <AccordionItem title="Why open innovation is essential in AI?">
+      </AnimatedItem>
+
+      <AnimatedItem
+        title="Why open innovation is essential in AI?"
+        custom={5 * fadeInFactor}
+      >
         <p>
           Some of the most exciting progress in AI has been driven by open
           research and development. For example, data and developer frameworks,
@@ -139,8 +171,12 @@ const Faq: FC = () => {
           adoption, and value generation for both technology providers and
           consumers.
         </p>
-      </AccordionItem>
-      <AccordionItem title="What are foundation models?">
+      </AnimatedItem>
+
+      <AnimatedItem
+        title="What are foundation models?"
+        custom={6 * fadeInFactor}
+      >
         <p>
           The next wave of innovation in AI is looking to replace the
           task-specific models that have dominated the current AI landscape. The
@@ -155,7 +191,7 @@ const Faq: FC = () => {
           self-supervised learning and transfer learning, the model can apply
           information it has learned about one situation to another.
         </p>
-      </AccordionItem>
+      </AnimatedItem>
     </Accordion>
   );
 };
