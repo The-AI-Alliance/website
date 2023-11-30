@@ -115,7 +115,7 @@ const MembersPage: React.FC = () => {
         </Grid>
       </Section>
 
-      <Section className={styles.testimonials}>
+      {/* <Section className={styles.testimonials}>
         <Grid className={styles.grid}>
           <Column xlg={{ span: 6, offset: 1 }} lg={6} md={6} sm={3}>
             <Heading
@@ -135,9 +135,9 @@ const MembersPage: React.FC = () => {
             ))}
           </Column>
         </Grid>
-      </Section>
+      </Section> */}
 
-      <Section className={styles.join}>
+      {/* <Section className={styles.join}>
         <Grid className={styles.grid}>
           <Column xlg={{ span: 6, offset: 1 }} lg={6} md={6} sm={3}>
             <Heading
@@ -161,7 +161,7 @@ const MembersPage: React.FC = () => {
             </motion.p>
           </Column>
         </Grid>
-      </Section>
+      </Section> */}
 
       <ContactPanel
         className={styles.contactPanel}

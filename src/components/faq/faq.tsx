@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import { Accordion, AccordionItem } from '@carbon/react';
+import { Accordion, AccordionItem, Button } from '@carbon/react';
 import { motion } from 'framer-motion';
 import { showInView } from '@utils/showInView';
 
@@ -27,11 +27,13 @@ const Faq: FC = () => {
           The AI Alliance is an international community of researchers,
           developers and organizational leaders committed to support and enhance
           open innovation across the AI technology landscape to accelerate
-          progress, and enhance safety, security and trust in AI to maximize
-          benefits to people and society everywhere. Members of the AI Alliance
-          believe that open innovation is essential to develop and achieve safe
-          and responsible AI that benefit society rather than a select few big
-          players.
+          progress, improve safety, security and trust in AI, and maximize
+          benefits to people and society everywhere.
+        </p>
+        <p>
+          Members of the AI Alliance believe that open innovation is essential
+          to develop and achieve safe and responsible AI that benefit society
+          rather than benefit a select few big players.
         </p>
       </AnimatedItem>
 
@@ -40,30 +42,102 @@ const Faq: FC = () => {
         custom={2 * fadeInFactor}
       >
         <p>
-          The AI Alliance is focused on accelerating and disseminating open
-          innovation across the AI technology landscape to improve foundational
-          capabilities, safety, security and trust in AI, and to responsibly
-          maximize benefits to people and society everywhere.
+          The AI Alliance is designed to create opportunities everywhere through
+          a diverse range of institutions that can shape the evolution of AI in
+          ways that better reflect the needs and the complexity of our
+          societies. This stands in contrast to a vision that aims to relegate
+          AI innovation and value creation to a small number of companies with a
+          closed, proprietary vision for the AI industry.
         </p>
-        <p>Alliance members intend to start or contribute to projects that:</p>
+        <p>
+          The AI Alliance is focused on fostering an open community and enabling
+          developers and researchers to accelerate responsible innovation in AI
+          while ensuring scientific rigor, trust, safety, security, diversity
+          and economic competitiveness. By bringing together leading developers,
+          scientists, academic institutions, companies, and other innovators, we
+          will pool resources and knowledge to address safety concerns while
+          providing a platform for sharing and developing solutions that fit the
+          researchers, developers, and adopters around the world.
+        </p>
+      </AnimatedItem>
+
+      <AnimatedItem
+        title="Who is currently part of the AI Alliance?"
+        custom={3 * fadeInFactor}
+      >
+        <p>
+          To ensure open innovation in AI benefits everyone and that it is built
+          responsibly, the AI Alliance consists of a broad range of
+          organizations that are working across aspects of AI education,
+          research, development and deployment, and governance.
+        </p>
+        <p>We are:</p>
         <ul>
           <li>
-            Support global AI skills building, education, and exploratory
-            research.
+            The creators of the tooling driving AI benchmarking, trust and
+            validation metrics and best practices, and application creation such
+            as MLPerf, Hugging Face, LangChain, LlamaIndex, and open-source AI
+            toolkits for <a href="http://aix360.res.ibm.com/">explainability</a>
+            , <a href="https://aip360.res.ibm.com/">privacy</a>,{' '}
+            <a href="https://github.com/Trusted-AI/adversarial-robustness-toolbox">
+              adversarial robustness
+            </a>
+            , and <a href="https://aif360.res.ibm.com/">fairness</a>{' '}
+            <a href="https://research.facebook.com/publications/casual-conversations-v2-designing-a-large-consent-driven-dataset-to-measure-algorithmic-bias-and-robustness/">
+              evaluation
+            </a>
+            .
           </li>
           <li>
-            Create testing, validation and benchmarking tools and methodologies
-            to advance safe, secure, trusted and ethical AI.
+            The universities and science agencies that educate and support
+            generation after generation of AI scientists and engineers and push
+            the frontiers of AI research through open science.
           </li>
           <li>
-            Build and advance the most efficient and capable software frameworks
-            and tools to enable AI model builders and GenAI application
-            developers.
+            The builders of the hardware and infrastructure that supports AI
+            training and applications – from the needed GPUs to custom AI
+            accelerators and cloud platforms.
           </li>
           <li>
-            Enable an ecosystem of open foundation models with diverse
-            modalities, including highly capable multilingual, multi-modal, and
-            science models.
+            The champions of frameworks that drive platform software including
+            PyTorch, Transformers, Diffusers, Kubernetes, Ray, Hugging Face Text
+            generation inference and Parameter Efficient Fine Tuning.
+          </li>
+          <li>
+            The creators of some of today’s most used open models including
+            Llama2, Stable Diffusion, StarCoder, Bloom, and many others.
+          </li>
+        </ul>
+        <p>
+          <a href="./members">Meet our members →</a>
+        </p>
+      </AnimatedItem>
+
+      <AnimatedItem
+        title="What do members contribute?"
+        custom={4 * fadeInFactor}
+      >
+        <p>
+          AI Alliance members plan to start or enhance projects that meet the
+          following objectives:
+        </p>
+        <ul>
+          <li>
+            Deploy benchmarks, tools, and other resources that enable the
+            responsible development and use of AI systems at global scale,
+            including the creation of a catalog of vetted safety, security and
+            trust tools. Support the advocacy and enablement of these tools with
+            the developer community for model and application development.
+          </li>
+          <li>
+            Develop and align on meaningful benchmarks and evaluation standards
+            for open model releases and model deployment into applications.
+          </li>
+          <li>
+            Responsibly advance the ecosystem of open foundation models with
+            diverse modalities, including highly capable multilingual,
+            multi-modal, and science models that can help address society-wide
+            challenges in climate, human health, and beyond.
           </li>
           <li>
             Foster a vibrant AI hardware accelerator ecosystem by boosting
@@ -71,99 +145,71 @@ const Faq: FC = () => {
             technology.
           </li>
           <li>
-            Advocate for regulatory policies that create a healthy open
-            ecosystem for AI.
-          </li>
-        </ul>
-      </AnimatedItem>
-
-      <AnimatedItem
-        title="What do members contribute to the Alliance?"
-        custom={3 * fadeInFactor}
-      >
-        <p>
-          AI Alliance members will actively contribute to one or more of the
-          following areas:
-        </p>
-        <ul>
-          <li>Tools for GenAI model building and application development</li>
-          <li>An ecosystem of open models with diverse modalities</li>
-          <li>Tools and processes for AI safety and alignment</li>
-          <li>A vibrant AI hardware accelerator ecosystem</li>
-          <li>Initiatives for AI skills education and exploratory research</li>
-          <li>
-            Advocacy for regulatory policies that create a healthy, safe open AI
-            ecosystem.
-          </li>
-        </ul>
-      </AnimatedItem>
-
-      <AnimatedItem
-        title="What is the Alliance’s immediate roadmap?"
-        custom={4 * fadeInFactor}
-      >
-        <p>
-          The AI Alliance will begin its work with the formation of working
-          groups with a focus on:
-        </p>
-        <ul>
-          <li>
-            Curating tools to help science, business and society develop safe,
-            secure, trusted AI and advocating to and enabling developers to use
-            them effectively for model and application development.
+            Support global AI skills building, education, and exploratory
+            research. Engage the academic community to support researchers and
+            students to learn and contribute to essential AI model and tool
+            research projects.
           </li>
           <li>
-            Developing new tools, benchmarks and evaluation standards for model
-            release and model deployment into applications.
-          </li>
-          <li>
-            Developing educational content and resources to inform the public
+            Develop educational content and resources to inform the public
             discourse and policymakers on benefits, risks, solutions and
             precision regulation for AI.
           </li>
           <li>
-            Engaging the academic community to support researchers and students
-            to learn and contribute to essential AI model and tool research
-            projects.
-          </li>
-          <li>
-            Launching events to explore AI use cases and showcase the many ways
-            Alliance members are using open technology in AI responsibly and for
-            good.
+            Launch initiatives that encourage open development of AI in safe and
+            beneficial ways, and host events to explore AI use cases and
+            showcase how Alliance members are using open technology in AI
+            responsibly and for good.
           </li>
         </ul>
+      </AnimatedItem>
+
+      <AnimatedItem
+        title="How will the AI Alliance work?"
+        custom={5 * fadeInFactor}
+      >
         <p>
-          The AI Alliance will also establish a governing board and technical
-          oversight committee dedicated to advancing the above project areas, as
-          well as establishing overall project standards and guidelines.
+          The AI Alliance will begin its work with the formation of
+          member-driven working groups across all major topical areas listed
+          above. The Alliance will also establish a governing board and
+          technical oversight committee dedicated to advancing the above project
+          areas, as well as establishing overall project standards and
+          guidelines.
+        </p>
+        <p>
+          In addition to bringing together leading developers, scientists,
+          academics, students, and business leaders in the field of artificial
+          intelligence, the AI Alliance will plan to partner with important
+          existing initiatives from governments, non-profit and civil society
+          organizations who are doing valuable and aligned work in the AI space.
         </p>
       </AnimatedItem>
 
       <AnimatedItem
-        title="Why open innovation is essential in AI?"
-        custom={5 * fadeInFactor}
+        title="Why is open innovation essential in AI?"
+        custom={6 * fadeInFactor}
       >
         <p>
-          Some of the most exciting progress in AI has been driven by open
-          research and development. For example, data and developer frameworks,
-          models and model cards, and papers with code. This approach benefits
-          everyone – industry, academia, and society. Benefits of open
-          innovation include:
+          To date, some of the most exciting progress in AI has been driven by
+          collaborative and open research and development: from data and
+          developer frameworks, to models and model cards, to conferences and
+          papers with code. And, this approach benefits everyone – industry,
+          academia, and society.
         </p>
         <ul>
           <li>
-            Democratizing access to the most foundational and broadly applicable
-            advances
+            Democratizes access to the most foundational and broadly applicable
+            advances;
           </li>
-          <li>Harnessing the innovative talent of the global community</li>
-          <li>Ensuring accountability among individuals and companies</li>
+          <li>Harnesses the innovative talent of the global community;</li>
+          <li>Ensures accountability among individuals and companies;</li>
           <li>
-            Instilling trust from transparency by demystifying technical
+            Instills trust from transparency by demystifying technical
             innovation for both the public and policymakers; and
           </li>
           <li>
-            Better enabling robust testing and validation through broad-based
-            community approaches
+            Better enables robust testing and validation through broad-based
+            community approaches.
           </li>
         </ul>
         <p>
@@ -175,7 +221,7 @@ const Faq: FC = () => {
 
       <AnimatedItem
         title="What are foundation models?"
-        custom={6 * fadeInFactor}
+        custom={7 * fadeInFactor}
       >
         <p>
           The next wave of innovation in AI is looking to replace the
@@ -190,6 +236,18 @@ const Faq: FC = () => {
           the basis for a wide variety of applications of the AI model. Using
           self-supervised learning and transfer learning, the model can apply
           information it has learned about one situation to another.
+        </p>
+      </AnimatedItem>
+      <AnimatedItem
+        title="Can an organization join the AI Alliance? How?"
+        custom={8 * fadeInFactor}
+      >
+        <p>
+          The Alliance continues to welcome new members who share our commitment
+          to open AI innovation and collaboration. Our program is purposefully
+          designed to enable flexible levels of collaboration and contribution
+          to maximize the participation and impact of organizations and
+          individuals globally.
         </p>
       </AnimatedItem>
     </Accordion>
