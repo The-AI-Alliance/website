@@ -1,0 +1,37 @@
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '@carbon/type' as *;
+
+@mixin subheading {
+  @include type-style('fluid-paragraph-01', true);
+
+  font-size: 20px;
+  line-height: 28px;
+
+  @include breakpoint(xlg) {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  @include breakpoint(max) {
+    font-size: 32;
+    line-height: 40px;
+  }
+}
+
+@mixin paragraph {
+  @include type-style('body-02');
+  font-weight: 300;
+
+  @include breakpoint(lg) {
+    @include type-style('fluid-paragraph-01', true);
+  }
+
+  @include breakpoint(xlg) {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  @include breakpoint(max) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}

@@ -1,7 +1,23 @@
-@use "@carbon/styles/scss/breakpoint" as *;
-@use "@carbon/type" as *;
-@use "@carbon/grid" as *;
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '@carbon/type' as *;
+@use '@carbon/grid' as *;
 @use '@carbon/colors' as *;
+
+.wrapper {
+  margin-top: 80px;
+
+  @include breakpoint(lg) {
+    margin-top: 160px;
+  }
+}
+
+.innerHeading {
+  margin-bottom: 48px;
+
+  @include breakpoint(lg) {
+    margin-bottom: 0;
+  }
+}
 
 .contactForm {
   padding-bottom: 160px;
@@ -13,10 +29,10 @@
 
   &--bcg-straight {
     @include breakpoint-down(md) {
-      padding-bottom: calc(48px + 160px);
+      padding-bottom: 208px;
     }
   }
-  
+
   .emailSent {
     @include type-style('body-02');
     position: absolute;
@@ -40,14 +56,6 @@
 .titleColumn {
   display: flex;
   flex-direction: column;
-  
-  .innerHeading {
-    @include type-style('fluid-display-03', true);
-    
-    @include breakpoint-down(lg) {
-      @include type-style('heading-06');
-    }
-  }
 
   .titleGraphics {
     position: relative;
@@ -74,15 +82,15 @@
       width: calc(100% - $grid-gutter);
       height: 160px;
     }
-    
+
     svg {
       position: absolute;
       top: 0;
-      
+
       @include breakpoint(lg) {
         left: -20%;
       }
-      
+
       @include breakpoint-up(xlg) {
         left: -33%;
         width: 115%;
@@ -100,5 +108,22 @@
 
   @include breakpoint-down(lg) {
     display: none;
+  }
+}
+
+.ball {
+  position: absolute;
+  top: 0;
+  left: 25.044%;
+  width: 24.96%;
+  
+  @include breakpoint(lg) {
+    left: 10%;
+    width: 30%;
+  }
+
+  @include breakpoint(xlg) {
+    left: -4.26%;
+    width: 28.8%;
   }
 }

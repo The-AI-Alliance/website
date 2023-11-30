@@ -2,15 +2,19 @@ import { useRouter } from 'next/router';
 import { useCallback, useMemo } from 'react';
 
 export enum ROUTE {
+  FOCUS_AREAS = 'focusareas',
   HOME = '',
   LEARN = 'learn',
   MEMBERS = 'members',
+  NEWS = 'news',
 }
 
 export const ROUTE_LABEL: Record<ROUTE, string> = {
+  [ROUTE.FOCUS_AREAS]: 'Focus areas',
   [ROUTE.HOME]: 'Landing',
   [ROUTE.LEARN]: 'Learn more',
   [ROUTE.MEMBERS]: 'Members',
+  [ROUTE.NEWS]: 'News',
 };
 
 export const routes = Object.values(ROUTE);

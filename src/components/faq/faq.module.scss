@@ -1,0 +1,51 @@
+@use "@carbon/styles/scss/breakpoint" as *;
+@use "@carbon/type" as *;
+@use "@carbon/grid" as *;
+@use '../../styles/type.scss' as *;
+
+.faq {
+  :global(.cds--accordion__item) {
+    margin-left: calc($grid-gutter / -2);
+    margin-right: calc($grid-gutter / -2);
+  }
+
+  :global(.cds--accordion__heading) {
+    padding: 24px 16px;
+  }
+
+  :global(.cds--accordion__title) {
+    @include paragraph;
+    font-weight: 400 !important;
+    padding: 0;
+  }
+
+  :global(.cds--accordion__content) {
+    padding-bottom: 32px;
+    padding-right: calc(25% - $grid-gutter / 2);
+    
+    @include breakpoint(md) {
+      padding-right: calc(12.5% - $grid-gutter / 2);
+    }
+
+    > p, > ul > li {
+      @include paragraph;
+
+      @include breakpoint(lg) {
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
+
+    > p, ul {
+      & + ul, + p {
+        margin-top: 1.5rem;
+      }
+    }
+
+    > ul > li {
+      margin-top: 1rem;
+      margin-left: $grid-gutter;
+      list-style-type: disc;
+    }
+  }
+}

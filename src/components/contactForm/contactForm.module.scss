@@ -1,5 +1,5 @@
-@use "@carbon/styles/scss/breakpoint" as *;
-@use "@carbon/grid" as *;
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '@carbon/grid' as *;
 @use '@carbon/colors' as *;
 @use '@carbon/type' as *;
 
@@ -8,7 +8,8 @@
     color: $white-0;
   }
 
-  :global(.cds--text-input), :global(.cds--text-area) {
+  :global(.cds--text-input),
+  :global(.cds--text-area) {
     border: solid 1px $white-0;
     border-radius: 24px;
     background-color: $gray-100;
@@ -30,24 +31,25 @@
     width: 100%;
     margin-top: 24px;
     float: left;
-    
-    &:nth-of-type(1), &:nth-of-type(2) {
+
+    &:nth-of-type(1),
+    &:nth-of-type(2) {
       margin-top: 0;
     }
-    
+
     @include breakpoint-down(md) {
       &:nth-of-type(2) {
         margin-top: 24px;
       }
     }
-    
+
     &--half-width {
       width: calc((100% - $grid-gutter) / 2);
 
       &:nth-of-type(2n + 1) {
         margin-right: $grid-gutter;
       }
-      
+
       @include breakpoint-down(md) {
         width: 100%;
         margin-right: 0;
@@ -55,19 +57,28 @@
     }
 
     &.acknowledge {
-      width: calc((100% - $grid-gutter) / 2);
-      margin-right: $grid-gutter;
+      width: 100%;
+      padding-right: 24px;
+      
+      @include breakpoint(md) {
+        padding-right: 0;
+      }
 
-      p {
+      @include breakpoint(xlg) {
+        width: calc((100% + $grid-gutter) / 8 * 5 - $grid-gutter);
+        margin-right: $grid-gutter;
+      }
+
+      > p {
         @include type-style('label-01');
+
+        & + p {
+          margin-top: 1rem;
+        }
       }
 
       :global(.cds--checkbox-label-text) {
         padding-left: 16px;
-      }
-      
-      @include breakpoint-down(lg) {
-        width: 100%;
       }
     }
   }
@@ -79,7 +90,7 @@
   .link {
     text-decoration: underline;
     color: $white-0;
-    
+
     &:hover {
       color: $gray-20;
     }
@@ -95,18 +106,24 @@
   .submitBtn {
     float: right;
     margin-top: 24px;
-    width: calc((100% - $grid-gutter) / 2);
-    
-    @include breakpoint-up(lg) {
-      max-width: 216px;
-    }
-    
-    @include breakpoint-down(lg) {
-      float: left;
+    max-width: unset;
+    width: 100%;
+    float: left;
+
+    @include breakpoint(md) {
+      max-width: calc((100% - $grid-gutter) / 2);
     }
 
-    @include breakpoint-down(md) {
-      width: 100%;
+    @include breakpoint(lg) {
+      max-width: 232px;
+      margin-top: 32px;
+    }
+    
+    @include breakpoint(xlg) {
+      margin-top: 24px;
+      float: right;
+      width: calc((100% + $grid-gutter) / 8 * 3 - $grid-gutter);;
+      max-width: 216px;
     }
   }
 }
