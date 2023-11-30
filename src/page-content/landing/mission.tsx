@@ -81,8 +81,9 @@ const Mission: FC<MissionProps> = ({
             </motion.p>
             <motion.p {...showInView}>
               The AI Alliance brings together a critical mass of compute, data,
-              tools, and talent to accelerate open innovation in AI to:
+              tools, and talent to accelerate open innovation in AI.
             </motion.p>
+            <motion.p {...showInView}>The AI Alliance seeks to:</motion.p>
           </Column>
 
           <Column {...graphicsLeftProps}>
