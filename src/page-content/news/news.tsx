@@ -10,11 +10,8 @@ const NewsPage: React.FC = () => {
   const mainContentVariants = useMemo(
     () => ({
       hide: { opacity: 0 },
-      show: {
-        opacity: 1,
-        transition: { delay: 0.35 },
-      },
-      unmount: { opacity: 0, transition: { duration: 0.35 } },
+      show: { opacity: 1 },
+      unmount: { opacity: 0, transition: { duration: 0.2 } },
     }),
     [],
   );

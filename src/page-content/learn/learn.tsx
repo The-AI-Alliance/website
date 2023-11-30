@@ -14,11 +14,8 @@ const LearnMorePage: FC = () => {
   const mainContentVariants = useMemo(
     () => ({
       hide: { opacity: 0 },
-      show: {
-        opacity: 1,
-        transition: { delay: 0.35 },
-      },
-      unmount: { opacity: 0, transition: { duration: 0.35 } },
+      show: { opacity: 1 },
+      unmount: { opacity: 0, transition: { duration: 0.2 } },
     }),
     [],
   );
@@ -44,7 +41,11 @@ const LearnMorePage: FC = () => {
             md={5}
             sm={4}
           >
-            <Heading>Open innovation in AI is essential</Heading>
+            <Heading>
+              <motion.span {...showInView}>
+                Open innovation in AI is essential
+              </motion.span>
+            </Heading>
           </Column>
           <Column
             className={styles.contentRow}
@@ -83,7 +84,11 @@ const LearnMorePage: FC = () => {
             md={5}
             sm={4}
           >
-            <h2>Meeting the challenges of open innovation​</h2>
+            <Heading>
+              <motion.span {...showInView}>
+                Meeting the challenges of open innovation
+              </motion.span>
+            </Heading>
           </Column>
           <Column
             className={styles.contentRow}
@@ -118,7 +123,9 @@ const LearnMorePage: FC = () => {
             md={5}
             sm={4}
           >
-            <h2>FAQ</h2>
+            <Heading>
+              <motion.span {...showInView}>FAQ</motion.span>
+            </Heading>
           </Column>
           <Column
             className={styles.contentRow}

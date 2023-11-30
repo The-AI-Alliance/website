@@ -1,5 +1,5 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react';
-import { Column, Grid, Heading } from '@carbon/react';
+import React, { useMemo } from 'react';
+import { Column, Grid, Heading, Section } from '@carbon/react';
 import classnames from 'classnames';
 import ContactPanel from '../contact/contactPanel';
 import Image from 'next/image';
@@ -22,9 +22,9 @@ import soft_bank from '@public/members/soft_bank.png';
 import tum from '@public/members/tum.png';
 import uiuc from '@public/members/uiuc.png';
 import { motion } from 'framer-motion';
-import Ball from '@components/ball/ball';
-import useResize from '@utils/useResize';
-import useBreakpoint, { Breakpoint } from '@utils/useBreakpoint';
+import { showInView } from '@utils/showInView';
+import testimonials from './testimonials';
+import Testimonial from './testimonial';
 
 import styles from './members.module.scss';
 
@@ -53,38 +53,43 @@ const MembersPage: React.FC = () => {
   const mainContentVariants = useMemo(
     () => ({
       hide: { opacity: 0 },
-      show: {
-        opacity: 1,
-        transition: { delay: 0.35 },
-      },
-      unmount: { opacity: 0, transition: { duration: 0.35 } },
+      show: { opacity: 1 },
+      unmount: { opacity: 0, transition: { duration: 0.2 } },
     }),
     [],
   );
 
   return (
     <motion.div
+      className={styles.wrapper}
       variants={mainContentVariants}
       initial="hide"
       animate="show"
       exit="unmount"
     >
-      <Grid className={styles.members}>
-        <>
-          <Column xlg={{ span: 15, offset: 1 }} lg={16} md={8} sm={4}>
+      <Section className={styles.members}>
+        <Grid className={styles.grid}>
+          <Column xlg={{ span: 6, offset: 1 }} lg={6} md={6} sm={3}>
             <Heading
               className={classnames(styles.heading, styles['heading--members'])}
             >
-              Members
+              <motion.span {...showInView}>Members</motion.span>
             </Heading>
           </Column>
-          <Column xlg={{ span: 15, offset: 1 }} lg={16} md={8} sm={4}>
-            <p className={styles.subheading}>
+          <Column
+            xlg={{ span: 8, offset: 8 }}
+            lg={{ span: 9, offset: 7 }}
+            md={6}
+            sm={4}
+          >
+            <motion.p className={styles.paragraph} {...showInView}>
               The AI Alliance consists of companies and startups, universities,
               research and government organizations, and non-profit foundations
               that individually and together are innovating across all aspects
               of AI technology, applications and governance.
-            </p>
+            </motion.p>
+          </Column>
+          <Column xlg={{ span: 15, offset: 1 }} lg={16} md={8} sm={4}>
             <div className={styles.logos}>
               {logos.map(({ size, src, alt }, idx) => (
                 <motion.div
@@ -107,8 +112,56 @@ const MembersPage: React.FC = () => {
               <div className={styles.filler}></div>
             </div>
           </Column>
-        </>
-      </Grid>
+        </Grid>
+      </Section>
+
+      <Section className={styles.testimonials}>
+        <Grid className={styles.grid}>
+          <Column xlg={{ span: 6, offset: 1 }} lg={6} md={6} sm={3}>
+            <Heading
+              className={classnames(styles.heading, styles['heading--members'])}
+            >
+              <motion.span {...showInView}>Testimonials</motion.span>
+            </Heading>
+          </Column>
+          <Column
+            xlg={{ span: 8, offset: 8 }}
+            lg={{ span: 9, offset: 7 }}
+            md={6}
+            sm={4}
+          >
+            {testimonials.map((t, idx) => (
+              <Testimonial key={idx} {...t} />
+            ))}
+          </Column>
+        </Grid>
+      </Section>
+
+      <Section className={styles.join}>
+        <Grid className={styles.grid}>
+          <Column xlg={{ span: 6, offset: 1 }} lg={6} md={6} sm={3}>
+            <Heading
+              className={classnames(styles.heading, styles['heading--members'])}
+            >
+              <motion.span {...showInView}>Joining the AI Alliance</motion.span>
+            </Heading>
+          </Column>
+          <Column
+            xlg={{ span: 8, offset: 8 }}
+            lg={{ span: 9, offset: 7 }}
+            md={6}
+            sm={4}
+          >
+            <motion.p className={styles.paragraph} {...showInView}>
+              The AI alliance continues to welcome new partners who share our
+              commitment to open AI innovation and collaboration. Our program is
+              purposefully designed to enable flexible levels of collaboration
+              and contribution to maximize the participation and impact of
+              organizations and individuals globally.
+            </motion.p>
+          </Column>
+        </Grid>
+      </Section>
 
       <ContactPanel
         className={styles.contactPanel}
