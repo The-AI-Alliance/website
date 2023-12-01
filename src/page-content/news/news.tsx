@@ -144,6 +144,298 @@ const NewsPage: React.FC = () => (
                 </li>
               </ul>
             </section>
+            <section>
+              <h3>Who We Are</h3>
+              <p>
+                To ensure open innovation in AI benefits everyone and that it is
+                built responsibly, the AI Alliance consists of a broad range of
+                organizations that are working across aspects of AI education,
+                research, development and deployment, and governance.
+              </p>
+              <p>We are:</p>
+              <ul>
+                <li>
+                  The creators of the tooling driving AI benchmarking, trust and
+                  validation metrics and best practices, and application
+                  creation such as MLPerf, Hugging Face, LangChain, LlamaIndex,
+                  and open-source AI toolkits for{' '}
+                  <a href="http://aix360.res.ibm.com/">explainability</a>,{' '}
+                  <a href="https://aip360.res.ibm.com/">privacy</a>,{' '}
+                  <a href="https://github.com/Trusted-AI/adversarial-robustness-toolbox">
+                    adversarial robustness
+                  </a>
+                  , and <a href="https://aif360.res.ibm.com/">fairness</a>{' '}
+                  <a href="https://research.facebook.com/publications/casual-conversations-v2-designing-a-large-consent-driven-dataset-to-measure-algorithmic-bias-and-robustness/">
+                    evaluation
+                  </a>
+                  .
+                </li>
+                <li>
+                  The universities and science agencies that educate and support
+                  generation after generation of AI scientists and engineers and
+                  push the frontiers of AI research through open science.
+                </li>
+                <li>
+                  The builders of the hardware and infrastructure that supports
+                  AI training and applications – from the needed GPUs to custom
+                  AI accelerators and cloud platforms.
+                </li>
+                <li>
+                  The champions of frameworks that drive platform software
+                  including PyTorch, Transformers, Diffusers, Kubernetes, Ray,
+                  Hugging Face Text generation inference and Parameter Efficient
+                  Fine Tuning.
+                </li>
+                <li>
+                  The creators of some of today’s most used open models
+                  including Llama2, Stable Diffusion, StarCoder, Bloom, and many
+                  others.
+                </li>
+              </ul>
+              <p>
+                IBM and Meta are proud to co-launch the AI Alliance with leading
+                organizations across industry, government and academia. Partners
+                and collaborators include:
+              </p>
+              <ul>
+                <li>A*STAR</li>
+                <li>Aitomatic</li>
+                <li>AMD</li>
+                <li>Anyscale</li>
+                <li>Cerebras</li>
+                <li>CERN</li>
+                <li>Cleveland Clinic</li>
+                <li>Cornell University</li>
+                <li>Dartmouth College</li>
+                <li>Dell Technologies</li>
+                <li>Ecole Polytechnique Federale de Lausanne</li>
+                <li>ETH Zurich</li>
+                <li>Fast.ai</li>
+                <li>FPT</li>
+                <li>Hebrew University</li>
+                <li>Hugging Face</li>
+                <li>IBM</li>
+                <li>Imperial College London</li>
+                <li>Indian Institute of Technology Bombay</li>
+                <li>
+                  Abdus Salam International Centre for Theoretical Physics
+                  (ICTP)
+                </li>
+                <li>Institute for Computer Science, Artificial Intelligence</li>
+                <li>Intel</li>
+                <li>Keio University</li>
+                <li>LangChain</li>
+                <li>LlamaIndex</li>
+                <li>Linux Foundation</li>
+                <li>
+                  Mass Open Cloud Alliance, operated by Boston University and
+                  Harvard
+                </li>
+                <li>Meta</li>
+                <li>Mohamed bin Zayed University of Artificial Intelligence</li>
+                <li>MLCommons</li>
+                <li>National Aeronautics and Space Administration</li>
+                <li>National Science Foundation</li>
+                <li>NumFOCUS</li>
+                <li>Oracle</li>
+                <li>Quansight</li>
+                <li>Red Hat</li>
+                <li>Rensselaer Polytechnic Institute</li>
+                <li>Roadzen</li>
+                <li>Sakana AI</li>
+                <li>ServiceNow</li>
+                <li>Simons Foundation</li>
+                <li>Sony Group</li>
+                <li>Stability AI</li>
+                <li>Together AI</li>
+                <li>TU Munich</li>
+                <li>
+                  UC Berkeley’s College of Computing, Data Science, and Society
+                </li>
+                <li>University of Illinois Urbana-Champagne</li>
+                <li>University of Notre Dame</li>
+                <li>The University of Tokyo</li>
+                <li>Yale University</li>
+              </ul>
+            </section>
+            <section>
+              <h3>How the AI Alliance Will Work</h3>
+              <p>
+                The AI Alliance will begin its work with the formation of
+                member-driven working groups across all major topical areas
+                listed above. The Alliance will also establish a governing board
+                and technical oversight committee dedicated to advancing the
+                above project areas, as well as establishing overall project
+                standards and guidelines.
+              </p>
+              <p>
+                In addition to bringing together leading developers, scientists,
+                academics, students, and business leaders in the field of
+                artificial intelligence, the AI Alliance will plan to partner
+                with important existing initiatives from governments, non-profit
+                and civil society organizations who are doing valuable and
+                aligned work in the AI space.
+              </p>
+            </section>
+            <section>
+              <h3>Member Quotes</h3>
+
+              <p>
+                <strong>Nick Clegg, President, Global Affairs of Meta: </strong>
+                “We believe it’s better when AI is developed openly – more
+                people can access can access the benefits, build innovative
+                products and work on safety. The AI Alliance brings together
+                researchers, developers and companies to share tools and
+                knowledge that can help us all make progress whether models are
+                shared openly or not. We’re looking forward to working with
+                partners to advance the state-of-the-art in AI and help everyone
+                build responsibly.”
+              </p>
+              <p>
+                <strong>
+                  Christopher Nguyen, CEO, Aitomatic & Industrial AI Leader:{' '}
+                </strong>
+                “AI independence is vital for industrial companies, focusing on
+                specialized domain expertise as key to competitiveness.
+                Open-source foundations, driven by the AI Alliance, are
+                essential for seamless model deployment at the computing edge.
+                Aitomatic and our partners are eager to both contribute to and
+                benefit from the transformative impact of the global AI
+                Alliance.”
+              </p>
+              <p>
+                <strong>Robert Nishihara, CEO of Anyscale </strong>
+                “AI will have a positive impact on our daily lives and address
+                some of the world’s most pressing challenges, but like with any
+                new technology or innovation, we need to consider the risks. To
+                ensure that open source communities can continue to flourish,
+                innovate, deliver rich technological progress and advance the
+                broader AI ecosystem, it’s imperative that we advance AI ethics,
+                governance and safety. The AI Alliance is an important step to
+                ensuring that our society can benefit from AI responsibly and
+                equitably.”
+              </p>
+              <p>
+                <strong>
+                  Yannis Paschalidis, Distinguished Professor of ECE and
+                  Director of the Hariri Institute for Computing and
+                  Computational Science & Engineering at Boston University:{' '}
+                </strong>
+                “The Hariri Institute, which houses the multi-institutional Mass
+                Open Cloud Alliance (MOC Alliance), is excited to have the MOC
+                Alliance join the AI Alliance as a founding member. The MOC
+                Alliance was formed to provide an affordable open cloud platform
+                to the research community, thus furthering the goals of the
+                Massachusetts Green High Performance Computing Center (MGHPCC)
+                -- a joint venture of Boston University, Harvard, MIT,
+                Northeastern, and UMass. The Hariri Institute has a history of
+                supporting open-source efforts and is at the forefront of AI
+                innovations with applications in science, biomedicine, and
+                health care, where open, trusted, unbiased, and ethical AI
+                models are particularly important.”
+              </p>
+              <p>
+                <strong>
+                  Andrew Feldman, co-founder and CEO, Cerebras Systems:{' '}
+                </strong>
+                “Cerebras’ mission is to transform AI compute and democratize
+                access to AI for customers around the world. In alliance with
+                this community of global technology leaders, we look forward to
+                accelerating the progress and contributions of the open source
+                AI community in the most efficient, collaborative, and
+                responsible way possible.”
+              </p>
+              <p>
+                <strong>
+                  Tom Mihaljevic, M.D., Cleveland Clinic CEO and President, and
+                  holder of the Morton L. Mandel CEO Chair:{' '}
+                </strong>
+                “We are pleased to become a founding member of the AI Alliance.
+                As a leader in healthcare AI, we recognize that it has the
+                potential to quickly accelerate the pace of medical research and
+                enhance patient care. AI capabilities are now constantly growing
+                and improving, and it is critical that organizations from
+                diverse fields come together to help advance AI discoveries and
+                technologies while also addressing concerns around security and
+                safety. We are looking forward to working on these important
+                issues collaboratively with the Alliance members.”
+              </p>
+              <p>
+                <strong>
+                  Dave Kotz, Provost and the Pat and John Rosenwald Professor in
+                  the Department of Computer Science, Dartmouth College:{' '}
+                </strong>
+                “Dartmouth, where ‘artificial intelligence’ was first envisioned
+                in 1956, is excited to be part of this alliance and committed to
+                ensuring AI is transparent, trustworthy, and serves all humanity
+                going forward.”
+              </p>
+              <p>
+                <strong>
+                  Jeff Boudreau, chief AI officer, Dell Technologies:{' '}
+                </strong>
+                “AI progress that drives real value for humanity can only happen
+                with open innovation and in open ecosystems. The AI Alliance is
+                a positive step in making sure a diverse set of voices are
+                collaborating transparently for the benefit of all.”
+              </p>
+              <p>
+                <strong>Phong Nguyen, CAIO, FPT Software: </strong>
+                “FPT Software is thrilled and honored to join the Alliance,
+                where we believe that openness and transparency are key to
+                ensuring the safe and responsible deployment of AI. Committed to
+                this vision, we aim to work closely with various stakeholders to
+                enhance open-science AI, ultimately bringing significant social
+                benefits to the industry.”
+              </p>
+              <p>
+                <strong>
+                  President Asher Cohen, Hebrew University of Jerusalem:{' '}
+                </strong>
+                “Joining the AI Alliance marks a pivotal moment for Hebrew
+                University, where collaboration meets innovation. We're thrilled
+                to be part of this coalition driving the future of AI, fostering
+                open technologies, nurturing talent, and championing ethical,
+                trusted AI practices. Together, we'll forge pathways for global
+                education, build robust frameworks, and advocate for policies
+                that nurture a vibrant, open AI ecosystem. This alliance is a
+                beacon illuminating our commitment to shaping a responsible,
+                inclusive future powered by the boundless possibilities of
+                artificial intelligence.”
+              </p>
+              <p>
+                <strong>Atish Dabholkar, ICTP Director </strong>
+                “ICTP is pleased to be part of the high-level, international
+                research community underpinning the AI Alliance that includes
+                major players in the field. We share a commitment to exploring
+                new scientific horizons and to sharing new knowledge openly. AI
+                has the potential to radically change the way science is done,
+                and by joining this Alliance we will ensure that our large
+                international network of scientists have open access to the
+                latest in AI innovation, training and governance, regardless of
+                geographical borders.”
+              </p>
+              <p>
+                <strong>
+                  Professor Varsha Apte, Head, Department of Computer Science
+                  and Engineering at IIT Bombay{' '}
+                </strong>
+                “The Computer Science Department of IIT Bombay is excited to be
+                part of the AI Alliance. We hope to contribute towards creating
+                and deploying speech and language models over more diverse
+                languages, accents and dialects, while also investigating
+                foundation models for better representation of structurally rich
+                information.”
+              </p>
+              <p>
+                <strong>
+                  Professor Martin Vechev, Scientific Director of INSAIT, Full
+                  Professor at ETH Zurich{' '}
+                </strong>
+                “INSAIT is delighted to join the AI Alliance and help pave the
+                way towards a more transparent, open, safe and trustworthy AI.”
+              </p>
+            </section>
           </article>
         </Column>
       </Grid>
