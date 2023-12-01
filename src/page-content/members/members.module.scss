@@ -18,12 +18,7 @@
 
 .members {
   position: relative;
-  padding-top: calc(48px + 48px);
 
-  @include breakpoint(lg) {
-    padding-top: calc(96px + 48px);
-  }
-  
   .logos {
     display: flex;
     flex-direction: row;

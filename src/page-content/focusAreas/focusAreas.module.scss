@@ -1,32 +1,24 @@
 @use '@carbon/styles/scss/breakpoint' as *;
 @use '@carbon/type' as *;
-@use '@carbon/grid' as *;
-@use '@carbon/colors' as *;
+@use '../../styles/type.scss' as *;
 
 .focusAreas {
   position: relative;
-  padding-top: calc(48px + 48px);
 
-  @include breakpoint-up(lg) {
-    padding-top: calc(96px + 48px);
+  .grid {
+    row-gap: 48px;
+    margin-bottom: 80px;
+    
+    @include breakpoint(lg) {
+      margin-bottom: 160px;
+    }
   }
 
-  .heading {
-    // @include type-style('fluid-display-03', true);
-    margin-bottom: 48px;
-
-    @include breakpoint-up(lg) {
-      &--members {
-        margin-bottom: 96px;
-      }
-    }
-
-    &--benefits {
-      margin-top: 160px;
-
-      @include breakpoint-down(lg) {
-        margin-top: 80px;
-      }
-    }
+  .paragraph {
+    @include paragraph;
+  }
+  
+  .area:last-of-type {
+    padding-bottom: 0;
   }
 }

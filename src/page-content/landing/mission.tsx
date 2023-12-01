@@ -60,7 +60,7 @@ const Mission: FC<MissionProps> = ({
   };
 
   return (
-    <Section className={styles.mission} ref={sectionRef}>
+    <Section className={styles.mission} ref={sectionRef} level={1}>
       <motion.div onViewportEnter={onViewportEnter}>
         <Grid className={styles.mission__grid}>
           <Column xlg={{ span: 7, offset: 1 }} lg={7} md={6} sm={4}>

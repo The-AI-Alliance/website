@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import ShapeTop from '@graphics/shape2b.svg';
 import ShapeBottom from '@graphics/shape1c.svg';
-import { Column, Grid, Heading, Section } from '@carbon/react';
+import { Column, Grid, Heading } from '@carbon/react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from '@carbon/icons-react';
 import { headerAnimations } from './animations';
@@ -30,27 +30,21 @@ const LandingHeader: FC<LandingHeaderProps> = ({ onLearnMore }) => (
       </motion.div>
     </div>
     <Column className={styles.content}>
-      <Section level={1}>
-        <motion.div {...headerAnimations.title}>
-          <Heading className={styles.content__header}>The AI Alliance</Heading>
-        </motion.div>
-        <motion.p
-          className={styles.content__subhead}
-          {...headerAnimations.text}
-        >
-          A community of technology creators, developers and adopters
-          collaborating to advance safe, responsible AI rooted in open
-          innovation.
-        </motion.p>
-        <AnimatedButton
-          animationDelay={0.5}
-          className={styles.action}
-          onClick={onLearnMore}
-          icon={<ArrowDown />}
-        >
-          Learn more
-        </AnimatedButton>
-      </Section>
+      <motion.div {...headerAnimations.title}>
+        <Heading className={styles.content__header}>The AI Alliance</Heading>
+      </motion.div>
+      <motion.p className={styles.content__subhead} {...headerAnimations.text}>
+        A community of technology creators, developers and adopters
+        collaborating to advance safe, responsible AI rooted in open innovation.
+      </motion.p>
+      <AnimatedButton
+        animationDelay={0.5}
+        className={styles.action}
+        onClick={onLearnMore}
+        icon={<ArrowDown />}
+      >
+        Learn more
+      </AnimatedButton>
     </Column>
   </Grid>
 );

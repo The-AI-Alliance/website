@@ -27,26 +27,6 @@ html {
 }
 
 h1 {
-  @include type-style('fluid-display-03', true);
-  
-  font-size: 56px;
-  line-height: 64px;
-  
-  @include breakpoint(md) {
-    font-size: 68px;
-    line-height: 78px;
-  }
-  @include breakpoint(xlg) {
-    font-size: 76px;
-    line-height: 86px;
-  }
-  @include breakpoint(max) {
-    font-size: 84px;
-    line-height: 94px;
-  }
-}
-
-h2 {
   @include type-style('fluid-display-01', true);
 }
 

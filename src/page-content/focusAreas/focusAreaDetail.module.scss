@@ -1,0 +1,37 @@
+@use '@carbon/styles/scss/breakpoint' as *;
+@use '@carbon/colors' as *;
+@use '../../styles/type.scss' as *;
+
+.focusAreaDetail {
+  position: relative;
+  row-gap: 48px;
+  margin-bottom: 80px;
+
+  @include breakpoint(lg) {
+    margin-bottom: 160px;
+  }
+
+  .separator {
+    border-top: solid 1px $white-0;
+  }
+
+  .header__title, .header__subtitle, .body {
+    @include paragraph;
+
+    @include breakpoint(lg) {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+
+  .header {
+    &__title {
+      font-weight: 400;
+    }
+
+    &__subtitle {
+      font-style: italic;
+      margin-top: 16px;
+    }
+  }
+}

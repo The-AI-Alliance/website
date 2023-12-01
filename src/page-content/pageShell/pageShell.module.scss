@@ -1,0 +1,10 @@
+@use '@carbon/styles/scss/breakpoint' as *;
+
+.wrapper {
+  position: relative;
+  padding-top: calc(48px + 48px);
+
+  @include breakpoint-up(lg) {
+    padding-top: calc(96px + 48px);
+  }
+}
