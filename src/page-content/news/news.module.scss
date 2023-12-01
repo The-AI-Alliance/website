@@ -50,15 +50,18 @@
         font-style: italic;
       }
 
+      // I also added this section to make the lists appear correct to spec, but this may not be the best way to go about it
       ul {
-        margin-bottom: 80px;
+        margin-bottom: 48px;
+        line-height: 28px;
       }
 
+      // Stano, I removed  `& + li` from here because it was causing large spacing between list items. Kelly said this is fine.
       section {
         margin-top: 80px;
         
         > p, > ul > li {
-          & + p, & + ul, & + li {
+          & + p, & + ul {
             margin-top: 1.5rem;
           }
         }
