@@ -4,7 +4,7 @@
 @use '@carbon/colors' as *;
 @use '../../styles/type.scss' as *;
 
-.wrapper {
+.news {
   > section {
     &:not(:first-of-type) .grid {
       margin-top: 80px;
@@ -14,25 +14,52 @@
       }
     }
   }
-}
 
-.news {
-  position: relative;
-  padding-top: calc(48px + 48px);
-
-  @include breakpoint(lg) {
-    padding-top: calc(96px + 48px);
+  .paragraph {
+    @include paragraph;
   }
-}
 
-.grid {
-  row-gap: 48px;
-  
-  @include breakpoint(lg) {
-    row-gap: 96px;
+  .heading {
+    border-bottom: solid 1px $white-0;
+    padding-bottom: 48px;
+    
+    @include breakpoint(lg) {
+      padding-bottom: 80px;
+    }
   }
-}
 
-.paragraph {
-  @include paragraph;
+  .contentHeader {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .content {
+    article {
+      padding-bottom: 80px;
+      border-bottom: solid 1px $white-0;
+
+      h2 {
+        margin-bottom: 48px;
+      }
+      
+      .abstract {
+        font-style: italic;
+      }
+
+      section {
+        margin-top: 80px;
+        
+        > p, > ul > li {
+          & + p, & + ul, & + li {
+            margin-top: 1.5rem;
+          }
+        }
+
+        > ul > li {
+          list-style-type: disc;
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
 }
