@@ -29,10 +29,13 @@
 
   :global(.cds--accordion__content) {
     padding-bottom: 32px;
-    padding-right: calc(25% - $grid-gutter / 2);
     
-    @include breakpoint(md) {
-      padding-right: calc(12.5% - $grid-gutter / 2);
+    @include breakpoint(lg) {
+      padding-right: calc((100% / 8 * 3) - $grid-gutter / 2);
+    }
+    
+    @include breakpoint(xlg) {
+      padding-right: calc((100% / 3) - $grid-gutter / 2);
     }
 
     > * {
