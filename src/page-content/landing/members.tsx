@@ -56,7 +56,11 @@ type MembersProps = {
 };
 
 const Members: FC<MembersProps> = ({ className, sectionRef }) => (
-  <Section className={classnames(styles.members, className)} ref={sectionRef}>
+  <Section
+    className={classnames(styles.members, className)}
+    level={1}
+    ref={sectionRef}
+  >
     <Grid className={styles.members__grid}>
       <Column xlg={{ span: 7, offset: 1 }} lg={7} md={6} sm={3}>
         <motion.div {...showInView}>

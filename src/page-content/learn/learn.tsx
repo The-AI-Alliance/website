@@ -1,38 +1,24 @@
-import { FC, useCallback, useMemo } from 'react';
+import { FC, useCallback } from 'react';
 import { Button, Column, Grid, Heading, Section } from '@carbon/react';
-import ContactPanel from '../contact/contactPanel';
 import { motion } from 'framer-motion';
 import { showInView } from '@utils/showInView';
 import { ArrowRight } from '@carbon/icons-react';
 import Faq from '@components/faq/faq';
 import useNavigation, { ROUTE } from '@utils/useNavigation';
+import PageShell from '../pageShell/pageShell';
 
 import styles from './learn.module.scss';
 
 const LearnMorePage: FC = () => {
   const { navigate } = useNavigation();
-  const mainContentVariants = useMemo(
-    () => ({
-      hide: { opacity: 0 },
-      show: { opacity: 1 },
-      unmount: { opacity: 0, transition: { duration: 0.2 } },
-    }),
-    [],
-  );
 
   const onMembersCtaClick = useCallback(() => {
     navigate(ROUTE.MEMBERS);
   }, [navigate]);
 
   return (
-    <motion.div
-      className={styles.learnMore}
-      variants={mainContentVariants}
-      initial="hide"
-      animate="show"
-      exit="unmount"
-    >
-      <Section>
+    <PageShell className={styles.learnMore} withContactPanel>
+      <Section level={1}>
         <Grid className={styles.grid}>
           <Column
             className={styles.contentRow}
@@ -75,7 +61,7 @@ const LearnMorePage: FC = () => {
         </Grid>
       </Section>
 
-      <Section>
+      <Section level={1}>
         <Grid className={styles.grid}>
           <Column
             className={styles.contentRow}
@@ -114,7 +100,7 @@ const LearnMorePage: FC = () => {
         </Grid>
       </Section>
 
-      <Section>
+      <Section level={1}>
         <Grid className={styles.grid}>
           <Column
             className={styles.contentRow}
@@ -138,9 +124,7 @@ const LearnMorePage: FC = () => {
           </Column>
         </Grid>
       </Section>
-
-      <ContactPanel background="straight" staticBall />
-    </motion.div>
+    </PageShell>
   );
 };
 

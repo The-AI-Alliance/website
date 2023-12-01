@@ -1,5 +1,6 @@
 @use '@carbon/styles/scss/breakpoint' as *;
 @use '@carbon/grid' as *;
+@use '@carbon/type' as *;
 @use '@carbon/colors' as *;
 @use '../../styles/type.scss' as *;
 
@@ -93,11 +94,27 @@
   }
 
   &__header {
+    @include type-style('fluid-display-03', true);
+    font-size: 56px;
+    line-height: 64px;
     margin: 400px 0 32px;
-    
+
+    @include breakpoint(md) {
+      font-size: 68px;
+      line-height: 78px;
+    }
     @include breakpoint(lg) {
       margin: 330px 0 32px;
     }
+    @include breakpoint(xlg) {
+      font-size: 76px;
+      line-height: 86px;
+    }
+    @include breakpoint(max) {
+      font-size: 84px;
+      line-height: 94px;
+    }
+
   }
 
   &__subhead {

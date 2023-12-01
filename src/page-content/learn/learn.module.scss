@@ -7,14 +7,6 @@
   position: relative;
 
   > section {
-    &:first-of-type .grid {
-      padding-top: 96px;
-      
-      @include breakpoint(lg) {
-        padding-top: 144px;
-      }
-    }
-
     &:not(:first-of-type) .grid {
       margin-top: 80px;
       

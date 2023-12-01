@@ -2,30 +2,37 @@
 @use '@carbon/type' as *;
 @use '@carbon/grid' as *;
 @use '@carbon/colors' as *;
+@use '../../styles/type.scss' as *;
+
+.wrapper {
+  > section {
+    &:not(:first-of-type) .grid {
+      margin-top: 80px;
+      
+      @include breakpoint(lg) {
+        margin-top: 160px;
+      }
+    }
+  }
+}
 
 .news {
   position: relative;
   padding-top: calc(48px + 48px);
 
-  @include breakpoint-up(lg) {
+  @include breakpoint(lg) {
     padding-top: calc(96px + 48px);
   }
+}
 
-  .heading {
-    margin-bottom: 48px;
-
-    @include breakpoint-up(lg) {
-      &--members {
-        margin-bottom: 96px;
-      }
-    }
-
-    &--benefits {
-      margin-top: 160px;
-
-      @include breakpoint-down(lg) {
-        margin-top: 80px;
-      }
-    }
+.grid {
+  row-gap: 48px;
+  
+  @include breakpoint(lg) {
+    row-gap: 96px;
   }
+}
+
+.paragraph {
+  @include paragraph;
 }

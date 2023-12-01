@@ -41,7 +41,7 @@ const ContactPanel: React.FC<{
   const { emailSent, enabled, sendMail } = useSendEmail();
 
   return enabled ? (
-    <Section className={styles.wrapper}>
+    <Section className={styles.wrapper} level={1}>
       <Grid>
         <Column
           className={styles.titleColumn}
