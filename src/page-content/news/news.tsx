@@ -418,7 +418,7 @@ const NewsPage: React.FC = () => (
               <p>
                 <strong>
                   Professor Varsha Apte, Head, Department of Computer Science
-                  and Engineering at IIT Bombay{' '}
+                  and Engineering at IIT Bombay:{' '}
                 </strong>
                 “The Computer Science Department of IIT Bombay is excited to be
                 part of the AI Alliance. We hope to contribute towards creating
@@ -430,10 +430,236 @@ const NewsPage: React.FC = () => (
               <p>
                 <strong>
                   Professor Martin Vechev, Scientific Director of INSAIT, Full
-                  Professor at ETH Zurich{' '}
+                  Professor at ETH Zurich:{' '}
                 </strong>
                 “INSAIT is delighted to join the AI Alliance and help pave the
                 way towards a more transparent, open, safe and trustworthy AI.”
+              </p>
+              <p>
+                <strong>Prof. Kohei Itoh, President, Keio University: </strong>
+                “Keio University is excited to be a part of this new alliance
+                that will play a key role in our contribution to expanding the
+                horizon of computing by combining supercomputing, quantum
+                computing, semiconductor, and AI research.”
+              </p>
+              <p>
+                <strong>
+                  Jim Zemlin, Executive Director, Linux Foundation:{' '}
+                </strong>
+                “The AI Alliance is another milestone in the process of
+                providing for openly shareable software, data, and other assets
+                essential to the development of transparent, advanced and
+                trustworthy AI. Open collaborative processes and open governance
+                are essential to these efforts and working with our{' '}
+                <a href="https://pytorch.org/">PyTorch Foundation</a>,{' '}
+                <a href="https://lfaidata.foundation/">
+                  LF AI and Data Foundation
+                </a>
+                ,{' '}
+                <a href="https://www.cncf.io/">
+                  Cloud Native Computing Foundation
+                </a>
+                , we look forward to participating in and assisting the Alliance
+                by providing a neutral home for essential elements of the AI
+                ecosystem.”
+              </p>
+              <p>
+                <strong>
+                  Orran Krieger, Professor ECE and CS and Director of the Mass
+                  Open Cloud Alliance (MOC Alliance):{' '}
+                </strong>
+                “The MOC Alliance is excited to have its open production cloud
+                be a part of the Open AI Alliance. The AI Alliance's mission of
+                enabling AI in an open and transparent matter is an exciting
+                match for a cloud based on open source with all the operations
+                state and telemetry available to enable innovation. We hope to
+                both be a cost-effective platform for many of the research and
+                non-profit users that are part of the AI Alliance, as well as a
+                place where AI Alliance participants who are developing new
+                tools and platforms can expose their innovation to our large
+                community of existing AI researchers/users.”
+              </p>
+              <p>
+                <strong>
+                  Timothy Baldwin, Acting Provost, Mohamed bin Zayed University
+                  of Artificial Intelligence (MBZUAI):{' '}
+                </strong>
+                “MBZUAI recognizes the transformative impact of collaborative
+                efforts in fostering innovation. The open ecosystem cultivated
+                by the alliance mirrors our core values, emphasizing principles
+                such as scientific rigor, trust, ethics, transparency and
+                responsibility. As one of the founding members, MBZUAI
+                recognizes the transformative potential of foundation models and
+                generative AI. Our recent launch of the Institute of
+                Foundational Models solidifies our commitment to advancing
+                academic research into foundational models with linguistic,
+                visual, and biological capabilities and beyond. These models are
+                driving transformation in industries as diverse as
+                sustainability and healthcare. We are honored to be part of the
+                AI Alliance, and we eagerly anticipate the collaborative strides
+                we will make towards shaping a future where AI benefits people
+                and society everywhere.”
+              </p>
+              <p>
+                <strong>David Kanter, MLCommons Executive Director: </strong>
+                “MLCommons believes in collaborative engineering to build
+                industry standard benchmarks and metrics to help drive AI
+                forward in key areas such as performance and safety. We look
+                forward to working with the AI Alliance in these areas to make
+                all AI safer for everyone.”
+              </p>
+              <p>
+                <strong>Sethuraman Panchanathan, NSF Director </strong>
+                “The U.S. National Science Foundation is delighted to partner
+                with the AI Alliance to meet our shared goals of supporting
+                AI-driven discovery and innovation. The NAIRR pilot seeks to
+                connect America’s broad and diverse research community with the
+                resources needed to pursue the frontiers of AI in a safe,
+                secure, and trustworthy manner. The resources and tools
+                developed by the AI Alliance will strengthen and extend the
+                NAIRR pilot’s ability to advance AI innovation in areas of
+                societal and economic importance, ensuring the U.S. remains in
+                the vanguard of competitiveness in this key technology.”
+              </p>
+              <p>
+                <strong>
+                  Stacie Bloom, Chief Research Officer and Vice Provost for
+                  Research, NYU{' '}
+                </strong>
+                “NYU is excited about this opportunity to connect our world
+                class AI research community with so many outstanding
+                institutions including IBM and Meta.  This Alliance aligns with
+                our goals to drive science and technology solutions on a global
+                scale, and in a way that is safe, responsible, accessible and
+                equitable.”
+              </p>
+              <p>
+                <strong>Matt Hicks, president and CEO, Red Hat: </strong>
+                “Collaboration and open innovation have always been true
+                catalysts for progress. The launch of the AI Alliance marks a
+                visionary milestone, uniting industry giants, academia, and
+                innovators with a shared responsibility to shape the future and
+                advance open innovation, ensuring that the transformative power
+                of AI is harnessed responsibly and ethically. As a founding
+                member of the AI Alliance, Red Hat recognizes the collective
+                potential of an open, healthy AI community — a force that will
+                not only build technologies but also advocate for a future where
+                innovation knows no bounds.”
+              </p>
+              <p>
+                <strong>
+                  Martin A. Schmidt, Ph.D., Rensselaer Polytechnic Institute
+                  President{' '}
+                </strong>
+                “Rensselaer Polytechnic Institute is honored to become a
+                founding member of the AI Alliance. We believe the responsible
+                application of artificial intelligence enables infinite
+                possibilities in discovery and innovation. We look forward to
+                collaborating with the alliance as we accelerate our work in
+                artificial intelligence and quantum computing.”
+              </p>
+              <p>
+                <strong>Rohan Malhotra, CEO and Founder, Roadzen </strong>
+                The AI Alliance's focus on fostering an open and diverse
+                ecosystem is a pivotal step in advancing AI research worldwide.
+                It's a striking contrast to the idea of AI being tightly
+                controlled by a few entities. As Roadzen joins this global
+                initiative alongside the industry's leaders and researchers, our
+                commitment is twofold: to support this vision and to leverage
+                our expertise in building AI that is not just groundbreaking but
+                also safe, accessible, and beneficial for all.”
+              </p>
+              <p>
+                <strong>CJ Desai, president & COO, ServiceNow: </strong>
+                “AI innovation must remain open to drive positive and equitable
+                societal impact, foster continued progress, and address
+                potential risks collaboratively. There is no room for a
+                winner-take-all approach; the development of responsible, secure
+                LLMs comes in many forms, By joining this alliance, ServiceNow
+                is doubling down on open innovation, harnessing the collective
+                talent and expertise across the global open-source community.
+                This move aims to ensure AI development is grounded in the needs
+                of society, both today and in the future.”
+              </p>
+              <p>
+                <strong>David Spergel, President, Simons Foundation: </strong>
+                “The Simons Foundation is strongly committed to open codes, open
+                data and open scientific literature. We have been long
+                supporters of the arXiv, a key site for open science. We see
+                this support of open source code for AI as essential for both
+                advancing the science and enabling ethical use of AI.”
+              </p>
+              <p>
+                <strong>Emad Mostaque, CEO of Stability AI: </strong>
+                “Stability AI, a leader in developing advanced open AI models,
+                and IBM, a champion of open-source innovation, proudly announce
+                our partnership with The AI Alliance. Together, we are poised to
+                redefine the landscape of generative AI, focusing on
+                breakthrough innovations with a steadfast commitment to trust
+                and safety in this dynamic field.”
+              </p>
+              <p>
+                <strong>
+                  Prof. Hiroaki Aihara, Executive Vice President of the
+                  University of Tokyo:{' '}
+                </strong>
+                “The University Tokyo is thrilled to be part of the AI Alliance,
+                together to support open innovation and open science in AI for
+                the benefit of society at large.”
+              </p>
+              <p>
+                <strong>Thomas F. Hofmann, TUM president: </strong>
+                “With this alliance, we want to accelerate the development of
+                responsible, socially acceptable and scalable AI solutions in
+                partnership with other leading universities and companies.”
+              </p>
+              <p>
+                <strong>
+                  Jennifer Chayes, Dean, UC Berkeley's College of Computing,
+                  Data Science, and Society:{' '}
+                </strong>
+                “Pursuing open innovation levels the playing field, allowing
+                everyone to share in the benefits of generative AI.”
+              </p>
+              <p>
+                <strong>
+                  Rashid Bashir, dean of The Grainger College of Engineering,
+                  University of Illinois Urbana-Champaign :
+                </strong>
+                “Grainger Engineers have been conducting AI research since the
+                dawn of computing and UIUC is a hotbed of AI innovation today
+                because of that rich history. Today, with three of the nation’s
+                NSF AI Institutes, and numerous cross-sector partnerships, we
+                are advancing research and workforce development to accelerate
+                safe, responsible AI progress. UIUC is proud to join our
+                esteemed peers and partners in this vital alliance.”
+              </p>
+              <p>
+                <strong>
+                  University President Rev. John I. Jenkins, C.S.C., University
+                  of Notre Dame:{' '}
+                </strong>
+                “Innovations in artificial intelligence offer, at the same time,
+                the promise of serving the common good and the threat of
+                undermining it. It is critical that we engage serious ethical
+                questions about AI alongside the technological. Notre Dame has
+                long been a place for researching and reflecting on the ethical
+                implications of science and technology, and we are pleased that
+                through the AI Alliance we will be able to lend a distinctive
+                voice and perspective to the conversation about building
+                technologies that are both innovative and ethical.”
+              </p>
+              <p>
+                <strong>
+                  Jeffrey Brock, Dean of the Yale School of Engineering &
+                  Applied Science:{' '}
+                </strong>
+                “We are excited to join the AI Alliance as a founding partner.
+                Its commitment to innovative and open AI development aligns with
+                our vision at Yale Engineering. This partnership enables us to
+                work with a broad range of university and industry leadership to
+                pursue collaborative research, while formulating policy and
+                standards for safe, explainable, and trustworthy AI.”
               </p>
             </section>
           </article>
