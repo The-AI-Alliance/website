@@ -4,6 +4,18 @@
 @use '@carbon/colors' as *;
 @use '../../styles/type.scss' as *;
 
+@mixin font20_28 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 300;
+}
+
+@mixin font16_24 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+}
+
 .news {
   > section {
     &:not(:first-of-type) .grid {
@@ -23,7 +35,7 @@
     border-bottom: solid 1px $white-0;
     padding-bottom: 48px;
     
-    @include breakpoint(lg) {
+    @include breakpoint(md) {
       padding-bottom: 80px;
     }
   }
@@ -31,44 +43,72 @@
   .contentHeader {
     padding-top: 48px;
     padding-bottom: 48px;
+    @include font20_28;
   }
 
   .content {
     article {
-      padding-bottom: 80px;
-      border-bottom: solid 1px $white-0;
+      @include breakpoint(lg) {
+        padding-bottom: 80px;
+        border-bottom: solid 1px $white-0;
+      }
 
       h2 {
         margin-bottom: 48px;
       }
 
-      h3 {
-        margin-bottom: 24px;
-      }
-      
       .abstract {
         font-style: italic;
+        @include font20_28;
       }
 
-      // I also added this section to make the lists appear correct to spec, but this may not be the best way to go about it
       ul {
-        margin-bottom: 48px;
-        line-height: 28px;
+        margin-bottom: 1.5rem;
       }
 
-      // Stano, I removed  `& + li` from here because it was causing large spacing between list items. Kelly said this is fine.
       section {
-        margin-top: 80px;
-        
-        > p, > ul > li {
-          & + p, & + ul {
+        margin-top: 48px;
+        @include breakpoint(md) {
+          margin-top: 80px;
+        }
+
+        p, li, blockquote {
+          @include font16_24;
+          
+          @include breakpoint(md) {
+            @include font20_28;
+          }
+        }
+
+        h3 {
+          padding-top: 32px;
+          margin-bottom: 1.5rem;
+
+          @include breakpoint(md) {
+            padding-top: 0;
+          }
+        }
+
+        > p, > ul > li, > blockquote {
+          & + p, & + ul, & + blockquote {
             margin-top: 1.5rem;
+          }
+          & + li {
+            margin-top: 0.5rem;
           }
         }
 
         > ul > li {
           list-style-type: disc;
           margin-left: 2rem;
+        }
+
+        p.enlargeSpacing {
+          margin: 48px 0;
+        }
+
+        blockquote {
+          font-style: italic;
         }
       }
     }
