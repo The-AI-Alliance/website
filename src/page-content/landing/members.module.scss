@@ -1,15 +1,16 @@
 @use '@carbon/styles/scss/breakpoint' as *;
 @use '@carbon/grid' as *;
+@use '@carbon/colors' as *;
 @use '../../styles/type.scss' as *;
 
 .members {
-  &__grid {
-    row-gap: 48px;
+  // &__grid {
+  //   row-gap: 48px;
 
-    @include breakpoint(lg) {
-      row-gap: 80px;
-    }
-  }
+  //   @include breakpoint(lg) {
+  //     row-gap: 80px;
+  //   }
+  // }
 
   &__list {
     position: relative;
@@ -25,6 +26,67 @@
       @include paragraph;
       @include breakpoint(max) {
         line-height: 42px;
+      }
+    }
+  }
+
+  .stat {
+    display: block;
+    border-top: solid 1px $white-0;
+    padding: 24px 0;
+
+    @include breakpoint(lg) {
+      display: none;
+    }
+
+    .statTitle {
+      @include paragraph;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .statValue {
+      font-size: 24px;
+      font-weight: 300;
+    }
+  }
+
+  .map {
+    position: relative;
+    z-index: -1;
+    
+    &.mapWithSidebar {
+      display: none;
+      
+      @include breakpoint(lg) {
+        display: block;
+      }
+
+      @include breakpoint(lg) {
+        margin-top: -38px;
+      }
+      @include breakpoint(xlg) {
+        margin-top: -44px;
+      }
+      @include breakpoint(max) {
+        margin-top: -62px;
+      }
+    }
+
+    &.mapOnly {
+      display: block;
+      margin-bottom: 48px;
+      margin-top: 48px;
+
+      @include breakpoint(lg) {
+        display: none;
+      }
+    }
+
+    &__stats {
+      display: block;
+      @include breakpoint(lg) {
+        display: none;
       }
     }
   }
