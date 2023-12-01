@@ -120,7 +120,7 @@ const MembersPage: FC = () => (
       </Section>
     ) : null}
 
-    <Section className={styles.join} level={1}>
+    {/* <Section className={styles.join} level={1}>
       <Grid className={styles.grid}>
         <Column xlg={{ span: 6, offset: 1 }} lg={6} md={6} sm={3}>
           <Heading
@@ -144,7 +144,7 @@ const MembersPage: FC = () => (
           </motion.p>
         </Column>
       </Grid>
-    </Section>
+    </Section> */}
   </PageShell>
 );
 
