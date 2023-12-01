@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import { Accordion, AccordionItem, Button } from '@carbon/react';
+import { Accordion, AccordionItem } from '@carbon/react';
 import { motion } from 'framer-motion';
 import { showInView } from '@utils/showInView';
 

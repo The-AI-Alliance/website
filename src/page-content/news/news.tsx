@@ -393,10 +393,10 @@ const NewsPage: React.FC = () => (
                   President Asher Cohen, Hebrew University of Jerusalem:{' '}
                 </strong>
                 “Joining the AI Alliance marks a pivotal moment for Hebrew
-                University, where collaboration meets innovation. We're thrilled
+                University, where collaboration meets innovation. We’re thrilled
                 to be part of this coalition driving the future of AI, fostering
                 open technologies, nurturing talent, and championing ethical,
-                trusted AI practices. Together, we'll forge pathways for global
+                trusted AI practices. Together, we’ll forge pathways for global
                 education, build robust frameworks, and advocate for policies
                 that nurture a vibrant, open AI ecosystem. This alliance is a
                 beacon illuminating our commitment to shaping a responsible,
@@ -469,7 +469,7 @@ const NewsPage: React.FC = () => (
                   Open Cloud Alliance (MOC Alliance):{' '}
                 </strong>
                 “The MOC Alliance is excited to have its open production cloud
-                be a part of the Open AI Alliance. The AI Alliance's mission of
+                be a part of the Open AI Alliance. The AI Alliance’s mission of
                 enabling AI in an open and transparent matter is an exciting
                 match for a cloud based on open source with all the operations
                 state and telemetry available to enable innovation. We hope to
@@ -528,7 +528,7 @@ const NewsPage: React.FC = () => (
                 </strong>
                 “NYU is excited about this opportunity to connect our world
                 class AI research community with so many outstanding
-                institutions including IBM and Meta.  This Alliance aligns with
+                institutions including IBM and Meta. This Alliance aligns with
                 our goals to drive science and technology solutions on a global
                 scale, and in a way that is safe, responsible, accessible and
                 equitable.”
@@ -560,11 +560,11 @@ const NewsPage: React.FC = () => (
               </p>
               <p>
                 <strong>Rohan Malhotra, CEO and Founder, Roadzen: </strong>
-                The AI Alliance's focus on fostering an open and diverse
+                The AI Alliance’s focus on fostering an open and diverse
                 ecosystem is a pivotal step in advancing AI research worldwide.
-                It's a striking contrast to the idea of AI being tightly
+                It’s a striking contrast to the idea of AI being tightly
                 controlled by a few entities. As Roadzen joins this global
-                initiative alongside the industry's leaders and researchers, our
+                initiative alongside the industry’s leaders and researchers, our
                 commitment is twofold: to support this vision and to leverage
                 our expertise in building AI that is not just groundbreaking but
                 also safe, accessible, and beneficial for all.”
@@ -615,7 +615,7 @@ const NewsPage: React.FC = () => (
               </p>
               <p>
                 <strong>
-                  Jennifer Chayes, Dean, UC Berkeley's College of Computing,
+                  Jennifer Chayes, Dean, UC Berkeley’s College of Computing,
                   Data Science, and Society:{' '}
                 </strong>
                 “Pursuing open innovation levels the playing field, allowing
