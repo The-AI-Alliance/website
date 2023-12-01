@@ -304,7 +304,7 @@ const NewsPage: React.FC = () => (
                 Alliance.”
               </p>
               <p>
-                <strong>Robert Nishihara, CEO of Anyscale </strong>
+                <strong>Robert Nishihara, CEO of Anyscale: </strong>
                 “AI will have a positive impact on our daily lives and address
                 some of the world’s most pressing challenges, but like with any
                 new technology or innovation, we need to consider the risks. To
@@ -404,7 +404,7 @@ const NewsPage: React.FC = () => (
                 artificial intelligence.”
               </p>
               <p>
-                <strong>Atish Dabholkar, ICTP Director </strong>
+                <strong>Atish Dabholkar, ICTP Director: </strong>
                 “ICTP is pleased to be part of the high-level, international
                 research community underpinning the AI Alliance that includes
                 major players in the field. We share a commitment to exploring
@@ -509,7 +509,7 @@ const NewsPage: React.FC = () => (
                 all AI safer for everyone.”
               </p>
               <p>
-                <strong>Sethuraman Panchanathan, NSF Director </strong>
+                <strong>Sethuraman Panchanathan, NSF Director: </strong>
                 “The U.S. National Science Foundation is delighted to partner
                 with the AI Alliance to meet our shared goals of supporting
                 AI-driven discovery and innovation. The NAIRR pilot seeks to
@@ -524,7 +524,7 @@ const NewsPage: React.FC = () => (
               <p>
                 <strong>
                   Stacie Bloom, Chief Research Officer and Vice Provost for
-                  Research, NYU{' '}
+                  Research, NYU:{' '}
                 </strong>
                 “NYU is excited about this opportunity to connect our world
                 class AI research community with so many outstanding
@@ -549,7 +549,7 @@ const NewsPage: React.FC = () => (
               <p>
                 <strong>
                   Martin A. Schmidt, Ph.D., Rensselaer Polytechnic Institute
-                  President{' '}
+                  President:{' '}
                 </strong>
                 “Rensselaer Polytechnic Institute is honored to become a
                 founding member of the AI Alliance. We believe the responsible
@@ -559,7 +559,7 @@ const NewsPage: React.FC = () => (
                 artificial intelligence and quantum computing.”
               </p>
               <p>
-                <strong>Rohan Malhotra, CEO and Founder, Roadzen </strong>
+                <strong>Rohan Malhotra, CEO and Founder, Roadzen: </strong>
                 The AI Alliance's focus on fostering an open and diverse
                 ecosystem is a pivotal step in advancing AI research worldwide.
                 It's a striking contrast to the idea of AI being tightly
@@ -624,7 +624,7 @@ const NewsPage: React.FC = () => (
               <p>
                 <strong>
                   Rashid Bashir, dean of The Grainger College of Engineering,
-                  University of Illinois Urbana-Champaign :
+                  University of Illinois Urbana-Champaign:{' '}
                 </strong>
                 “Grainger Engineers have been conducting AI research since the
                 dawn of computing and UIUC is a hotbed of AI innovation today
