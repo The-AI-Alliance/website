@@ -7,6 +7,7 @@ import Shape1r from '@graphics/shape1r.svg';
 import ContactForm from '@components/contactForm/contactForm';
 import useSendEmail from '../../utils/useSendEmail';
 import Ball from '@components/ball/ball';
+import { showInView } from '@utils/showInView';
 
 import styles from './contactPanel.module.scss';
 
@@ -51,7 +52,9 @@ const ContactPanel: React.FC<{
           sm={3}
         >
           <Heading className={styles.innerHeading}>
-            Learn more about the AI Alliance
+            <motion.span {...showInView}>
+              Learn more about the AI Alliance
+            </motion.span>
           </Heading>
           {background === 'straight' ? (
             <div className={styles.titleGraphics} ref={graphicsRef}>

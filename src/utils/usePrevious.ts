@@ -1,18 +1,13 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
-export const usePrevious = <T, D>(value: T, defaultValue: D) => {
-  const ref = useRef<{ value: T | D; prev: T | D }>({
-    value,
-    prev: defaultValue,
-  });
+export const usePrevious = <T>(value: T) => {
+  const ref = useRef<T>(value);
 
-  const current = ref.current.value;
-  if (value !== current) {
-    ref.current = {
-      value,
-      prev: current,
-    };
-  }
+  useEffect(() => {
+    if (value !== ref.current) {
+      ref.current = value;
+    }
+  }, [value]);
 
-  return ref.current.prev;
+  return ref.current;
 };

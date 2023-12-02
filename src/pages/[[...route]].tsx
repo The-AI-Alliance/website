@@ -1,6 +1,7 @@
 import React, {
   MouseEventHandler,
   useCallback,
+  useEffect,
   useMemo,
   useState,
 } from 'react';
@@ -39,6 +40,20 @@ export default function Home({
 }) {
   const [isSideNavExpanded, setSideNavExpanded] = useState(false);
   const { navigate: _navigate, currentRoute } = useNavigation();
+  const [renderedRoute, setRenderedRoute] = useState<ROUTE | null>(
+    currentRoute,
+  );
+
+  const exitComplete = useCallback(() => {
+    setRenderedRoute(currentRoute);
+    window.scrollTo(0, 0);
+  }, [currentRoute]);
+
+  useEffect(() => {
+    if (currentRoute !== renderedRoute) {
+      setRenderedRoute(null);
+    }
+  }, [currentRoute, renderedRoute]);
 
   const navigate = useCallback(
     (route: ROUTE) => {
@@ -78,7 +93,7 @@ export default function Home({
   );
 
   const renderContent = useCallback(() => {
-    switch (currentRoute) {
+    switch (renderedRoute) {
       case ROUTE.LEARN:
         return <LearnMorePage key="learnMorePage" />;
 
@@ -91,10 +106,13 @@ export default function Home({
       case ROUTE.NEWS:
         return <NewsPage key="newsPage" />;
 
-      default:
+      case ROUTE.HOME:
         return <LandingPage key="landingPage" />;
+
+      default:
+        return null;
     }
-  }, [currentRoute]);
+  }, [renderedRoute]);
 
   const handleGoHome: MouseEventHandler<HTMLAnchorElement> = useCallback(
     e => {
@@ -144,7 +162,9 @@ export default function Home({
             </SideNavItems>
           </SideNav>
         </Header>
-        <AnimatePresence>{renderContent()}</AnimatePresence>
+        <AnimatePresence onExitComplete={exitComplete}>
+          {renderContent()}
+        </AnimatePresence>
       </main>
     </FeatureFlagsContext.Provider>
   );

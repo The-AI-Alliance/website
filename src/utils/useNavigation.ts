@@ -30,7 +30,6 @@ const useNavigation = () => {
   const navigate = useCallback(
     (route: ROUTE) => {
       router.push(route, undefined, { shallow: true });
-      setTimeout(() => window.scrollTo(0, 0), 420); // Wait till the previous page fades-out
     },
     [router],
   );
