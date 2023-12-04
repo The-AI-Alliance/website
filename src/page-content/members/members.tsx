@@ -2,24 +2,39 @@ import { FC } from 'react';
 import { Column, Grid, Heading, Section } from '@carbon/react';
 import classnames from 'classnames';
 import Image from 'next/image';
-import cerebras from '@public/members/cerebras.png';
-import dell from '@public/members/dell.png';
-import epfl from '@public/members/epfl.png';
-import esa from '@public/members/esa.png';
-import ethz from '@public/members/ethz.png';
+import aitomatic from '@public/members/aitomatic.png';
+import amd from '@public/members/amd.png';
+import anyscale from '@public/members/anyscale.jpg';
+import berkeley from '@public/members/berkeley.png';
+import CC from '@public/members/CC.jpg';
+import dartmouth from '@public/members/dartmouth.png';
+import fast_ai from '@public/members/fast_ai.png';
+import fenrir from '@public/members/fenrir.png';
+import FPT from '@public/members/FPT.png';
+import HUJI from '@public/members/HUJI.jpg';
 import ibm from '@public/members/ibm.png';
+import INSAIT from '@public/members/INSAIT.jpg';
 import intel from '@public/members/intel.png';
-import langchain from '@public/members/langchain.png';
+import keio from '@public/members/keio.png';
 import linux from '@public/members/linux.png';
+import mass from '@public/members/mass.png';
+import MBZUAI from '@public/members/MBZUAI.jpg';
 import meta from '@public/members/meta.png';
-import mit from '@public/members/mit.png';
-import ml_commons from '@public/members/ml_commons.png';
-import nasa from '@public/members/nasa.png';
-import preferred_networks from '@public/members/preferred_networks.png';
-import redhat from '@public/members/redhat.png';
-import soft_bank from '@public/members/soft_bank.png';
-import tum from '@public/members/tum.png';
+import mlcommons from '@public/members/mlcommons.png';
+import munich from '@public/members/munich.png';
+import notre_dame from '@public/members/notre_dame.png';
+import nyu from '@public/members/nyu.png';
+import red_hat from '@public/members/red_hat.png';
+import roadzen from '@public/members/roadzen.png';
+import rpi from '@public/members/rpi.png';
+import sbintuitions from '@public/members/sbintuitions.jpg';
+import servicenow from '@public/members/servicenow.png';
+import simons from '@public/members/simons.png';
+import sony from '@public/members/sony.png';
+import together from '@public/members/together.png';
+import tokyo from '@public/members/tokyo.jpg';
 import uiuc from '@public/members/uiuc.png';
+import yale from '@public/members/yale.png';
 import { motion } from 'framer-motion';
 import { showInView } from '@utils/showInView';
 import Testimonial from './testimonial';
@@ -30,24 +45,39 @@ import styles from './members.module.scss';
 import testimonials from './testimonials';
 
 const logos = [
-  { size: 1, src: ibm, alt: 'IBM' },
-  { size: 2, src: redhat, alt: 'RedHat' },
-  { size: 1, src: dell, alt: 'Dell' },
-  { size: 1, src: intel, alt: 'Intel' },
-  { size: 1, src: soft_bank, alt: 'SoftBank' },
-  { size: 1, src: meta, alt: 'Meta' },
-  { size: 2, src: preferred_networks, alt: 'Preferred Networks' },
-  { size: 4, src: cerebras, alt: 'Cerebras' },
-  { size: 2, src: linux, alt: 'linux' },
-  { size: 3, src: ml_commons, alt: 'ML Commons' },
-  { size: 1, src: epfl, alt: 'EPFL' },
-  { size: 1, src: mit, alt: 'MIT' },
-  { size: 2, src: uiuc, alt: 'UIUC' },
-  { size: 6, src: nasa, alt: 'NASA' },
-  { size: 1, src: ethz, alt: 'ETH' },
-  { size: 1, src: esa, alt: 'ESA' },
-  { size: 1, src: tum, alt: 'TUM' },
-  { size: 1, src: langchain, alt: 'LangChain' },
+  { size: 1, src: aitomatic, alt: 'IBM' },
+  { size: 2, src: amd, alt: 'RedHat' },
+  { size: 1, src: anyscale, alt: 'Dell' },
+  { size: 1, src: berkeley, alt: 'Intel' },
+  { size: 1, src: CC, alt: 'SoftBank' },
+  { size: 1, src: dartmouth, alt: 'Meta' },
+  { size: 2, src: fast_ai, alt: 'Preferred Networks' },
+  { size: 4, src: fenrir, alt: 'Cerebras' },
+  { size: 2, src: FPT, alt: 'linux' },
+  { size: 3, src: HUJI, alt: 'ML Commons' },
+  { size: 1, src: ibm, alt: 'EPFL' },
+  { size: 1, src: INSAIT, alt: 'MIT' },
+  { size: 2, src: intel, alt: 'UIUC' },
+  { size: 6, src: keio, alt: 'NASA' },
+  { size: 1, src: linux, alt: 'ETH' },
+  { size: 1, src: mass, alt: 'ESA' },
+  { size: 1, src: MBZUAI, alt: 'TUM' },
+  { size: 1, src: meta, alt: 'LangChain' },
+  { size: 1, src: mlcommons, alt: 'EPFL' },
+  { size: 1, src: munich, alt: 'MIT' },
+  { size: 1, src: notre_dame, alt: 'MIT' },
+  { size: 2, src: nyu, alt: 'UIUC' },
+  { size: 6, src: red_hat, alt: 'NASA' },
+  { size: 1, src: roadzen, alt: 'ETH' },
+  { size: 1, src: rpi, alt: 'ESA' },
+  { size: 1, src: sbintuitions, alt: 'TUM' },
+  { size: 1, src: servicenow, alt: 'LangChain' },
+  { size: 1, src: simons, alt: 'ETH' },
+  { size: 1, src: sony, alt: 'ESA' },
+  { size: 1, src: together, alt: 'TUM' },
+  { size: 1, src: tokyo, alt: 'LangChain' },
+  { size: 1, src: uiuc, alt: 'TUM' },
+  { size: 1, src: yale, alt: 'LangChain' },
 ];
 
 const MembersPage: FC = () => (
