@@ -46,59 +46,61 @@ const NewsPage: React.FC = () => (
           <article>
             <motion.h2 {...showInView}>
               AI Alliance Launches as an International Community of Leading
-              Technology Developers, Researchers and Adopters Collaborating
+              Technology Developers, Researchers, and Adopters Collaborating
               Together to Advance Open, Safe, Responsible AI
             </motion.h2>
             <motion.p className={styles.abstract}>
-              IBM and Meta Launch the AI Alliance in collaboration with X
-              Founding Members globally including AMD, Anyscale, CERN, Cleveland
-              Clinic, Cornell University, Dartmouth College, Dell Technologies,
-              EPFL, ETH, Hugging Face, Imperial College London, Intel, INSAIT,
-              Linux Foundation, MOC Alliance operated by Boston University and
-              Harvard, NSF, Oracle, Red Hat, Roadzen, ServiceNow, Sony Group,
-              Stability AI, University of California Berkeley, University of
-              Illinois, University of Tokyo, and Yale
+              IBM and Meta Launch the AI Alliance in collaboration with over 50
+              Founding Members and Collaborators globally including AMD,
+              Anyscale, CERN, Cerebras, Cleveland Clinic, Cornell University,
+              Dartmouth College, Dell Technologies, EPFL, ETH, Hugging Face,
+              Imperial College London, Intel, INSAIT, Linux Foundation,
+              MLCommons, MOC Alliance operated by Boston University and Harvard
+              University, NASA, NSF, Oracle, Partnership on AI, Red Hat,
+              Roadzen, ServiceNow, Sony Group, Stability AI, University of
+              California Berkeley, University of Illinois, University of Notre
+              Dame, The University of Tokyo, Yale University and others
             </motion.p>
             <section>
               <motion.p {...showInView}>
                 AI advancements are leading to new opportunities that can
-                improve how we work, live, learn andinteract with one another.
+                improve how we work, live, learn and interact with one another.
                 Open and transparent innovation is essential to empower a broad
-                spectrumof AI researchers, builders, and adopters with the
-                information and tools needed to harness theseadvancements in
+                spectrum of AI researchers, builders, and adopters with the
+                information and tools needed to harness these advancements in
                 ways that prioritize safety, diversity, economic opportunity and
                 benefits to all.
               </motion.p>
               <motion.p {...showInView}>
                 While there are many individual companies, start-ups,
-                researchers, governments, and others who arecommitted to open
+                researchers, governments, and others who are committed to open
                 science and open technologies and want to participate in the new
-                wave of AIinnovation, more collaboration and information sharing
-                will help the community innovate faster andmore inclusively, and
-                identify specific risks and mitigate those risks before putting
-                a product into theworld.
+                wave of AI innovation, more collaboration and information
+                sharing will help the community innovate faster and more
+                inclusively, and identify specific risks and mitigate those
+                risks before putting a product into the world.
               </motion.p>
               <motion.p {...showInView}>
                 That is why today, we’re launching the{' '}
                 <strong>AI Alliance</strong> – a group of leading organizations
-                across industry,startup, academia, research and government
-                coming together to support open innovation and openscience in
+                across industry, startup, academia, research and government
+                coming together to support open innovation and open science in
                 AI. The AI Alliance is action oriented and decidedly
-                international, designed to createopportunities everywhere
+                international, designed to create opportunities everywhere
                 through a diverse range of institutions that can shape the
-                evolution of AI inways that better reflect the needs and the
+                evolution of AI in ways that better reflect the needs and the
                 complexity of our societies.
               </motion.p>
               <motion.p {...showInView}>
                 The AI Alliance is focused on fostering an open community and
-                enabling developers and researchers toaccelerate responsible
+                enabling developers and researchers to accelerate responsible
                 innovation in AI while ensuring scientific rigor, trust, safety,
-                security, diversityand economic competitiveness. By bringing
-                together leading developers, scientists, academicinstitutions,
+                security, diversity and economic competitiveness. By bringing
+                together leading developers, scientists, academic institutions,
                 companies, and other innovators, we will pool resources and
-                knowledge to address safetyconcerns while providing a platform
-                for sharing and developing solutions that fit the needs
-                ofresearchers, developers, and adopters around the world.
+                knowledge to address safety concerns while providing a platform
+                for sharing and developing solutions that fit the needs of
+                researchers, developers, and adopters around the world.
               </motion.p>
               <motion.p {...showInView} className={styles.enlargeSpacing}>
                 To do that, the AI Alliance plans to start or enhance projects
@@ -215,7 +217,8 @@ const NewsPage: React.FC = () => (
                 </motion.li>
                 <motion.li {...showInView}>ETH Zurich</motion.li>
                 <motion.li {...showInView}>Fast.ai</motion.li>
-                <motion.li {...showInView}>FPT</motion.li>
+                <motion.li {...showInView}>Fenrir, Inc.</motion.li>
+                <motion.li {...showInView}>FPT Software</motion.li>
                 <motion.li {...showInView}>Hebrew University</motion.li>
                 <motion.li {...showInView}>Hugging Face</motion.li>
                 <motion.li {...showInView}>IBM</motion.li>
@@ -250,8 +253,11 @@ const NewsPage: React.FC = () => (
                 <motion.li {...showInView}>
                   National Science Foundation
                 </motion.li>
+                <motion.li {...showInView}>New York University</motion.li>
                 <motion.li {...showInView}>NumFOCUS</motion.li>
+                <motion.li {...showInView}>OpenTeams</motion.li>
                 <motion.li {...showInView}>Oracle</motion.li>
+                <motion.li {...showInView}>Partnership on AI</motion.li>
                 <motion.li {...showInView}>Quansight</motion.li>
                 <motion.li {...showInView}>Red Hat</motion.li>
                 <motion.li {...showInView}>
@@ -259,6 +265,7 @@ const NewsPage: React.FC = () => (
                 </motion.li>
                 <motion.li {...showInView}>Roadzen</motion.li>
                 <motion.li {...showInView}>Sakana AI</motion.li>
+                <motion.li {...showInView}>SB Intuitions</motion.li>
                 <motion.li {...showInView}>ServiceNow</motion.li>
                 <motion.li {...showInView}>Simons Foundation</motion.li>
                 <motion.li {...showInView}>Sony Group</motion.li>
@@ -266,12 +273,17 @@ const NewsPage: React.FC = () => (
                 <motion.li {...showInView}>Together AI</motion.li>
                 <motion.li {...showInView}>TU Munich</motion.li>
                 <motion.li {...showInView}>
-                  UC Berkeley’s College of Computing, Data Science, and Society
+                  UC Berkeley College of Computing, Data Science, and Society
                 </motion.li>
                 <motion.li {...showInView}>
-                  University of Illinois Urbana-Champagne
+                  University of Illinois Urbana-Champaign
                 </motion.li>
-                <motion.li {...showInView}>University of Notre Dame</motion.li>
+                <motion.li {...showInView}>
+                  The University of Notre Dame
+                </motion.li>
+                <motion.li {...showInView}>
+                  The University of Texas at Austin
+                </motion.li>
                 <motion.li {...showInView}>The University of Tokyo</motion.li>
                 <motion.li {...showInView}>Yale University</motion.li>
               </ul>
@@ -301,6 +313,17 @@ const NewsPage: React.FC = () => (
               <motion.h3 {...showInView}>Member Quotes</motion.h3>
 
               <motion.blockquote {...showInView}>
+                <strong>Arvind Krishna, IBM Chairman and CEO: </strong>
+                “The progress we continue to witness in AI is a testament to
+                open innovation and collaboration across communities of
+                creators, scientists, academics and business leaders. This is a
+                pivotal moment in defining the future of AI. IBM is proud to
+                partner with like-minded organizations through the AI Alliance
+                to ensure this open ecosystem drives an innovative AI agenda
+                underpinned by safety, accountability and scientific rigor.”
+              </motion.blockquote>
+
+              <motion.blockquote {...showInView}>
                 <strong>Nick Clegg, President, Global Affairs of Meta: </strong>
                 “We believe it’s better when AI is developed openly – more
                 people can access can access the benefits, build innovative
@@ -310,6 +333,20 @@ const NewsPage: React.FC = () => (
                 shared openly or not. We’re looking forward to working with
                 partners to advance the state-of-the-art in AI and help everyone
                 build responsibly.”
+              </motion.blockquote>
+              <motion.blockquote {...showInView}>
+                <strong>Lisa Su, AMD CEO and Chair: </strong>
+                “At AMD, we are committed to advancing technology through
+                collaboration. The history of our industry highlights how open,
+                standards-based development leveraging the capabilities of the
+                entire industry both accelerate innovation and ensure technology
+                advances have the largest positive impact. By embracing open
+                standards and transparency across all aspects of the rapidly
+                developing AI ecosystem, we can help ensure the transformational
+                benefits of responsible AI are broadly available. We are proud
+                to join with other industry leaders as a founding member of the
+                AI Alliance and look forward to working together to ensure the
+                rapid advances in AI are a force for positive change.”
               </motion.blockquote>
               <motion.blockquote {...showInView}>
                 <strong>
@@ -382,6 +419,20 @@ const NewsPage: React.FC = () => (
               </motion.blockquote>
               <motion.blockquote {...showInView}>
                 <strong>
+                  Krystyn J Van Vliet, Vice President for Research and
+                  Innovation at Cornell University{' '}
+                </strong>
+                “Cornell looks forward to participating in this AI Alliance, and
+                to the range of participants and perspectives around this table.
+                Open innovation has spurred incredible advances in many fields
+                including AI and thrives on experimentation and dialogue. We
+                look forward to contributing to the discussions, technologies,
+                and advances that will help the world develop knowledge and
+                tools using AI, as well as a shared sense of responsibility for
+                positive impact on society.”
+              </motion.blockquote>
+              <motion.blockquote {...showInView}>
+                <strong>
                   Dave Kotz, Provost and the Pat and John Rosenwald Professor in
                   the Department of Computer Science, Dartmouth College:{' '}
                 </strong>
@@ -398,6 +449,25 @@ const NewsPage: React.FC = () => (
                 with open innovation and in open ecosystems. The AI Alliance is
                 a positive step in making sure a diverse set of voices are
                 collaborating transparently for the benefit of all.”
+              </motion.blockquote>
+              <motion.blockquote {...showInView}>
+                <strong>
+                  Marcel Salathé & Pascal Frossard, co-directors of the EPFL AI
+                  Center:{' '}
+                </strong>
+                “EPFL is committed to the open, transparent, and safe
+                development of AI, recognizing its significance for everyone.
+                Through global collaborations like the AI alliance, we aim to
+                ensure that progress in AI technology is ethical, efficient, and
+                universally beneficent.”
+              </motion.blockquote>
+              <motion.blockquote {...showInView}>
+                <strong>Jeremy Howard, founding researcher, Fast.ai: </strong>
+                “Open source is the backbone of all leading artificial
+                intelligence software. With open source, the entire community
+                comes together to collaborate on solving the toughest problems,
+                the most effective solutions rise to the top, and everyone
+                benefits.”
               </motion.blockquote>
               <motion.blockquote {...showInView}>
                 <strong>Phong Nguyen, CAIO, FPT Software: </strong>
@@ -449,11 +519,37 @@ const NewsPage: React.FC = () => (
               </motion.blockquote>
               <motion.blockquote {...showInView}>
                 <strong>
+                  Professor Bob Shorten, Head of Dyson School of Engineering,
+                  Imperial College London:{' '}
+                </strong>
+                “We are delighted to be a founding member of the AI Alliance. At
+                Imperial College London, we believe that community engagement is
+                essential for making AI trusted, responsible, transparent, as
+                well as auditable. We look forward to engaging with the Alliance
+                community to realise these objectives.”
+              </motion.blockquote>
+              <motion.blockquote {...showInView}>
+                <strong>
                   Professor Martin Vechev, Scientific Director of INSAIT, Full
                   Professor at ETH Zurich:{' '}
                 </strong>
                 “INSAIT is delighted to join the AI Alliance and help pave the
                 way towards a more transparent, open, safe and trustworthy AI.”
+              </motion.blockquote>
+              <motion.blockquote {...showInView}>
+                <strong>
+                  Deepak Patil, CVP and GM Intel Datacenter AI Solutions:{' '}
+                </strong>
+                “Intel has long supported the open ecosystem to drive innovation
+                and the future of technology. The AI Alliance provides an
+                opportunity for a broad community to come together to advance
+                the future of artificial intelligence technologies including
+                data sets, models and tools rooted in responsibility, ethics,
+                trustworthy and security practices. By collaborating across the
+                industry, the advancement of this technology can be driven
+                forward with speed and transparency. We look forward to working
+                with this diverse group to help shape an open, responsible AI
+                ecosystem.”
               </motion.blockquote>
               <motion.blockquote {...showInView}>
                 <strong>Prof. Kohei Itoh, President, Keio University: </strong>
@@ -610,6 +706,21 @@ const NewsPage: React.FC = () => (
                 advancing the science and enabling ethical use of AI.”
               </motion.blockquote>
               <motion.blockquote {...showInView}>
+                <strong>
+                  Dr. Hiroaki Kitano, Senior Executive Vice President and CTO of
+                  Sony Group Corporation{' '}
+                </strong>
+                “As a global technology and entertainment company, Sony believes
+                in developing new technology for the benefit of the creative
+                community and society at large in an ethical, legal, and
+                responsible manner. We look forward to working together with
+                representatives from the diverse international open-source
+                community across industry, academic, research, and government
+                organizations to develop AI models, data, guidelines and best
+                practices that ensure safe and responsible usage of such
+                technology.”
+              </motion.blockquote>
+              <motion.blockquote {...showInView}>
                 <strong>Emad Mostaque, CEO of Stability AI: </strong>
                 “Stability AI, a leader in developing advanced open AI models,
                 and IBM, a champion of open-source innovation, proudly announce
@@ -620,12 +731,12 @@ const NewsPage: React.FC = () => (
               </motion.blockquote>
               <motion.blockquote {...showInView}>
                 <strong>
-                  Prof. Hiroaki Aihara, Executive Vice President of the
-                  University of Tokyo:{' '}
+                  Vipul Ved Prakash, Co-founder and CEO of Together AI:{' '}
                 </strong>
-                “The University Tokyo is thrilled to be part of the AI Alliance,
-                together to support open innovation and open science in AI for
-                the benefit of society at large.”
+                “We are excited to join the alliance because we believe in the
+                power of the community and openness. This is the path to safe
+                and responsible AI, and we are interested in building the
+                platform to enable the open models community to thrive.”
               </motion.blockquote>
               <motion.blockquote {...showInView}>
                 <strong>Thomas F. Hofmann, TUM president: </strong>
@@ -668,6 +779,27 @@ const NewsPage: React.FC = () => (
                 through the AI Alliance we will be able to lend a distinctive
                 voice and perspective to the conversation about building
                 technologies that are both innovative and ethical.”
+              </motion.blockquote>
+              <motion.blockquote {...showInView}>
+                <strong>
+                  Adam Klivans, Director, UT-Austin Machine Learning Lab{' '}
+                </strong>
+                “The AI and ML researchers at The University of Texas at Austin,
+                led by the Machine Learning Lab (MLL) and Good Systems, look
+                forward to working closely with members of the AI Alliance to
+                broaden access to generative AI for the purpose of accelerating
+                research. We are excited about exploring ways to leverage its
+                benefits, safeguard against AI dangers while simultaneously
+                advancing the state of the art in AI capabilities.”
+              </motion.blockquote>
+              <motion.blockquote {...showInView}>
+                <strong>
+                  Prof. Hiroaki Aihara, Executive Vice President of the
+                  University of Tokyo:{' '}
+                </strong>
+                “The University Tokyo is thrilled to be part of the AI Alliance,
+                together to support open innovation and open science in AI for
+                the benefit of society at large.”
               </motion.blockquote>
               <motion.blockquote {...showInView}>
                 <strong>
