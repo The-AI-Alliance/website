@@ -580,6 +580,16 @@ const NewsPage: React.FC = () => (
                 ecosystem.”
               </motion.blockquote>
               <motion.blockquote {...showInView}>
+                <strong>Jerry Liu, Co-founder and CEO, Llama Index: </strong>
+                “Open-source software is one of the most important components in
+                making sure that AI is understandable, explainable, and
+                accessible to everyone. The mission of LlamaIndex is to empower
+                all developers to connect LLMs with their private data. We
+                support the development of open-source models and supporting
+                tooling so that developers can take advantage of a strong
+                ecosystem of different choices in achieving this mission.”
+              </motion.blockquote>
+              <motion.blockquote {...showInView}>
                 <strong>
                   Orran Krieger, Professor ECE and CS and Director of the Mass
                   Open Cloud Alliance (MOC Alliance):{' '}
