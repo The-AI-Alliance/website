@@ -16,8 +16,9 @@
   }
 }
 
-.members {
+.logosSection {
   position: relative;
+  background-color: white;
 
   .logos {
     display: flex;
@@ -171,4 +172,22 @@
 
 .paragraph {
   @include paragraph;
+}
+
+.testimonials {
+  p, li, blockquote {
+    @include font16_24;
+    
+    @include breakpoint(md) {
+      @include font20_28;
+    }
+  }
+
+  blockquote {
+    font-style: italic;
+
+    & + blockquote {
+      margin-top: 1.5rem;
+    }
+  }
 }
