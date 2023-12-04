@@ -1,7 +1,8 @@
 import { FC, RefObject } from 'react';
-import Shape2 from '@graphics/shape2.svg';
-import Shape3 from '@graphics/shape3.svg';
-import Shape4 from '@graphics/shape4.svg';
+import Image from 'next/image';
+import shape2 from '@graphics/shape2.png';
+import shape3 from '@graphics/shape3.png';
+import shape4 from '@graphics/shape4.png';
 import { Column, Grid, Heading, Section } from '@carbon/react';
 import classnames from 'classnames';
 import { MotionProps, motion } from 'framer-motion';
@@ -88,7 +89,7 @@ const Mission: FC<MissionProps> = ({
 
           <Column {...graphicsLeftProps}>
             <div ref={shape1ref}>
-              <Shape2 className={styles.shape} />
+              <Image className={styles.shape} src={shape2} alt="" />
             </div>
           </Column>
           <Column {...textRightProps}>
@@ -106,7 +107,7 @@ const Mission: FC<MissionProps> = ({
           </Column>
           <Column {...graphicsRightProps}>
             <div ref={shape2ref}>
-              <Shape3 className={styles.shape} />
+              <Image className={styles.shape} src={shape3} alt="" />
             </div>
           </Column>
           <Column {...textRightProps} data-viewport="small">
@@ -118,7 +119,7 @@ const Mission: FC<MissionProps> = ({
 
           <Column {...graphicsLeftProps}>
             <div ref={shape3ref}>
-              <Shape4 className={styles.shape} />
+              <Image className={styles.shape} src={shape4} alt="" />
             </div>
           </Column>
           <Column {...textRightProps}>

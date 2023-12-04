@@ -14,13 +14,11 @@
     "@carbon/react": "^1.36.0",
     "@sendgrid/mail": "^7.7.0",
     "classnames": "^2.3.2",
-    "framer-motion": "^10.16.1",
+    "framer-motion": "^10.16.12",
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.46.1",
-    "sass": "^1.66.1",
-    "typescript": "5.2.2"
+    "react-hook-form": "^7.46.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
@@ -33,7 +31,9 @@
     "eslint-config-next": "13.4.19",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
-    "prettier": "^3.0.3"
+    "prettier": "^3.0.3",
+    "sass": "^1.66.1",
+    "typescript": "5.2.2"
   },
   "engines": {
     "npm": ">=9.0.0 <10.0.0",
