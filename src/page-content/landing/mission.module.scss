@@ -5,6 +5,11 @@
 .mission {
   scroll-margin-top: 96px;
 
+  .shape {
+    width: 100%;
+    height: auto;
+  }
+
   &__grid {
     row-gap: 48px;
     @include breakpoint(lg) { row-gap: 160px; }

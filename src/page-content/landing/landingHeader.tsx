@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import ShapeTop from '@graphics/shape2b.svg';
-import ShapeBottom from '@graphics/shape1c.svg';
+import Image from 'next/image';
+import shapeTop from '@graphics/shape2b.png';
+import shapeBottom from '@graphics/shape1c.png';
 import { Column, Grid, Heading } from '@carbon/react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from '@carbon/icons-react';
@@ -23,10 +24,10 @@ const LandingHeader: FC<LandingHeaderProps> = ({ onLearnMore }) => (
         animate={{ opacity: 1, transition: { delay: 0.2 } }}
       />
       <motion.div className={styles.shapeTop} {...headerAnimations.shape}>
-        <ShapeTop />
+        <Image className={styles.shape} src={shapeTop} alt="" />
       </motion.div>
       <motion.div className={styles.shapeBottom} {...headerAnimations.shape}>
-        <ShapeBottom />
+        <Image className={styles.shape} src={shapeBottom} alt="" />
       </motion.div>
     </div>
     <Column className={styles.content}>

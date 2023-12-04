@@ -2,8 +2,9 @@ import React, { RefObject } from 'react';
 import classnames from 'classnames';
 import { AnimationProps, motion } from 'framer-motion';
 import { Column, Grid, Heading, Section } from '@carbon/react';
-import Shape1b from '@graphics/shape1b.svg';
-import Shape1r from '@graphics/shape1r.svg';
+import Image from 'next/image';
+import shape1b from '@graphics/shape1b.png';
+import shape1r from '@graphics/shape1r.png';
 import ContactForm from '@components/contactForm/contactForm';
 import useSendEmail from '../../utils/useSendEmail';
 import Ball from '@components/ball/ball';
@@ -59,7 +60,7 @@ const ContactPanel: React.FC<{
           {background === 'straight' ? (
             <div className={styles.titleGraphics} ref={graphicsRef}>
               {staticBall ? <Ball className={styles.ball} /> : null}
-              <Shape1r />
+              <Image className={styles.shape} src={shape1r} alt="" />
             </div>
           ) : null}
         </Column>
@@ -95,7 +96,7 @@ const ContactPanel: React.FC<{
 
         {background === 'tilted' ? (
           <div className={styles.footerGraphics} ref={graphicsRef}>
-            <Shape1b />
+            <Image className={styles.shape} src={shape1b} alt="" />
           </div>
         ) : null}
       </Grid>
