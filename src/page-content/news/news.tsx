@@ -276,7 +276,7 @@ const NewsPage: React.FC = () => (
                   UC Berkeley College of Computing, Data Science, and Society
                 </motion.li>
                 <motion.li {...showInView}>
-                  University of Illinois Urbana-Champagne
+                  University of Illinois Urbana-Champaign
                 </motion.li>
                 <motion.li {...showInView}>
                   The University of Notre Dame
