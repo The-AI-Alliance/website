@@ -47,7 +47,7 @@ const logos = [
   { size: 1, src: aitomatic, alt: 'Aitomatic' },
   { size: 2, src: amd, alt: 'AMD' },
   { size: 1, src: anyscale, alt: 'AnyScale' },
-  { size: 1, src: berkeley, alt: 'Berkeley' },
+  { size: 6, src: berkeley, alt: 'Berkeley' },
   { size: 1, src: CC, alt: 'CC' },
   { size: 1, src: dartmouth, alt: 'dartmouth' },
   { size: 2, src: fast_ai, alt: 'Fast AI' },
