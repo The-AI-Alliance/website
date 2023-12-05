@@ -17,19 +17,18 @@ const focusAreas: FocusAreaDetails[] = [
   {
     title: 'Responsible, Scalable AI',
     subtitle:
-      'Create benchmarks, tools, and methodologies to ensure and evaluate high-quality, safe, secure and trusted AI.',
+      'Create benchmarks, tools, and methodologies to ensure and evaluate high-quality and safe AI.',
     body: 'AI Alliance members will deploy benchmarks, tools, and other resources that enable the responsible development and use of AI systems at global scale, including the creation of a catalog of vetted safety, security and trust tools. This work will include supporting the advocacy and enablement of these tools with the developer community for model and application development. AI Alliance members will also develop and align on meaningful benchmarks and evaluation standards for open model releases and model deployment into applications.',
   },
   {
     title: 'Open Foundation Models',
     subtitle:
-      'Enable an ecosystem of open foundation models with diverse modalities, including highly capable multilingual, multi-modal, and science models.',
-    body: 'The AI Alliance will focus on responsibly advancing the ecosystem of open foundation models with diverse modalities, including highly capable multilingual, multi-modal, and science models that can help address society-wide challenges in climate, human health, and beyond. To support AI model builders and application developers, AI Alliance members will join forces to help build and promote open-source tools for model training, tuning, and inference. The AI Alliance will also launch initiatives that encourage open development of AI in safe and beneficial ways, and host events to explore AI use cases.',
+      'Enable an ecosystem of open foundation models with diverse modalities.',
+    body: 'The AI Alliance will focus on responsibly advancing the ecosystem of open foundation models with diverse modalities, including highly capable multilingual, multi-modal, and science models that can help address society-wide challenges in climate, education, and beyond. To support AI model builders and application developers, AI Alliance members will join forces to help build and promote open-source tools for model training, tuning, and inference. The AI Alliance will also launch initiatives that encourage open development of AI in safe and beneficial ways, and host events to explore AI use cases.',
   },
   {
     title: 'Diversified AI Hardware',
-    subtitle:
-      'Foster a vibrant AI hardware accelerator ecosystem by accelerating contributions and adoption of essential software technology.',
+    subtitle: 'Foster a vibrant AI hardware accelerator ecosystem.',
     body: 'AI Alliance members will collaborate on the benchmarking, optimization, and adaptation of AI workloads to advance a diverse set of hardware. This work will focus on scalability, platform adaptation, and advanced power, energy, and carbon modeling. Benchmarks and metrics developed for model inference, fine-tuning and energy consumption of large-scale AI workloads will be contributed to the open-source community.',
   },
   {

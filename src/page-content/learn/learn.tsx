@@ -41,21 +41,12 @@ const LearnMorePage: FC = () => {
             sm={4}
           >
             <motion.p {...showInView}>
-              It is a pivotal time in AI. Foundation models and generative AI
-              are introducing opportunities that can improve how we work, live
-              and interact with one another. This progress is possible because
-              of decades of open innovation: the collaboration among communities
-              of developers, scientists, academics, and business leaders to
-              build, validate, and adopt the latest AI technologies that advance
-              business and society.
-            </motion.p>
-            <motion.p {...showInView} custom={1}>
-              This open ecosystem has been a catalyst for driving an AI agenda
-              underpinned by trust, ethics, resiliency, and responsibility. The
-              AI of today and tomorrow must continuously improve upon levels of
-              governance and safety – and this can only be done through the
-              collective power of an open, healthy AI community that promotes
-              the exchange of ideas and collaboration on decisions and outputs.
+              AI advancements are leading to new opportunities that can improve
+              how we work, live, learn and interact with one another. Open and
+              transparent innovation is essential to empower a broad spectrum of
+              AI researchers, builders, and adopters with the information and
+              tools needed to harness these advancements in ways that prioritize
+              safety, diversity, economic opportunity and benefits to all.
             </motion.p>
           </Column>
         </Grid>
@@ -84,14 +75,13 @@ const LearnMorePage: FC = () => {
             sm={4}
           >
             <motion.p {...showInView}>
-              Recently, the large amount of computational and data resources
-              required to build foundation models along with amplified concerns
-              around model utility, trust, and risk, have threatened to relegate
-              AI innovation to a small number of closed companies. The AI
-              Alliance members are coming together to address these bottlenecks
-              and accelerate and disseminate open innovation across the AI
-              technology landscape to improve capabilities and responsibly
-              benefit society.
+              While there are many individual companies, start-ups, researchers,
+              governments, and others who are committed to open science and open
+              technologies and want to participate in the new wave of AI
+              innovation, more collaboration and information sharing will help
+              the community innovate faster and more inclusively, and identify
+              specific risks and mitigate those risks before putting a product
+              into the world.
             </motion.p>
             <Button className={styles.membersCta} onClick={onMembersCtaClick}>
               Meet our members <ArrowRight />
