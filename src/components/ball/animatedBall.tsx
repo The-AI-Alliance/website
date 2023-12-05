@@ -4,6 +4,7 @@ import {
   HTMLMotionProps,
   motion,
   useScroll,
+  useSpring,
   useTransform,
 } from 'framer-motion';
 import classnames from 'classnames';
@@ -31,16 +32,21 @@ const AnimatedBall: FC<
   ...props
 }) => {
   const { scrollY } = useScroll();
-  const top = useTransform(scrollY, stopPoints, yStopCoordinates);
+  const easedScrollY = useSpring(scrollY, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+  const top = useTransform(easedScrollY, stopPoints, yStopCoordinates);
 
   const left = useTransform(
-    scrollY,
+    easedScrollY,
     stopPoints,
     xStopCoordinates,
     easeX ? { ease: easeX } : undefined,
   );
   const size = useTransform(
-    scrollY,
+    easedScrollY,
     stopPoints,
     ballSizes,
     easeY ? { ease: easeY } : undefined,
