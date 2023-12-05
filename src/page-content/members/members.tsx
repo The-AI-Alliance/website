@@ -38,6 +38,12 @@ import yale from '@public/members/yale.png';
 import openteams from '@public/members/openteams.png';
 import pai from '@public/members/pai.png';
 import numfocus from '@public/members/numfocus.png';
+import sakana_ai from '@public/members/sakana_ai.png';
+import langchain from '@public/members/langchain.png';
+import ictp from '@public/members/ictp.png';
+import hf from '@public/members/hf.png';
+import cerebras from '@public/members/cerebras.png';
+import eth from '@public/members/eth.png';
 import { motion } from 'framer-motion';
 import { showInView } from '@utils/showInView';
 import PageShell from '../pageShell/pageShell';
@@ -51,16 +57,21 @@ const logos = [
   { size: 1, src: amd, alt: 'AMD' },
   { size: 1, src: anyscale, alt: 'AnyScale' },
   { size: 6, src: berkeley, alt: 'Berkeley' },
+  { size: 6, src: cerebras, alt: 'Cerebras' },
   { size: 1, src: CC, alt: 'CC' },
   { size: 0, src: dartmouth, alt: 'dartmouth' },
+  { size: 3, src: eth, alt: 'eth' },
   { size: 7, src: fast_ai, alt: 'Fast AI' },
   { size: 4, src: fenrir, alt: 'Fenrir' },
   { size: 5, src: FPT, alt: 'FPT' },
   { size: 6, src: HUJI, alt: 'HUJI' },
+  { size: 5, src: hf, alt: 'Hugging Face' },
+  { size: 4, src: ictp, alt: 'ICTP' },
   { size: 7, src: ibm, alt: 'IBM' },
   { size: 4, src: INSAIT, alt: 'INSAIT' },
   { size: 2, src: intel, alt: 'Intel' },
   { size: 6, src: keio, alt: 'keio' },
+  { size: 3, src: langchain, alt: 'LangChain' },
   { size: 2, src: linux, alt: 'Linux' },
   { size: 3, src: mass, alt: 'Mass' },
   { size: 3, src: MBZUAI, alt: 'MBZUAI' },
@@ -75,6 +86,7 @@ const logos = [
   { size: 2, src: red_hat, alt: 'RedHat' },
   { size: 2, src: roadzen, alt: 'Roadzen' },
   { size: 1, src: rpi, alt: 'RPI' },
+  { size: 6, src: sakana_ai, alt: 'Sakana AI' },
   { size: 2, src: sbintuitions, alt: 'sbintuitions' },
   { size: 3, src: servicenow, alt: 'ServiceNow' },
   { size: 2, src: simons, alt: 'simons' },
