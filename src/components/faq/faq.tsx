@@ -45,9 +45,7 @@ const Faq: FC = () => {
           The AI Alliance is designed to create opportunities everywhere through
           a diverse range of institutions that can shape the evolution of AI in
           ways that better reflect the needs and the complexity of our
-          societies. This stands in contrast to a vision that aims to relegate
-          AI innovation and value creation to a small number of companies with a
-          closed, proprietary vision for the AI industry.
+          societies.
         </p>
         <p>
           The AI Alliance is focused on fostering an open community and enabling
@@ -128,10 +126,6 @@ const Faq: FC = () => {
             including the creation of a catalog of vetted safety, security and
             trust tools. Support the advocacy and enablement of these tools with
             the developer community for model and application development.
-          </li>
-          <li>
-            Develop and align on meaningful benchmarks and evaluation standards
-            for open model releases and model deployment into applications.
           </li>
           <li>
             Responsibly advance the ecosystem of open foundation models with
@@ -220,34 +214,34 @@ const Faq: FC = () => {
       </AnimatedItem>
 
       <AnimatedItem
-        title="What are foundation models?"
+        title="Can an organization join the AI Alliance? How?"
         custom={7 * fadeInFactor}
       >
         <p>
-          The next wave of innovation in AI is looking to replace the
-          task-specific models that have dominated the current AI landscape. The
-          future of AI is based on models that are trained on a broad set of
-          unlabeled data with the ability to use these models on a wide range of
-          different tasks. Only minimal fine tuning is required for some
-          specialized applications.
+          The Alliance will continue to welcome new members who share our
+          commitment to values and principles that will advance safe and
+          responsible AI rooted in open innovation. Members of the AI Alliance
+          are committed to:
         </p>
+        <ul>
+          <li>
+            Bringing together a critical mass of compute, data, tools, and
+            talent to accelerate open innovation in AI to build and support open
+            technologies across software, models and tools;
+          </li>
+          <li>
+            Enable students, developers and scientists to understand,
+            experiment, and adopt open technologies; and
+          </li>
+          <li>
+            Advocate for the value of open innovation with organizational and
+            societal leaders, policy and regulatory bodies, and the public.
+          </li>
+        </ul>
         <p>
-          What makes these models &apos;foundational&apos; is that they provide
-          the basis for a wide variety of applications of the AI model. Using
-          self-supervised learning and transfer learning, the model can apply
-          information it has learned about one situation to another.
-        </p>
-      </AnimatedItem>
-      <AnimatedItem
-        title="Can an organization join the AI Alliance? How?"
-        custom={8 * fadeInFactor}
-      >
-        <p>
-          The Alliance continues to welcome new members who share our commitment
-          to open AI innovation and collaboration. Our program is purposefully
-          designed to enable flexible levels of collaboration and contribution
-          to maximize the participation and impact of organizations and
-          individuals globally.
+          Our program is purposefully designed to enable flexible levels of
+          collaboration and contribution to maximize the participation and
+          impact of organizations and individuals globally.
         </p>
       </AnimatedItem>
     </Accordion>
