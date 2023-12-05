@@ -42,7 +42,9 @@ export default function Home({
   enableContactForm: boolean;
 }) {
   useMemo(() => {
-    console.log(`[GA] Analytics ${analyticsID ? '' : 'NOT '}configured`);
+    console.log(
+      `[GA] Analytics ${analyticsID?.length ? '' : 'NOT '}configured`,
+    );
   }, [analyticsID]);
 
   const [isSideNavExpanded, setSideNavExpanded] = useState(false);
