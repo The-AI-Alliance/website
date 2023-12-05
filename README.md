@@ -32,6 +32,7 @@ yarn dev
     - `SEND_GRID_API_KEY` - Sendgrid API key
     - `EMAIL_FROM` - email address to be used as a sender (NOT reply-to)
     - `EMAIL_TO` - comma-separated emails of recipients
+    - `GA_ID` - (optional) Google Analytics ID
     - `HTTP_BASIC_AUTH` - (optional) credentials in `username:password` format to turn on basic authentication restricting access to the site to authenticated users only
 
 
