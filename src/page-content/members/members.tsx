@@ -173,11 +173,11 @@ const MembersPage: FC = () => (
             <motion.blockquote {...showInView}>
               <strong>Nick Clegg, President, Global Affairs of Meta: </strong>
               “We believe it’s better when AI is developed openly – more people
-              can access can access the benefits, build innovative products and
-              work on safety. The AI Alliance brings together researchers,
-              developers and companies to share tools and knowledge that can
-              help us all make progress whether models are shared openly or not.
-              We’re looking forward to working with partners to advance the
+              can access the benefits, build innovative products and work on
+              safety. The AI Alliance brings together researchers, developers
+              and companies to share tools and knowledge that can help us all
+              make progress whether models are shared openly or not. We’re
+              looking forward to working with partners to advance the
               state-of-the-art in AI and help everyone build responsibly.”
             </motion.blockquote>
             <motion.blockquote {...showInView}>
