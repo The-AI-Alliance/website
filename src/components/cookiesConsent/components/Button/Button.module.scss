@@ -1,0 +1,32 @@
+.button {
+  display: inline-block;
+  text-align: center;
+  border-radius: 100px;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  font-weight: 500;
+  width: auto;
+  border: none;
+  text-decoration: none;
+  position: relative;
+  background: transparent;
+  border: 1px solid #161616;
+  color: #161616;
+
+  &.primary {
+    background: #161616;
+    border: 1px solid transparent;
+    color: white;
+  }
+  
+  font-size: 13px;
+  padding: 10px 25px;
+  line-height: 20px;
+  font-family: inherit;
+  margin-right: 10px;
+  
+  @media screen and (max-width: 500px) {
+    padding: 8px 18px;
+  }
+}

@@ -31,6 +31,8 @@ import { AnimatePresence } from 'framer-motion';
 import FocusAreasPage from '../page-content/focusAreas/focusAreas';
 import NewsPage from '../page-content/news/news';
 import Script from 'next/script';
+import { CookieAcceptance } from '@components/cookiesConsent';
+import { CookieTypes } from '@components/cookiesConsent/helpers/Types';
 
 import styles from '@styles/main.module.scss';
 
@@ -132,6 +134,20 @@ export default function Home({
     [navigate],
   );
 
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
+  const injectScript = useCallback(
+    (cookie: CookieTypes) => {
+      if (cookie === 'performance' && analyticsID?.length) {
+        setAnalyticsEnabled(true);
+      }
+    },
+    [analyticsID],
+  );
+
+  useEffect(() => {
+    analyticsEnabled && console.log('[GA] Analytics enabled');
+  }, [analyticsEnabled]);
+
   return (
     <>
       <FeatureFlagsContext.Provider value={{ contactForm: enableContactForm }}>
@@ -181,7 +197,18 @@ export default function Home({
         </main>
       </FeatureFlagsContext.Provider>
 
-      {analyticsID ? (
+      {analyticsID?.length ? (
+        <CookieAcceptance
+          smallText="We are using cookies to improve the user experience by collecting
+      anonymous analytics of the site usage."
+          largeText="Please, specify what type of cookies we can store in your browser."
+          cookies={['performance']}
+          appName="AI Alliance"
+          necessaryCookiesText="Necessary cookies"
+          injectScript={injectScript}
+        />
+      ) : null}
+      {analyticsEnabled && analyticsID?.length ? (
         <div className="ga_container">
           <Script
             async

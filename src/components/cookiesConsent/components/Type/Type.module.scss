@@ -1,0 +1,38 @@
+.type {
+  
+  h4 {
+    text-transform: capitalize;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    margin: 18px 0;
+    cursor: pointer;
+    color: #363b40;
+    
+    small {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+      opacity: 0.6;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      width: auto !important;
+    }
+    
+    > div {
+      display: flex;
+
+      > * + * {
+        margin-left: 10px;
+      }
+    }
+  }
+  
+  p {
+    margin: 0 !important;
+  }
+}

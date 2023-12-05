@@ -1,0 +1,72 @@
+.toggle {
+  position: relative;
+  height: 32px;
+  
+  > input {
+    height: 0 !important;
+    width: 0 !important;
+    position: absolute !important;
+    appearance: none !important;
+    opacity: 0 !important;
+
+    &:focus {
+      & + label {
+        box-shadow: inset 0 0 0 2px #ef9d92;
+      }
+    }
+
+    &:checked + label {
+      background: #ef9d92;
+      &:before {
+        content: attr(data-on);
+        left: 9px;
+        right: auto;
+        color: #fff;
+      }
+
+      &:after {
+        left: calc(100% - 5px);
+        transform: translateX(-100%);
+      }
+    }
+  }
+
+  > label {
+    width: 62px;
+    height: 32px;
+    background: #999;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    display: block;
+    user-select: none;
+    opacity: 1 !important;
+
+    &:before {
+      content: attr(data-off);
+      color: #000;
+      position: absolute;
+      right: 9px;
+      top: calc(50% - 1px);
+      transform: translateY(-50%);
+      font-size: 12px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      background: #333;
+      border-radius: 100%;
+      left: 5px;
+      top: 5px;
+      transition: all 0.1s ease-in-out;
+    }
+
+  }
+
+  &.checked label:after {
+    background: #a0483d;
+  }
+}
