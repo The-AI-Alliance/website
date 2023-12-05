@@ -8,21 +8,23 @@ export default function App({ Component, pageProps }: AppProps) {
     <NotificationProvider>
       <Component {...pageProps} />
 
-      <div className="ga_container">
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-4D79BD68C0"
-        />
-        <Script id="google-analytics">
-          {`
+      {process.env.NODE_ENV === 'production' ? (
+        <div className="ga_container">
+          <Script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-4D79BD68C0"
+          />
+          <Script id="google-analytics">
+            {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               
               gtag('config', 'G-4D79BD68C0');
-            `}
-        </Script>
-      </div>
+              `}
+          </Script>
+        </div>
+      ) : null}
     </NotificationProvider>
   );
 }
