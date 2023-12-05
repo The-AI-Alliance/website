@@ -19,8 +19,10 @@
 .logosSection {
   position: relative;
   background-color: $white-0;
-
+  
   .logos {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

@@ -4,15 +4,19 @@ import '@styles/globals.scss';
 import Script from 'next/script';
 
 export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <NotificationProvider>
-      <Component {...pageProps} />
+  const ga = process.env.NEXT_PUBLIC_GA;
 
-      {process.env.NODE_ENV === 'production' ? (
+  return (
+    <>
+      <NotificationProvider>
+        <Component {...pageProps} />
+      </NotificationProvider>
+
+      {ga ? (
         <div className="ga_container">
           <Script
             async
-            src="https://www.googletagmanager.com/gtag/js?id=G-4D79BD68C0"
+            src={`https://www.googletagmanager.com/gtag/js?id=${ga}`}
           />
           <Script id="google-analytics">
             {`
@@ -20,11 +24,11 @@ export default function App({ Component, pageProps }: AppProps) {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               
-              gtag('config', 'G-4D79BD68C0');
+              gtag('config', '${ga}');
             `}
           </Script>
         </div>
       ) : null}
-    </NotificationProvider>
+    </>
   );
 }

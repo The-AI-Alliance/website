@@ -128,18 +128,10 @@ const MembersPage: FC = () => (
       <Grid className={styles.grid}>
         <Column xlg={{ span: 15, offset: 1 }} lg={16} md={8} sm={4}>
           <div className={styles.logos}>
-            {logos.map(({ size, src, alt }, idx) => (
-              <motion.div
-                key={alt}
-                initial={{ opacity: 0 }}
-                whileInView={{
-                  opacity: 1,
-                  transition: { delay: idx / 50 },
-                }}
-                viewport={{ once: true, amount: 0.8 }}
-              >
+            {logos.map(({ size, src, alt }) => (
+              <div key={alt}>
                 <Image className={styles[`size${size}`]} src={src} alt={alt} />
-              </motion.div>
+              </div>
             ))}
 
             <div className={styles.filler}></div>
