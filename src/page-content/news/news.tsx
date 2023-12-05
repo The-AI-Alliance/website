@@ -45,13 +45,13 @@ const NewsPage: React.FC = () => (
               IBM and Meta Launch the AI Alliance in collaboration with over 50
               Founding Members and Collaborators globally including AMD,
               Anyscale, CERN, Cerebras, Cleveland Clinic, Cornell University,
-              Dartmouth College, Dell Technologies, EPFL, ETH, Hugging Face,
-              Imperial College London, Intel, INSAIT, Linux Foundation,
-              MLCommons, MOC Alliance operated by Boston University and Harvard
-              University, NASA, NSF, Oracle, Partnership on AI, Red Hat,
-              Roadzen, ServiceNow, Sony Group, Stability AI, University of
-              California Berkeley, University of Illinois, University of Notre
-              Dame, The University of Tokyo, Yale University and others
+              Dartmouth, Dell Technologies, EPFL, ETH, Hugging Face, Imperial
+              College London, Intel, INSAIT, Linux Foundation, MLCommons, MOC
+              Alliance operated by Boston University and Harvard University,
+              NASA, NSF, Oracle, Partnership on AI, Red Hat, Roadzen,
+              ServiceNow, Sony Group, Stability AI, University of California
+              Berkeley, University of Illinois, University of Notre Dame, The
+              University of Tokyo, Yale University and others
             </motion.p>
             <section>
               <motion.p {...showInView}>
