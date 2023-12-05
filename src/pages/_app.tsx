@@ -8,11 +8,11 @@ export default function App({ Component, pageProps }: AppProps) {
     <NotificationProvider>
       <Component {...pageProps} />
 
-      {process.env.GA_ID ? (
+      {process.env.NODE_ENV === 'production' ? (
         <div className="ga_container">
           <Script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`}
+            src="https://www.googletagmanager.com/gtag/js?id=G-4D79BD68C0"
           />
           <Script id="google-analytics">
             {`
@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               
-              gtag('config', '${process.env.GA_ID}');
+              gtag('config', 'G-4D79BD68C0');
             `}
           </Script>
         </div>
