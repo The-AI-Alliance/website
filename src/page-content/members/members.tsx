@@ -35,6 +35,9 @@ import together from '@public/members/together.png';
 import tokyo from '@public/members/tokyo.jpg';
 import uiuc from '@public/members/uiuc.png';
 import yale from '@public/members/yale.png';
+import openteams from '@public/members/openteams.png';
+import pai from '@public/members/pai.png';
+import numfocus from '@public/members/numfocus.png';
 import { motion } from 'framer-motion';
 import { showInView } from '@utils/showInView';
 import PageShell from '../pageShell/pageShell';
@@ -65,7 +68,10 @@ const logos = [
   { size: 1, src: mlcommons, alt: 'ML Commons' },
   { size: 1, src: munich, alt: 'Munich' },
   { size: 6, src: notre_dame, alt: 'Notre Dame' },
+  { size: 3, src: numfocus, alt: 'NumFocus' },
   { size: 4, src: nyu, alt: 'NYU' },
+  { size: 1, src: openteams, alt: 'openteams' },
+  { size: 2, src: pai, alt: 'pai' },
   { size: 2, src: red_hat, alt: 'RedHat' },
   { size: 2, src: roadzen, alt: 'Roadzen' },
   { size: 1, src: rpi, alt: 'RPI' },
@@ -186,6 +192,22 @@ const MembersPage: FC = () => (
             </motion.blockquote>
             <motion.blockquote {...showInView}>
               <strong>
+                Dr. Sun Sumei, Acting Executive Director, A*STAR’s Institute for
+                Infocomm Research (I²R):{' '}
+              </strong>
+              “As a research institute under A*STAR, I²R spearheads research
+              initiatives and actively strives to enhance the tangible impact of
+              our innovations to address the national needs of Singapore and its
+              people. We are proud to be a founding member of this AI Alliance,
+              which will allow us to play a pivotal role in the ecosystem,
+              contribute to the development of ethical and trustworthy AI
+              innovations with well-regulated AI models for impactful real-world
+              applications. Through the collective efforts with the rest of the
+              members, we believe that the evolution, application and adoption
+              of AI will reach new heights.”
+            </motion.blockquote>
+            <motion.blockquote {...showInView}>
+              <strong>
                 Christopher Nguyen, CEO, Aitomatic & Industrial AI Leader:{' '}
               </strong>
               “AI independence is vital for industrial companies, focusing on
@@ -255,7 +277,7 @@ const MembersPage: FC = () => (
             <motion.blockquote {...showInView}>
               <strong>
                 Krystyn J Van Vliet, Vice President for Research and Innovation
-                at Cornell University{' '}
+                at Cornell University:{' '}
               </strong>
               “Cornell looks forward to participating in this AI Alliance, and
               to the range of participants and perspectives around this table.
@@ -414,6 +436,16 @@ const MembersPage: FC = () => (
               ecosystem.”
             </motion.blockquote>
             <motion.blockquote {...showInView}>
+              <strong>Jerry Liu, Co-founder and CEO, Llama Index: </strong>
+              “Open-source software is one of the most important components in
+              making sure that AI is understandable, explainable, and accessible
+              to everyone. The mission of LlamaIndex is to empower all
+              developers to connect LLMs with their private data. We support the
+              development of open-source models and supporting tooling so that
+              developers can take advantage of a strong ecosystem of different
+              choices in achieving this mission.”
+            </motion.blockquote>
+            <motion.blockquote {...showInView}>
               <strong>
                 Orran Krieger, Professor ECE and CS and Director of the Mass
                 Open Cloud Alliance (MOC Alliance):{' '}
@@ -458,6 +490,16 @@ const MembersPage: FC = () => (
               everyone.”
             </motion.blockquote>
             <motion.blockquote {...showInView}>
+              <strong>Kevin Murphy, Chief Science Data Officer, NASA: </strong>
+              “Open innovation is all but essential to ensuring equitable access
+              and collaboration around AI and root this technology in principles
+              that adhere to the strongest standards of diversity, trust and
+              ingenuity. NASA is excited about efforts like the AI Alliance to
+              continue enabling the global community of scientists, researchers,
+              and practitioners committed to responsible, trustworthy AI
+              technologies.”
+            </motion.blockquote>
+            <motion.blockquote {...showInView}>
               <strong>Sethuraman Panchanathan, NSF Director: </strong>
               “The U.S. National Science Foundation is delighted to partner with
               the AI Alliance to meet our shared goals of supporting AI-driven
@@ -471,6 +513,13 @@ const MembersPage: FC = () => (
               competitiveness in this key technology.”
             </motion.blockquote>
             <motion.blockquote {...showInView}>
+              <strong>Leah Silen, Executive Director, NumFOCUS: </strong>
+              “NumFOCUS supports many of the open-source scientific computing
+              projects and communities foundational to AI research and
+              innovation. We look forward to opportunities for collaboration
+              among this community of support and advocacy for open-source AI.”
+            </motion.blockquote>
+            <motion.blockquote {...showInView}>
               <strong>
                 Stacie Bloom, Chief Research Officer and Vice Provost for
                 Research, NYU:{' '}
@@ -480,6 +529,29 @@ const MembersPage: FC = () => (
               including IBM and Meta. This Alliance aligns with our goals to
               drive science and technology solutions on a global scale, and in a
               way that is safe, responsible, accessible and equitable.”
+            </motion.blockquote>
+            <motion.blockquote {...showInView}>
+              <strong>
+                Travis E. Oliphant, author of NumPy and SciPy, founder of
+                Anaconda, CEO and founder of Quansight and OpenTeams:{' '}
+              </strong>
+              “We’re eager to contribute to an open, collaborative dialogue
+              shaping the responsible development of AI. Embracing principles of
+              transparency, ethics, and collaboration amplified by the
+              open-source communities we serve, we envision a future where
+              diverse voices continue to drive socially beneficial innovation in
+              AI. Our commitment is to actively collaborate and share our
+              expertise to ensure a responsible, open, and accessible AI
+              ecosystem.”
+            </motion.blockquote>
+            <motion.blockquote {...showInView}>
+              <strong>Rebecca Finlay, CEO, Partnership on AI: </strong>
+              “Partnership on AI is dedicated to creating a global community to
+              catalyze AI developments that benefit people and society. It is
+              important that open science and innovation contribute to safe and
+              responsible AI. We look forward to continuing our work on this
+              with PAI Partners, members of the Alliance, and the broader AI
+              ecosystem.”
             </motion.blockquote>
             <motion.blockquote {...showInView}>
               <strong>Matt Hicks, president and CEO, Red Hat: </strong>
@@ -508,14 +580,14 @@ const MembersPage: FC = () => (
             </motion.blockquote>
             <motion.blockquote {...showInView}>
               <strong>Rohan Malhotra, CEO and Founder, Roadzen: </strong>
-              The AI Alliance’s focus on fostering an open and diverse ecosystem
-              is a pivotal step in advancing AI research worldwide. It’s a
-              striking contrast to the idea of AI being tightly controlled by a
-              few entities. As Roadzen joins this global initiative alongside
-              the industry’s leaders and researchers, our commitment is twofold:
-              to support this vision and to leverage our expertise in building
-              AI that is not just groundbreaking but also safe, accessible, and
-              beneficial for all.”
+              “The AI Alliance’s focus on fostering an open and diverse
+              ecosystem is a pivotal step in advancing AI research worldwide.
+              It’s a striking contrast to the idea of AI being tightly
+              controlled by a few entities. As Roadzen joins this global
+              initiative alongside the industry’s leaders and researchers, our
+              commitment is twofold: to support this vision and to leverage our
+              expertise in building AI that is not just groundbreaking but also
+              safe, accessible, and beneficial for all.”
             </motion.blockquote>
             <motion.blockquote {...showInView}>
               <strong>CJ Desai, president & COO, ServiceNow: </strong>
@@ -523,7 +595,7 @@ const MembersPage: FC = () => (
               societal impact, foster continued progress, and address potential
               risks collaboratively. There is no room for a winner-take-all
               approach; the development of responsible, secure LLMs comes in
-              many forms, By joining this alliance, ServiceNow is doubling down
+              many forms. By joining this alliance, ServiceNow is doubling down
               on open innovation, harnessing the collective talent and expertise
               across the global open-source community. This move aims to ensure
               AI development is grounded in the needs of society, both today and
@@ -540,7 +612,7 @@ const MembersPage: FC = () => (
             <motion.blockquote {...showInView}>
               <strong>
                 Dr. Hiroaki Kitano, Senior Executive Vice President and CTO of
-                Sony Group Corporation{' '}
+                Sony Group Corporation:{' '}
               </strong>
               “As a global technology and entertainment company, Sony believes
               in developing new technology for the benefit of the creative
@@ -614,7 +686,24 @@ const MembersPage: FC = () => (
             </motion.blockquote>
             <motion.blockquote {...showInView}>
               <strong>
-                Adam Klivans, Director, UT-Austin Machine Learning Lab{' '}
+                Jeffrey F. Rhoads, vice president for research and professor in
+                the Department of Aerospace and Mechanical Engineering at the
+                University of Notre Dame:{' '}
+              </strong>
+              “The technologies that will truly move our world forward will be
+              the ones that emerge from an inclusive, interdisciplinary
+              innovation ecosystem. As a founding partner in the AI Alliance,
+              Notre Dame’s engineers, data scientists, ethicists, and other
+              researchers will be able to collaborate to build that ecosystem,
+              joining both with AI labs around the world and with the industry
+              partners who get new technologies into the hands of users. This
+              will bring an unprecedented opportunity to our faculty and our
+              students as they help steer innovations that bring benefits to
+              society.”
+            </motion.blockquote>
+            <motion.blockquote {...showInView}>
+              <strong>
+                Adam Klivans, Director, UT-Austin Machine Learning Lab:{' '}
               </strong>
               “The AI and ML researchers at The University of Texas at Austin,
               led by the Machine Learning Lab (MLL) and Good Systems, look
