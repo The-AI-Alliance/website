@@ -137,7 +137,10 @@ export default function Home({
       <FeatureFlagsContext.Provider value={{ contactForm: enableContactForm }}>
         <Head>
           <title>AI Alliance</title>
-          <meta name="description" content="IBM AI Alliance" />
+          <meta
+            name="description"
+            content="A community of technology creators, developers and adopters collaborating to advance safe, responsible AI rooted in open innovation."
+          />
           <meta
             name="author"
             content="Stanislav Pelak - stanislav.pelak@ibm.com"
