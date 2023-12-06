@@ -44,6 +44,11 @@ import ictp from '@public/members/ictp.png';
 import hf from '@public/members/hf.png';
 import cerebras from '@public/members/cerebras.png';
 import eth from '@public/members/eth.png';
+import utexas from '@public/members/utexas.png';
+import astar from '@public/members/astar.png';
+import quansight from '@public/members/quansight.png';
+import bombay from '@public/members/bombay.png';
+import llama from '@public/members/llama.png';
 import { motion } from 'framer-motion';
 import { showInView } from '@utils/showInView';
 import PageShell from '../pageShell/pageShell';
@@ -56,6 +61,7 @@ const logos = [
   { size: 0, src: aitomatic, alt: 'Aitomatic' },
   { size: 1, src: amd, alt: 'AMD' },
   { size: 1, src: anyscale, alt: 'AnyScale' },
+  { size: 2, src: astar, alt: 'astar' },
   { size: 6, src: berkeley, alt: 'Berkeley' },
   { size: 6, src: cerebras, alt: 'Cerebras' },
   { size: 1, src: CC, alt: 'CC' },
@@ -70,9 +76,11 @@ const logos = [
   { size: 7, src: ibm, alt: 'IBM' },
   { size: 4, src: INSAIT, alt: 'INSAIT' },
   { size: 2, src: intel, alt: 'Intel' },
+  { size: 2, src: bombay, alt: 'Bombay' },
   { size: 6, src: keio, alt: 'keio' },
   { size: 3, src: langchain, alt: 'LangChain' },
   { size: 2, src: linux, alt: 'Linux' },
+  { size: 2, src: llama, alt: 'LlamaIndex' },
   { size: 3, src: mass, alt: 'Mass' },
   { size: 3, src: MBZUAI, alt: 'MBZUAI' },
   { size: 5, src: meta, alt: 'Meta' },
@@ -83,6 +91,7 @@ const logos = [
   { size: 4, src: nyu, alt: 'NYU' },
   { size: 1, src: openteams, alt: 'openteams' },
   { size: 2, src: pai, alt: 'pai' },
+  { size: 2, src: quansight, alt: 'quansight' },
   { size: 2, src: red_hat, alt: 'RedHat' },
   { size: 2, src: roadzen, alt: 'Roadzen' },
   { size: 1, src: rpi, alt: 'RPI' },
@@ -91,6 +100,7 @@ const logos = [
   { size: 3, src: servicenow, alt: 'ServiceNow' },
   { size: 2, src: simons, alt: 'simons' },
   { size: 3, src: sony, alt: 'sony' },
+  { size: 3, src: utexas, alt: 'Univerity of Texas' },
   { size: 1, src: together, alt: 'together' },
   { size: 2, src: tokyo, alt: 'tokyo' },
   { size: 6, src: uiuc, alt: 'uiuc' },
@@ -295,7 +305,7 @@ const MembersPage: FC = () => (
             <motion.blockquote {...showInView}>
               <strong>
                 Dave Kotz, Provost and the Pat and John Rosenwald Professor in
-                the Department of Computer Science, Dartmouth College:{' '}
+                the Department of Computer Science, Dartmouth:{' '}
               </strong>
               “Dartmouth, where ‘artificial intelligence’ was first envisioned
               in 1956, is excited to be part of this alliance and committed to

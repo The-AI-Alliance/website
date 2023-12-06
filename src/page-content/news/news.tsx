@@ -447,7 +447,7 @@ const NewsPage: React.FC = () => (
               <motion.blockquote {...showInView}>
                 <strong>
                   Dave Kotz, Provost and the Pat and John Rosenwald Professor in
-                  the Department of Computer Science, Dartmouth College:{' '}
+                  the Department of Computer Science, Dartmouth:{' '}
                 </strong>
                 “Dartmouth, where ‘artificial intelligence’ was first envisioned
                 in 1956, is excited to be part of this alliance and committed to

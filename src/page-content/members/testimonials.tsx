@@ -151,7 +151,7 @@ export default [
 
   {
     author:
-      'Dave Kotz, Provost and the Pat and John Rosenwald Professor in the Department of Computer Science, Dartmouth College',
+      'Dave Kotz, Provost and the Pat and John Rosenwald Professor in the Department of Computer Science, Dartmouth',
     body: (
       <>
         Dartmouth, where ‘artificial intelligence’ was first envisioned in 1956,
