@@ -21,7 +21,7 @@ const useBreakpoint = (): Breakpoint | undefined => {
   }, []);
 
   const updateBreakpoint = useCallback(
-    () => setBreakpoint(getBreakpoint(window.innerWidth)),
+    () => setBreakpoint(getBreakpoint(window.outerWidth)),
     [getBreakpoint],
   );
 

@@ -11,7 +11,7 @@ export type ShapeStops = {
 
 const getMiddleStop = (rect: DOMRect, viewportHeight: number) => {
   const center = window.scrollY + rect.top + rect.height / 2;
-  return Math.round((center - viewportHeight / 2) * 2) / 2;
+  return Math.round(center - (viewportHeight / 3) * 2);
 };
 
 const getShape1Stops = (ref: RefObject<HTMLDivElement>): ShapeStops | null => {
@@ -82,7 +82,7 @@ const getShape3Stops = (ref: RefObject<HTMLDivElement>): ShapeStops | null => {
 
   const sizeFactor = 0.25;
 
-  const viewportHeight = window.innerHeight;
+  const viewportHeight = window.outerHeight;
   const rect = ref.current.getBoundingClientRect();
   const size = rect.width * sizeFactor;
 
@@ -99,7 +99,7 @@ const getShape3Stops = (ref: RefObject<HTMLDivElement>): ShapeStops | null => {
   const left5 = rect.left + rect.width * 1.2;
 
   const leave2Stop = (rect.height / 4) * 7;
-  const left6 = window.innerWidth + 2 * size;
+  const left6 = window.outerWidth + 2 * size;
 
   const rtop = rect.top + window.scrollY;
 

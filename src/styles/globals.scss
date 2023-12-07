@@ -26,6 +26,10 @@ html {
   }
 }
 
+body {
+  overflow-x: clip;
+}
+
 h1 {
   @include type-style('fluid-display-01', true);
 }
