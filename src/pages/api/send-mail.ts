@@ -10,8 +10,6 @@ apiKey && sg.setApiKey(apiKey);
 const sendEmail = async (params: EmailParams) => {
   if (!apiKey || !emailFrom || !emailTo) {
     throw new Error('Email service not configured');
-  } else {
-    console.log('[Sendgrid] Using API key:', apiKey.substring(0, 10), '...');
   }
 
   const msg = {
