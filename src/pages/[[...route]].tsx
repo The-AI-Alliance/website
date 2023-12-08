@@ -43,12 +43,6 @@ export default function Home({
   analyticsID?: string;
   enableContactForm: boolean;
 }) {
-  useMemo(() => {
-    console.log(
-      `[GA] Analytics ${analyticsID?.length ? '' : 'NOT '}configured`,
-    );
-  }, [analyticsID]);
-
   const [isSideNavExpanded, setSideNavExpanded] = useState(false);
   const { navigate: _navigate, currentRoute } = useNavigation();
   const [renderedRoute, setRenderedRoute] = useState<ROUTE | null>(
@@ -143,10 +137,6 @@ export default function Home({
     },
     [analyticsID],
   );
-
-  useEffect(() => {
-    analyticsEnabled && console.log('[GA] Analytics enabled');
-  }, [analyticsEnabled]);
 
   return (
     <>
