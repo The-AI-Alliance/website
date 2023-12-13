@@ -31,6 +31,7 @@ import sbintuitions from '@public/members/sbintuitions.jpg';
 import servicenow from '@public/members/servicenow.png';
 import simons from '@public/members/simons.png';
 import sony from '@public/members/sony.png';
+import stability from '@public/members/stability.png';
 import together from '@public/members/together.png';
 import tokyo from '@public/members/tokyo.jpg';
 import uiuc from '@public/members/uiuc.png';
@@ -49,6 +50,10 @@ import astar from '@public/members/astar.png';
 import quansight from '@public/members/quansight.png';
 import bombay from '@public/members/bombay.png';
 import llama from '@public/members/llama.png';
+import epfl from '@public/members/epfl.png';
+import silo from '@public/members/silo.png';
+import lightning from '@public/members/lightning.png';
+import oracle from '@public/members/oracle.png';
 import { motion } from 'framer-motion';
 import { showInView } from '@utils/showInView';
 import PageShell from '../pageShell/pageShell';
@@ -67,6 +72,7 @@ const logos = [
   { size: 1, src: CC, alt: 'CC' },
   { size: 0, src: dartmouth, alt: 'dartmouth' },
   { size: 3, src: eth, alt: 'eth' },
+  { size: 4, src: epfl, alt: 'EPFL' },
   { size: 7, src: fast_ai, alt: 'Fast AI' },
   { size: 4, src: fenrir, alt: 'Fenrir' },
   { size: 5, src: FPT, alt: 'FPT' },
@@ -79,6 +85,7 @@ const logos = [
   { size: 6, src: bombay, alt: 'Bombay' },
   { size: 6, src: keio, alt: 'keio' },
   { size: 3, src: langchain, alt: 'LangChain' },
+  { size: 2, src: lightning, alt: 'Lightning AI' },
   { size: 2, src: linux, alt: 'Linux' },
   { size: 3, src: llama, alt: 'LlamaIndex' },
   { size: 3, src: mass, alt: 'Mass' },
@@ -90,6 +97,7 @@ const logos = [
   { size: 3, src: numfocus, alt: 'NumFocus' },
   { size: 4, src: nyu, alt: 'NYU' },
   { size: 1, src: openteams, alt: 'openteams' },
+  { size: 5, src: oracle, alt: 'oracle' },
   { size: 2, src: pai, alt: 'pai' },
   { size: 6, src: quansight, alt: 'quansight' },
   { size: 2, src: red_hat, alt: 'RedHat' },
@@ -97,9 +105,11 @@ const logos = [
   { size: 1, src: rpi, alt: 'RPI' },
   { size: 6, src: sakana_ai, alt: 'Sakana AI' },
   { size: 2, src: sbintuitions, alt: 'sbintuitions' },
-  { size: 3, src: servicenow, alt: 'ServiceNow' },
+  { size: 4, src: servicenow, alt: 'ServiceNow' },
+  { size: 1, src: silo, alt: 'Silo' },
   { size: 2, src: simons, alt: 'simons' },
   { size: 5, src: sony, alt: 'sony' },
+  { size: 2, src: stability, alt: 'Stability' },
   { size: 3, src: utexas, alt: 'Univerity of Texas' },
   { size: 1, src: together, alt: 'together' },
   { size: 2, src: tokyo, alt: 'tokyo' },
