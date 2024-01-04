@@ -54,6 +54,8 @@ import epfl from '@public/members/epfl.png';
 import silo from '@public/members/silo.png';
 import lightning from '@public/members/lightning.png';
 import oracle from '@public/members/oracle.png';
+import w_and_b from '@public/members/w_and_b.png';
+import northeastern from '@public/members/northeastern.jpg';
 import { motion } from 'framer-motion';
 import { showInView } from '@utils/showInView';
 import PageShell from '../pageShell/pageShell';
@@ -94,6 +96,7 @@ const logos = [
   { size: 1, src: mlcommons, alt: 'ML Commons' },
   { size: 1, src: munich, alt: 'Munich' },
   { size: 6, src: notre_dame, alt: 'Notre Dame' },
+  { size: 6, src: northeastern, alt: 'Northeastern' },
   { size: 3, src: numfocus, alt: 'NumFocus' },
   { size: 4, src: nyu, alt: 'NYU' },
   { size: 1, src: openteams, alt: 'openteams' },
@@ -114,6 +117,7 @@ const logos = [
   { size: 1, src: together, alt: 'together' },
   { size: 2, src: tokyo, alt: 'tokyo' },
   { size: 6, src: uiuc, alt: 'uiuc' },
+  { size: 2, src: w_and_b, alt: 'Weights and Biases' },
   { size: 0, src: yale, alt: 'yale' },
 ];
 
