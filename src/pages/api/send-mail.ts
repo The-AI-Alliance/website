@@ -1,13 +1,13 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import sg from '@sendgrid/mail';
-import EmailParams from '@type/emailParams';
+import ContactFormParams from '@type/contactFormParams';
 
 const emailFrom = process.env.EMAIL_FROM;
 const emailTo = (process.env.EMAIL_TO ?? '').split(',');
 const apiKey = process.env.SEND_GRID_API_KEY;
 apiKey && sg.setApiKey(apiKey);
 
-const sendEmail = async (params: EmailParams) => {
+const sendEmail = async (params: ContactFormParams) => {
   if (!apiKey || !emailFrom || !emailTo) {
     throw new Error('Email service not configured');
   }
@@ -57,7 +57,7 @@ const sendEmail = async (params: EmailParams) => {
 
 const getValidatedBody = (
   body: NextApiRequest['body'],
-): EmailParams | { error: string } => {
+): ContactFormParams | { error: string } => {
   try {
     const params = JSON.parse(body);
     if (
@@ -68,15 +68,16 @@ const getValidatedBody = (
     ) {
       throw new Error('required value missing');
     }
-    return params as EmailParams;
+    return params as ContactFormParams;
   } catch (e) {
     console.error('[validateBody] Invalid request body:', body, e);
     return { error: String(e) };
   }
 };
 
-const hasError = (b: EmailParams | { error: string }): b is { error: string } =>
-  b.hasOwnProperty('error');
+const hasError = (
+  b: ContactFormParams | { error: string },
+): b is { error: string } => b.hasOwnProperty('error');
 
 export default async function handler(
   req: NextApiRequest,

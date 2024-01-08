@@ -1,14 +1,18 @@
-import React, { RefObject } from 'react';
+import React, { RefObject, useCallback, useMemo } from 'react';
 import classnames from 'classnames';
 import { AnimationProps, motion } from 'framer-motion';
 import { Column, Grid, Heading, Section } from '@carbon/react';
 import Image from 'next/image';
 import shape1b from '@graphics/shape1b.png';
 import shape1r from '@graphics/shape1r.png';
-import ContactForm from '@components/contactForm/contactForm';
+import ContactForm, {
+  ContactFormProps,
+} from '@components/contactForm/contactForm';
 import useSendEmail from '../../utils/useSendEmail';
 import Ball from '@components/ball/ball';
 import { showInView } from '@utils/showInView';
+import useHubSpot from '@utils/useHubSpot';
+import { useNotification } from '@utils/useNotification';
 
 import styles from './contactPanel.module.scss';
 
@@ -40,9 +44,56 @@ const ContactPanel: React.FC<{
   graphicsRef?: RefObject<HTMLDivElement>;
   staticBall?: boolean;
 }> = ({ className, background = 'none', graphicsRef, staticBall }) => {
-  const { emailSent, enabled, sendMail } = useSendEmail();
+  const { setNotification } = useNotification();
+  const { enabled: emailsConfigured, emailSent, sendMail } = useSendEmail();
+  const {
+    enabled: hubSpotConfigured,
+    formSubmitted,
+    submitContactForm,
+  } = useHubSpot();
 
-  return enabled ? (
+  const handleSubmitForm: ContactFormProps['onSubmit'] = useCallback(
+    async params => {
+      let partialSuccess = false;
+      try {
+        if (hubSpotConfigured) {
+          await submitContactForm(params);
+          partialSuccess = true;
+        }
+
+        emailsConfigured && (await sendMail(params));
+      } catch (e) {
+        partialSuccess
+          ? console.error('Email was not sent:', e)
+          : setNotification?.({
+              kind: 'error',
+              title: "Your message couldn't be sent.",
+              subtitle: 'Plesae, try again later.',
+              autoClose: 5000,
+              lowContrast: true,
+            });
+      }
+    },
+    [
+      emailsConfigured,
+      hubSpotConfigured,
+      sendMail,
+      setNotification,
+      submitContactForm,
+    ],
+  );
+
+  const submitComplete = useMemo(
+    () => emailSent || formSubmitted,
+    [emailSent, formSubmitted],
+  );
+
+  const contactFormEnabled = useMemo(
+    () => emailsConfigured || hubSpotConfigured,
+    [emailsConfigured, hubSpotConfigured],
+  );
+
+  return contactFormEnabled ? (
     <Section className={styles.wrapper} level={1}>
       <Grid>
         <Column
@@ -75,7 +126,7 @@ const ContactPanel: React.FC<{
           md={8}
           sm={4}
         >
-          {emailSent ? (
+          {submitComplete ? (
             <motion.div
               className={styles.emailSent}
               variants={confirmVariants}
@@ -91,7 +142,7 @@ const ContactPanel: React.FC<{
               </motion.p>
             </motion.div>
           ) : null}
-          <ContactForm onSubmit={sendMail} />
+          <ContactForm onSubmit={handleSubmitForm} />
         </Column>
 
         {background === 'tilted' ? (
