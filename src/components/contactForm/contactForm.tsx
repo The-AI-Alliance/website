@@ -3,19 +3,19 @@ import { Button, Form, TextArea, TextInput } from '@carbon/react';
 import classNames from 'classnames';
 import { useForm } from 'react-hook-form';
 import { ArrowRight } from '@carbon/icons-react';
-import EmailParams from '@type/emailParams';
+import ContactFormParams from '@type/contactFormParams';
 
 import styles from './contactForm.module.scss';
 
 const INPUT_MAX_LENGTH = 100;
 const MESSAGE_MAX_LENGTH = 1000;
 
-type ContactFormProps = {
+export type ContactFormProps = {
   className?: string;
-  onSubmit: (params: EmailParams) => Promise<void>;
+  onSubmit: (params: ContactFormParams) => Promise<void>;
 };
 
-export type ContactFormData = {
+type ContactFormData = {
   firstName: string;
   lastName: string;
   email: string;
@@ -27,6 +27,9 @@ export type ContactFormData = {
 
 const isEmail = (value: string) =>
   /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(value);
+
+const consentText = `The AI Alliance is committed to protecting and respecting your privacy, and we’ll only use your personal information to contact you upon submission of this form.
+By submitting the preceding form, you consent to allow IBM to store and process the personal information submitted to provide the content requested.`;
 
 const ContactForm: React.FC<ContactFormProps> = ({ className, onSubmit }) => {
   const { register, handleSubmit, formState } = useForm<ContactFormData>();
@@ -43,7 +46,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ className, onSubmit }) => {
         lastName &&
         email &&
         organization &&
-        onSubmit({ firstName, lastName, email, organization, message });
+        onSubmit({
+          firstName,
+          lastName,
+          email,
+          organization,
+          message,
+          consentText,
+        });
     },
     [onSubmit],
   );
@@ -134,16 +144,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ className, onSubmit }) => {
       <div
         className={classNames(styles.field, styles.acknowledge, styles.test)}
       >
-        <p>
-          The AI Alliance is committed to protecting and respecting your
-          privacy, and we’ll only use your personal information to contact you
-          upon submission of this form.
-        </p>
-        <p>
-          By submitting the preceding form, you consent to allow IBM to store
-          and process the personal information submitted to provide the content
-          requested.
-        </p>
+        {consentText.split('\n').map((paragraph, idx) => (
+          <p key={idx}>{paragraph}</p>
+        ))}
       </div>
       <Button
         className={styles.submitBtn}

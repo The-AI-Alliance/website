@@ -1,7 +1,11 @@
 import { createContext } from 'react';
 
 export type FeatureFlags = {
-  contactForm?: boolean;
+  contactForm?: {
+    enabled: boolean;
+    email: boolean;
+    hubSpot: boolean;
+  };
 };
 
 const FeatureFlagsContext = createContext<FeatureFlags>({});

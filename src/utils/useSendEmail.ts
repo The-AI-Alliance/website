@@ -1,40 +1,30 @@
 import { useCallback, useContext, useState } from 'react';
+import ContactFormParams from '@type/contactFormParams';
 import FeatureFlagsContext from './featureFlagsContext';
-import EmailParams from '@type/emailParams';
-import { useNotification } from './useNotification';
 
 const useSendEmail = () => {
   const { contactForm } = useContext(FeatureFlagsContext);
   const [emailSent, setEmailSent] = useState(false);
-  const { setNotification } = useNotification();
 
   const sendMail = useCallback(
-    async (params: EmailParams) => {
-      try {
-        const response = await fetch('/api/send-mail', {
-          method: 'POST',
-          body: JSON.stringify(params),
-        });
-        if (!response.ok) {
-          throw new Error(`Server responded with ${response.status}`);
-        }
-        setEmailSent(true);
-      } catch (e) {
-        setNotification?.({
-          kind: 'error',
-          title: "Your message couldn't be sent.",
-          subtitle: 'Plesae, try again later.',
-          autoClose: 5000,
-          lowContrast: true,
-        });
+    async (params: ContactFormParams) => {
+      if (!contactForm?.email) return;
+
+      const response = await fetch('/api/send-mail', {
+        method: 'POST',
+        body: JSON.stringify(params),
+      });
+      if (!response.ok) {
+        throw new Error(`Server responded with ${response.status}`);
       }
+      setEmailSent(true);
     },
-    [setNotification],
+    [contactForm?.email],
   );
 
   return {
+    enabled: !!contactForm?.email,
     emailSent,
-    enabled: contactForm,
     sendMail,
   };
 };

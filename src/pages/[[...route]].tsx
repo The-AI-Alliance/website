@@ -38,10 +38,12 @@ import styles from '@styles/main.module.scss';
 
 export default function Home({
   analyticsID,
-  enableContactForm,
+  emailConfigured,
+  hubSpotConfigured,
 }: {
   analyticsID?: string;
-  enableContactForm: boolean;
+  emailConfigured: boolean;
+  hubSpotConfigured: boolean;
 }) {
   const [isSideNavExpanded, setSideNavExpanded] = useState(false);
   const { navigate: _navigate, currentRoute } = useNavigation();
@@ -140,7 +142,15 @@ export default function Home({
 
   return (
     <>
-      <FeatureFlagsContext.Provider value={{ contactForm: enableContactForm }}>
+      <FeatureFlagsContext.Provider
+        value={{
+          contactForm: {
+            email: emailConfigured,
+            hubSpot: hubSpotConfigured,
+            enabled: emailConfigured || hubSpotConfigured,
+          },
+        }}
+      >
         <Head>
           <title>AI Alliance</title>
           <meta
@@ -229,10 +239,14 @@ export const getServerSideProps = async (
   return {
     props: {
       analyticsID: process.env.GA_ID,
-      enableContactForm:
+      emailConfigured:
         !!process.env.SEND_GRID_API_KEY &&
         !!process.env.EMAIL_FROM &&
         !!process.env.EMAIL_TO,
+      hubSpotConfigured:
+        !!process.env.HUBSPOT_ACCESS_TOKEN &&
+        !!process.env.HUBSPOT_PORTAL_ID &&
+        !!process.env.HUBSPOT_FORM_GUID,
     },
   };
 };
