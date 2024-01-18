@@ -56,6 +56,13 @@ import lightning from '@public/members/lightning.png';
 import oracle from '@public/members/oracle.png';
 import w_and_b from '@public/members/w_and_b.png';
 import northeastern from '@public/members/northeastern.jpg';
+import citadel from '@public/members/citadel.png';
+import databricks from '@public/members/databricks.jpg';
+import buffalo from '@public/members/buffalo.png';
+import predibase from '@public/members/predibase.png';
+import zilliz from '@public/members/zilliz.png';
+import snowflake from '@public/members/snowflake.png';
+import uber from '@public/members/uber.png';
 import { motion } from 'framer-motion';
 import { showInView } from '@utils/showInView';
 import PageShell from '../pageShell/pageShell';
@@ -70,9 +77,12 @@ const logos = [
   { size: 1, src: anyscale, alt: 'AnyScale' },
   { size: 5, src: astar, alt: 'astar' },
   { size: 6, src: berkeley, alt: 'Berkeley' },
+  { size: 3, src: buffalo, alt: 'University at Buffalo' },
   { size: 6, src: cerebras, alt: 'Cerebras' },
+  { size: 3, src: citadel, alt: 'Citadel AI' },
   { size: 1, src: CC, alt: 'CC' },
   { size: 0, src: dartmouth, alt: 'dartmouth' },
+  { size: 6, src: databricks, alt: 'databricks' },
   { size: 3, src: eth, alt: 'eth' },
   { size: 4, src: epfl, alt: 'EPFL' },
   { size: 7, src: fast_ai, alt: 'Fast AI' },
@@ -102,6 +112,7 @@ const logos = [
   { size: 1, src: openteams, alt: 'openteams' },
   { size: 5, src: oracle, alt: 'oracle' },
   { size: 2, src: pai, alt: 'pai' },
+  { size: 1, src: predibase, alt: 'Predibase' },
   { size: 6, src: quansight, alt: 'quansight' },
   { size: 2, src: red_hat, alt: 'RedHat' },
   { size: 2, src: roadzen, alt: 'Roadzen' },
@@ -111,14 +122,17 @@ const logos = [
   { size: 4, src: servicenow, alt: 'ServiceNow' },
   { size: 1, src: silo, alt: 'Silo' },
   { size: 2, src: simons, alt: 'simons' },
+  { size: 4, src: snowflake, alt: 'Slowflake' },
   { size: 5, src: sony, alt: 'sony' },
   { size: 2, src: stability, alt: 'Stability' },
   { size: 3, src: utexas, alt: 'Univerity of Texas' },
   { size: 1, src: together, alt: 'together' },
   { size: 2, src: tokyo, alt: 'tokyo' },
   { size: 6, src: uiuc, alt: 'uiuc' },
+  { size: 3, src: uber, alt: 'Uber' },
   { size: 2, src: w_and_b, alt: 'Weights and Biases' },
   { size: 0, src: yale, alt: 'yale' },
+  { size: 7, src: zilliz, alt: 'Zilliz' },
 ];
 
 const MembersPage: FC = () => (
@@ -761,6 +775,71 @@ const MembersPage: FC = () => (
               with a broad range of university and industry leadership to pursue
               collaborative research, while formulating policy and standards for
               safe, explainable, and trustworthy AI.”
+            </motion.blockquote>
+            <motion.blockquote {...showInView}>
+              <strong>Kenny Song, CTO, Citadel AI: </strong>
+              “Citadel AI builds tools to validate and monitor the quality of AI
+              systems, including our open-source LLM evaluation toolkit,
+              LangCheck. We’re excited to contribute to the AI Alliance and
+              advance our shared mission of making the world’s AI systems more
+              reliable.”
+            </motion.blockquote>
+            <motion.blockquote {...showInView}>
+              <strong>
+                Jinjun Xiong, Empire Innovation Professor of CSE, Director of
+                Institute for Artificial Intelligence and Data Science, and
+                Scientific Director of the National AI Institute for Exceptional
+                Education at University at Buffalo (UB):{' '}
+              </strong>
+              “The recent resurgent interests in AI is a clear demonstration of
+              the power of open research and the close collaboration between
+              industry and academia. UB is proud to be part of the AI Alliance
+              as a founding member to achieve its noble goals of democratizing
+              the access of AI through open innovation, and to ensure the
+              advancement of AI will benefit everyone in our society in a safe,
+              responsible, and equitable way.”
+            </motion.blockquote>
+            <motion.blockquote {...showInView}>
+              <strong>Travis Addair, Co-Founder and CTO, Predibase: </strong>
+              “At Predibase, we strongly believe that the future of AI will be
+              built upon smaller, faster, and cheaper open source models
+              fine-tuned for specific tasks, and that open source will play a
+              key role in democratizing AI in the coming years. Empowering
+              organizations to build and deploy their own AI models will prevent
+              AI from concentrating in the hands of a few large, well-resourced
+              tech companies. Developing in the open is the only way to ensure
+              that AI is built for the benefit of everyone.”
+            </motion.blockquote>
+            <motion.blockquote {...showInView}>
+              <strong>Charles Xie, CEO of Zilliz: </strong>
+              “Supporting the development of open-source models and fostering an
+              ecosystem of choices empowers responsible AI usage. Safe AI is
+              pivotal, ensuring AI’s positive impact while upholding
+              explainability, ethics, and accessibility. We believe that vector
+              databases are the backbone of enabling Safe AI. The AI Alliance
+              represents an important step toward paving the path to safe and
+              impactful AI innovation.”
+            </motion.blockquote>
+            <motion.blockquote {...showInView}>
+              <strong>Sridhar Ramaswamy, Snowflake SVP of AI: </strong>
+              “By joining a diverse and global set of organizations working
+              across all aspects of AI research, development, education, and
+              governance, Snowflake is excited to help shape the future of
+              responsible AI,” said Sridhar Ramaswamy, Snowflake’s SVP, AI. “As
+              AI becomes a critical part of every industry within the Snowflake
+              Data Cloud, we are committed to collaborating with a holistic team
+              of developers, scientists across companies and academic
+              institutions to proactively address concerns around security,
+              governance and safety in AI.”
+            </motion.blockquote>
+            <motion.blockquote {...showInView}>
+              <strong>Ann Lavin, VP of Central Policy, Uber: </strong>
+              “The open source development of technology has long driven
+              innovation. The AI Alliance recognizes the importance of
+              continuing to support open source, as well as sharing the
+              principles and practices necessary for responsible development.
+              We’re looking forward to partnering with this broad set of experts
+              to advance AI ethically and democratically.”
             </motion.blockquote>
           </Column>
         </Grid>
