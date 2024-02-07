@@ -94,7 +94,7 @@ const blog: BlogPostData = {
         </motion.p>
         <motion.blockquote {...showInView}>
           <strong>Barry Libert, CEO, Anaconda: </strong>
-          “This journey is more than AI—it's the shared pursuit for a future
+          “This journey is more than AI—it’s the shared pursuit for a future
           guided by scientific curiosity, relentless innovation, and boundless
           access in which technology uplifts businesses and society to the
           highest standards of integrity and responsibility. Anaconda is fully
@@ -136,12 +136,12 @@ const blog: BlogPostData = {
           “Citadel AI builds tools to validate and monitor the quality of AI
           systems, including our open-source LLM evaluation toolkit, LangCheck.
           We’re excited to contribute to the AI Alliance and advance our shared
-          mission of making the world's AI systems more reliable.”
+          mission of making the world’s AI systems more reliable.”
         </motion.blockquote>
 
         <motion.blockquote {...showInView}>
           <strong>Naveen Rao, VP of Generative AI, Databricks:</strong>
-          “At Databricks, we're committed to open source innovation in AI. We
+          “At Databricks, we’re committed to open source innovation in AI. We
           believe innovation accelerates when researchers share ideas through
           open source. We’re the original creators of MLflow, one of the most
           popular open source AI tools, and we’re carrying on that legacy with
@@ -155,8 +155,8 @@ const blog: BlogPostData = {
         <motion.blockquote {...showInView}>
           <strong>Nick Elprin, CEO and co-founder of Domino Data Lab: </strong>
           “The AI Alliance embodies the principles of openness, flexibility, and
-          responsibility that guide the world's top AI innovators. We’re proud
-          to support these innovators together, ensuring AI's benefits are both
+          responsibility that guide the world’s top AI innovators. We’re proud
+          to support these innovators together, ensuring AI’s benefits are both
           far-reaching and responsibly realized.”
         </motion.blockquote>
 
@@ -182,7 +182,7 @@ const blog: BlogPostData = {
           responsible deployment of AI technologies across European
           organizations and ensuring broad accessibility to its transformative
           tools. In line with these values, we wholeheartedly support the
-          Alliance's efforts to build an open technology ecosystem. This
+          Alliance’s efforts to build an open technology ecosystem. This
           commitment to fostering diversity and innovation is crucial for the
           development of AI solutions that are not only advanced but also
           ethical and accessible to all. Through our support for the AI
@@ -313,7 +313,7 @@ const blog: BlogPostData = {
           technology and skeptical users is critical to realize the promise of
           AI. AI Alliance, with its mission of bringing together industry and
           academia and its focus on transparency in innovation, can play a
-          crucial role in bridging this gap. Penn Engineering's recent
+          crucial role in bridging this gap. Penn Engineering’s recent
           initiative in Trustworthy AI — ASSET (AI-Enabled Systems: Safe,
           Explainable, and Trustworthy) Center, is perfectly aligned with this
           mission, and we are delighted to join the effort.”
