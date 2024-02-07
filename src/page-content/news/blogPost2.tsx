@@ -3,7 +3,7 @@ import BlogPostData from './blogPostData';
 import { showInView } from '@utils/showInView';
 
 const blog: BlogPostData = {
-  anchor: 'launch',
+  anchor: 'new-members',
   date: 'February 8, 2024',
   renderBody: styles => (
     <>
