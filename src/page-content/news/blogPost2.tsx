@@ -78,12 +78,12 @@ const blog: BlogPostData = {
             source and open innovation before policymakers.
           </motion.li>
         </ul>
-        <motion.p {...showInView} className={styles.enlargeSpacing}>
+        {/* <motion.p {...showInView} className={styles.enlargeSpacing}>
           Newly announced AI Alliance members include:
         </motion.p>
         <motion.p {...showInView}>
         <img src="https://thealliance.ai/news/members_map.svg" alt="AI Alliance members map"/>
-        </motion.p>
+        </motion.p> */}
         <motion.p {...showInView} className={styles.enlargeSpacing}>
           The AI Alliance, which launched in December 2023, emphasizes the
           importance of open technologies and encourages the adoption of these

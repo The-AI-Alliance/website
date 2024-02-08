@@ -77,6 +77,7 @@ import caics from '@public/members/caics.png';
 import mlops from '@public/members/mlops.png';
 import neo4j from '@public/members/neo4j.png';
 import seed_ai from '@public/members/seed_ai.png';
+import impact_ai from '@public/members/impact_ai.png';
 import { motion } from 'framer-motion';
 import { showInView } from '@utils/showInView';
 import PageShell from '../pageShell/pageShell';
@@ -113,6 +114,7 @@ const logos = [
   { size: 5, src: hf, alt: 'Hugging Face' },
   { size: 4, src: ictp, alt: 'ICTP' },
   { size: 7, src: ibm, alt: 'IBM' },
+  { size: 7, src: impact_ai, alt: 'ImpactAI' },
   { size: 4, src: INSAIT, alt: 'INSAIT' },
   { size: 2, src: intel, alt: 'Intel' },
   { size: 6, src: bombay, alt: 'Bombay' },
