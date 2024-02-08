@@ -13,13 +13,14 @@ const blog: BlogPostData = {
       </motion.h2>
       <motion.p className={styles.abstract}>
         New AI Alliance Members Include: Anaconda; Applied Digital; Citadel AI;
-        Core42; Databricks; Domino Data Lab; ESADE, Hitachi; Impact AI; Kera
-        Health Platforms; LastMile AI; Lightning AI; MLOps Community; NEC
-        Corporation; New Native Inc.; Neo4j; Northeastern University; Predibase;
-        SeedAI; Snowflake, Inc.; Uber; University at Buffalo; University of
-        Pennsylvania; University of Technology in Poznan: Interdisciplinary
-        Centre for Artificial Intelligence and Cybersecurity; University of
-        Utah; Weights & Biases (ML/LLMops); and Zilliz
+        Core42; Databricks; Domino Data Lab; ESADE, Hitachi; Institut
+        Polytechnique De Paris; Impact AI; Kera Health Platforms; LastMile AI;
+        Lightning AI; MLOps Community; NEC Corporation; New Native Inc.; Neo4j;
+        Northeastern University; Predibase; SeedAI; Snowflake, Inc.; Uber;
+        University at Buffalo; University of Pennsylvania; University of
+        Technology in Poznan: Interdisciplinary Centre for Artificial
+        Intelligence and Cybersecurity; University of Utah; Weights & Biases
+        (ML/LLMops); and Zilliz
       </motion.p>
       <section>
         <motion.p {...showInView}>
@@ -111,24 +112,10 @@ const blog: BlogPostData = {
           entities. Applied Digital leads with state-of-the-art low-cost digital
           infrastructure, strategically placing data centers at the power
           generation source for high-performance computing applications. Our
-          commitment to the IBM AI Alliance aligns seamlessly with our mission,
+          commitment to the AI Alliance aligns seamlessly with our mission,
           championing responsible AI development and sustainability through
           collaborative efforts with industry leaders, academia, and
           government.”
-        </motion.blockquote>
-
-        <motion.blockquote {...showInView}>
-          <strong>
-            Talal Al Kaissi, EVP and Chief Product and Global Partnerships
-            Officer:{' '}
-          </strong>
-          “At Core42, our purpose is to accelerate what people, enterprises and
-          nations can achieve with AI. Joining the AI Alliance allows us to
-          partner with global technology leaders to mold the future of AI while
-          collaborating openly and sharing knowledge, tools, and resources. By
-          doing so, we aim to expedite our collective progress and guarantee
-          that the benefits of AI reach everyone in a manner that is ethical and
-          inclusive.”
         </motion.blockquote>
 
         <motion.blockquote {...showInView}>
@@ -137,6 +124,20 @@ const blog: BlogPostData = {
           systems, including our open-source LLM evaluation toolkit, LangCheck.
           We’re excited to contribute to the AI Alliance and advance our shared
           mission of making the world’s AI systems more reliable.”
+        </motion.blockquote>
+
+        <motion.blockquote {...showInView}>
+          <strong>
+            Talal Al Kaissi, EVP and Chief Product and Global Partnerships
+            Officer, Core42:{' '}
+          </strong>
+          “At Core42, our purpose is to accelerate what people, enterprises and
+          nations can achieve with AI. Joining the AI Alliance allows us to
+          partner with global technology leaders to mold the future of AI while
+          collaborating openly and sharing knowledge, tools, and resources. By
+          doing so, we aim to expedite our collective progress and guarantee
+          that the benefits of AI reach everyone in a manner that is ethical and
+          inclusive.”
         </motion.blockquote>
 
         <motion.blockquote {...showInView}>
@@ -158,6 +159,24 @@ const blog: BlogPostData = {
           responsibility that guide the world’s top AI innovators. We’re proud
           to support these innovators together, ensuring AI’s benefits are both
           far-reaching and responsibly realized.”
+        </motion.blockquote>
+
+        <motion.blockquote {...showInView}>
+          <strong>
+            Ivan Bofarull, Chief Innovation Officer, ESADE (Business & Law
+            School):
+          </strong>
+          At ESADE, we firmly believe that the integration of AI in higher
+          education holds the potential to catalyze a transformation extending
+          beyond technology. AI presents an opportunity to reimagine from
+          scratch the fundamental value of education and learning, reassess the
+          efficacy and impact of educational outcomes, and elevate the standards
+          of decision-making and judgment, particularly in domains such as
+          management and law. Furthermore, the advent of AI will compel academic
+          institutions to accentuate the elements we aim to preserve and
+          reinforce each university's distinct purpose. We are enthusiastic
+          about actively participating in this collaborative ecosystem,
+          contributing to this ongoing journey of transformation.”
         </motion.blockquote>
 
         <motion.blockquote {...showInView}>
@@ -193,12 +212,11 @@ const blog: BlogPostData = {
 
         <motion.blockquote {...showInView}>
           <strong>
-            Ricardo Baeza-Yates, Director of Research, Institute for
-            Experiential AI, Northeastern University:{' '}
+            Moustapha Cisse, Founder and CEO, Kera Health Platforms:{' '}
           </strong>
-          “OSS is crucial for the advancement of science and technology, and
-          there are many proof points, from Linux and Hadoop to current
-          open-language models.”
+          "Artificial intelligence's full promise hinges on open knowledge. Open
+          source is our gateway to a future where collective innovation benefits
+          everyone, everywhere."
         </motion.blockquote>
 
         <motion.blockquote {...showInView}>
@@ -242,6 +260,16 @@ const blog: BlogPostData = {
           collaboration. We’re proud to be part of the AI Alliance in tackling
           AI’s challenges while pushing the boundaries of what’s possible in
           ways that are collaborative, innovative, and beneficial for humanity.”
+        </motion.blockquote>
+
+        <motion.blockquote {...showInView}>
+          <strong>
+            Ricardo Baeza-Yates, Director of Research, Institute for
+            Experiential AI, Northeastern University:{' '}
+          </strong>
+          “OSS is crucial for the advancement of science and technology, and
+          there are many proof points, from Linux and Hadoop to current
+          open-language models.”
         </motion.blockquote>
 
         <motion.blockquote {...showInView}>
@@ -322,7 +350,7 @@ const blog: BlogPostData = {
         <motion.blockquote {...showInView}>
           <strong>
             Mitzi M. Montoya, Senior Vice President for Academic Affairs,
-            University of Utah:
+            University of Utah:{' '}
           </strong>
           “One of the great missions of the University of Utah is to impact our
           society for the better. As we launched the Responsible AI Initiative
@@ -337,7 +365,7 @@ const blog: BlogPostData = {
         </motion.blockquote>
 
         <motion.blockquote {...showInView}>
-          <strong>Charles Xie, CEO, Zilliz:</strong>
+          <strong>Charles Xie, CEO, Zilliz: </strong>
           “Supporting the development of open-source models and fostering an
           ecosystem of choices empowers responsible AI usage. Safe AI is
           pivotal, ensuring AI’s positive impact while upholding explainability,
