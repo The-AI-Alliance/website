@@ -82,7 +82,7 @@ const blog: BlogPostData = {
           Newly announced AI Alliance members include:
         </motion.p>
         <motion.p {...showInView}>
-          <strong>[INFOGRAPHIC HERE]</strong>
+        <img src="https://thealliance.ai/news/members_map.svg" alt="AI Alliance members map"/>
         </motion.p>
         <motion.p {...showInView} className={styles.enlargeSpacing}>
           The AI Alliance, which launched in December 2023, emphasizes the
