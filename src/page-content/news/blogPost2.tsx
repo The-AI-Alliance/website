@@ -208,9 +208,9 @@ const blog: BlogPostData = {
           <strong>
             Moustapha Cisse, Founder and CEO, Kera Health Platforms:{' '}
           </strong>
-          "Artificial intelligence’s full promise hinges on open knowledge. Open
+          “Artificial intelligence’s full promise hinges on open knowledge. Open
           source is our gateway to a future where collective innovation benefits
-          everyone, everywhere."
+          everyone, everywhere.”
         </motion.blockquote>
 
         <motion.blockquote {...showInView}>
