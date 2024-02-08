@@ -243,6 +243,24 @@ const Faq: FC = () => {
           collaboration and contribution to maximize the participation and
           impact of organizations and individuals globally.
         </p>
+        <p>Members of the AI Alliance must meet these 4 criteria categories:</p>
+        <ul>
+          <li>
+            Alignment with the AI Alliance’s values and its mission to cultivate
+            safe and open science and innovation
+          </li>
+          <li>
+            Commitment to undertake significant projects aligned with the
+            mission of the AI Alliance
+          </li>
+          <li>
+            Contribution to the diversity of perspectives within the AI Alliance
+          </li>
+          <li>
+            Activity and reputation within the wider communities of AI builders,
+            advocates, and educators
+          </li>
+        </ul>
       </AnimatedItem>
     </Accordion>
   );

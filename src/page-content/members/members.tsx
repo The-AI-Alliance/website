@@ -63,6 +63,21 @@ import predibase from '@public/members/predibase.png';
 import zilliz from '@public/members/zilliz.png';
 import snowflake from '@public/members/snowflake.png';
 import uber from '@public/members/uber.png';
+import penn from '@public/members/penn.png';
+import anaconda from '@public/members/anaconda.png';
+import applied_digital from '@public/members/applied_digital.png';
+import core_42 from '@public/members/core_42.png';
+import domino from '@public/members/domino.png';
+import hitachi from '@public/members/hitachi.png';
+import kera from '@public/members/kera.png';
+import lastmile from '@public/members/lastmile.png';
+import nec from '@public/members/nec.png';
+import esade from '@public/members/esade.png';
+import caics from '@public/members/caics.png';
+import mlops from '@public/members/mlops.png';
+import neo4j from '@public/members/neo4j.png';
+import seed_ai from '@public/members/seed_ai.png';
+import impact_ai from '@public/members/impact_ai.png';
 import { motion } from 'framer-motion';
 import { showInView } from '@utils/showInView';
 import PageShell from '../pageShell/pageShell';
@@ -74,37 +89,50 @@ import testimonials from './testimonials';
 const logos = [
   { size: 0, src: aitomatic, alt: 'Aitomatic' },
   { size: 1, src: amd, alt: 'AMD' },
+  { size: 1, src: anaconda, alt: 'Anaconda' },
   { size: 1, src: anyscale, alt: 'AnyScale' },
+  { size: 2, src: applied_digital, alt: 'Applied Digital' },
   { size: 5, src: astar, alt: 'astar' },
   { size: 6, src: berkeley, alt: 'Berkeley' },
   { size: 3, src: buffalo, alt: 'University at Buffalo' },
+  { size: 6, src: caics, alt: 'CAICS' },
   { size: 6, src: cerebras, alt: 'Cerebras' },
   { size: 3, src: citadel, alt: 'Citadel AI' },
   { size: 1, src: CC, alt: 'CC' },
+  { size: 7, src: core_42, alt: 'Core 42' },
   { size: 0, src: dartmouth, alt: 'dartmouth' },
   { size: 6, src: databricks, alt: 'databricks' },
+  { size: 1, src: domino, alt: 'Domino Data Lab' },
   { size: 3, src: eth, alt: 'eth' },
   { size: 4, src: epfl, alt: 'EPFL' },
+  { size: 7, src: esade, alt: 'ESADE' },
   { size: 7, src: fast_ai, alt: 'Fast AI' },
   { size: 4, src: fenrir, alt: 'Fenrir' },
   { size: 5, src: FPT, alt: 'FPT' },
+  { size: 5, src: hitachi, alt: 'Hitachi' },
   { size: 6, src: HUJI, alt: 'HUJI' },
   { size: 5, src: hf, alt: 'Hugging Face' },
   { size: 4, src: ictp, alt: 'ICTP' },
   { size: 7, src: ibm, alt: 'IBM' },
+  { size: 7, src: impact_ai, alt: 'ImpactAI' },
   { size: 4, src: INSAIT, alt: 'INSAIT' },
   { size: 2, src: intel, alt: 'Intel' },
   { size: 6, src: bombay, alt: 'Bombay' },
   { size: 6, src: keio, alt: 'keio' },
+  { size: 4, src: kera, alt: 'Kera' },
   { size: 3, src: langchain, alt: 'LangChain' },
+  { size: 1, src: lastmile, alt: 'Last Mile AI' },
   { size: 2, src: lightning, alt: 'Lightning AI' },
   { size: 2, src: linux, alt: 'Linux' },
   { size: 3, src: llama, alt: 'LlamaIndex' },
   { size: 3, src: mass, alt: 'Mass' },
+  { size: 7, src: mlops, alt: 'ML Ops' },
   { size: 3, src: MBZUAI, alt: 'MBZUAI' },
   { size: 5, src: meta, alt: 'Meta' },
   { size: 1, src: mlcommons, alt: 'ML Commons' },
   { size: 1, src: munich, alt: 'Munich' },
+  { size: 6, src: nec, alt: 'NEC' },
+  { size: 2, src: neo4j, alt: 'NEO4J' },
   { size: 6, src: notre_dame, alt: 'Notre Dame' },
   { size: 6, src: northeastern, alt: 'Northeastern' },
   { size: 3, src: numfocus, alt: 'NumFocus' },
@@ -112,6 +140,7 @@ const logos = [
   { size: 1, src: openteams, alt: 'openteams' },
   { size: 5, src: oracle, alt: 'oracle' },
   { size: 2, src: pai, alt: 'pai' },
+  { size: 3, src: penn, alt: 'Penn' },
   { size: 1, src: predibase, alt: 'Predibase' },
   { size: 6, src: quansight, alt: 'quansight' },
   { size: 2, src: red_hat, alt: 'RedHat' },
@@ -119,6 +148,7 @@ const logos = [
   { size: 1, src: rpi, alt: 'RPI' },
   { size: 6, src: sakana_ai, alt: 'Sakana AI' },
   { size: 2, src: sbintuitions, alt: 'sbintuitions' },
+  { size: 3, src: seed_ai, alt: 'SeedAI' },
   { size: 4, src: servicenow, alt: 'ServiceNow' },
   { size: 1, src: silo, alt: 'Silo' },
   { size: 2, src: simons, alt: 'simons' },
