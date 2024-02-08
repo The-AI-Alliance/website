@@ -9,7 +9,7 @@ import blog2 from './blogPost2';
 
 import styles from './news.module.scss';
 
-const blogs: BlogPostData[] = [blog1];
+const blogs: BlogPostData[] = [blog2, blog1];
 
 const NewsPage: React.FC = () => (
   <PageShell className={styles.wrapper} withContactPanel>
