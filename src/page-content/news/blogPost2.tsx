@@ -174,7 +174,7 @@ const blog: BlogPostData = {
           of decision-making and judgment, particularly in domains such as
           management and law. Furthermore, the advent of AI will compel academic
           institutions to accentuate the elements we aim to preserve and
-          reinforce each university's distinct purpose. We are enthusiastic
+          reinforce each university’s distinct purpose. We are enthusiastic
           about actively participating in this collaborative ecosystem,
           contributing to this ongoing journey of transformation.”
         </motion.blockquote>
@@ -214,7 +214,7 @@ const blog: BlogPostData = {
           <strong>
             Moustapha Cisse, Founder and CEO, Kera Health Platforms:{' '}
           </strong>
-          "Artificial intelligence's full promise hinges on open knowledge. Open
+          "Artificial intelligence’s full promise hinges on open knowledge. Open
           source is our gateway to a future where collective innovation benefits
           everyone, everywhere."
         </motion.blockquote>
