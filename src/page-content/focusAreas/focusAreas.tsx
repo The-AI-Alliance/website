@@ -15,7 +15,7 @@ type FocusAreaDetails = {
 
 const focusAreas: FocusAreaDetails[] = [
   {
-    title: 'Responsible, Scalable AI',
+    title: 'Safe, secure trusted AI',
     subtitle:
       'Create benchmarks, tools, and methodologies to ensure and evaluate high-quality and safe AI.',
     body: 'AI Alliance members will deploy benchmarks, tools, and other resources that enable the responsible development and use of AI systems at global scale, including the creation of a catalog of vetted safety, security and trust tools. This work will include supporting the advocacy and enablement of these tools with the developer community for model and application development. AI Alliance members will also develop and align on meaningful benchmarks and evaluation standards for open model releases and model deployment into applications.',
@@ -32,10 +32,22 @@ const focusAreas: FocusAreaDetails[] = [
     body: 'AI Alliance members will collaborate on the benchmarking, optimization, and adaptation of AI workloads to advance a diverse set of hardware. This work will focus on scalability, platform adaptation, and advanced power, energy, and carbon modeling. Benchmarks and metrics developed for model inference, fine-tuning and energy consumption of large-scale AI workloads will be contributed to the open-source community.',
   },
   {
-    title: 'Skills, Education, and Research',
+    title: 'Skills and exploratory research',
     subtitle:
       'Support global AI skills building, education, and exploratory research.',
     body: 'To help close the AI skill gap, AI Alliance members will engage the academic community to enable researchers and students to learn and contribute to essential AI model and tool research projects including AI algorithms, models, platforms, and new techniques for power and resource efficient AI.  Members will also collaborate to develop educational content and resources that inform the public discourse and policymakers on benefits, risks, solutions, and precision regulation for AI.',
+  },
+  {
+    title: 'AI Policy Advocacy',
+    subtitle:
+      'Advocacy for regulatory policies that create a healthy open ecosystem for AI.',
+    body: 'A thriving and competitive open innovation ecosystem for AI must be a priority for industry, civil society, and academia, and policymakers should take note. While open innovation ecosystems are largely decentralized and self-directed, policymakers can still take steps to ensure they can flourish. The AI Alliance will work together to help policymakers and governments recognize and support open innovation ecosystems for AI. This effort will also involve bringing together policymakers, institutions, and businesses across industries to learn, develop, and adopt responsible, safe and ethical data and AI practices that have a positive impact for people and society.',
+  },
+  {
+    title: 'Software Frameworks and Tools',
+    subtitle:
+      'Build and advance efficient and capable software frameworks for model builders and developers.',
+    body: 'To support AI model builders and application developers, AI Alliance members will join forces to help build and promote open-source tools for model training, tuning, and inference, such as PyTorch. We will also work together to simplify, automate, and optimize the deployment and execution of large-scale AI workloads on Kubernetes.',
   },
 ];
 
