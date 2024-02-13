@@ -78,6 +78,8 @@ import mlops from '@public/members/mlops.png';
 import neo4j from '@public/members/neo4j.png';
 import seed_ai from '@public/members/seed_ai.png';
 import impact_ai from '@public/members/impact_ai.png';
+import imperial_college from '@public/members/imperial_college.png';
+import new_native from '@public/members/new_native.png';
 import { motion } from 'framer-motion';
 import { showInView } from '@utils/showInView';
 import PageShell from '../pageShell/pageShell';
@@ -115,6 +117,7 @@ const logos = [
   { size: 4, src: ictp, alt: 'ICTP' },
   { size: 7, src: ibm, alt: 'IBM' },
   { size: 7, src: impact_ai, alt: 'ImpactAI' },
+  { size: 4, src: imperial_college, alt: 'Imperial College London' },
   { size: 4, src: INSAIT, alt: 'INSAIT' },
   { size: 2, src: intel, alt: 'Intel' },
   { size: 6, src: bombay, alt: 'Bombay' },
@@ -133,6 +136,7 @@ const logos = [
   { size: 1, src: munich, alt: 'Munich' },
   { size: 6, src: nec, alt: 'NEC' },
   { size: 2, src: neo4j, alt: 'NEO4J' },
+  { size: 3, src: new_native, alt: 'New Native' },
   { size: 6, src: notre_dame, alt: 'Notre Dame' },
   { size: 6, src: northeastern, alt: 'Northeastern' },
   { size: 3, src: numfocus, alt: 'NumFocus' },

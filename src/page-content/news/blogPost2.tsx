@@ -17,10 +17,10 @@ const blog: BlogPostData = {
         Polytechnique De Paris; Impact AI; Kera Health Platforms; LastMile AI;
         Lightning AI; MLOps Community; NEC Corporation; New Native Inc.; Neo4j;
         Northeastern University; Predibase; SeedAI; Snowflake, Inc.; Uber;
-        University at Buffalo; University of Pennsylvania; University of
-        Technology in Poznan: Interdisciplinary Centre for Artificial
-        Intelligence and Cybersecurity; University of Utah; Weights & Biases
-        (ML/LLMops); and Zilliz
+        University at Buffalo; University of Pennsylvania; Interdisciplinary
+        Centre for Artificial Intelligence and Cybersecurity @ Poznan University
+        of Technology; University of Utah; Weights & Biases (ML/LLMops); and
+        Zilliz
       </motion.p>
       <section>
         <motion.p {...showInView}>
@@ -366,6 +366,18 @@ const blog: BlogPostData = {
           ethics, and accessibility. We believe that vector databases are the
           backbone of enabling Safe AI. The AI Alliance represents an important
           step toward paving the path to safe and impactful AI innovation.”
+        </motion.blockquote>
+
+        <motion.blockquote {...showInView}>
+          <strong>Simon Olson, Co-Founder & CEO, New Native: </strong>
+          “At New Native Inc, we believe that the future of AI thrives on open
+          collaboration and the collective efforts of a global community.
+          Through our initiatives like lablab.ai and its growing active
+          community of AI builders & enthusiasts, we are contributing to a
+          future where AI is democratized, accessible, and has its potential
+          fully utilized. Our partnership with the AI Alliance is a testament to
+          our commitment towards nurturing an ecosystem where open-source AI is
+          part of the cornerstone of innovation and progress.”
         </motion.blockquote>
       </section>
     </>
