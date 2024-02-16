@@ -80,6 +80,9 @@ import seed_ai from '@public/members/seed_ai.png';
 import impact_ai from '@public/members/impact_ai.png';
 import imperial_college from '@public/members/imperial_college.png';
 import new_native from '@public/members/new_native.png';
+import sci from '@public/members/sci.png';
+import utah from '@public/members/utah.png';
+
 import { motion } from 'framer-motion';
 import { showInView } from '@utils/showInView';
 import PageShell from '../pageShell/pageShell';
@@ -152,6 +155,7 @@ const logos = [
   { size: 1, src: rpi, alt: 'RPI' },
   { size: 6, src: sakana_ai, alt: 'Sakana AI' },
   { size: 2, src: sbintuitions, alt: 'sbintuitions' },
+  { size: 5, src: sci, alt: 'SCI' },
   { size: 3, src: seed_ai, alt: 'SeedAI' },
   { size: 4, src: servicenow, alt: 'ServiceNow' },
   { size: 1, src: silo, alt: 'Silo' },
@@ -164,6 +168,7 @@ const logos = [
   { size: 2, src: tokyo, alt: 'tokyo' },
   { size: 6, src: uiuc, alt: 'uiuc' },
   { size: 3, src: uber, alt: 'Uber' },
+  { size: 5, src: utah, alt: 'University of Utah' },
   { size: 2, src: w_and_b, alt: 'Weights and Biases' },
   { size: 0, src: yale, alt: 'yale' },
   { size: 7, src: zilliz, alt: 'Zilliz' },
