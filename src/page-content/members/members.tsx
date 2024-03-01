@@ -880,6 +880,18 @@ const MembersPage: FC = () => (
               We’re looking forward to partnering with this broad set of experts
               to advance AI ethically and democratically.”
             </motion.blockquote>
+            <motion.blockquote {...showInView}>
+              <strong>
+                Robert Wrembel, leader, Interdisciplinary Centre for Artificial
+                Intelligence and Cybersecurity (CAICS), Poland:{' '}
+              </strong>
+              “The mission of CAICS is to provide expert knowledge on AI and
+              cybersecurity technologies for companies, public organizations,
+              and society. We are committed to running R&D projects as well as
+              pro publico bono educational initiatives. We are proud to join the
+              AI Alliance to work with worldwide leading players in the field of
+              AI.”
+            </motion.blockquote>
           </Column>
         </Grid>
       </Section>
